@@ -1,0 +1,128 @@
+/*
+Copyright 2023 RallyHere
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+#include "status.h"
+#include "allocator.h"
+
+#include <unordered_map>
+
+#define RH_SYMBOL_STRING_PAIR(e) e, #e
+
+namespace rallyhere
+{
+
+const char* status_text(RallyHereStatusCode err)
+{
+    static std::unordered_map<RallyHereStatusCode, const char*> lookup = {
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_OK) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_ERROR) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_NO_BOOTSTRAP_MODE_PROVIDED) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_CREDENTIALS_FILE_NOT_TWO_LINES) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_NO_RALLYHERE_URL_PROVIDED) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_NO_SIC_PROFILE_ID_PROVIDED) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_CANCELLED) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_VALIDATION_ERROR_ADAPTER_IS_NULLPTR) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_ADAPTER_ALLOCATION_ERROR) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_VALIDATION_ERROR_MAP_IS_NULLPTR) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_MAP_ALLOCATION_ERROR) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_VALIDATION_ERROR_KEY_IS_NULLPTR) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_VALIDATION_ERROR_VALUE_IS_NULLPTR) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_VALIDATION_ERROR_VALUE_SIZE_IS_NULLPTR) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_KEY_NOT_FOUND) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_COULD_NOT_PARSE_RESPONSE) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_RESPONSE_NO_ACCESS_TOKEN) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_RESPONSE_NO_REFRESH_TOKEN) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_RESPONSE_NO_AUTH_SUCCESS) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_RESPONSE_AUTH_SUCCESS_NOT_BOOL) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_POLL_INTERVAL_MUST_BE_NUMERIC) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_CANNOT_POLL_WITHOUT_ON_ALLOCATED_CALLBACK) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_PROMETHEUS_PORT_MUST_BE_NUMERIC) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_PROMETHEUS_ALREADY_STARTED) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_PROMETHEUS_COULD_NOT_START) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_REQUEST_TIMEOUT_MUST_BE_NUMERIC) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_POLL_UNKNOWN_STATE) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_CONTINUE                           ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_SWITCHINGPROTOCOLS                 ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_PROCESSING                         ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_OK                                 ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_CREATED                            ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_ACCEPTED                           ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_NON_AUTHORITATIVE_INFORMATION      ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_NO_CONTENT                         ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_RESET_CONTENT                      ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_PARTIAL_CONTENT                    ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_MULTI_STATUS                       ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_ALREADY_REPORTED                   ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_IM_USED                            ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_MULTIPLE_CHOICES                   ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_MOVED_PERMANENTLY                  ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_FOUND                              ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_SEE_OTHER                          ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_NOT_MODIFIED                       ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_USE_PROXY                          ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_TEMPORARY_REDIRECT                 ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_PERMANENT_REDIRECT                 ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_BAD_REQUEST                        ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_UNAUTHORIZED                       ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_PAYMENT_REQUIRED                   ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_FORBIDDEN                          ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_NOT_FOUND                          ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_METHOD_NOT_ALLOWED                 ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_NOT_ACCEPTABLE                     ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_PROXY_AUTHENTICATION_REQUIRED      ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_REQUEST_TIMEOUT                    ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_CONFLICT                           ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_GONE                               ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_LENGTH_REQUIRED                    ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_PRECONDITION_FAILED                ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_PAYLOAD_TOO_LARGE                  ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_URI_TOO_LONG                       ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_UNSUPPORTED_MEDIA_TYPE             ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_RANGE_NOT_SATISFIABLE              ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_EXPECTATION_FAILED                 ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_MISDIRECTED_REQUEST                ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_UNPROCESSABLE_ENTITY               ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_LOCKED                             ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_FAILED_DEPENDENCY                  ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_UPGRADE_REQUIRED                   ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_PRECONDITION_REQUIRED              ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_TOO_MANY_REQUESTS                  ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_REQUEST_HEADER_FIELDS_TOO_LARGE    ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_CONNECTION_CLOSED_WITHOUT_RESPONSE ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_UNAVAILABLE_FOR_LEGAL_REASONS      ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_CLIENT_CLOSED_REQUEST              ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_INTERNAL_SERVER_ERROR              ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_NOT_IMPLEMENTED                    ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_BAD_GATEWAY                        ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_SERVICE_UNAVAILABLE                ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_GATEWAY_TIMEOUT                    ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_HTTP_VERSION_NOT_SUPPORTED         ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_VARIANT_ALSO_NEGOTIATES            ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_INSUFFICIENT_STORAGE               ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_LOOP_DETECTED                      ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_NOT_EXTENDED                       ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_NETWORK_AUTHENTICATION_REQUIRED    ) },
+        { RH_SYMBOL_STRING_PAIR(RH_STATUS_HTTP_NETWORK_CONNECT_TIMEOUT_ERROR      ) },
+    };
+
+    auto it = lookup.find(err);
+    if (it == lookup.end())
+    {
+        return "";
+    }
+    return it->second;
+}
+
+} // namespace rallyhere

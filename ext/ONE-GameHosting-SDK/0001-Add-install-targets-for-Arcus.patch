@@ -1,0 +1,23 @@
+From ee465c498fa5fb9720eec0450c3afc012eaf6d3b Mon Sep 17 00:00:00 2001
+From: Andrew Sayman <asayman@hirezstudios.com>
+Date: Wed, 26 Apr 2023 21:34:31 -0400
+Subject: [PATCH] Add install targets for Arcus
+
+---
+ one/arcus/CMakeLists.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/one/arcus/CMakeLists.txt b/one/arcus/CMakeLists.txt
+index 66b416c..7843ef6 100644
+--- a/one/arcus/CMakeLists.txt
++++ b/one/arcus/CMakeLists.txt
+@@ -64,3 +64,5 @@ target_compile_features(one_arcus PUBLIC cxx_std_11)
+ if(WIN32)
+     target_link_libraries(one_arcus wsock32 ws2_32)
+ endif()
++
++install(TARGETS one_arcus DESTINATION lib)
+\ No newline at end of file
+-- 
+2.34.1
+

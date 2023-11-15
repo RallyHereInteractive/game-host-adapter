@@ -1,0 +1,7 @@
+{
+  "name": "certify",
+  "version-string": "0",
+  "dependencies": [
+    "vcpkg-cmake-config"
+  ]
+}

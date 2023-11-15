@@ -1,0 +1,66 @@
+From 277194da5a3806c0c73e1c4be25f9b5856305401 Mon Sep 17 00:00:00 2001
+From: Andrew Sayman <asayman@hirezstudios.com>
+Date: Fri, 28 Apr 2023 17:25:21 -0400
+Subject: [PATCH 2/2] Put the cmake files into the correct directory for vcpkg
+
+---
+ CMakeLists.txt                              | 16 ++++++++--------
+ certifyConfig.cmake => certify-config.cmake |  2 +-
+ 2 files changed, 9 insertions(+), 9 deletions(-)
+ rename certifyConfig.cmake => certify-config.cmake (63%)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 6c45db4..65058f2 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -60,26 +60,26 @@ target_link_libraries(
+ 
+ include(CMakePackageConfigHelpers)
+ write_basic_package_version_file(
+-    "certifyConfigVersion.cmake"
++    "certify-config-version.cmake"
+     COMPATIBILITY AnyNewerVersion)
+ 
+ install(FILES
+-            "certifyConfig.cmake"
+-            "${CMAKE_BINARY_DIR}/certifyConfigVersion.cmake"
+-        DESTINATION lib/cmake/certify)
++            "certify-config.cmake"
++            "${CMAKE_BINARY_DIR}/certify-config-version.cmake"
++        DESTINATION share/certify)
+ 
+ install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/
+         DESTINATION include
+         FILES_MATCHING PATTERN "*.hpp" PATTERN "*.ipp")
+ 
+ install(TARGETS core
+-        EXPORT certifyTargets
++        EXPORT certify-targets
+         INCLUDES DESTINATION include)
+ 
+-install(EXPORT certifyTargets
+-        FILE certifyTargets.cmake
++install(EXPORT certify-targets
++        FILE certify-targets.cmake
+         NAMESPACE certify::
+-        DESTINATION lib/cmake/certify)
++        DESTINATION share/certify)
+ 
+ include(CTest)
+ if(BUILD_TESTING)
+diff --git a/certifyConfig.cmake b/certify-config.cmake
+similarity index 63%
+rename from certifyConfig.cmake
+rename to certify-config.cmake
+index 272dd90..4a401dd 100644
+--- a/certifyConfig.cmake
++++ b/certify-config.cmake
+@@ -3,4 +3,4 @@ include(CMakeFindDependencyMacro)
+ find_dependency(Boost COMPONENTS system)
+ find_dependency(Threads)
+ 
+-include("${CMAKE_CURRENT_LIST_DIR}/certify-Targets.cmake")
++include("${CMAKE_CURRENT_LIST_DIR}/certify-targets.cmake")
+-- 
+2.34.1
+

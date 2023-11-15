@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>RallyHere.GameHostAdapter.Ubuntu.20_04</id>
+        <version>${GAME_HOST_ADAPTER_VERSION}</version>
+        <authors>Andrew Sayman</authors>
+        <owners>asayman, RallyHere</owners>
+        <description>A dynamic library for interacting with different game hosting providers</description>
+    </metadata>
+    <files>
+        <file src="libgame-host-adapter.so" target="libgame-host-adapter.so" />
+        <file src="libgame-host-adapter.sym" target="libgame-host-adapter.sym" />
+    </files>
+</package>

@@ -1,0 +1,32 @@
+From 4d1e715b547a0e53c46cab87d67a9474cfb71be6 Mon Sep 17 00:00:00 2001
+From: Andrew Sayman <asayman@hirezstudios.com>
+Date: Wed, 26 Apr 2023 21:29:48 -0400
+Subject: [PATCH 1/2] Remove testing from default build
+
+---
+ CMakeLists.txt | 11 +----------
+ 1 file changed, 1 insertion(+), 10 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b83d1ae..74498f9 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -57,13 +57,4 @@ configure_file(
+ configure_file(
+   "${PROJECT_SOURCE_DIR}/ping-version.h.in"
+   "${PROJECT_SOURCE_DIR}/one/ping/internal/version.h"
+-)
+-
+-# Testing only available if this is the main app
+-# Emergency override MODERN_CMAKE_BUILD_TESTING provided as well
+-if((CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME OR MODERN_CMAKE_BUILD_TESTING))
+-  set(RUN_TEST_AFTER_BUILD true)
+-  include(CTest)
+-  enable_testing()
+-  add_subdirectory(tests)
+-endif()
++)
+\ No newline at end of file
+-- 
+2.34.1
+

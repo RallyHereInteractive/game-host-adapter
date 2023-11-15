@@ -1,0 +1,25 @@
+From 32bcc9b929616a2e38d3e1cd35df47f9908fe9b9 Mon Sep 17 00:00:00 2001
+From: Andrew Sayman <asayman@hirezstudios.com>
+Date: Wed, 26 Apr 2023 21:52:51 -0400
+Subject: [PATCH 6/6] Install public header files
+
+---
+ one/arcus/CMakeLists.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/one/arcus/CMakeLists.txt b/one/arcus/CMakeLists.txt
+index 7843ef6..d668e46 100644
+--- a/one/arcus/CMakeLists.txt
++++ b/one/arcus/CMakeLists.txt
+@@ -65,4 +65,5 @@ if(WIN32)
+     target_link_libraries(one_arcus wsock32 ws2_32)
+ endif()
+ 
+-install(TARGETS one_arcus DESTINATION lib)
+\ No newline at end of file
++set_target_properties(one_arcus PROPERTIES PUBLIC_HEADER "${HEADER_FILES}")
++install(TARGETS one_arcus LIBRARY DESTINATION lib PUBLIC_HEADER DESTINATION include/one/arcus)
+\ No newline at end of file
+-- 
+2.34.1
+
