@@ -1,0 +1,167 @@
+From 643990d8dafa3ea0c4dfdab40b5e48c5572d9f2a Mon Sep 17 00:00:00 2001
+From: Andrew Sayman <asayman@hirezstudios.com>
+Date: Wed, 26 Apr 2023 21:43:05 -0400
+Subject: [PATCH 5/6] Fix ping's allocator
+
+---
+ one/ping/allocator.cpp | 19 ++++++++++---------
+ one/ping/allocator.h   | 24 ++++++++++++------------
+ 2 files changed, 22 insertions(+), 21 deletions(-)
+
+diff --git a/one/ping/allocator.cpp b/one/ping/allocator.cpp
+index 8d847da..db32d88 100644
+--- a/one/ping/allocator.cpp
++++ b/one/ping/allocator.cpp
+@@ -1,6 +1,7 @@
+-#include <one/ping/allocator.h>
++#include <one/arcus/allocator.h>
+ 
+ #include <assert.h>
++#include <cstdlib>
+ 
+ namespace i3d {
+ namespace ping {
+@@ -10,7 +11,7 @@ namespace allocator {
+ namespace {
+ 
+ // Wrapper to allow assignment to the std::function.
+-void *default_alloc(size_t bytes) {
++void *default_alloc(std::size_t bytes) {
+     return std::malloc(bytes);
+ }
+ 
+@@ -19,18 +20,18 @@ void default_free(void *p) {
+     std::free(p);
+ }
+ 
+-void *default_realloc(void *p, size_t bytes) {
++void *default_realloc(void *p, std::size_t bytes) {
+     return std::realloc(p, bytes);
+ }
+ 
+ }  // namespace
+ 
+ // Global allocation overridable functions.
+-std::function<void *(size_t)> _alloc = default_alloc;
++std::function<void *(std::size_t)> _alloc = default_alloc;
+ std::function<void(void *)> _free = default_free;
+-std::function<void *(void *, size_t)> _realloc = default_realloc;
++std::function<void *(void *, std::size_t)> _realloc = default_realloc;
+ 
+-void set_alloc(std::function<void *(size_t)> fn) {
++void set_alloc(std::function<void *(std::size_t)> fn) {
+     _alloc = fn;
+ }
+ 
+@@ -38,7 +39,7 @@ void set_free(std::function<void(void *)> fn) {
+     _free = fn;
+ }
+ 
+-void set_realloc(std::function<void *(void *, size_t)> fn) {
++void set_realloc(std::function<void *(void *, std::size_t)> fn) {
+     _realloc = fn;
+ }
+ 
+@@ -48,7 +49,7 @@ void reset_overrides() {
+     _realloc = default_realloc;
+ }
+ 
+-void *alloc(size_t bytes) {
++void *alloc(std::size_t bytes) {
+     assert(_alloc);
+     void *p = _alloc(bytes);
+     assert(p != nullptr);
+@@ -60,7 +61,7 @@ void free(void *p) {
+     _free(p);
+ }
+ 
+-void *realloc(void *p, size_t s) {
++void *realloc(void *p, std::size_t s) {
+     return _realloc(p, s);
+ }
+ 
+diff --git a/one/ping/allocator.h b/one/ping/allocator.h
+index 7ca6411..5ba62d8 100644
+--- a/one/ping/allocator.h
++++ b/one/ping/allocator.h
+@@ -10,7 +10,7 @@ namespace allocator {
+ 
+ // Override alloc, which is used by all allocation functions in this
+ // namespace. Default is ::operator new.
+-void set_alloc(std::function<void *(size_t)>);
++void set_alloc(std::function<void *(std::size_t)>);
+ 
+ // Override free, which is used by all deallocation functions in this
+ // namespace. Default is ::operator delete.
+@@ -18,23 +18,23 @@ void set_free(std::function<void(void *)>);
+ 
+ // Override realloc, which is used by the realloc function in this
+ // namespace. Default is ::operator delete.
+-void set_realloc(std::function<void *(void *, size_t)>);
++void set_realloc(std::function<void *(void *, std::size_t)>);
+ 
+ // Sets the allocators back to the default.
+ void reset_overrides();
+ 
+ // Use the function set by set_alloc to allocate memory.
+-void *alloc(size_t);
++void *alloc(std::size_t);
+ 
+ // Use the function set by set_free to free memory.
+ void free(void *);
+ 
+ // Reallocate existing memory with new size. Must match standard c behavior.
+-void *realloc(void *p, size_t s);
++void *realloc(void *p, std::size_t s);
+ 
+ // Equivalent to the new operator, but using the function set by set_alloc.
+ template <class T, class... Args>
+-T *create(Args &&...args) {
++T *create(Args &&... args) {
+     auto data = alloc(sizeof(T));
+     auto p = reinterpret_cast<T *>(data);
+     ::new (p) T(std::forward<Args>(args)...);
+@@ -52,19 +52,19 @@ void destroy(T *p) noexcept {
+ // has its constructor called, with the same arguments. The returned memory must
+ // be deleted via destroy_array.
+ template <class T, class... Args>
+-T *create_array(size_t count, Args &&...args) {
++T *create_array(std::size_t count, Args &&... args) {
+     // Allocate additional space to store the array length.
+-    size_t padding = sizeof(size_t);
++    std::size_t padding = sizeof(std::size_t);
+     auto data = alloc(sizeof(T) * count + padding);
+ 
+     // The padding will be at the front of the data. Set it to the array length.
+-    size_t *start = reinterpret_cast<size_t *>(data);
++    std::size_t *start = reinterpret_cast<std::size_t *>(data);
+     *start = count;
+ 
+     // The actual array elements start directly after the padding.
+     auto p = reinterpret_cast<T *>(start + 1);
+     auto element = p;
+-    for (size_t i = 0; i < count; ++i) {
++    for (std::size_t i = 0; i < count; ++i) {
+         ::new (element) T(std::forward<Args>(args)...);
+         ++element;
+     }
+@@ -81,13 +81,13 @@ void destroy_array(T *p) noexcept {
+ 
+     // The buffer allocated will start before the array length preceding the
+     // array elements (p).
+-    size_t *start = (reinterpret_cast<size_t *>(p) - 1);
++    std::size_t *start = (reinterpret_cast<std::size_t *>(p) - 1);
+     // The array length is first.
+-    size_t count = *start;
++    std::size_t count = *start;
+ 
+     // Call destructors.
+     T *element = reinterpret_cast<T *>(p);
+-    for (size_t i = 0; i < count; ++i) {
++    for (std::size_t i = 0; i < count; ++i) {
+         element->~T();
+         ++element;
+     }
+-- 
+2.34.1
+

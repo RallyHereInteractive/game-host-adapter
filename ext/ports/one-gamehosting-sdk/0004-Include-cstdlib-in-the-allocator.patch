@@ -1,0 +1,24 @@
+From f44b4cd624d9170c56cc37e7e1b89269a121b464 Mon Sep 17 00:00:00 2001
+From: Andrew Sayman <asayman@hirezstudios.com>
+Date: Wed, 26 Apr 2023 21:41:59 -0400
+Subject: [PATCH 4/6] Include cstdlib in the allocator
+
+---
+ one/arcus/allocator.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/one/arcus/allocator.cpp b/one/arcus/allocator.cpp
+index 61d78c8..4ca6dba 100644
+--- a/one/arcus/allocator.cpp
++++ b/one/arcus/allocator.cpp
+@@ -1,6 +1,7 @@
+ #include <one/arcus/allocator.h>
+ 
+ #include <assert.h>
++#include <cstdlib>
+ 
+ namespace i3d {
+ namespace one {
+-- 
+2.34.1
+

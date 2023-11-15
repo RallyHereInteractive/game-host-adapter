@@ -1,0 +1,32 @@
+From e12e3303c0f6465b07aa86e00a13a23221376380 Mon Sep 17 00:00:00 2001
+From: Andrew Sayman <asayman@hirezstudios.com>
+Date: Fri, 28 Apr 2023 17:02:22 -0400
+Subject: [PATCH 1/2] Fix main CMakeLists.txt
+
+---
+ CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index d6ee973..6c45db4 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -64,13 +64,13 @@ write_basic_package_version_file(
+     COMPATIBILITY AnyNewerVersion)
+ 
+ install(FILES
+-            "netutilsConfig.cmake"
++            "certifyConfig.cmake"
+             "${CMAKE_BINARY_DIR}/certifyConfigVersion.cmake"
+         DESTINATION lib/cmake/certify)
+ 
+ install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/
+         DESTINATION include
+-        FILES_MATCHING PATTERN "*.hpp")
++        FILES_MATCHING PATTERN "*.hpp" PATTERN "*.ipp")
+ 
+ install(TARGETS core
+         EXPORT certifyTargets
+-- 
+2.34.1
+

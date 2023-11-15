@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>RallyHere.GameHostAdapter.Windows.x64</id>
+        <version>${GAME_HOST_ADAPTER_VERSION}</version>
+        <authors>Andrew Sayman</authors>
+        <owners>asayman, RallyHere</owners>
+        <description>A dynamic library for interacting with different game hosting providers</description>
+    </metadata>
+    <files>
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/game-host-adapter.dll" target="lib/game-host-adapter.dll" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/game-host-adapter.pdb" target="lib/game-host-adapter.pdb" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/game-host-adapter.lib" target="lib/game-host-adapter.lib" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/game-host-adapter.exp" target="lib/game-host-adapter.exp" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/boost_filesystem-vc143-mt-x64-1_82.dll" target="lib/boost_filesystem-vc143-mt-x64-1_82.dll" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/boost_json-vc143-mt-x64-1_82.dll" target="lib/boost_json-vc143-mt-x64-1_82.dll" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/boost_url-vc143-mt-x64-1_82.dll" target="lib/boost_url-vc143-mt-x64-1_82.dll" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/fmt.dll" target="lib/fmt.dll" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/libcrypto-3-x64.dll" target="lib/libcrypto-3-x64.dll" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/libssl-3-x64.dll" target="lib/libssl-3-x64.dll" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/zlib1.dll" target="lib/zlib1.dll" />
+    </files>
+</package>
