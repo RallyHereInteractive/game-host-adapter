@@ -1120,13 +1120,10 @@ std::pair<http::request<string_body>, boost::system::error_code> GameInstanceAda
             rallyhere::memory_buffer buffer;
             fmt::format_to(std::back_inserter(buffer), "{}:{}", m_APIUserName, m_APIPassword);
             j["portal_access_token"] = std::string_view{ buffer.data(), buffer.size() };
+            j["accept_eula"] = true;
+            j["accept_tos"] = true;
+            j["accept_privacy_policy"] = true;
         }
-    }
-    if (!m_UseClientId)
-    {
-        j["accept_eula"] = true;
-        j["accept_tos"] = true;
-        j["accept_privacy_policy"] = true;
     }
 
     rallyhere::stringstream sstr;
