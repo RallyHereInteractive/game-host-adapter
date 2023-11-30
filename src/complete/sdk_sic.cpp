@@ -1069,6 +1069,14 @@ void GameInstanceAdapter::ReadySIC(base_callback_function_t callback, void* user
     });
 }
 
+void basic_with_base64_data(rallyhere::memory_buffer& buffer, const rallyhere::string& left, const rallyhere::string& right)
+{
+    rallyhere::memory_buffer base64buffer;
+    fmt::format_to(std::back_inserter(base64buffer), "{}:{}", left, right);
+    base64(base64buffer);
+    fmt::format_to(std::back_inserter(buffer), "Basic {}", std::string_view{ base64buffer.data(), base64buffer.size() });
+}
+
 std::pair<http::request<string_body>, boost::system::error_code> GameInstanceAdapter::BuildLoginRequest(const rallyhere::string& in_url_str)
 {
     http::request<string_body> m_Request;
@@ -1096,8 +1104,7 @@ std::pair<http::request<string_body>, boost::system::error_code> GameInstanceAda
         if (m_UseClientId)
         {
             rallyhere::memory_buffer buffer;
-            fmt::format_to(std::back_inserter(buffer), "{}:{}", m_APIUserName, m_APIPassword);
-            base64(buffer)
+            basic_with_base64_data(buffer, m_APIUserName, m_APIPassword);
             m_Request.set(http::field::authorization, std::string_view{ buffer.data(), buffer.size() });
         }
         else
@@ -1112,8 +1119,7 @@ std::pair<http::request<string_body>, boost::system::error_code> GameInstanceAda
             j["grant_type"] = "client_credentials";
             j["include_refresh"] = true;
             rallyhere::memory_buffer buffer;
-            fmt::format_to(std::back_inserter(buffer), "{}:{}", m_APIUserName, m_APIPassword);
-            base64(buffer)
+            basic_with_base64_data(buffer, m_APIUserName, m_APIPassword);
             m_Request.set(http::field::authorization, std::string_view{ buffer.data(), buffer.size() });
         }
         else
