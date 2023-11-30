@@ -1093,19 +1093,44 @@ std::pair<http::request<string_body>, boost::system::error_code> GameInstanceAda
     if (m_RefreshTokenValid)
     {
         j["grant_type"] = "refresh";
-        j["portal_access_token"] = m_RefreshToken;
+        if (m_UseClientId)
+        {
+            rallyhere::memory_buffer buffer;
+            fmt::format_to(std::back_inserter(buffer), "{}:{}", m_APIUserName, m_APIPassword);
+            base64(buffer)
+            m_Request.set(http::field::authorization, std::string_view{ buffer.data(), buffer.size() });
+        }
+        else
+        {
+            j["portal_access_token"] = m_RefreshToken;
+        }
     }
     else
     {
-        j["grant_type"] = "basic";
-        j["include_refresh"] = true;
-        rallyhere::memory_buffer buffer;
-        fmt::format_to(std::back_inserter(buffer), "{}:{}", m_APIUserName, m_APIPassword);
-        j["portal_access_token"] = std::string_view{ buffer.data(), buffer.size() };
+        if (m_UseClientId)
+        {
+            j["grant_type"] = "client_credentials";
+            j["include_refresh"] = true;
+            rallyhere::memory_buffer buffer;
+            fmt::format_to(std::back_inserter(buffer), "{}:{}", m_APIUserName, m_APIPassword);
+            base64(buffer)
+            m_Request.set(http::field::authorization, std::string_view{ buffer.data(), buffer.size() });
+        }
+        else
+        {
+            j["grant_type"] = "basic";
+            j["include_refresh"] = true;
+            rallyhere::memory_buffer buffer;
+            fmt::format_to(std::back_inserter(buffer), "{}:{}", m_APIUserName, m_APIPassword);
+            j["portal_access_token"] = std::string_view{ buffer.data(), buffer.size() };
+        }
     }
-    j["accept_eula"] = true;
-    j["accept_tos"] = true;
-    j["accept_privacy_policy"] = true;
+    if (!m_UseClientId)
+    {
+        j["accept_eula"] = true;
+        j["accept_tos"] = true;
+        j["accept_privacy_policy"] = true;
+    }
 
     rallyhere::stringstream sstr;
     boost::json::serializer sr(&mr);
