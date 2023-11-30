@@ -1101,16 +1101,7 @@ std::pair<http::request<string_body>, boost::system::error_code> GameInstanceAda
     if (m_RefreshTokenValid)
     {
         j["grant_type"] = "refresh";
-        if (m_UseClientId)
-        {
-            rallyhere::memory_buffer buffer;
-            basic_with_base64_data(buffer, m_APIUserName, m_APIPassword);
-            m_Request.set(http::field::authorization, std::string_view{ buffer.data(), buffer.size() });
-        }
-        else
-        {
-            j["portal_access_token"] = m_RefreshToken;
-        }
+        j["portal_access_token"] = m_RefreshToken;
     }
     else
     {
