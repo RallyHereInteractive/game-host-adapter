@@ -100,6 +100,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES CXX_VISIBILITY_PRESET hidden)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${VERSION_HEADER_DIR})
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/game-host-adapter)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/ext)
 
 #find_library(ONE_ARCUS_LIB one_arcus)
 #target_link_libraries(${PROJECT_NAME} PRIVATE ${ONE_ARCUS_LIB})

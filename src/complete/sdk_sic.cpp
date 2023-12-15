@@ -46,6 +46,8 @@ namespace net = boost::asio;      // from <boost/asio.hpp>
 namespace ssl = boost::asio::ssl; // from <boost/asio/ssl.hpp>
 using tcp = boost::asio::ip::tcp; // from <boost/asio/ip/tcp.hpp>
 
+#include "cpp-base64/base64.hpp"
+
 #include "sdk_helpers.hpp"
 #include "sdk_formatters.hpp"
 
@@ -1073,8 +1075,9 @@ void basic_with_base64_data(rallyhere::memory_buffer& buffer, const rallyhere::s
 {
     rallyhere::memory_buffer base64buffer;
     fmt::format_to(std::back_inserter(base64buffer), "{}:{}", left, right);
-    base64(base64buffer);
-    fmt::format_to(std::back_inserter(buffer), "Basic {}", std::string_view{ base64buffer.data(), base64buffer.size() });
+    base64<rallyhere::string> encoder;
+    auto encoded = encoder.encode(std::string_view{ base64buffer.data(), base64buffer.size() }, false);
+    fmt::format_to(std::back_inserter(buffer), "Basic {}", std::string_view{ encoded.data(), encoded.size() });
 }
 
 std::pair<http::request<string_body>, boost::system::error_code> GameInstanceAdapter::BuildLoginRequest(const rallyhere::string& in_url_str)
