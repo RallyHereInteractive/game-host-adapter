@@ -31,8 +31,6 @@ freely, subject to the following restrictions:
 
                      */
 
-#include "base64.h"
-
 #include <algorithm>
 #include <stdexcept>
 
@@ -70,17 +68,21 @@ static unsigned int pos_of_char(const unsigned char chr) {
         throw std::runtime_error("Input is not valid base64-encoded data.");
 }
 
-static std::string insert_linebreaks(std::string str, size_t distance) {
+template<typename InputT>
+InputT insert_linebreaks(InputT str, size_t distance)
+{
     //
     // Provided by https://github.com/JomaCorpFX, adapted by me.
     //
-    if (!str.length()) {
-        return "";
+    if (!str.length())
+    {
+        return str;
     }
 
     size_t pos = distance;
 
-    while (pos < str.size()) {
+    while (pos < str.size())
+    {
         str.insert(pos, "\n");
         pos += distance + 1;
     }
@@ -88,27 +90,32 @@ static std::string insert_linebreaks(std::string str, size_t distance) {
     return str;
 }
 
-template <typename String, unsigned int line_length>
-static std::string encode_with_line_breaks(String s) {
-    return insert_linebreaks(base64_encode(s, false), line_length);
+template<typename StorageT>
+struct base64
+{
+    using storage_type = StorageT;
+
+template <typename StringT, unsigned int line_length>
+storage_type encode_with_line_breaks(StringT s) {
+    return insert_linebreaks(base64_encode<storage_type>(s, false), line_length);
 }
 
-template <typename String>
-static std::string encode_pem(String s) {
-    return encode_with_line_breaks<String, 64>(s);
+template <typename StringT>
+storage_type encode_pem(StringT s) {
+    return encode_with_line_breaks<StringT, 64>(s);
 }
 
-template <typename String>
-static std::string encode_mime(String s) {
-    return encode_with_line_breaks<String, 76>(s);
+template <typename StringT>
+storage_type encode_mime(StringT s) {
+    return encode_with_line_breaks<StringT, 76>(s);
 }
 
-template <typename String>
-static std::string encode(String s, bool url) {
+template <typename StringT>
+storage_type encode(StringT s, bool url) {
     return base64_encode(reinterpret_cast<const unsigned char*>(s.data()), s.length(), url);
 }
 
-std::string base64_encode(unsigned char const* bytes_to_encode, size_t in_len, bool url) {
+storage_type base64_encode(unsigned char const* bytes_to_encode, size_t in_len, bool url) {
 
     size_t len_encoded = (in_len +2) / 3 * 4;
 
@@ -125,7 +132,7 @@ std::string base64_encode(unsigned char const* bytes_to_encode, size_t in_len, b
     //
     const char* base64_chars_ = base64_chars[url];
 
-    std::string ret;
+    storage_type ret;
     ret.reserve(len_encoded);
 
     unsigned int pos = 0;
@@ -159,8 +166,8 @@ std::string base64_encode(unsigned char const* bytes_to_encode, size_t in_len, b
     return ret;
 }
 
-template <typename String>
-static std::string decode(String const& encoded_string, bool remove_linebreaks) {
+template <typename StringT>
+storage_type decode(StringT const& encoded_string, bool remove_linebreaks) {
     //
     // decode(…) is templated so that it can be used with String = const std::string&
     // or std::string_view (requires at least C++17)
@@ -187,7 +194,7 @@ static std::string decode(String const& encoded_string, bool remove_linebreaks) 
     // enough space in the string to be returned.
     //
     size_t approx_length_of_decoded_string = length_of_string / 4 * 3;
-    std::string ret;
+    storage_type ret;
     ret.reserve(approx_length_of_decoded_string);
 
     while (pos < length_of_string) {
@@ -209,7 +216,7 @@ static std::string decode(String const& encoded_string, bool remove_linebreaks) 
         //
         // Emit the first output byte that is produced in each chunk:
         //
-        ret.push_back(static_cast<std::string::value_type>( ( (pos_of_char(encoded_string.at(pos+0)) ) << 2 ) + ( (pos_of_char_1 & 0x30 ) >> 4)));
+        ret.push_back(static_cast<typename decltype(ret)::value_type>( ( (pos_of_char(encoded_string.at(pos+0)) ) << 2 ) + ( (pos_of_char_1 & 0x30 ) >> 4)));
 
         if ( ( pos + 2 < length_of_string  )       &&  // Check for data that is not padded with equal signs (which is allowed by RFC 2045)
             encoded_string.at(pos+2) != '='     &&
@@ -220,7 +227,7 @@ static std::string decode(String const& encoded_string, bool remove_linebreaks) 
             // Emit a chunk's second byte (which might not be produced in the last chunk).
             //
             unsigned int pos_of_char_2 = pos_of_char(encoded_string.at(pos+2) );
-            ret.push_back(static_cast<std::string::value_type>( (( pos_of_char_1 & 0x0f) << 4) + (( pos_of_char_2 & 0x3c) >> 2)));
+            ret.push_back(static_cast<typename decltype(ret)::value_type>( (( pos_of_char_1 & 0x0f) << 4) + (( pos_of_char_2 & 0x3c) >> 2)));
 
             if ( ( pos + 3 < length_of_string )     &&
                 encoded_string.at(pos+3) != '='  &&
@@ -230,7 +237,7 @@ static std::string decode(String const& encoded_string, bool remove_linebreaks) 
                 //
                 // Emit a chunk's third byte (which might not be produced in the last chunk).
                 //
-                ret.push_back(static_cast<std::string::value_type>( ( (pos_of_char_2 & 0x03 ) << 6 ) + pos_of_char(encoded_string.at(pos+3))   ));
+                ret.push_back(static_cast<typename decltype(ret)::value_type>( ( (pos_of_char_2 & 0x03 ) << 6 ) + pos_of_char(encoded_string.at(pos+3))   ));
             }
         }
 
@@ -240,22 +247,6 @@ static std::string decode(String const& encoded_string, bool remove_linebreaks) 
     return ret;
 }
 
-std::string base64_decode(std::string const& s, bool remove_linebreaks) {
-    return decode(s, remove_linebreaks);
-}
-
-std::string base64_encode(std::string const& s, bool url) {
-    return encode(s, url);
-}
-
-std::string base64_encode_pem (std::string const& s) {
-    return encode_pem(s);
-}
-
-std::string base64_encode_mime(std::string const& s) {
-    return encode_mime(s);
-}
-
 #if __cplusplus >= 201703L
 //
 // Interface with std::string_view rather than const std::string&
@@ -263,20 +254,22 @@ std::string base64_encode_mime(std::string const& s) {
 // Provided by Yannic Bonenberger (https://github.com/Yannic)
 //
 
-std::string base64_encode(std::string_view s, bool url) {
+storage_type base64_encode(std::string_view s, bool url) {
     return encode(s, url);
 }
 
-std::string base64_encode_pem(std::string_view s) {
+storage_type base64_encode_pem(std::string_view s) {
     return encode_pem(s);
 }
 
-std::string base64_encode_mime(std::string_view s) {
+storage_type base64_encode_mime(std::string_view s) {
     return encode_mime(s);
 }
 
-std::string base64_decode(std::string_view s, bool remove_linebreaks) {
+storage_type base64_decode(std::string_view s, bool remove_linebreaks) {
     return decode(s, remove_linebreaks);
 }
 
 #endif  // __cplusplus >= 201703L
+
+};
