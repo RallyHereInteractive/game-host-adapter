@@ -190,6 +190,8 @@ if (LEST_INCLUDE_DIRS)
             test/complete/test_sdk_helpers.cpp
             test/complete/configuration.h
             test/complete/configuration.cpp
+            test/complete/test_base64.cpp
+            test/complete/test_base64.h
     )
     add_executable(${PROJECT_NAME}_complete_test
             ${complete_test_sources}
@@ -197,6 +199,7 @@ if (LEST_INCLUDE_DIRS)
     target_include_directories(${PROJECT_NAME}_complete_test PRIVATE ${LEST_INCLUDE_DIRS})
     target_include_directories(${PROJECT_NAME}_complete_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/game-host-adapter)
     target_include_directories(${PROJECT_NAME}_complete_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/complete)
+    target_include_directories(${PROJECT_NAME}_complete_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/ext)
     target_link_libraries(${PROJECT_NAME}_complete_test PRIVATE ${PROJECT_NAME})
     target_link_libraries(${PROJECT_NAME}_complete_test PRIVATE ${Boost_LIBRARIES})
     target_link_libraries(${PROJECT_NAME}_complete_test PRIVATE Boost::thread Boost::url)
