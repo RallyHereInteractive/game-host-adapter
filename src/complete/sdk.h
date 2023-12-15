@@ -462,6 +462,7 @@ class GameInstanceAdapter
     rallyhere::string m_AccessToken;
     rallyhere::string m_RefreshToken;
     bool m_RefreshTokenValid{false};
+    bool m_UseClientId{false};
     /// @}
 
     /// @name SIC Ready
