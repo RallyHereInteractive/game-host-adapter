@@ -52,3 +52,7 @@ Sessionx.vim
 tags
 # Persistent undo
 [._]*.un~
+
+
+# Test data
+.test_data.json
