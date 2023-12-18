@@ -620,6 +620,13 @@ void GameInstanceAdapter::SetupSIC()
                 m_Status = { RH_STATUS_MAX_POLL_FAILURES_MUST_BE_NUMERIC };
             }
         }
+        if (ParseArgument("rhcredentialsas=", arg, tmp))
+        {
+            if ("clientid" == tmp)
+            {
+                m_UseClientId = true;
+            }
+        }
     }
     if (m_SicProfileId.empty())
     {
