@@ -139,6 +139,16 @@ class StringMap
     rallyhere::map<rallyhere::string, rallyhere::string> m_Map;
 };
 
+struct SICCredentials
+{
+    rallyhere::string m_CredentialsFile;
+    rallyhere::string m_APIUserName;
+    rallyhere::string m_APIPassword;
+    rallyhere::string m_APIClientId;
+    rallyhere::string m_APISecret;
+    bool m_UseCredentialsAsClientId{false};
+};
+
 class GameInstanceAdapter
 {
   public:
@@ -427,9 +437,7 @@ class GameInstanceAdapter
 
     /// @name SIC
     /// @{
-    rallyhere::string m_CredentialsFile;
-    rallyhere::string m_APIUserName;
-    rallyhere::string m_APIPassword;
+    SICCredentials m_SICCredentials;
     rallyhere::string m_RallyHereUrl;
     rallyhere::string m_SicProfileId;
     rallyhere::string m_SicServerId;
@@ -462,7 +470,6 @@ class GameInstanceAdapter
     rallyhere::string m_AccessToken;
     rallyhere::string m_RefreshToken;
     bool m_RefreshTokenValid{false};
-    bool m_UseClientId{false};
     /// @}
 
     /// @name SIC Ready

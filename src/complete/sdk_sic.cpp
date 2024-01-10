@@ -513,17 +513,17 @@ void GameInstanceAdapter::SetupSIC()
     for (auto&& arg : m_Arguments)
     {
         rallyhere::string tmp;
-        if (ParseArgument("rhcredentialsfile=", arg, m_CredentialsFile))
+        if (ParseArgument("rhcredentialsfile=", arg, m_SICCredentials.m_CredentialsFile))
         {
-            auto lines = LoadFileToStringArray(m_CredentialsFile);
+            auto lines = LoadFileToStringArray(m_SICCredentials.m_CredentialsFile);
             if (2 != lines.size())
             {
                 m_Status = { RH_STATUS_CREDENTIALS_FILE_NOT_TWO_LINES };
                 return;
             }
-            m_APIUserName = lines[0];
-            m_APIPassword = lines[1];
-            log().log(RH_LOG_LEVEL_INFO, "Loaded rhapi username from file: {}", m_APIUserName);
+            m_SICCredentials.m_APIUserName = lines[0];
+            m_SICCredentials.m_APIPassword = lines[1];
+            log().log(RH_LOG_LEVEL_INFO, "Loaded rhapi username from file: {}", m_SICCredentials.m_APIUserName);
             continue;
         }
         if (ParseArgument("rhsicprofileid=", arg, m_SicProfileId))
@@ -624,7 +624,7 @@ void GameInstanceAdapter::SetupSIC()
         {
             if ("clientid" == tmp)
             {
-                m_UseClientId = true;
+                m_SICCredentials.m_UseCredentialsAsClientId = true;
             }
         }
     }
@@ -755,6 +755,12 @@ void GameInstanceAdapter::SetupSIC()
     upperedState[0] = toupper(upperedState[0]);
     m_InternalAdditionalInfoLabels.get()["sic_state"] = upperedState;
     m_InternalLabels.Set("sic_id", m_SicId);
+
+    if (m_SICCredentials.m_UseCredentialsAsClientId)
+    {
+        m_SICCredentials.m_APIClientId = m_SICCredentials.m_APIUserName;
+        m_SICCredentials.m_APISecret = m_SICCredentials.m_APIPassword;
+    }
 }
 
 template<class>
@@ -1115,12 +1121,12 @@ std::pair<http::request<string_body>, boost::system::error_code> GameInstanceAda
     }
     else
     {
-        if (m_UseClientId)
+        if (m_SICCredentials.m_UseCredentialsAsClientId)
         {
             j["grant_type"] = "client_credentials";
             j["include_refresh"] = true;
             rallyhere::memory_buffer buffer;
-            basic_with_base64_data(buffer, m_APIUserName, m_APIPassword);
+            basic_with_base64_data(buffer, m_SICCredentials.m_APIClientId, m_SICCredentials.m_APISecret);
             m_Request.set(http::field::authorization, std::string_view{ buffer.data(), buffer.size() });
         }
         else
@@ -1128,7 +1134,7 @@ std::pair<http::request<string_body>, boost::system::error_code> GameInstanceAda
             j["grant_type"] = "basic";
             j["include_refresh"] = true;
             rallyhere::memory_buffer buffer;
-            fmt::format_to(std::back_inserter(buffer), "{}:{}", m_APIUserName, m_APIPassword);
+            fmt::format_to(std::back_inserter(buffer), "{}:{}", m_SICCredentials.m_APIUserName, m_SICCredentials.m_APIPassword);
             j["portal_access_token"] = std::string_view{ buffer.data(), buffer.size() };
             j["accept_eula"] = true;
             j["accept_tos"] = true;
