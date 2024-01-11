@@ -134,7 +134,7 @@ if (UNIX)
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
             COMMAND objcopy --add-gnu-debuglink=$<PATH:REPLACE_EXTENSION,LAST_ONLY,$<TARGET_FILE:${PROJECT_NAME}>,sym> $<TARGET_FILE:${PROJECT_NAME}>)
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-            COMMAND mono ${NUGET_EXE} pack ${CMAKE_CURRENT_BINARY_DIR}/${NUSPEC_NAME}.nuspec -Version ${GAME_HOST_ADAPTER_VERSION} -OutputDirectory ${CMAKE_CURRENT_BINARY_DIR}
+            COMMAND ${NUGET_EXE} pack ${CMAKE_CURRENT_BINARY_DIR}/${NUSPEC_NAME}.nuspec -Version ${GAME_HOST_ADAPTER_VERSION} -OutputDirectory ${CMAKE_CURRENT_BINARY_DIR}
             BYPRODUCTS RallyHere.GameHostAdapter.${NUPKG_OS}.${GAME_HOST_ADAPTER_VERSION}.nupkg)
 else()
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
