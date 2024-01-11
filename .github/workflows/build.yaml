@@ -3,8 +3,8 @@ run-name: Build Game Host Adapter
 
 on:
   push:
-    paths:
-      - 'vcpkg.json'
+    #paths:
+    #  - 'vcpkg.json'
     branches:
       - main
   workflow_dispatch:
