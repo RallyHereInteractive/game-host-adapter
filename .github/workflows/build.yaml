@@ -64,33 +64,33 @@ jobs:
       - name: Install Linux requirements
         if: runner.os != 'Windows'
         run: sudo apt install -y mono-complete ninja-build
-      - name: Generate Game Host Adapter Build
-        shell: bash
-        run: |
-          export VCPKG_DEFAULT_BINARY_CACHE='${{ github.workspace }}\vcpkg_cache'
-          export NUGET_EXE=`which nuget.exe`
-          cmake -G "${{ matrix.config.generator }}" \
-            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-            --toolchain '${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' \
-            --install-prefix '${{ github.workspace }}/install' \
-            -DVCPKG_TARGET_TRIPLET='${{ matrix.config.vcpkg_triplet }}' \
-            -S '${{ github.workspace }}/game-host-adapter' \
-            -B '${{ github.workspace }}/build'
-      - name: Build Game Host Adapter
-        shell: bash
-        run: |
-          cmake --build '${{ github.workspace }}/build' \
-            --config RelWithDebInfo \
-            --target game-host-adapter
-      - name: Archive Nuget Package
-        uses: actions/upload-artifact@v3
-        if: runner.os == 'Windows'
-        with:
-          name: RallyHere.GameHostAdapter.${{ matrix.config.os }}.${{ github.run_number }}.nupkg
-          path: ${{ github.workspace }}/build/RelWithDebInfo/RallyHere.GameHostAdapter.*
-      - name: Archive Nuget Package
-        uses: actions/upload-artifact@v3
-        if: runner.os != 'Windows'
-        with:
-          name: RallyHere.GameHostAdapter.${{ matrix.config.os }}.${{ github.run_number }}.nupkg
-          path: ${{ github.workspace }}/build/RallyHere.GameHostAdapter.*
+#     - name: Generate Game Host Adapter Build
+#       shell: bash
+#       run: |
+#         export VCPKG_DEFAULT_BINARY_CACHE='${{ github.workspace }}\vcpkg_cache'
+#         export NUGET_EXE=`which nuget.exe`
+#         cmake -G "${{ matrix.config.generator }}" \
+#           -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+#           --toolchain '${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' \
+#           --install-prefix '${{ github.workspace }}/install' \
+#           -DVCPKG_TARGET_TRIPLET='${{ matrix.config.vcpkg_triplet }}' \
+#           -S '${{ github.workspace }}/game-host-adapter' \
+#           -B '${{ github.workspace }}/build'
+#     - name: Build Game Host Adapter
+#       shell: bash
+#       run: |
+#         cmake --build '${{ github.workspace }}/build' \
+#           --config RelWithDebInfo \
+#           --target game-host-adapter
+#     - name: Archive Nuget Package
+#       uses: actions/upload-artifact@v3
+#       if: runner.os == 'Windows'
+#       with:
+#         name: RallyHere.GameHostAdapter.${{ matrix.config.os }}.${{ github.run_number }}.nupkg
+#         path: ${{ github.workspace }}/build/RelWithDebInfo/RallyHere.GameHostAdapter.*
+#     - name: Archive Nuget Package
+#       uses: actions/upload-artifact@v3
+#       if: runner.os != 'Windows'
+#       with:
+#         name: RallyHere.GameHostAdapter.${{ matrix.config.os }}.${{ github.run_number }}.nupkg
+#         path: ${{ github.workspace }}/build/RallyHere.GameHostAdapter.*
