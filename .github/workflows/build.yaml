@@ -83,7 +83,7 @@ jobs:
       - name: Generate Game Host Adapter Build
         shell: bash
         run: |
-          export NUGET_EXE=`which nuget.exe`
+          export NUGET_EXE=`which nuget`
           cmake -G "${{ matrix.config.generator }}" \
             -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             --toolchain '${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' \
@@ -94,7 +94,7 @@ jobs:
       - name: Build Game Host Adapter
         shell: bash
         run: |
-          export NUGET_EXE=`which nuget.exe`
+          export NUGET_EXE=`which nuget`
           cmake --build '${{ github.workspace }}/build' \
             --config RelWithDebInfo \
             --target game-host-adapter
