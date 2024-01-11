@@ -79,7 +79,6 @@ jobs:
       - name: Generate Game Host Adapter Build
         shell: bash
         run: |
-          export VCPKG_DEFAULT_BINARY_CACHE='${{ github.workspace }}\vcpkg_cache'
           export NUGET_EXE=`which nuget.exe`
           cmake -G "${{ matrix.config.generator }}" \
             -DCMAKE_BUILD_TYPE=RelWithDebInfo \
