@@ -94,6 +94,7 @@ jobs:
       - name: Build Game Host Adapter
         shell: bash
         run: |
+          export NUGET_EXE=`which nuget.exe`
           cmake --build '${{ github.workspace }}/build' \
             --config RelWithDebInfo \
             --target game-host-adapter
