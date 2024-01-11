@@ -89,9 +89,9 @@ jobs:
         with:
           name: RallyHere.GameHostAdapter.${{ matrix.config.os }}.${{ github.run_number }}.nupkg
           path: ${{ github.workspace }}/build/RelWithDebInfo/RallyHere.GameHostAdapter.*
-    - name: Archive Nuget Package
-      uses: actions/upload-artifact@v3
-      if: runner.os != 'Windows'
-      with:
-        name: RallyHere.GameHostAdapter.${{ matrix.config.os }}.${{ github.run_number }}.nupkg
-        path: ${{ github.workspace }}/build/RallyHere.GameHostAdapter.*
+      - name: Archive Nuget Package
+        uses: actions/upload-artifact@v3
+        if: runner.os != 'Windows'
+        with:
+          name: RallyHere.GameHostAdapter.${{ matrix.config.os }}.${{ github.run_number }}.nupkg
+          path: ${{ github.workspace }}/build/RallyHere.GameHostAdapter.*
