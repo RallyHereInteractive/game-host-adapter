@@ -15,6 +15,7 @@ limitations under the License.
 */
 #include "lest/lest.hpp"
 #include "c_api.h"
+#include "configuration.h"
 #include <cstring>
 
 using namespace std;
@@ -76,12 +77,13 @@ const lest::test main_module[] =
     }
 };
 //@formatter:on
-// clang-format off
+// clang-format on
 
 MODULE( specification(), main_module );
 
 int main( int argc, char * argv[] )
 {
+    handle_launch_parameters(argc, argv);
     putenv("HIREZ_SIC_REPORTED_PUBLIC_HOST=unknownhostname");
-    return lest::run(specification(), argc, argv);
+    return lest::run(specification(), 1, argv);
 }

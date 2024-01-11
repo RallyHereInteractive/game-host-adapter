@@ -16,6 +16,7 @@
     "boost-beast",
     "boost-scope-exit",
     "boost-test",
+    "boost-program-options",
     "lest",
     "rapidjson",
     "fmt",

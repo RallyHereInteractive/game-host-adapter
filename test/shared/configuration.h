@@ -16,5 +16,21 @@ limitations under the License.
 
 #pragma once
 
+#include "profile_reader.hpp"
+
+struct LaunchParameters
+{
+    bool use_user_pass{false};
+    bool use_clientid_secret{false};
+    bool generate_cred_file{false};
+    std::string rallyhereenv{"Dev"};
+    std::string profiles_path{"../.test_data.json"};
+};
+
+void handle_launch_parameters(int argc, char** argv);
+
+std::string get_rally_here_url();
 const char* get_rally_here_url_arg();
+std::string get_credentials_file_path();
 const char* get_credentials_file_path_arg();
+const char* get_rh_credentials_as_arg();

@@ -110,7 +110,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)
 
 find_package(OpenSSL REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC OpenSSL::SSL OpenSSL::Crypto)
-find_package(Boost REQUIRED COMPONENTS date_time regex system thread atomic filesystem url json)
+find_package(Boost REQUIRED COMPONENTS date_time regex system thread atomic filesystem url json program_options)
 target_link_libraries(${PROJECT_NAME} PRIVATE Boost::url Boost::json)
 find_package(certify CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC certify::core)
@@ -147,6 +147,11 @@ find_path(LEST_INCLUDE_DIRS "lest/lest.hpp")
 
 if (LEST_INCLUDE_DIRS)
     include(CTest)
+    set(shared_sources
+            test/shared/configuration.h
+            test/shared/configuration.cpp
+            test/shared/profile_reader.hpp
+    )
     set(c_interface_test_sources
             test/c_interface/main.cpp
             test/c_interface/test_sic.h
@@ -162,21 +167,28 @@ if (LEST_INCLUDE_DIRS)
             test/c_interface/test_metrics.cpp
             test/c_interface/test_statsd_metrics.h
             test/c_interface/test_statsd_metrics.cpp
-            test/c_interface/configuration.h
-            test/c_interface/configuration.cpp
             )
     add_executable(${PROJECT_NAME}_test
             ${c_interface_test_sources}
+            ${shared_sources}
             )
     target_include_directories(${PROJECT_NAME}_test PRIVATE ${LEST_INCLUDE_DIRS})
     target_include_directories(${PROJECT_NAME}_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/game-host-adapter)
     target_include_directories(${PROJECT_NAME}_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/test-helpers)
+    target_include_directories(${PROJECT_NAME}_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/test/shared)
     target_link_libraries(${PROJECT_NAME}_test PRIVATE ${PROJECT_NAME})
     target_link_libraries(${PROJECT_NAME}_test PRIVATE ${Boost_LIBRARIES})
-    target_link_libraries(${PROJECT_NAME}_test PRIVATE Boost::thread Boost::url)
+    target_link_libraries(${PROJECT_NAME}_test PRIVATE Boost::thread Boost::url Boost::program_options Boost::json)
     target_link_libraries(${PROJECT_NAME}_test PRIVATE fmt::fmt)
     set_target_properties(${PROJECT_NAME}_test PROPERTIES EXCLUDE_FROM_ALL 0 EXCLUDE_FROM_DEFAULT_BUILD 1)
-    add_test(NAME c_interface_test COMMAND ${PROJECT_NAME}_test)
+    add_test(NAME c_interface_test_demo_cred_file_user_pass COMMAND ${PROJECT_NAME}_test --generate-cred-file --rallyhereenv=Demo)
+    add_test(NAME c_interface_test_demo_cred_file_clientid_secret COMMAND ${PROJECT_NAME}_test --generate-cred-file --rallyhereenv=Demo --use-clientid-secret)
+    #add_test(NAME c_interface_test_demo_user_pass COMMAND ${PROJECT_NAME}_test --use-user-pass --rallyhereenv=Demo)
+    #add_test(NAME c_interface_test_demo_clientid_secret COMMAND ${PROJECT_NAME}_test --use-clientid-secret --rallyhereenv=Demo)
+    add_test(NAME c_interface_test_dev_cred_file_user_pass COMMAND ${PROJECT_NAME}_test --generate-cred-file --rallyhereenv=Dev)
+    add_test(NAME c_interface_test_dev_cred_file_clientid_secret COMMAND ${PROJECT_NAME}_test --generate-cred-file --rallyhereenv=Dev --use-clientid-secret)
+    #add_test(NAME c_interface_test_dev_user_pass COMMAND ${PROJECT_NAME}_test --use-user-pass --rallyhereenv=Dev)
+    #add_test(NAME c_interface_test_dev_clientid_secret COMMAND ${PROJECT_NAME}_test --use-clientid-secret --rallyhereenv=Dev)
 
     set(complete_test_sources
             test/complete/main.cpp
@@ -188,24 +200,31 @@ if (LEST_INCLUDE_DIRS)
             test/complete/shared_test_data.h
             test/complete/shared_test_data.cpp
             test/complete/test_sdk_helpers.cpp
-            test/complete/configuration.h
-            test/complete/configuration.cpp
             test/complete/test_base64.cpp
             test/complete/test_base64.h
     )
     add_executable(${PROJECT_NAME}_complete_test
             ${complete_test_sources}
+            ${shared_sources}
     )
     target_include_directories(${PROJECT_NAME}_complete_test PRIVATE ${LEST_INCLUDE_DIRS})
     target_include_directories(${PROJECT_NAME}_complete_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/game-host-adapter)
     target_include_directories(${PROJECT_NAME}_complete_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/complete)
     target_include_directories(${PROJECT_NAME}_complete_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/ext)
+    target_include_directories(${PROJECT_NAME}_complete_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/test/shared)
     target_link_libraries(${PROJECT_NAME}_complete_test PRIVATE ${PROJECT_NAME})
     target_link_libraries(${PROJECT_NAME}_complete_test PRIVATE ${Boost_LIBRARIES})
-    target_link_libraries(${PROJECT_NAME}_complete_test PRIVATE Boost::thread Boost::url)
+    target_link_libraries(${PROJECT_NAME}_complete_test PRIVATE Boost::thread Boost::url Boost::program_options Boost::json)
     target_link_libraries(${PROJECT_NAME}_complete_test PRIVATE fmt::fmt)
     set_target_properties(${PROJECT_NAME}_complete_test PROPERTIES EXCLUDE_FROM_ALL 0 EXCLUDE_FROM_DEFAULT_BUILD 1)
-    add_test(NAME complete_test COMMAND ${PROJECT_NAME}_complete_test)
+    add_test(NAME complete_test_demo_cred_file_user_pass COMMAND ${PROJECT_NAME}_complete_test --generate-cred-file --rallyhereenv=Demo)
+    add_test(NAME complete_test_demo_cred_file_clientid_secret COMMAND ${PROJECT_NAME}_complete_test --generate-cred-file --rallyhereenv=Demo --use-clientid-secret)
+    #add_test(NAME complete_test_demo_user_pass COMMAND ${PROJECT_NAME}_complete_test --use-user-pass --rallyhereenv=Demo)
+    #add_test(NAME complete_test_demo_clientid_secret COMMAND ${PROJECT_NAME}_complete_test --use-clientid-secret --rallyhereenv=Demo)
+    add_test(NAME complete_test_dev_cred_file_user_pass COMMAND ${PROJECT_NAME}_complete_test --generate-cred-file --rallyhereenv=Dev)
+    add_test(NAME complete_test_dev_cred_file_clientid_secret COMMAND ${PROJECT_NAME}_complete_test --generate-cred-file --rallyhereenv=Dev --use-clientid-secret)
+    #add_test(NAME complete_test_dev_user_pass COMMAND ${PROJECT_NAME}_complete_test --use-user-pass --rallyhereenv=Dev)
+    #add_test(NAME complete_test_dev_clientid_secret COMMAND ${PROJECT_NAME}_complete_test --use-clientid-secret --rallyhereenv=Dev)
 endif()
 
 install(TARGETS ${PROJECT_NAME}
