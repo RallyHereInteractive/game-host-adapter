@@ -5,8 +5,8 @@ on:
   push:
     #paths:
     #  - 'vcpkg.json'
-    branches:
-      - main
+    #branches:
+    #  - main
   workflow_dispatch:
 jobs:
   build:
