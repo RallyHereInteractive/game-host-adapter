@@ -1,0 +1,96 @@
+name: build
+run-name: Build Game Host Adapter
+
+on:
+  push:
+    paths:
+      - 'vcpkg.json'
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - os: ubuntu-latest
+            vcpkg_triplet: x64-linux-release
+            generator: Ninja
+          - os: ubuntu-20.04
+            vcpkg_triplet: x64-linux-release
+            generator: Ninja
+          - os: windows-latest
+            vcpkg_triplet: x64-windows-release
+            generator: Visual Studio 17 2022
+    steps:
+      - name: Checkout Game Host Adapter
+        uses: actions/checkout@v4
+        with:
+          path: game-host-adapter
+          token: ${{ github.token }}
+      - name: Use clang-14 on 22.04
+        shell: bash
+        if: matrix.config.os == 'ubuntu-latest'
+        run: |
+          echo CC=/usr/bin/clang-14 >> $GITHUB_ENV
+          echo CPP=/usr/bin/clang-cpp-14 >> $GITHUB_ENV
+          echo CXX=/usr/bin/clang++-14 >> $GITHUB_ENV
+          echo LD=/usr/bin/ld.lld-14 >> $GITHUB_ENV
+      - name: Use clang-12 on 20.04
+        shell: bash
+        if: matrix.config.os == 'ubuntu-20.04'
+        run: |
+          echo CC=/usr/bin/clang-12 >> $GITHUB_ENV
+          echo CPP=/usr/bin/clang-cpp-12 >> $GITHUB_ENV
+          echo CXX=/usr/bin/clang++-12 >> $GITHUB_ENV
+          echo LD=/usr/bin/ld.lld-12 >> $GITHUB_ENV
+      - name: vcpkg build
+        uses: johnwason/vcpkg-action@v5
+        with:
+          manifest-dir: ${{ github.workspace }}/game-host-adapter
+          triplet: ${{ matrix.config.vcpkg_triplet }}
+          cache-key: ${{ matrix.config.os }}
+          revision: 3ef62a2a767cd5df9bffd0559549752ae07a49ec
+          token: ${{ github.token }}
+      - name: Print the certify build failure logs
+        if: failure()
+        shell: bash
+        run: |
+          cat /home/runner/work/game-host-adapter/game-host-adapter/vcpkg/buildtrees/certify/config-x64-linux-release-rel-CMakeCache.txt.log
+          cat /home/runner/work/game-host-adapter/game-host-adapter/vcpkg/buildtrees/certify/config-x64-linux-release-rel-out.log
+          cat /home/runner/work/game-host-adapter/game-host-adapter/vcpkg/buildtrees/certify/config-x64-linux-release-rel-err.log
+      - name: Install Linux requirements
+        if: runner.os != 'Windows'
+        run: sudo apt install -y mono-complete ninja-build
+      - name: Generate Game Host Adapter Build
+        shell: bash
+        run: |
+          export VCPKG_DEFAULT_BINARY_CACHE='${{ github.workspace }}\vcpkg_cache'
+          export NUGET_EXE=`which nuget.exe`
+          cmake -G "${{ matrix.config.generator }}" \
+            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+            --toolchain '${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' \
+            --install-prefix '${{ github.workspace }}/install' \
+            -DVCPKG_TARGET_TRIPLET='${{ matrix.config.vcpkg_triplet }}' \
+            -S '${{ github.workspace }}/game-host-adapter' \
+            -B '${{ github.workspace }}/build'
+      - name: Build Game Host Adapter
+        shell: bash
+        run: |
+          cmake --build '${{ github.workspace }}/build' \
+            --config RelWithDebInfo \
+            --target game-host-adapter
+      - name: Archive Nuget Package
+        uses: actions/upload-artifact@v3
+        if: runner.os == 'Windows'
+        with:
+          name: RallyHere.GameHostAdapter.${{ matrix.config.os }}.${{ github.run_number }}.nupkg
+          path: ${{ github.workspace }}/build/RelWithDebInfo/RallyHere.GameHostAdapter.*
+    - name: Archive Nuget Package
+      uses: actions/upload-artifact@v3
+      if: runner.os != 'Windows'
+      with:
+        name: RallyHere.GameHostAdapter.${{ matrix.config.os }}.${{ github.run_number }}.nupkg
+        path: ${{ github.workspace }}/build/RallyHere.GameHostAdapter.*
