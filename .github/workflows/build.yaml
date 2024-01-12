@@ -48,10 +48,7 @@ jobs:
           echo CXX=/usr/bin/clang++-12 >> $GITHUB_ENV
           echo LD=/usr/bin/ld.lld-12 >> $GITHUB_ENV
       - name: vcpkg build
-        uses: johnwason/vcpkg-action@v5
-        env:
-          GIT_DEPTH: 0
-          GIT_STRATEGY: clone
+        uses: seanmiddleditch/vcpkg-action@8fca4ade4e2146ffeb4490d5e7987bde9ab0b32f
         with:
           manifest-dir: ${{ github.workspace }}/game-host-adapter
           triplet: ${{ matrix.config.vcpkg_triplet }}
