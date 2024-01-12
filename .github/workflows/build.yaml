@@ -49,6 +49,9 @@ jobs:
           echo LD=/usr/bin/ld.lld-12 >> $GITHUB_ENV
       - name: vcpkg build
         uses: johnwason/vcpkg-action@v5
+        env:
+          GIT_DEPTH: 0
+          GIT_STRATEGY: clone
         with:
           manifest-dir: ${{ github.workspace }}/game-host-adapter
           triplet: ${{ matrix.config.vcpkg_triplet }}
