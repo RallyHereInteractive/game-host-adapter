@@ -22,7 +22,7 @@ jobs:
 #           vcpkg_triplet: x64-linux-release
 #           generator: Ninja
           - os: windows-latest
-            vcpkg_triplet: x64-windows
+            vcpkg_triplet: x64-windows-release
             generator: Visual Studio 17 2022
     steps:
       - name: Checkout Game Host Adapter
