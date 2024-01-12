@@ -760,6 +760,8 @@ void GameInstanceAdapter::SetupSIC()
     {
         m_SICCredentials.m_APIClientId = m_SICCredentials.m_APIUserName;
         m_SICCredentials.m_APISecret = m_SICCredentials.m_APIPassword;
+        m_SICCredentials.m_APIUserName.clear();
+        m_SICCredentials.m_APIPassword.clear();
     }
 }
 
