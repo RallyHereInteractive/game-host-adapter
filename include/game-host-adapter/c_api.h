@@ -118,10 +118,21 @@ extern "C"
     ///@name Opaque types
     /// The API uses the pointer handles to represent internal objects.
     ///@{
+
+    /// @struct RallyHereGameInstanceAdapter
+    /// Opaque type and handle to a Rally Here Game Instance Adapter.
+    ///
+    /// This struct is intentionally empty because its true interface is only defined internally. Any methods which take
+    /// this as the first argument can be thought of as methods on this struct.
     struct RallyHereGameInstanceAdapter;
     /// Opaque type and handle to a Rally Here Game Instance Adapter.
     typedef RallyHereGameInstanceAdapter* RallyHereGameInstanceAdapterPtr;
 
+    /// @struct RallyHereStringMap
+    /// Opaque type and handle to a Rally Here String Map.
+    ///
+    /// This struct is intentionally empty because its true interface is only defined internally. Any methods which take
+    /// this as the first argument can be thought of as methods on this struct.
     struct RallyHereStringMap;
     /// Opaque type and handle to a Rally Here String Map.
     typedef RallyHereStringMap* RallyHereStringMapPtr;
@@ -160,10 +171,12 @@ extern "C"
     /// Log callback function
     typedef void (*RallyHereLogCallback)(RallyHereLogLevel level, const char* message, size_t messagen, void* user_data);
     /// Sets a custom logger that can handle logs from inside of the server.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_set_log_callback(RallyHereGameInstanceAdapterPtr adapter,
                                               RallyHereLogCallback callback,
                                               void* user_data);
     /// Sets the default log level for the SDK and any adapters created. This is only used if a log callback is not set.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_set_default_log_level(RallyHereLogLevel level);
     ///@}
 
@@ -187,14 +200,17 @@ extern "C"
     ///@{
 
     /// Create a new adapter using a single string to represent the command line arguments it will use for initialization.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT RallyHereStatusCode rallyhere_create_game_instance_adapter(RallyHereGameInstanceAdapterPtr* adapter, const char* arguments);
     /// Create a new adapter using a C-style array to represent the command line arguments it will use for initialization.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT RallyHereStatusCode rallyhere_create_game_instance_adaptern(RallyHereGameInstanceAdapterPtr* adapter,
                                                                           const char* arguments,
                                                                           unsigned int arguments_length);
     /// Create a new adapter using a single string to represent the command line arguments it will use for
     /// initialization and a custom logging function to be used from the moment it is created.
     /// @sa rallyhere_set_log_callback
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT RallyHereStatusCode rallyhere_create_game_instance_adapter_with_logger(RallyHereGameInstanceAdapterPtr* adapter,
                                                                                      const char* arguments,
                                                                                      RallyHereLogCallback callback,
@@ -202,6 +218,7 @@ extern "C"
     /// Create a new adapter using a C-style array to represent the command line arguments it will use for
     /// initialization and a custom logging function to be used from the moment it is created.
     /// @sa rallyhere_set_log_callback
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT RallyHereStatusCode rallyhere_create_game_instance_adaptern_with_logger(RallyHereGameInstanceAdapterPtr* adapter,
                                                                                       const char* arguments,
                                                                                       unsigned int arguments_length,
@@ -211,6 +228,7 @@ extern "C"
     ///
     /// Before any memory is freed every registered callback is called with the status RH_STATUS_CANCELLED so that
     /// any memory associated with the callback's user data can be freed.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_destroy_game_instance_adapter(RallyHereGameInstanceAdapterPtr adapter);
     ///@}
 
@@ -222,6 +240,7 @@ extern "C"
     /// This is used to check for any messages from the game host. All deferred message processing and callbacks will be
     /// handled during this tick.
     /// @return RH_STATUS_OK if this adapter can still be used, otherwise an error code.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT RallyHereStatusCode rallyhere_tick(RallyHereGameInstanceAdapterPtr adapter);
     /// @brief Mark the adapter as healthy.
     ///
@@ -230,6 +249,7 @@ extern "C"
     /// SIC relies on an open metrics endpoint created by this SDK.
     /// i3D relies on the Arcus socket connection.
     /// Multiplay reliies on the A2S socket connection.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT RallyHereStatusCode rallyhere_healthy(RallyHereGameInstanceAdapterPtr adapter);
     ///@}
 
@@ -239,6 +259,7 @@ extern "C"
     /// @brief Begin the process of connecting to the appropriate game host.
     ///
     /// The provided callback will be called when the process completes with the result of the connection attempt.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_connect(RallyHereGameInstanceAdapterPtr adapter,
                                      void (*callback)(const RallyHereStatusCode& code, void* user_data),
                                      void* user_data);
@@ -247,6 +268,7 @@ extern "C"
     ///
     /// The provided callback will be called when the process completes with the result of the game host being told
     /// this is ready.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void
         rallyhere_ready(RallyHereGameInstanceAdapterPtr adapter, void (*callback)(const RallyHereStatusCode& code, void* user_data), void* user_data);
 
@@ -256,11 +278,13 @@ extern "C"
     typedef void (*RallyHereOnAllocatedCallback)(RallyHereStringMapPtr allocation_info, const RallyHereStatusCode& code, void* user_data);
 
     /// Register the callback which will be called when the game host has assigned an allocation to this adapter.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_on_allocated_callback(RallyHereGameInstanceAdapterPtr adapter,
                                                    RallyHereOnAllocatedCallback callback,
                                                    void* user_data);
 
-    /// Fake an ollocation. This should only be used for testing purposes.
+    /// Fake an allocation. This should only be used for testing purposes.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_test_fake_allocation_response(RallyHereGameInstanceAdapterPtr adapter, const char *fake_data);
 
     /// @brief Tell the game host that this GameInstance has been allocated
@@ -269,6 +293,7 @@ extern "C"
     /// information and have done the appropriate work. In the rallyhere_reserve() case this is telling the Game Host
     /// that you are allocated by some other means. The provided callback will be called when the process completes
     /// with the result
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_allocate(RallyHereGameInstanceAdapterPtr adapter,
                                       void (*callback)(const RallyHereStatusCode& code, void* user_data),
                                       void* user_data);
@@ -278,6 +303,7 @@ extern "C"
     /// This will stop the game host from destroying this game instance based on any ready timeouts. This is to be used
     /// when the game instance is manually handling sessions in a way that isn't expected to be handled by the normal
     /// matchmaking route. The provided callback will be called when the process completes with the result
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_reserve(RallyHereGameInstanceAdapterPtr adapter,
                                      unsigned int timeout_seconds,
                                      void (*reserve_callback)(const RallyHereStatusCode& code, void* user_data),
@@ -290,6 +316,7 @@ extern "C"
     /// This will stop the game host from destroying this game instance based on any ready timeouts. This is to be used
     /// when the game instance is manually handling sessions in a way that isn't expected to be handled by the normal
     /// matchmaking route. The provided callback will be called when the process completes with the result
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_reserve_unconditional(RallyHereGameInstanceAdapterPtr adapter,
                                      void (*callback)(const RallyHereStatusCode& code, void* user_data),
                                      void* user_data);
@@ -305,6 +332,7 @@ extern "C"
     ///
     /// In SIC this is expected to come from the SIGTERM handler.
     /// In i3D this is expected to come from the Arcus commands
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_on_soft_stop_callback(RallyHereGameInstanceAdapterPtr adapter,
                                                    void (*callback)(const RallyHereStatusCode& code, void* user_data),
                                                    void* user_data);
@@ -316,6 +344,7 @@ extern "C"
     ///
     /// In SIC the SIGTERM handler can't always be overridden by this adapter. In those situations the caller is
     /// expected to call this function as part of their SIGTERM handling.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_external_soft_stop_requested(RallyHereGameInstanceAdapterPtr adapter);
     //------------------------------------------------------------------------------
     ///@}
@@ -328,20 +357,26 @@ extern "C"
     ///@{
 
     /// Create a map of string to a string. The strings may not be null terminated in order to store binary data
+    /// @public @memberof RallyHereStringMap
     RH_EXPORT RallyHereStatusCode rallyhere_string_map_create(RallyHereStringMapPtr* map);
     /// Destroy a map of string to a string
+    /// @public @memberof RallyHereStringMap
     RH_EXPORT void rallyhere_string_map_destroy(RallyHereStringMapPtr map);
     /// Copy a RallyHereStringMap
+    /// @public @memberof RallyHereStringMap
     RH_EXPORT RallyHereStatusCode rallyhere_string_map_copy(RallyHereStringMapPtr dest, const RallyHereStringMapPtr src);
     /// Clear the contents of a RallyHereStringMap
+    /// @public @memberof RallyHereStringMap
     RH_EXPORT void rallyhere_string_map_clear(RallyHereStringMapPtr map);
     /// Get a value form RallyHereStringMap
+    /// @public @memberof RallyHereStringMap
     RH_EXPORT RallyHereStatusCode rallyhere_string_map_get(RallyHereStringMapPtr map, const char* key, const char** value, unsigned int* value_size);
     /// Set a value in RallyHereStringMap
+    /// @public @memberof RallyHereStringMap
     RH_EXPORT RallyHereStatusCode rallyhere_string_map_set(RallyHereStringMapPtr map, const char* key, const char* value);
     /// Set a value in RallyHereStringMap with a size
+    /// @public @memberof RallyHereStringMap
     RH_EXPORT RallyHereStatusCode rallyhere_string_map_setn(RallyHereStringMapPtr map, const char* key, const char* value, unsigned int value_size);
-    //------------------------------------------------------------------------------
     ///@}
     ///@name Stats Labels
     /// This is a map of string to string that can be used to store labels for stats. In SIC mode this will be exported as labels on
@@ -351,11 +386,13 @@ extern "C"
     /// @brief Get the current string map for the labels.
     ///
     /// Caller is responsible for freeing the string map with rallyhere_string_map_destroy.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_get_labels(RallyHereGameInstanceAdapterPtr adapter, RallyHereStringMapPtr* map);
     /// @brief Set the current string map for the labels.
     ///
     /// The string map will be copied. Provide a callback to be notified when the labels have been set.
     /// These must be set before calling rallyhere_ready() or rallyhere_reserve() is called.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_set_labels(RallyHereGameInstanceAdapterPtr adapter,
                                         const RallyHereStringMapPtr map,
                                         void (*callback)(const RallyHereStatusCode& code, void* user_data),
@@ -369,11 +406,13 @@ extern "C"
     /// @brief Get the current string map for the additional info.
     ///
     /// Caller is responsible for freeing the string map with rallyhere_string_map_destroy.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_get_additional_info(RallyHereGameInstanceAdapterPtr adapter, RallyHereStringMapPtr* map);
     /// @brief Set the current string map for the additional info.
     ///
     /// The string map will be copied. Provide a callback to be notified when the labels
     /// have been set. These can be set after calls to rallyhere_ready() or rallyhere_reserve().
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_set_additional_info(RallyHereGameInstanceAdapterPtr adapter,
                                                  const RallyHereStringMapPtr map,
                                                  void (*callback)(const RallyHereStatusCode& code, void* user_data),
@@ -385,10 +424,12 @@ extern "C"
     /// @brief Get the current string map for the annotations.
     ///
     /// Caller is responsible for freeing the string map.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_get_annotations(RallyHereGameInstanceAdapterPtr adapter, RallyHereStringMapPtr* map);
     /// @brief Set the current string map for the annotations.
     ///
     /// The string map will be copied. Provide a callback to be notified when the labels have been set.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_set_annotations(RallyHereGameInstanceAdapterPtr adapter,
                                              const RallyHereStringMapPtr map,
                                              void (*callback)(const RallyHereStatusCode& code, void* user_data),
@@ -448,6 +489,7 @@ extern "C"
     /// Provide a callback to be notified when the stats have been set
     /// These will be exported as labels on the "instance_info" gauge.
     /// These will be exported as part of the A2S_INFO query.
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT RallyHereStatusCode rallyhere_stats_base(RallyHereGameInstanceAdapterPtr adapter,
                                                        const RallyHereStatsBase* stats,
                                                        const RallyHereStatsBaseProvided *provided,
@@ -460,6 +502,7 @@ extern "C"
 
     /// Set the value of a gauge. Provide a callback to be notified when the stats have been set.
     /// These stats will be exported with the current labels
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_stats_gauge(RallyHereGameInstanceAdapterPtr adapter,
                                          const char* name,
                                          double value,
@@ -467,6 +510,7 @@ extern "C"
                                          void* user_data);
     /// Set the value of a gauge. Provide a callback to be notified when the stats have been set.
     /// @param labels The labels to export with the gauge
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_stats_gauge_with_labels(RallyHereGameInstanceAdapterPtr adapter,
                                                      const char* name,
                                                      double value,
@@ -479,6 +523,7 @@ extern "C"
 
     /// Set the value of an arbitrary stat. Provide a callback to be notified when the stats have been set.
     /// @param data The data to export with the stat which is copied by the call
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_stats_arbitrary(RallyHereGameInstanceAdapterPtr adapter,
                                              const char* name,
                                              const char* data,
@@ -488,6 +533,7 @@ extern "C"
     /// Set the value of an arbitrary stat. Provide a callback to be notified when the stats have been set.
     /// @param data The data to export with the stat which must have been allocated with the same alloc as set for the adapter.
     /// This function takes ownership of that pointer. If the error code is not RH_OK then the pointer is not taken and the caller is responsible
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_stats_arbitrary_move(RallyHereGameInstanceAdapterPtr adapter,
                                                   const char* name,
                                                   char* data,
@@ -504,18 +550,22 @@ extern "C"
     /// better handling of automatically pushing those metrics in the future. The metric API is stable and generates the
     /// correct output foer statsd and graphite, but there is no internal code to send those values out yet.
     ///@{
+
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT RallyHereStatusCode rallyhere_metrics_immediate_action(RallyHereGameInstanceAdapterPtr adapter,
                                                                      const RallyHereMetricDefinition* definition,
                                                                      const RallyHereMetricAction* action,
                                                                      RallyHereMetricFlush flush);
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT RallyHereStatusCode rallyhere_metrics_immediate_action_with_time(RallyHereGameInstanceAdapterPtr adapter,
                                                                                const RallyHereMetricDefinition* definition,
                                                                                const RallyHereMetricAction* action,
                                                                                double timestamp,
                                                                                RallyHereMetricFlush flush);
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_metrics_statsd_output(RallyHereGameInstanceAdapterPtr adapter, const char** data, size_t* data_size);
+    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_metrics_graphite_output(RallyHereGameInstanceAdapterPtr adapter, const char** data, size_t* data_size);
-    //------------------------------------------------------------------------------
     ///@}
 
 #ifdef __cplusplus
