@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacerallyhere_1_1allocator" kind="namespace" language="C++">
+    <compoundname>rallyhere::allocator</compoundname>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacerallyhere_1_1allocator_1a72acd99bdea4508c86208ec46d611292" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::allocator&lt; T &gt;</type>
+        <definition>using rallyhere::allocator::allocator = typedef std::allocator&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>allocator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_allocator.h" line="33" column="9" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_allocator.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacerallyhere_1_1allocator_1a200aed2eba9e9bd8791f9fa69c5ba262" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Params</declname>
+            <defname>Params</defname>
+          </param>
+        </templateparamlist>
+        <type>T *</type>
+        <definition>T* rallyhere::allocator::create</definition>
+        <argsstring>(Params &amp;&amp;... params)</argsstring>
+        <name>create</name>
+        <param>
+          <type>Params &amp;&amp;...</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_allocator.h" line="23" column="11" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_allocator.h" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerallyhere_1_1allocator_1a25a4d2183bf86a60bfff9f8ff66b5c51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void rallyhere::allocator::destroy</definition>
+        <argsstring>(T *ptr)</argsstring>
+        <name>destroy</name>
+        <param>
+          <type>T *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_allocator.h" line="28" column="14" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_allocator.h" bodystart="28" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_allocator.h" line="21" column="5"/>
+  </compounddef>
+</doxygen>

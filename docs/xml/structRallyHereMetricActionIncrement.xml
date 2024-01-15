@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structRallyHereMetricActionIncrement" kind="struct" language="C++" prot="public">
+    <compoundname>RallyHereMetricActionIncrement</compoundname>
+    <includes refid="c__metrics_8h" local="no">c_metrics.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structRallyHereMetricActionIncrement_1a31c310cfcb22787fb8bf07cf4a2ddae7" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RallyHereMetricActionIncrement::change</definition>
+        <argsstring></argsstring>
+        <name>change</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The amount to add to the metric. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="68" column="12" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="66" column="1" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="66" bodyend="69"/>
+    <listofallmembers>
+      <member refid="structRallyHereMetricActionIncrement_1a31c310cfcb22787fb8bf07cf4a2ddae7" prot="public" virt="non-virtual"><scope>RallyHereMetricActionIncrement</scope><name>change</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

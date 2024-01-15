@@ -1,0 +1,1027 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structRallyHereGameInstanceAdapter" kind="struct" language="C++" prot="public">
+    <compoundname>RallyHereGameInstanceAdapter</compoundname>
+    <includes refid="c__api_8h" local="no">c_api.h</includes>
+      <sectiondef kind="user-defined">
+      <header>Logging</header>
+      <description><para>Logging levels that will passed to the optional log callback function </para>
+</description>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1ad1d09e6062ad3db182a66f1829c7479b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_set_log_callback</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, RallyHereLogCallback callback, void *user_data)</argsstring>
+        <name>rallyhere_set_log_callback</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type><ref refid="c__api_8h_1a64a7679e581842654beca7ae63664a26" kindref="member">RallyHereLogCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets a custom logger that can handle logs from inside of the server. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="111" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="111" declcolumn="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Lifetime</header>
+      <description><para>Manages the lifetime of a Rally Here Game Instance Adapter. </para>
+</description>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a6122df1cede4159d0d30be0eb7b45463" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RH_EXPORT RallyHereStatusCode rallyhere_create_game_instance_adapter</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr *adapter, const char *arguments)</argsstring>
+        <name>rallyhere_create_game_instance_adapter</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref> *</type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>arguments</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new adapter using a single string to represent the command line arguments it will use for initialization. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="139" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="139" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1aeef6eea3f33281f1a997fcb3462effd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RH_EXPORT RallyHereStatusCode rallyhere_create_game_instance_adaptern</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr *adapter, const char *arguments, unsigned int arguments_length)</argsstring>
+        <name>rallyhere_create_game_instance_adaptern</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref> *</type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>arguments</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>arguments_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new adapter using a C-style array to represent the command line arguments it will use for initialization. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="142" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="142" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a49786a749d31ba4c426b4b0059709704" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RH_EXPORT RallyHereStatusCode rallyhere_create_game_instance_adapter_with_logger</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr *adapter, const char *arguments, RallyHereLogCallback callback, void *user_data)</argsstring>
+        <name>rallyhere_create_game_instance_adapter_with_logger</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref> *</type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>arguments</declname>
+        </param>
+        <param>
+          <type><ref refid="c__api_8h_1a64a7679e581842654beca7ae63664a26" kindref="member">RallyHereLogCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new adapter using a single string to represent the command line arguments it will use for initialization and a custom logging function to be used from the moment it is created. <simplesect kind="see"><para><ref refid="structRallyHereGameInstanceAdapter_1ad1d09e6062ad3db182a66f1829c7479b" kindref="member">rallyhere_set_log_callback</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="149" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="149" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a85db0b2f34bb7f67347ff9bbe5ff2beb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RH_EXPORT RallyHereStatusCode rallyhere_create_game_instance_adaptern_with_logger</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr *adapter, const char *arguments, unsigned int arguments_length, RallyHereLogCallback callback, void *user_data)</argsstring>
+        <name>rallyhere_create_game_instance_adaptern_with_logger</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref> *</type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>arguments</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>arguments_length</declname>
+        </param>
+        <param>
+          <type><ref refid="c__api_8h_1a64a7679e581842654beca7ae63664a26" kindref="member">RallyHereLogCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new adapter using a C-style array to represent the command line arguments it will use for initialization and a custom logging function to be used from the moment it is created. <simplesect kind="see"><para><ref refid="structRallyHereGameInstanceAdapter_1ad1d09e6062ad3db182a66f1829c7479b" kindref="member">rallyhere_set_log_callback</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="157" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="157" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a291d4acc324c8dbab8786391fb5557ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_destroy_game_instance_adapter</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter)</argsstring>
+        <name>rallyhere_destroy_game_instance_adapter</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <briefdescription>
+<para>Destroes the adapter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Before any memory is freed every registered callback is called with the status RH_STATUS_CANCELLED so that any memory associated with the callback&apos;s user data can be freed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="167" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="167" declcolumn="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Repeated at Regular Intervals</header>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a4db3f8b5b27ab240d0edb337719dd2fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RH_EXPORT RallyHereStatusCode rallyhere_tick</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter)</argsstring>
+        <name>rallyhere_tick</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <briefdescription>
+<para>Tick that&apos;s expected to be called every frame. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is used to check for any messages from the game host. All deferred message processing and callbacks will be handled during this tick. <simplesect kind="return"><para>RH_STATUS_OK if this adapter can still be used, otherwise an error code. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="179" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="179" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1af3d04dce0166b8f1ba22de46ef74da9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RH_EXPORT RallyHereStatusCode rallyhere_healthy</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter)</argsstring>
+        <name>rallyhere_healthy</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <briefdescription>
+<para>Mark the adapter as healthy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is used to tell the game host that this adapter is still alive and well. Should be called at a regular interval. Every 5 seconds is a good rule of thumb. Currently only used by Agones. SIC relies on an open metrics endpoint created by this SDK. i3D relies on the Arcus socket connection. Multiplay reliies on the A2S socket connection. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="188" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="188" declcolumn="35"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>State request and callbacks</header>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a4a665dd0eeb67b49043e7a54e0d397ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_connect</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, void(*callback)(const RallyHereStatusCode &amp;code, void *user_data), void *user_data)</argsstring>
+        <name>rallyhere_connect</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, void *user_data)</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+<para>Begin the process of connecting to the appropriate game host. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The provided callback will be called when the process completes with the result of the connection attempt. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="198" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="198" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a5844a4e3c29f530db2d61f647e925f88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_ready</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, void(*callback)(const RallyHereStatusCode &amp;code, void *user_data), void *user_data)</argsstring>
+        <name>rallyhere_ready</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, void *user_data)</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+<para>Tell the game host that this GameInstance can now be allocated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The provided callback will be called when the process completes with the result of the game host being told this is ready. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="208" column="9" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="208" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a3c96a6e133beb24d2f54af05b13a713c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_on_allocated_callback</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, RallyHereOnAllocatedCallback callback, void *user_data)</argsstring>
+        <name>rallyhere_on_allocated_callback</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type><ref refid="c__api_8h_1a8664a168347b6152d05be2870fff5113" kindref="member">RallyHereOnAllocatedCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register the callback which will be called when the game host has assigned an allocation to this adapter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="217" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="217" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1adddb6d6ebd068feef7972c6188ebecfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_test_fake_allocation_response</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, const char *fake_data)</argsstring>
+        <name>rallyhere_test_fake_allocation_response</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fake_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fake an allocation. This should only be used for testing purposes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="223" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="223" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1afa437234d06d99d50e63479ae8ca3bd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_allocate</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, void(*callback)(const RallyHereStatusCode &amp;code, void *user_data), void *user_data)</argsstring>
+        <name>rallyhere_allocate</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, void *user_data)</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+<para>Tell the game host that this GameInstance has been allocated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When using <ref refid="structRallyHereGameInstanceAdapter_1a5844a4e3c29f530db2d61f647e925f88" kindref="member">rallyhere_ready()</ref> this is used to tell the Game Host that you have recieved the allocation information and have done the appropriate work. In the <ref refid="structRallyHereGameInstanceAdapter_1ab7b0b24e192ce285af9c233e68d12c19" kindref="member">rallyhere_reserve()</ref> case this is telling the Game Host that you are allocated by some other means. The provided callback will be called when the process completes with the result </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="232" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="232" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1ab7b0b24e192ce285af9c233e68d12c19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_reserve</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, unsigned int timeout_seconds, void(*reserve_callback)(const RallyHereStatusCode &amp;code, void *user_data), void *reserve_user_data, void(*ready_callback)(const RallyHereStatusCode &amp;code, void *user_data), void *ready_user_data)</argsstring>
+        <name>rallyhere_reserve</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>timeout_seconds</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, void *user_data)</type>
+          <declname>reserve_callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>reserve_user_data</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, void *user_data)</type>
+          <declname>ready_callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>ready_user_data</declname>
+        </param>
+        <briefdescription>
+<para>Tell the game host to reserve this game instance rather than marking it ready. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This will stop the game host from destroying this game instance based on any ready timeouts. This is to be used when the game instance is manually handling sessions in a way that isn&apos;t expected to be handled by the normal matchmaking route. The provided callback will be called when the process completes with the result </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="242" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="242" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1afb679e1014b59a9a246c7c5b02c1062b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_reserve_unconditional</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, void(*callback)(const RallyHereStatusCode &amp;code, void *user_data), void *user_data)</argsstring>
+        <name>rallyhere_reserve_unconditional</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, void *user_data)</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+<para>Tell the game host to reserve this game instance rather than marking it ready. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This will stop the game host from destroying this game instance based on any ready timeouts. This is to be used when the game instance is manually handling sessions in a way that isn&apos;t expected to be handled by the normal matchmaking route. The provided callback will be called when the process completes with the result </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="255" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="255" declcolumn="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Soft Stop</header>
+      <description><para>There are times when the game hosting system would like your instance to shut down, but it does not need to happen immediately. In these situations a soft-stop will be requested so that your instance can finish any currently running games and then stop gracefully. Currently only used by SIC and i3D. </para>
+</description>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a662073848a735b58f79f18df20196cf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_on_soft_stop_callback</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, void(*callback)(const RallyHereStatusCode &amp;code, void *user_data), void *user_data)</argsstring>
+        <name>rallyhere_on_soft_stop_callback</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, void *user_data)</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+<para>The callback to trigger when the game host wants to stop the game instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In SIC this is expected to come from the SIGTERM handler. In i3D this is expected to come from the Arcus commands </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="271" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="271" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a12b6641eae79cfca381c5a4adc4cb2aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_external_soft_stop_requested</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter)</argsstring>
+        <name>rallyhere_external_soft_stop_requested</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <briefdescription>
+<para>Inform the adapter that a soft stop has been requested. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There are situations where soft stop comes from something external to the adapter and the adapter needs to be told. In this case the adapter will also trigger the on soft stop callback. This is not a deferred call, so the registered callback will be called immediately.</para>
+<para>In SIC the SIGTERM handler can&apos;t always be overridden by this adapter. In those situations the caller is expected to call this function as part of their SIGTERM handling. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="283" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="283" declcolumn="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Stats Labels</header>
+      <description><para>This is a map of string to string that can be used to store labels for stats. In SIC mode this will be exported as labels on every single prometheus metric. These must be set before calling <ref refid="structRallyHereGameInstanceAdapter_1a5844a4e3c29f530db2d61f647e925f88" kindref="member">rallyhere_ready()</ref> or <ref refid="structRallyHereGameInstanceAdapter_1ab7b0b24e192ce285af9c233e68d12c19" kindref="member">rallyhere_reserve()</ref> is called. </para>
+</description>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1ab3f0ff7c642bb703f228782a4e6aae93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_get_labels</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, RallyHereStringMapPtr *map)</argsstring>
+        <name>rallyhere_get_labels</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type><ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref> *</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+<para>Get the current string map for the labels. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Caller is responsible for freeing the string map with rallyhere_string_map_destroy. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="325" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="325" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a80e5b040228f255c243f45317f04eeac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_set_labels</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, const RallyHereStringMapPtr map, void(*callback)(const RallyHereStatusCode &amp;code, void *user_data), void *user_data)</argsstring>
+        <name>rallyhere_set_labels</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const <ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref></type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, void *user_data)</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+<para>Set the current string map for the labels. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The string map will be copied. Provide a callback to be notified when the labels have been set. These must be set before calling <ref refid="structRallyHereGameInstanceAdapter_1a5844a4e3c29f530db2d61f647e925f88" kindref="member">rallyhere_ready()</ref> or <ref refid="structRallyHereGameInstanceAdapter_1ab7b0b24e192ce285af9c233e68d12c19" kindref="member">rallyhere_reserve()</ref> is called. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="331" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="331" declcolumn="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Additional Info</header>
+      <description><para>This is a map of string to string that can be used to store additional information about the game instance. In SIC mode this will be exported as labels on the &quot;instance_info&quot; gauge. These can be set after calls to <ref refid="structRallyHereGameInstanceAdapter_1a5844a4e3c29f530db2d61f647e925f88" kindref="member">rallyhere_ready()</ref> or <ref refid="structRallyHereGameInstanceAdapter_1ab7b0b24e192ce285af9c233e68d12c19" kindref="member">rallyhere_reserve()</ref>. </para>
+</description>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a91c2c856bafd227bce07837642dba164" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_get_additional_info</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, RallyHereStringMapPtr *map)</argsstring>
+        <name>rallyhere_get_additional_info</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type><ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref> *</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+<para>Get the current string map for the additional info. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Caller is responsible for freeing the string map with rallyhere_string_map_destroy. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="345" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="345" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a059a56aff73e1901768e2511f664f9f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_set_additional_info</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, const RallyHereStringMapPtr map, void(*callback)(const RallyHereStatusCode &amp;code, void *user_data), void *user_data)</argsstring>
+        <name>rallyhere_set_additional_info</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const <ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref></type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, void *user_data)</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+<para>Set the current string map for the additional info. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The string map will be copied. Provide a callback to be notified when the labels have been set. These can be set after calls to <ref refid="structRallyHereGameInstanceAdapter_1a5844a4e3c29f530db2d61f647e925f88" kindref="member">rallyhere_ready()</ref> or <ref refid="structRallyHereGameInstanceAdapter_1ab7b0b24e192ce285af9c233e68d12c19" kindref="member">rallyhere_reserve()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="351" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="351" declcolumn="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Stats Annotations</header>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a5735f0da0826fe530291423a214ce456" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_get_annotations</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, RallyHereStringMapPtr *map)</argsstring>
+        <name>rallyhere_get_annotations</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type><ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref> *</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+<para>Get the current string map for the annotations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Caller is responsible for freeing the string map. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="363" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="363" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a6f5ea8bf77b08b81ffefe160157a4ca0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_set_annotations</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, const RallyHereStringMapPtr map, void(*callback)(const RallyHereStatusCode &amp;code, void *user_data), void *user_data)</argsstring>
+        <name>rallyhere_set_annotations</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const <ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref></type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, void *user_data)</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+<para>Set the current string map for the annotations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The string map will be copied. Provide a callback to be notified when the labels have been set. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="368" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="368" declcolumn="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Stats core</header>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a71b7533f99e051e4a6969d28521e1e88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RH_EXPORT RallyHereStatusCode rallyhere_stats_base</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, const RallyHereStatsBase *stats, const RallyHereStatsBaseProvided *provided, void(*callback)(const RallyHereStatusCode &amp;code, void *user_data), void *user_data)</argsstring>
+        <name>rallyhere_stats_base</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structRallyHereStatsBase" kindref="compound">RallyHereStatsBase</ref> *</type>
+          <declname>stats</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structRallyHereStatsBaseProvided" kindref="compound">RallyHereStatsBaseProvided</ref> *</type>
+          <declname>provided</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, void *user_data)</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+<para>Set the base stats for the game instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Provide a callback to be notified when the stats have been set These will be exported as labels on the &quot;instance_info&quot; gauge. These will be exported as part of the A2S_INFO query. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="428" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="428" declcolumn="35"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Stats gauges</header>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a4c6cb8ff5eb5fc79e352e64fea634582" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_stats_gauge</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, const char *name, double value, void(*callback)(const RallyHereStatusCode &amp;code, void *user_data), void *user_data)</argsstring>
+        <name>rallyhere_stats_gauge</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, void *user_data)</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the value of a gauge. Provide a callback to be notified when the stats have been set. These stats will be exported with the current labels </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="441" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="441" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1acdb70d34626a0951b5123ca5a8c90ba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_stats_gauge_with_labels</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, const char *name, double value, const RallyHereStringMapPtr labels, void(*callback)(const RallyHereStatusCode &amp;code, void *user_data), void *user_data)</argsstring>
+        <name>rallyhere_stats_gauge_with_labels</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const <ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref></type>
+          <declname>labels</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, void *user_data)</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the value of a gauge. Provide a callback to be notified when the stats have been set. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>labels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The labels to export with the gauge </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="449" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="449" declcolumn="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Stats arbitrary</header>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a9b1b98ccaabfe4412ab311c4e4bf12df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_stats_arbitrary</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, const char *name, const char *data, unsigned int data_size, void(*callback)(const RallyHereStatusCode &amp;code, void *user_data), void *user_data)</argsstring>
+        <name>rallyhere_stats_arbitrary</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>data_size</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, void *user_data)</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the value of an arbitrary stat. Provide a callback to be notified when the stats have been set. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to export with the stat which is copied by the call </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="462" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="462" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a8a05228013b9ad1fcdb0dbeea74d2d10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_stats_arbitrary_move</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, const char *name, char *data, unsigned int data_size, void(*callback)(const RallyHereStatusCode &amp;code, char *data, void *user_data), void *user_data)</argsstring>
+        <name>rallyhere_stats_arbitrary_move</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>data_size</declname>
+        </param>
+        <param>
+          <type>void(*)(const <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref> &amp;code, char *data, void *user_data)</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>user_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the value of an arbitrary stat. Provide a callback to be notified when the stats have been set. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to export with the stat which must have been allocated with the same alloc as set for the adapter. This function takes ownership of that pointer. If the error code is not RH_OK then the pointer is not taken and the caller is responsible </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="472" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="472" declcolumn="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Push metrics</header>
+      <description><para>Used for metrics that are push rather than pull. User of the SDK must choose between statsd or graphite as the target for the push.</para>
+<para><simplesect kind="attention"><para>This is still a work in progress and the API is provided with the expectation that there will be better handling of automatically pushing those metrics in the future. The metric API is stable and generates the correct output foer statsd and graphite, but there is no internal code to send those values out yet. </para>
+</simplesect>
+</para>
+</description>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1aaa958e15c14a2100748048adb0cf7277" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RH_EXPORT RallyHereStatusCode rallyhere_metrics_immediate_action</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, const RallyHereMetricDefinition *definition, const RallyHereMetricAction *action, RallyHereMetricFlush flush)</argsstring>
+        <name>rallyhere_metrics_immediate_action</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structRallyHereMetricDefinition" kindref="compound">RallyHereMetricDefinition</ref> *</type>
+          <declname>definition</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structRallyHereMetricAction" kindref="compound">RallyHereMetricAction</ref> *</type>
+          <declname>action</declname>
+        </param>
+        <param>
+          <type><ref refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaa" kindref="member">RallyHereMetricFlush</ref></type>
+          <declname>flush</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="490" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="490" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a28bcafe6ae1c9ebf393fb93f80253f73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RH_EXPORT RallyHereStatusCode rallyhere_metrics_immediate_action_with_time</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, const RallyHereMetricDefinition *definition, const RallyHereMetricAction *action, double timestamp, RallyHereMetricFlush flush)</argsstring>
+        <name>rallyhere_metrics_immediate_action_with_time</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structRallyHereMetricDefinition" kindref="compound">RallyHereMetricDefinition</ref> *</type>
+          <declname>definition</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structRallyHereMetricAction" kindref="compound">RallyHereMetricAction</ref> *</type>
+          <declname>action</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type><ref refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaa" kindref="member">RallyHereMetricFlush</ref></type>
+          <declname>flush</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="495" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="495" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a109f917f5f91e81768a91e794125dc0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_metrics_statsd_output</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, const char **data, size_t *data_size)</argsstring>
+        <name>rallyhere_metrics_statsd_output</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>data_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="501" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="501" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a221c9aa3189025c9ed28f73f812840f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_metrics_graphite_output</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, const char **data, size_t *data_size)</argsstring>
+        <name>rallyhere_metrics_graphite_output</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>data_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="503" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="503" declcolumn="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Opaque type and handle to a Rally Here Game Instance Adapter.</para>
+<para>This struct is intentionally empty because its true interface is only defined internally. Any methods which take this as the first argument can be thought of as methods on this struct.</para>
+<para>Callbacks are either called immediately at the call site or when calling <ref refid="structRallyHereGameInstanceAdapter_1a4db3f8b5b27ab240d0edb337719dd2fd" kindref="member">rallyhere_tick()</ref>. </para>
+    </detaileddescription>
+    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="56" column="1"/>
+    <listofallmembers>
+      <member refid="structRallyHereGameInstanceAdapter_1afa437234d06d99d50e63479ae8ca3bd4" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_allocate</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a4a665dd0eeb67b49043e7a54e0d397ed" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_connect</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a6122df1cede4159d0d30be0eb7b45463" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_create_game_instance_adapter</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a49786a749d31ba4c426b4b0059709704" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_create_game_instance_adapter_with_logger</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1aeef6eea3f33281f1a997fcb3462effd3" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_create_game_instance_adaptern</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a85db0b2f34bb7f67347ff9bbe5ff2beb" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_create_game_instance_adaptern_with_logger</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a291d4acc324c8dbab8786391fb5557ec" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_destroy_game_instance_adapter</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a12b6641eae79cfca381c5a4adc4cb2aa" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_external_soft_stop_requested</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a91c2c856bafd227bce07837642dba164" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_get_additional_info</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a5735f0da0826fe530291423a214ce456" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_get_annotations</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1ab3f0ff7c642bb703f228782a4e6aae93" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_get_labels</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1af3d04dce0166b8f1ba22de46ef74da9f" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_healthy</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a221c9aa3189025c9ed28f73f812840f6" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_metrics_graphite_output</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1aaa958e15c14a2100748048adb0cf7277" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_metrics_immediate_action</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a28bcafe6ae1c9ebf393fb93f80253f73" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_metrics_immediate_action_with_time</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a109f917f5f91e81768a91e794125dc0d" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_metrics_statsd_output</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a3c96a6e133beb24d2f54af05b13a713c" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_on_allocated_callback</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a662073848a735b58f79f18df20196cf1" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_on_soft_stop_callback</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a5844a4e3c29f530db2d61f647e925f88" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_ready</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1ab7b0b24e192ce285af9c233e68d12c19" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_reserve</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1afb679e1014b59a9a246c7c5b02c1062b" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_reserve_unconditional</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a059a56aff73e1901768e2511f664f9f8" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_set_additional_info</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a6f5ea8bf77b08b81ffefe160157a4ca0" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_set_annotations</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a80e5b040228f255c243f45317f04eeac" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_set_labels</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1ad1d09e6062ad3db182a66f1829c7479b" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_set_log_callback</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a9b1b98ccaabfe4412ab311c4e4bf12df" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_stats_arbitrary</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a8a05228013b9ad1fcdb0dbeea74d2d10" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_stats_arbitrary_move</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a71b7533f99e051e4a6969d28521e1e88" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_stats_base</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a4c6cb8ff5eb5fc79e352e64fea634582" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_stats_gauge</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1acdb70d34626a0951b5123ca5a8c90ba7" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_stats_gauge_with_labels</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1adddb6d6ebd068feef7972c6188ebecfe" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_test_fake_allocation_response</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a4db3f8b5b27ab240d0edb337719dd2fd" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_tick</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

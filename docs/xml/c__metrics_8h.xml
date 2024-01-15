@@ -1,0 +1,379 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="c__metrics_8h" kind="file" language="C++">
+    <compoundname>c_metrics.h</compoundname>
+    <includedby refid="c__api_8h" local="yes">/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h</label>
+        <link refid="c__metrics_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h</label>
+        <link refid="c__api_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</label>
+        <link refid="rh__string__map__wrapper_8hpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structRallyHereMetricActionIncrementWithSample" prot="public">RallyHereMetricActionIncrementWithSample</innerclass>
+    <innerclass refid="structRallyHereMetricActionSetWithSample" prot="public">RallyHereMetricActionSetWithSample</innerclass>
+    <innerclass refid="structRallyHereMetricActionIncrement" prot="public">RallyHereMetricActionIncrement</innerclass>
+    <innerclass refid="structRallyHereMetricActionSet" prot="public">RallyHereMetricActionSet</innerclass>
+    <innerclass refid="structRallyHereMetricActionUnique" prot="public">RallyHereMetricActionUnique</innerclass>
+    <innerclass refid="structRallyHereMetricAction" prot="public">RallyHereMetricAction</innerclass>
+    <innerclass refid="structRallyHereMetricCheckpoint" prot="public">RallyHereMetricCheckpoint</innerclass>
+    <innerclass refid="structRallyHereMetricDefinition" prot="public">RallyHereMetricDefinition</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>RallyHereMetricType</name>
+        <enumvalue id="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618fa8808a8162700d11fb63d8284b774cd02" prot="public">
+          <name>RALLY_HERE_METRIC_TYPE_COUNTER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Can be incremented with or without sampling </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618fa6041bf7b02d4007e6d87337fc5d6ff53" prot="public">
+          <name>RALLY_HERE_METRIC_TYPE_GAUGE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Can be set or incremented without sampling rate </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618fa4105dbae00ac34a5132dee29264c56a5" prot="public">
+          <name>RALLY_HERE_METRIC_TYPE_TIMER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Can be set with or without sampling rate </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618fad836d7d3a6cca871b5f8ec9d923fef49" prot="public">
+          <name>RALLY_HERE_METRIC_TYPE_SET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="29" column="1" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="29" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="enum" id="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280" prot="public" static="no" strong="no">
+        <type></type>
+        <name>RallyHereMetricActionType</name>
+        <enumvalue id="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280a675dde6d066fb043c8a73dab25c1919c" prot="public">
+          <name>RALLY_HERE_METRIC_ACTION_INCREMENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280abee4b24b39a5d86750ccca43bdbea9d6" prot="public">
+          <name>RALLY_HERE_METRIC_ACTION_INCREMENT_WITH_SAMPLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280aba4e49f55d7255fbc04b621d129eeff3" prot="public">
+          <name>RALLY_HERE_METRIC_ACTION_SET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280aca0aa0676686c6b2c35e706a66074101" prot="public">
+          <name>RALLY_HERE_METRIC_ACTION_SET_WITH_SAMPLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280a9e0be7f6aaae0def4094440401afabb0" prot="public">
+          <name>RALLY_HERE_METRIC_ACTION_UNIQUE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="39" column="1" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="39" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="enum" id="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaa" prot="public" static="no" strong="no">
+        <type></type>
+        <name>RallyHereMetricFlush</name>
+        <enumvalue id="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaaa99d1a9dff3f4848e02989bfeeee49267" prot="public">
+          <name>RALLY_HERE_METRIC_FLUSH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaaa0e1696cbfa95d59a78a5b8b07af43943" prot="public">
+          <name>RALLY_HERE_METRIC_NO_FLUSH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="47" column="1" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="47" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="c__metrics_8h_1aa89a9a2cad39bc67edf0a86c58ab7f75" prot="public" static="no">
+        <type>enum <ref refid="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618f" kindref="member">RallyHereMetricType</ref></type>
+        <definition>typedef enum RallyHereMetricType RallyHereMetricType</definition>
+        <argsstring></argsstring>
+        <name>RallyHereMetricType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="37" column="21"/>
+      </memberdef>
+      <memberdef kind="typedef" id="c__metrics_8h_1a0f584bba073df6feb1e7492408cd7a39" prot="public" static="no">
+        <type>enum <ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280" kindref="member">RallyHereMetricActionType</ref></type>
+        <definition>typedef enum RallyHereMetricActionType RallyHereMetricActionType</definition>
+        <argsstring></argsstring>
+        <name>RallyHereMetricActionType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="45" column="27"/>
+      </memberdef>
+      <memberdef kind="typedef" id="c__metrics_8h_1ae1518b512f4ad23fbb6291253b0bb068" prot="public" static="no">
+        <type>enum <ref refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaa" kindref="member">RallyHereMetricFlush</ref></type>
+        <definition>typedef enum RallyHereMetricFlush RallyHereMetricFlush</definition>
+        <argsstring></argsstring>
+        <name>RallyHereMetricFlush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="50" column="22"/>
+      </memberdef>
+      <memberdef kind="typedef" id="c__metrics_8h_1ad652760d0664a541a9dde797e61da7fd" prot="public" static="no">
+        <type>RallyHereMetricRegistry *</type>
+        <definition>typedef RallyHereMetricRegistry* RallyHereMetricRegistryPtr</definition>
+        <argsstring></argsstring>
+        <name>RallyHereMetricRegistryPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="117" column="33" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>An interface for structuring metrics in a way that can be used either with statsd or graphite </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">Copyright<sp/>2023<sp/>RallyHere</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment">Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GAME_HOST_ADAPTER_C_METRICS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GAME_HOST_ADAPTER_C_METRICS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618f" kindref="member">RallyHereMetricType</ref><sp/>{</highlight></codeline>
+<codeline lineno="31" refid="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618fa8808a8162700d11fb63d8284b774cd02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618fa8808a8162700d11fb63d8284b774cd02" kindref="member">RALLY_HERE_METRIC_TYPE_COUNTER</ref>,</highlight></codeline>
+<codeline lineno="33" refid="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618fa6041bf7b02d4007e6d87337fc5d6ff53" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618fa6041bf7b02d4007e6d87337fc5d6ff53" kindref="member">RALLY_HERE_METRIC_TYPE_GAUGE</ref>,</highlight></codeline>
+<codeline lineno="35" refid="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618fa4105dbae00ac34a5132dee29264c56a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618fa4105dbae00ac34a5132dee29264c56a5" kindref="member">RALLY_HERE_METRIC_TYPE_TIMER</ref>,</highlight></codeline>
+<codeline lineno="36" refid="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618fad836d7d3a6cca871b5f8ec9d923fef49" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618fad836d7d3a6cca871b5f8ec9d923fef49" kindref="member">RALLY_HERE_METRIC_TYPE_SET</ref>,</highlight></codeline>
+<codeline lineno="37" refid="c__metrics_8h_1aa89a9a2cad39bc67edf0a86c58ab7f75" refkind="member"><highlight class="normal">}<sp/><ref refid="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618f" kindref="member">RallyHereMetricType</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280" kindref="member">RallyHereMetricActionType</ref><sp/>{</highlight></codeline>
+<codeline lineno="40" refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280a675dde6d066fb043c8a73dab25c1919c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280a675dde6d066fb043c8a73dab25c1919c" kindref="member">RALLY_HERE_METRIC_ACTION_INCREMENT</ref>,</highlight></codeline>
+<codeline lineno="41" refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280abee4b24b39a5d86750ccca43bdbea9d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280abee4b24b39a5d86750ccca43bdbea9d6" kindref="member">RALLY_HERE_METRIC_ACTION_INCREMENT_WITH_SAMPLE</ref>,</highlight></codeline>
+<codeline lineno="42" refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280aba4e49f55d7255fbc04b621d129eeff3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280aba4e49f55d7255fbc04b621d129eeff3" kindref="member">RALLY_HERE_METRIC_ACTION_SET</ref>,</highlight></codeline>
+<codeline lineno="43" refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280aca0aa0676686c6b2c35e706a66074101" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280aca0aa0676686c6b2c35e706a66074101" kindref="member">RALLY_HERE_METRIC_ACTION_SET_WITH_SAMPLE</ref>,</highlight></codeline>
+<codeline lineno="44" refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280a9e0be7f6aaae0def4094440401afabb0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280a9e0be7f6aaae0def4094440401afabb0" kindref="member">RALLY_HERE_METRIC_ACTION_UNIQUE</ref>,</highlight></codeline>
+<codeline lineno="45" refid="c__metrics_8h_1a0f584bba073df6feb1e7492408cd7a39" refkind="member"><highlight class="normal">}<sp/><ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280" kindref="member">RallyHereMetricActionType</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaa" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaa" kindref="member">RallyHereMetricFlush</ref><sp/>{</highlight></codeline>
+<codeline lineno="48" refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaaa99d1a9dff3f4848e02989bfeeee49267" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaaa99d1a9dff3f4848e02989bfeeee49267" kindref="member">RALLY_HERE_METRIC_FLUSH</ref>,</highlight></codeline>
+<codeline lineno="49" refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaaa0e1696cbfa95d59a78a5b8b07af43943" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaaa0e1696cbfa95d59a78a5b8b07af43943" kindref="member">RALLY_HERE_METRIC_NO_FLUSH</ref>,</highlight></codeline>
+<codeline lineno="50" refid="c__metrics_8h_1ae1518b512f4ad23fbb6291253b0bb068" refkind="member"><highlight class="normal">}<sp/><ref refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaa" kindref="member">RallyHereMetricFlush</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="structRallyHereMetricActionIncrementWithSample" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54" refid="structRallyHereMetricActionIncrementWithSample_1a5867997e748f3306f09c60af07c83963" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="structRallyHereMetricActionIncrementWithSample_1a5867997e748f3306f09c60af07c83963" kindref="member">change</ref>;</highlight></codeline>
+<codeline lineno="56" refid="structRallyHereMetricActionIncrementWithSample_1a825b0cee1b3cf83ceb56db77653ca1d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="structRallyHereMetricActionIncrementWithSample_1a825b0cee1b3cf83ceb56db77653ca1d3" kindref="member">sample_rate</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}<sp/><ref refid="structRallyHereMetricActionIncrementWithSample" kindref="compound">RallyHereMetricActionIncrementWithSample</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="structRallyHereMetricActionSetWithSample" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61" refid="structRallyHereMetricActionSetWithSample_1ab1d32d720960beba507e34ac29c76ba4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="structRallyHereMetricActionSetWithSample_1ab1d32d720960beba507e34ac29c76ba4" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="63" refid="structRallyHereMetricActionSetWithSample_1a527ac4e573c55394bc13e8c4574ecf77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="structRallyHereMetricActionSetWithSample_1a527ac4e573c55394bc13e8c4574ecf77" kindref="member">sample_rate</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}<sp/><ref refid="structRallyHereMetricActionSetWithSample" kindref="compound">RallyHereMetricActionSetWithSample</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="structRallyHereMetricActionIncrement" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68" refid="structRallyHereMetricActionIncrement_1a31c310cfcb22787fb8bf07cf4a2ddae7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="structRallyHereMetricActionIncrement_1a31c310cfcb22787fb8bf07cf4a2ddae7" kindref="member">change</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}<sp/><ref refid="structRallyHereMetricActionIncrement" kindref="compound">RallyHereMetricActionIncrement</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="structRallyHereMetricActionSet" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73" refid="structRallyHereMetricActionSet_1a3bf2e16e09d492c11db4d5a8e12714ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="structRallyHereMetricActionSet_1a3bf2e16e09d492c11db4d5a8e12714ea" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}<sp/><ref refid="structRallyHereMetricActionSet" kindref="compound">RallyHereMetricActionSet</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="structRallyHereMetricActionUnique" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78" refid="structRallyHereMetricActionUnique_1a80518ed22e8e3272d863fa88dbb847fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structRallyHereMetricActionUnique_1a80518ed22e8e3272d863fa88dbb847fa" kindref="member">unique</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}<sp/><ref refid="structRallyHereMetricActionUnique" kindref="compound">RallyHereMetricActionUnique</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="structRallyHereMetricAction" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82" refid="structRallyHereMetricAction_1a38eefef5aea9eb30a8a98858bbe1fd87" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280" kindref="member">RallyHereMetricActionType</ref><sp/><ref refid="structRallyHereMetricAction_1a38eefef5aea9eb30a8a98858bbe1fd87" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="84" refid="structRallyHereMetricAction_1a7ea459c2b57aceae25b4a64fa7af2a87" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structRallyHereMetricAction_1a7ea459c2b57aceae25b4a64fa7af2a87" kindref="member">label_names</ref>;</highlight></codeline>
+<codeline lineno="86" refid="structRallyHereMetricAction_1a5f60337cbe56addbc1efcdf413b30941" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structRallyHereMetricAction_1a5f60337cbe56addbc1efcdf413b30941" kindref="member">label_values</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89" refid="structRallyHereMetricAction_1acdd9b8ab052985f11f69479520d14ddc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structRallyHereMetricActionIncrementWithSample" kindref="compound">RallyHereMetricActionIncrementWithSample</ref><sp/><ref refid="structRallyHereMetricAction_1acdd9b8ab052985f11f69479520d14ddc" kindref="member">increment_with_sample</ref>;</highlight></codeline>
+<codeline lineno="90" refid="structRallyHereMetricAction_1a953dc621717d4fd5dc88ac78a57e480d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structRallyHereMetricActionSetWithSample" kindref="compound">RallyHereMetricActionSetWithSample</ref><sp/><ref refid="structRallyHereMetricAction_1a953dc621717d4fd5dc88ac78a57e480d" kindref="member">set_with_sample</ref>;</highlight></codeline>
+<codeline lineno="91" refid="structRallyHereMetricAction_1a3a2aca58050d0e13e79a6c245189150d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structRallyHereMetricActionIncrement" kindref="compound">RallyHereMetricActionIncrement</ref><sp/><ref refid="structRallyHereMetricAction_1a3a2aca58050d0e13e79a6c245189150d" kindref="member">increment</ref>;</highlight></codeline>
+<codeline lineno="92" refid="structRallyHereMetricAction_1a2fde817163a71d14b17179557d0180b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structRallyHereMetricActionSet" kindref="compound">RallyHereMetricActionSet</ref><sp/><ref refid="structRallyHereMetricAction_1a2fde817163a71d14b17179557d0180b2" kindref="member">set</ref>;</highlight></codeline>
+<codeline lineno="93" refid="structRallyHereMetricAction_1ac6be45ccd5a7a84afb51068b5399fd0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structRallyHereMetricActionUnique" kindref="compound">RallyHereMetricActionUnique</ref><sp/><ref refid="structRallyHereMetricAction_1ac6be45ccd5a7a84afb51068b5399fd0b" kindref="member">unique</ref>;</highlight></codeline>
+<codeline lineno="94" refid="structRallyHereMetricAction_1a6f65572b126b3aaf389916ff31580195" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>action;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}<sp/><ref refid="structRallyHereMetricAction" kindref="compound">RallyHereMetricAction</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="structRallyHereMetricCheckpoint" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100" refid="structRallyHereMetricCheckpoint_1a0402f620add319371288822e23572acc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structRallyHereMetricAction" kindref="compound">RallyHereMetricAction</ref>*<sp/><ref refid="structRallyHereMetricCheckpoint_1a0402f620add319371288822e23572acc" kindref="member">actions</ref>;</highlight></codeline>
+<codeline lineno="102" refid="structRallyHereMetricCheckpoint_1a8bbdcb3d673d2f41f1c45684b874d692" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="structRallyHereMetricCheckpoint_1a8bbdcb3d673d2f41f1c45684b874d692" kindref="member">timestamp</ref>;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}<sp/><ref refid="structRallyHereMetricCheckpoint" kindref="compound">RallyHereMetricCheckpoint</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="structRallyHereMetricDefinition" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="106" refid="structRallyHereMetricDefinition_1a15ca495ca6545052916005ed5c308e92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618f" kindref="member">RallyHereMetricType</ref><sp/><ref refid="structRallyHereMetricDefinition_1a15ca495ca6545052916005ed5c308e92" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="107" refid="structRallyHereMetricDefinition_1ae4df975273d12099535e59c2e5cbce29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structRallyHereMetricDefinition_1ae4df975273d12099535e59c2e5cbce29" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="108" refid="structRallyHereMetricDefinition_1af1b03075f4b16eda485c32c83731c6f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structRallyHereMetricDefinition_1af1b03075f4b16eda485c32c83731c6f5" kindref="member">help</ref>;</highlight></codeline>
+<codeline lineno="110" refid="structRallyHereMetricDefinition_1a583c2b96ae113bb668f5e8ab8ffb6ff8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structRallyHereMetricDefinition_1a583c2b96ae113bb668f5e8ab8ffb6ff8" kindref="member">label_names</ref>;</highlight></codeline>
+<codeline lineno="112" refid="structRallyHereMetricDefinition_1a406468e49da400f7c1a94a77b3ca31ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structRallyHereMetricDefinition_1a406468e49da400f7c1a94a77b3ca31ef" kindref="member">label_values</ref>;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}<sp/><ref refid="structRallyHereMetricDefinition" kindref="compound">RallyHereMetricDefinition</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="keyword">struct<sp/></highlight><highlight class="normal">RallyHereMetricRegistry;</highlight></codeline>
+<codeline lineno="117" refid="c__metrics_8h_1ad652760d0664a541a9dde797e61da7fd" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>RallyHereMetricRegistry*<sp/><ref refid="c__metrics_8h_1ad652760d0664a541a9dde797e61da7fd" kindref="member">RallyHereMetricRegistryPtr</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>prepare()</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>RallyHereMetricsRegistryPtr<sp/>registry<sp/>=<sp/>rallyhere_metrics_registry_create();</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structRallyHereMetricDefinition" kindref="compound">RallyHereMetricDefinition</ref><sp/>definition{};</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.<ref refid="structRallyHereMetricDefinition_1a583c2b96ae113bb668f5e8ab8ffb6ff8" kindref="member">label_names</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;game\0map\0\0&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.label_values<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;rallyheredemo\0thebestmap\0\0&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.type<sp/>=<sp/>GAME_HOST_ADAPTER_METRIC_TYPE_COUNTER;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;TickCount&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.help<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;A<sp/>counter<sp/>of<sp/>ticks<sp/>that<sp/>have<sp/>passed&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>rallyhere_metrics_registry_metric_definition_add(registry,<sp/>&amp;definition);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.type<sp/>=<sp/>GAME_HOST_ADAPTER_METRIC_TYPE_TIMER;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;MaxFrameTime&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.help<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>maximum<sp/>frame<sp/>time<sp/>in<sp/>milliseconds&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>rallyhere_metrics_registry_metric_definition_add(registry,<sp/>&amp;definition);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.type<sp/>=<sp/>GAME_HOST_ADAPTER_METRIC_TYPE_GAUGE;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;CurrentPlayers&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.help<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Current<sp/>number<sp/>of<sp/>players<sp/>connected&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>rallyhere_metrics_registry_metric_definition_add(registry,<sp/>&amp;definition);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.type<sp/>=<sp/>GAME_HOST_ADAPTER_METRIC_TYPE_SET;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;UniqueUsers&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.help<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;How<sp/>many<sp/>unique<sp/>users<sp/>we&apos;ve<sp/>seen&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>rallyhere_metrics_registry_metric_definition_add(registry,<sp/>&amp;definition);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>checkpoint()</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structRallyHereMetricAction" kindref="compound">RallyHereMetricAction</ref><sp/>actions[4]{};</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>actions[0].<ref refid="structRallyHereMetricAction_1a38eefef5aea9eb30a8a98858bbe1fd87" kindref="member">type</ref><sp/>=<sp/><ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280a675dde6d066fb043c8a73dab25c1919c" kindref="member">RALLY_HERE_METRIC_ACTION_INCREMENT</ref>;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>actions[0].action.increment.change<sp/>=<sp/>DeltaTickCount;<sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>a<sp/>counter<sp/>so<sp/>it<sp/>needs<sp/>to<sp/>be<sp/>the<sp/>delta<sp/>of<sp/>the<sp/>ticks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>actions[1].type<sp/>=<sp/><ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280aba4e49f55d7255fbc04b621d129eeff3" kindref="member">RALLY_HERE_METRIC_ACTION_SET</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>actions[1].action.set.value<sp/>=<sp/>838.0f;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>actions[2].type<sp/>=<sp/><ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280aba4e49f55d7255fbc04b621d129eeff3" kindref="member">RALLY_HERE_METRIC_ACTION_SET</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>actions[2].action.set.value<sp/>=<sp/>5.0f;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>actions[3].type<sp/>=<sp/><ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280a9e0be7f6aaae0def4094440401afabb0" kindref="member">RALLY_HERE_METRIC_ACTION_UNIQUE</ref>;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>actions[3].action.unique.unique<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;TotallyAwesomePlayer&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structRallyHereMetricCheckpoint" kindref="compound">RallyHereMetricCheckpoint</ref><sp/>checkpoint{};</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>checkpoint.<ref refid="structRallyHereMetricCheckpoint_1a0402f620add319371288822e23572acc" kindref="member">actions</ref><sp/>=<sp/>actions;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>checkpoint.timestamp<sp/>=<sp/>time(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>rallyhere_metrics_registry_checkpoint_add(registry,<sp/>&amp;checkpoint);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>immediate_mode()</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structRallyHereMetricDefinition" kindref="compound">RallyHereMetricDefinition</ref><sp/>definition{};</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.<ref refid="structRallyHereMetricDefinition_1a15ca495ca6545052916005ed5c308e92" kindref="member">type</ref><sp/>=<sp/>GAME_HOST_ADAPTER_METRIC_TYPE_COUNTER;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>definition.name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;TickCount&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structRallyHereMetricAction" kindref="compound">RallyHereMetricAction</ref><sp/>action{};</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>action.<ref refid="structRallyHereMetricAction_1a38eefef5aea9eb30a8a98858bbe1fd87" kindref="member">type</ref><sp/>=<sp/><ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280a675dde6d066fb043c8a73dab25c1919c" kindref="member">RALLY_HERE_METRIC_ACTION_INCREMENT</ref>;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>action.action.increment.change<sp/>=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>rallyhere_metrics_registry_immediate_add(registry,<sp/>&amp;definition,<sp/>&amp;action,<sp/><ref refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaaa99d1a9dff3f4848e02989bfeeee49267" kindref="member">RALLY_HERE_METRIC_FLUSH</ref>);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>rallyhere_metrics_registry_immediate_add_with_time(registry,<sp/>&amp;definition,<sp/>&amp;action,<sp/>time(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">),<sp/><ref refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaaa0e1696cbfa95d59a78a5b8b07af43943" kindref="member">RALLY_HERE_METRIC_NO_FLUSH</ref>);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>rallyhere_metrics_registry_immediate_add_with_time(registry,<sp/>&amp;definition,<sp/>&amp;action,<sp/>time(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">),<sp/><ref refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaaa0e1696cbfa95d59a78a5b8b07af43943" kindref="member">RALLY_HERE_METRIC_NO_FLUSH</ref>);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>rallyhere_metrics_registry_immediate_add_with_time(registry,<sp/>&amp;definition,<sp/>&amp;action,<sp/>time(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">),<sp/><ref refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaaa0e1696cbfa95d59a78a5b8b07af43943" kindref="member">RALLY_HERE_METRIC_NO_FLUSH</ref>);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>rallyhere_metrics_registry_immediate_add_with_time(registry,<sp/>&amp;definition,<sp/>&amp;action,<sp/>time(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">),<sp/><ref refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaaa0e1696cbfa95d59a78a5b8b07af43943" kindref="member">RALLY_HERE_METRIC_NO_FLUSH</ref>);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>rallyhere_metrics_registry_immediate_flush(registry);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>GAME_HOST_ADAPTER_C_METRICS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h"/>
+  </compounddef>
+</doxygen>

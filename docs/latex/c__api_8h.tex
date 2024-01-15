@@ -1,0 +1,249 @@
+\hypertarget{c__api_8h}{}\doxysection{/home/asayman/\+Dev/game-\/host-\/adapter/include/game-\/host-\/adapter/c\+\_\+api.h File Reference}
+\label{c__api_8h}\index{/home/asayman/Dev/game-\/host-\/adapter/include/game-\/host-\/adapter/c\_api.h@{/home/asayman/Dev/game-\/host-\/adapter/include/game-\/host-\/adapter/c\_api.h}}
+
+
+An SDK for handling multiple different types of game hosting systems in one set of calls.  
+
+
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include \char`\"{}c\+\_\+platform.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}c\+\_\+status.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}c\+\_\+metrics.\+h\char`\"{}}\newline
+Include dependency graph for c\+\_\+api.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{c__api_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{c__api_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRallyHereStatsBase}{Rally\+Here\+Stats\+Base}}
+\begin{DoxyCompactList}\small\item\em Base stats to be exported by the game host adapter. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structRallyHereStatsBaseProvided}{Rally\+Here\+Stats\+Base\+Provided}}
+\begin{DoxyCompactList}\small\item\em Flags to indicate which fields of \mbox{\hyperlink{structRallyHereStatsBase}{Rally\+Here\+Stats\+Base}} are set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{Indent}\textbf{ Opaque types}\par
+{\em The API uses the pointer handles to represent internal objects. }\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{structRallyHereGameInstanceAdapter}{Rally\+Here\+Game\+Instance\+Adapter}} $\ast$ \mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}
+\begin{DoxyCompactList}\small\item\em Opaque type and handle to a Rally Here Game Instance Adapter. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{structRallyHereStringMap}{Rally\+Here\+String\+Map}} $\ast$ \mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}}
+\begin{DoxyCompactList}\small\item\em Opaque type and handle to a Rally Here String Map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ State request and callbacks}\par
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{c__api_8h_a8664a168347b6152d05be2870fff5113}{Rally\+Here\+On\+Allocated\+Callback}}) (\mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}} allocation\+\_\+info, const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Callback to be sent when an allocation is received from the game host adapter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Functions}
+\begin{Indent}\textbf{ Environment}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{c__api_8h_a4432d2d7215904ab70ae8fa09ceee234}{rallyhere\+\_\+allocator\+\_\+set\+\_\+alloc}} (void $\ast$($\ast$callback)(unsigned int size))
+\begin{DoxyCompactList}\small\item\em Optional custom memory alloc override. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{c__api_8h_aff419acc09d05afbc49c6b671d9b053f}{rallyhere\+\_\+allocator\+\_\+set\+\_\+free}} (void($\ast$callback)(void $\ast$))
+\begin{DoxyCompactList}\small\item\em Optional custom memory free override. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{c__api_8h_a7eeeadbe1fc805105e3ab945cb246720}{rallyhere\+\_\+allocator\+\_\+set\+\_\+realloc}} (void $\ast$($\ast$callback)(void $\ast$, unsigned int size))
+\begin{DoxyCompactList}\small\item\em Optional custom memory realloc override. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Global}\par
+{\em Bookend calls for using this SDK. Only the Environment methods may be called before or after these SDK calls. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{c__api_8h_a70be86817854bcd19b3f10b31fdf19c8}{rallyhere\+\_\+global\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the Rally Here SDK. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{c__api_8h_af11502e19d260c2a68285b7eb9e635c1}{rallyhere\+\_\+global\+\_\+cleanup}} ()
+\begin{DoxyCompactList}\small\item\em Cleanup the Rally Here SDK. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Logging}
+\label{_amgrp8db7df66ab1d7ab5f1dc947acdb5fae4}%
+ Logging levels that will passed to the optional log callback function \begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{c__api_8h_acea7ed85e1829a9b981399a844ae5120}{Rally\+Here\+Log\+Level}} \{ \mbox{\hyperlink{c__api_8h_acea7ed85e1829a9b981399a844ae5120a7c0c9197c6f55214da11db543b1529ca}{RH\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+ERROR}}
+, \mbox{\hyperlink{c__api_8h_acea7ed85e1829a9b981399a844ae5120ada3db8f5bebf4d8e168859727582f715}{RH\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+INFO}}
+, \mbox{\hyperlink{c__api_8h_acea7ed85e1829a9b981399a844ae5120ab9be2827a1b438f5701bf5955aaec308}{RH\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+DEBUG}}
+, \mbox{\hyperlink{c__api_8h_acea7ed85e1829a9b981399a844ae5120a2fb3decd4008728939c62b3a6dc9e513}{RH\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+TRACE}}
+ \}
+\item 
+typedef enum \mbox{\hyperlink{c__api_8h_acea7ed85e1829a9b981399a844ae5120}{Rally\+Here\+Log\+Level}} \mbox{\hyperlink{c__api_8h_ade4228dcd8f4d1f8c1d42bd5f40bcca3}{Rally\+Here\+Log\+Level}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{c__api_8h_a64a7679e581842654beca7ae63664a26}{Rally\+Here\+Log\+Callback}}) (\mbox{\hyperlink{c__api_8h_acea7ed85e1829a9b981399a844ae5120}{Rally\+Here\+Log\+Level}} level, const char $\ast$message, size\+\_\+t messagen, void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Log callback function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{c__api_8h_a4b0adaca38324c8ac2ebf6d2429b3d7a}{rallyhere\+\_\+set\+\_\+default\+\_\+log\+\_\+level}} (\mbox{\hyperlink{c__api_8h_acea7ed85e1829a9b981399a844ae5120}{Rally\+Here\+Log\+Level}} level)
+\begin{DoxyCompactList}\small\item\em Sets the default log level for the SDK and any adapters created. This is only used if a log callback is not set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An SDK for handling multiple different types of game hosting systems in one set of calls. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}\label{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}} 
+\index{c\_api.h@{c\_api.h}!RallyHereGameInstanceAdapterPtr@{RallyHereGameInstanceAdapterPtr}}
+\index{RallyHereGameInstanceAdapterPtr@{RallyHereGameInstanceAdapterPtr}!c\_api.h@{c\_api.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereGameInstanceAdapterPtr}{RallyHereGameInstanceAdapterPtr}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structRallyHereGameInstanceAdapter}{Rally\+Here\+Game\+Instance\+Adapter}}$\ast$ \mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}
+
+
+
+Opaque type and handle to a Rally Here Game Instance Adapter. 
+
+\mbox{\Hypertarget{c__api_8h_a64a7679e581842654beca7ae63664a26}\label{c__api_8h_a64a7679e581842654beca7ae63664a26}} 
+\index{c\_api.h@{c\_api.h}!RallyHereLogCallback@{RallyHereLogCallback}}
+\index{RallyHereLogCallback@{RallyHereLogCallback}!c\_api.h@{c\_api.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereLogCallback}{RallyHereLogCallback}}
+{\footnotesize\ttfamily typedef void($\ast$ Rally\+Here\+Log\+Callback) (\mbox{\hyperlink{c__api_8h_acea7ed85e1829a9b981399a844ae5120}{Rally\+Here\+Log\+Level}} level, const char $\ast$message, size\+\_\+t messagen, void $\ast$user\+\_\+data)}
+
+
+
+Log callback function. 
+
+\mbox{\Hypertarget{c__api_8h_ade4228dcd8f4d1f8c1d42bd5f40bcca3}\label{c__api_8h_ade4228dcd8f4d1f8c1d42bd5f40bcca3}} 
+\index{c\_api.h@{c\_api.h}!RallyHereLogLevel@{RallyHereLogLevel}}
+\index{RallyHereLogLevel@{RallyHereLogLevel}!c\_api.h@{c\_api.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereLogLevel}{RallyHereLogLevel}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{c__api_8h_acea7ed85e1829a9b981399a844ae5120}{Rally\+Here\+Log\+Level}} \mbox{\hyperlink{c__api_8h_acea7ed85e1829a9b981399a844ae5120}{Rally\+Here\+Log\+Level}}}
+
+\mbox{\Hypertarget{c__api_8h_a8664a168347b6152d05be2870fff5113}\label{c__api_8h_a8664a168347b6152d05be2870fff5113}} 
+\index{c\_api.h@{c\_api.h}!RallyHereOnAllocatedCallback@{RallyHereOnAllocatedCallback}}
+\index{RallyHereOnAllocatedCallback@{RallyHereOnAllocatedCallback}!c\_api.h@{c\_api.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereOnAllocatedCallback}{RallyHereOnAllocatedCallback}}
+{\footnotesize\ttfamily typedef void($\ast$ Rally\+Here\+On\+Allocated\+Callback) (\mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}} allocation\+\_\+info, const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}
+
+
+
+Callback to be sent when an allocation is received from the game host adapter. 
+
+The callback is responsible for freeing the allocation\+\_\+info string map \mbox{\Hypertarget{c__api_8h_a8901377cd48d4831c6380593a2a60360}\label{c__api_8h_a8901377cd48d4831c6380593a2a60360}} 
+\index{c\_api.h@{c\_api.h}!RallyHereStringMapPtr@{RallyHereStringMapPtr}}
+\index{RallyHereStringMapPtr@{RallyHereStringMapPtr}!c\_api.h@{c\_api.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereStringMapPtr}{RallyHereStringMapPtr}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structRallyHereStringMap}{Rally\+Here\+String\+Map}}$\ast$ \mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}}}
+
+
+
+Opaque type and handle to a Rally Here String Map. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{c__api_8h_acea7ed85e1829a9b981399a844ae5120}\label{c__api_8h_acea7ed85e1829a9b981399a844ae5120}} 
+\index{c\_api.h@{c\_api.h}!RallyHereLogLevel@{RallyHereLogLevel}}
+\index{RallyHereLogLevel@{RallyHereLogLevel}!c\_api.h@{c\_api.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereLogLevel}{RallyHereLogLevel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{c__api_8h_acea7ed85e1829a9b981399a844ae5120}{Rally\+Here\+Log\+Level}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_LOG\_LEVEL\_ERROR@{RH\_LOG\_LEVEL\_ERROR}!c\_api.h@{c\_api.h}}\index{c\_api.h@{c\_api.h}!RH\_LOG\_LEVEL\_ERROR@{RH\_LOG\_LEVEL\_ERROR}}}\mbox{\Hypertarget{c__api_8h_acea7ed85e1829a9b981399a844ae5120a7c0c9197c6f55214da11db543b1529ca}\label{c__api_8h_acea7ed85e1829a9b981399a844ae5120a7c0c9197c6f55214da11db543b1529ca}} 
+RH\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_LOG\_LEVEL\_INFO@{RH\_LOG\_LEVEL\_INFO}!c\_api.h@{c\_api.h}}\index{c\_api.h@{c\_api.h}!RH\_LOG\_LEVEL\_INFO@{RH\_LOG\_LEVEL\_INFO}}}\mbox{\Hypertarget{c__api_8h_acea7ed85e1829a9b981399a844ae5120ada3db8f5bebf4d8e168859727582f715}\label{c__api_8h_acea7ed85e1829a9b981399a844ae5120ada3db8f5bebf4d8e168859727582f715}} 
+RH\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+INFO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_LOG\_LEVEL\_DEBUG@{RH\_LOG\_LEVEL\_DEBUG}!c\_api.h@{c\_api.h}}\index{c\_api.h@{c\_api.h}!RH\_LOG\_LEVEL\_DEBUG@{RH\_LOG\_LEVEL\_DEBUG}}}\mbox{\Hypertarget{c__api_8h_acea7ed85e1829a9b981399a844ae5120ab9be2827a1b438f5701bf5955aaec308}\label{c__api_8h_acea7ed85e1829a9b981399a844ae5120ab9be2827a1b438f5701bf5955aaec308}} 
+RH\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+DEBUG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_LOG\_LEVEL\_TRACE@{RH\_LOG\_LEVEL\_TRACE}!c\_api.h@{c\_api.h}}\index{c\_api.h@{c\_api.h}!RH\_LOG\_LEVEL\_TRACE@{RH\_LOG\_LEVEL\_TRACE}}}\mbox{\Hypertarget{c__api_8h_acea7ed85e1829a9b981399a844ae5120a2fb3decd4008728939c62b3a6dc9e513}\label{c__api_8h_acea7ed85e1829a9b981399a844ae5120a2fb3decd4008728939c62b3a6dc9e513}} 
+RH\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+TRACE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{c__api_8h_a4432d2d7215904ab70ae8fa09ceee234}\label{c__api_8h_a4432d2d7215904ab70ae8fa09ceee234}} 
+\index{c\_api.h@{c\_api.h}!rallyhere\_allocator\_set\_alloc@{rallyhere\_allocator\_set\_alloc}}
+\index{rallyhere\_allocator\_set\_alloc@{rallyhere\_allocator\_set\_alloc}!c\_api.h@{c\_api.h}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_allocator\_set\_alloc()}{rallyhere\_allocator\_set\_alloc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+allocator\+\_\+set\+\_\+alloc (\begin{DoxyParamCaption}\item[{void $\ast$($\ast$)(unsigned int size)}]{callback }\end{DoxyParamCaption})}
+
+
+
+Optional custom memory alloc override. 
+
+If set, must be set at init time, before using any other APIs. If this is called, then rallyhere\+\_\+allocator\+\_\+set\+\_\+free must also be called. If this is called, then rallyhere\+\_\+allocator\+\_\+set\+\_\+free and rallyhere\+\_\+allocator\+\_\+set\+\_\+realloc must also be called. 
+\begin{DoxyParams}{Parameters}
+{\em callback} & A function that takes a size in bytes of memory to allocate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{c__api_8h_aff419acc09d05afbc49c6b671d9b053f}{rallyhere\+\_\+allocator\+\_\+set\+\_\+free}} 
+
+\mbox{\hyperlink{c__api_8h_a7eeeadbe1fc805105e3ab945cb246720}{rallyhere\+\_\+allocator\+\_\+set\+\_\+realloc}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{c__api_8h_aff419acc09d05afbc49c6b671d9b053f}\label{c__api_8h_aff419acc09d05afbc49c6b671d9b053f}} 
+\index{c\_api.h@{c\_api.h}!rallyhere\_allocator\_set\_free@{rallyhere\_allocator\_set\_free}}
+\index{rallyhere\_allocator\_set\_free@{rallyhere\_allocator\_set\_free}!c\_api.h@{c\_api.h}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_allocator\_set\_free()}{rallyhere\_allocator\_set\_free()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+allocator\+\_\+set\+\_\+free (\begin{DoxyParamCaption}\item[{void($\ast$)(void $\ast$)}]{callback }\end{DoxyParamCaption})}
+
+
+
+Optional custom memory free override. 
+
+If set, must be set at init time, before using any other APIs. 
+\begin{DoxyParams}{Parameters}
+{\em callback} & An existing pointer p to free. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{c__api_8h_a7eeeadbe1fc805105e3ab945cb246720}\label{c__api_8h_a7eeeadbe1fc805105e3ab945cb246720}} 
+\index{c\_api.h@{c\_api.h}!rallyhere\_allocator\_set\_realloc@{rallyhere\_allocator\_set\_realloc}}
+\index{rallyhere\_allocator\_set\_realloc@{rallyhere\_allocator\_set\_realloc}!c\_api.h@{c\_api.h}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_allocator\_set\_realloc()}{rallyhere\_allocator\_set\_realloc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+allocator\+\_\+set\+\_\+realloc (\begin{DoxyParamCaption}\item[{void $\ast$($\ast$)(void $\ast$, unsigned int size)}]{callback }\end{DoxyParamCaption})}
+
+
+
+Optional custom memory realloc override. 
+
+If set, must be set at init time, before using any other APIs. 
+\begin{DoxyParams}{Parameters}
+{\em callback} & A function taking an existing pointer and a new size. See the standard c realloc requirements for behavior. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{c__api_8h_af11502e19d260c2a68285b7eb9e635c1}\label{c__api_8h_af11502e19d260c2a68285b7eb9e635c1}} 
+\index{c\_api.h@{c\_api.h}!rallyhere\_global\_cleanup@{rallyhere\_global\_cleanup}}
+\index{rallyhere\_global\_cleanup@{rallyhere\_global\_cleanup}!c\_api.h@{c\_api.h}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_global\_cleanup()}{rallyhere\_global\_cleanup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+global\+\_\+cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cleanup the Rally Here SDK. 
+
+No other SDK calls may be made after this call. \mbox{\Hypertarget{c__api_8h_a70be86817854bcd19b3f10b31fdf19c8}\label{c__api_8h_a70be86817854bcd19b3f10b31fdf19c8}} 
+\index{c\_api.h@{c\_api.h}!rallyhere\_global\_init@{rallyhere\_global\_init}}
+\index{rallyhere\_global\_init@{rallyhere\_global\_init}!c\_api.h@{c\_api.h}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_global\_init()}{rallyhere\_global\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+global\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the Rally Here SDK. 
+
+Custom memory allocation must be made before this call, and no other SDK calls may be made until after this call. \mbox{\Hypertarget{c__api_8h_a4b0adaca38324c8ac2ebf6d2429b3d7a}\label{c__api_8h_a4b0adaca38324c8ac2ebf6d2429b3d7a}} 
+\index{c\_api.h@{c\_api.h}!rallyhere\_set\_default\_log\_level@{rallyhere\_set\_default\_log\_level}}
+\index{rallyhere\_set\_default\_log\_level@{rallyhere\_set\_default\_log\_level}!c\_api.h@{c\_api.h}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_set\_default\_log\_level()}{rallyhere\_set\_default\_log\_level()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+set\+\_\+default\+\_\+log\+\_\+level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_acea7ed85e1829a9b981399a844ae5120}{Rally\+Here\+Log\+Level}}}]{level }\end{DoxyParamCaption})}
+
+
+
+Sets the default log level for the SDK and any adapters created. This is only used if a log callback is not set. 
+

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structRallyHereMetricCheckpoint" kind="struct" language="C++" prot="public">
+    <compoundname>RallyHereMetricCheckpoint</compoundname>
+    <includes refid="c__metrics_8h" local="no">c_metrics.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structRallyHereMetricCheckpoint_1a0402f620add319371288822e23572acc" prot="public" static="no" mutable="no">
+        <type><ref refid="structRallyHereMetricAction" kindref="compound">RallyHereMetricAction</ref> *</type>
+        <definition>RallyHereMetricAction* RallyHereMetricCheckpoint::actions</definition>
+        <argsstring></argsstring>
+        <name>actions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An array of values for metrics in the same order that they were defined in the registry. A value must be provided for every metric defined in the registry. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="100" column="27" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structRallyHereMetricCheckpoint_1a8bbdcb3d673d2f41f1c45684b874d692" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RallyHereMetricCheckpoint::timestamp</definition>
+        <argsstring></argsstring>
+        <name>timestamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A UTC unix timestamp in seconds with milliseconds fraction </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="102" column="12" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>RallyHereMetricActionSetWithSample</label>
+        <link refid="structRallyHereMetricActionSetWithSample"/>
+      </node>
+      <node id="4">
+        <label>RallyHereMetricActionUnique</label>
+        <link refid="structRallyHereMetricActionUnique"/>
+      </node>
+      <node id="3">
+        <label>RallyHereMetricActionIncrement</label>
+        <link refid="structRallyHereMetricActionIncrement"/>
+      </node>
+      <node id="6">
+        <label>RallyHereMetricActionIncrementWithSample</label>
+        <link refid="structRallyHereMetricActionIncrementWithSample"/>
+      </node>
+      <node id="7">
+        <label>RallyHereMetricActionSet</label>
+        <link refid="structRallyHereMetricActionSet"/>
+      </node>
+      <node id="2">
+        <label>RallyHereMetricAction</label>
+        <link refid="structRallyHereMetricAction"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>increment</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>unique</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>set_with_sample</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>increment_with_sample</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>set</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>RallyHereMetricCheckpoint</label>
+        <link refid="structRallyHereMetricCheckpoint"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>actions</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="97" column="1" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="97" bodyend="103"/>
+    <listofallmembers>
+      <member refid="structRallyHereMetricCheckpoint_1a0402f620add319371288822e23572acc" prot="public" virt="non-virtual"><scope>RallyHereMetricCheckpoint</scope><name>actions</name></member>
+      <member refid="structRallyHereMetricCheckpoint_1a8bbdcb3d673d2f41f1c45684b874d692" prot="public" virt="non-virtual"><scope>RallyHereMetricCheckpoint</scope><name>timestamp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

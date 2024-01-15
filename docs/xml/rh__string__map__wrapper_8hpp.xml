@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="rh__string__map__wrapper_8hpp" kind="file" language="C++">
+    <compoundname>rh_string_map_wrapper.hpp</compoundname>
+    <includes refid="c__api_8h" local="yes">c_api.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>cstdint</label>
+      </node>
+      <node id="6">
+        <label>c_status.h</label>
+        <link refid="c__status_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>c_platform.h</label>
+        <link refid="c__platform_8h"/>
+      </node>
+      <node id="7">
+        <label>c_metrics.h</label>
+        <link refid="c__metrics_8h"/>
+      </node>
+      <node id="3">
+        <label>cstddef</label>
+      </node>
+      <node id="2">
+        <label>c_api.h</label>
+        <link refid="c__api_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</label>
+        <link refid="rh__string__map__wrapper_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structRallyHereStringMapWrapper" prot="public">RallyHereStringMapWrapper</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="c__api_8h" kindref="compound">c_api.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="structRallyHereStringMapWrapper" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structRallyHereStringMapWrapper" kindref="compound">RallyHereStringMapWrapper</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6" refid="structRallyHereStringMapWrapper_1a152cf562cde5bf71db47d862273f0548" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structRallyHereStringMapWrapper_1a152cf562cde5bf71db47d862273f0548" kindref="member">RallyHereStringMapWrapper</ref>(<ref refid="structRallyHereGameInstanceAdapter" kindref="compound">RallyHereGameInstanceAdapterPtr</ref><sp/>adapter_)<sp/>:<sp/><ref refid="structRallyHereStringMapWrapper_1a1301f10fba53c1c1da0b020290538f43" kindref="member">adapter</ref>(adapter_)</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structRallyHereStringMapWrapper_1abe2c41c2074b49052af3cdcb124ec1e3" kindref="member">code</ref><sp/>=<sp/>rallyhere_string_map_create(&amp;<ref refid="structRallyHereStringMapWrapper_1a6cf53e90e42ba7e166a4e4ed579d0239" kindref="member">map</ref>);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="c__status_8h_1a685f482fa4421e8b01ff18abe9e49b88" kindref="member">rallyhere_is_error</ref>(<ref refid="structRallyHereStringMapWrapper_1abe2c41c2074b49052af3cdcb124ec1e3" kindref="member">code</ref>))</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structRallyHereStringMapWrapper_1a6cf53e90e42ba7e166a4e4ed579d0239" kindref="member">map</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14" refid="structRallyHereStringMapWrapper_1aa2978f7dfda136c6faa0b0a56d54545a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structRallyHereStringMapWrapper_1aa2978f7dfda136c6faa0b0a56d54545a" kindref="member">~RallyHereStringMapWrapper</ref>()</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rallyhere_string_map_destroy(<ref refid="structRallyHereStringMapWrapper_1a6cf53e90e42ba7e166a4e4ed579d0239" kindref="member">map</ref>);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="structRallyHereStringMapWrapper_1a3b8dc841ee326e381b706d2377c8cb7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref><sp/><ref refid="structRallyHereStringMapWrapper_1a3b8dc841ee326e381b706d2377c8cb7e" kindref="member">add_to_string_map</ref>()</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="c__status_8h_1a685f482fa4421e8b01ff18abe9e49b88" kindref="member">rallyhere_is_error</ref>(<ref refid="structRallyHereStringMapWrapper_1abe2c41c2074b49052af3cdcb124ec1e3" kindref="member">code</ref>))</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structRallyHereStringMapWrapper_1abe2c41c2074b49052af3cdcb124ec1e3" kindref="member">code</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a1300ac8cfb4b729eb58870f1622ad954" kindref="member">RH_STATUS_OK</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Params&gt;</highlight></codeline>
+<codeline lineno="27" refid="structRallyHereStringMapWrapper_1a22f3c4be5745d64761c88713ae6c0167" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref><sp/><ref refid="structRallyHereStringMapWrapper_1a22f3c4be5745d64761c88713ae6c0167" kindref="member">add_to_string_map</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>key,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>value,<sp/>Params...<sp/>params)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="c__status_8h_1a685f482fa4421e8b01ff18abe9e49b88" kindref="member">rallyhere_is_error</ref>(<ref refid="structRallyHereStringMapWrapper_1abe2c41c2074b49052af3cdcb124ec1e3" kindref="member">code</ref>))</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structRallyHereStringMapWrapper_1abe2c41c2074b49052af3cdcb124ec1e3" kindref="member">code</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>rallyhere_string_map_set(<ref refid="structRallyHereStringMapWrapper_1a6cf53e90e42ba7e166a4e4ed579d0239" kindref="member">map</ref>,<sp/>key,<sp/>value);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="c__status_8h_1a685f482fa4421e8b01ff18abe9e49b88" kindref="member">rallyhere_is_error</ref>(result))</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structRallyHereStringMapWrapper_1a3b8dc841ee326e381b706d2377c8cb7e" kindref="member">add_to_string_map</ref>(params...);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="structRallyHereStringMapWrapper_1a7cc7e1005343f483c4dc1e9c88c5c721" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structRallyHereStringMap" kindref="compound">RallyHereStringMapPtr</ref><sp/><ref refid="structRallyHereStringMapWrapper_1a7cc7e1005343f483c4dc1e9c88c5c721" kindref="member">release</ref>()</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="structRallyHereStringMapWrapper_1a6cf53e90e42ba7e166a4e4ed579d0239" kindref="member">map</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structRallyHereStringMapWrapper_1a6cf53e90e42ba7e166a4e4ed579d0239" kindref="member">map</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="structRallyHereStringMapWrapper_1a1301f10fba53c1c1da0b020290538f43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structRallyHereGameInstanceAdapter" kindref="compound">RallyHereGameInstanceAdapterPtr</ref><sp/><ref refid="structRallyHereStringMapWrapper_1a1301f10fba53c1c1da0b020290538f43" kindref="member">adapter</ref>;</highlight></codeline>
+<codeline lineno="45" refid="structRallyHereStringMapWrapper_1a6cf53e90e42ba7e166a4e4ed579d0239" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structRallyHereStringMap" kindref="compound">RallyHereStringMapPtr</ref><sp/><ref refid="structRallyHereStringMapWrapper_1a6cf53e90e42ba7e166a4e4ed579d0239" kindref="member">map</ref>;</highlight></codeline>
+<codeline lineno="46" refid="structRallyHereStringMapWrapper_1abe2c41c2074b49052af3cdcb124ec1e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref><sp/><ref refid="structRallyHereStringMapWrapper_1abe2c41c2074b49052af3cdcb124ec1e3" kindref="member">code</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp"/>
+  </compounddef>
+</doxygen>

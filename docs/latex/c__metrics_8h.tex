@@ -1,0 +1,163 @@
+\hypertarget{c__metrics_8h}{}\doxysection{/home/asayman/\+Dev/game-\/host-\/adapter/include/game-\/host-\/adapter/c\+\_\+metrics.h File Reference}
+\label{c__metrics_8h}\index{/home/asayman/Dev/game-\/host-\/adapter/include/game-\/host-\/adapter/c\_metrics.h@{/home/asayman/Dev/game-\/host-\/adapter/include/game-\/host-\/adapter/c\_metrics.h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{c__metrics_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRallyHereMetricActionIncrementWithSample}{Rally\+Here\+Metric\+Action\+Increment\+With\+Sample}}
+\item 
+struct \mbox{\hyperlink{structRallyHereMetricActionSetWithSample}{Rally\+Here\+Metric\+Action\+Set\+With\+Sample}}
+\item 
+struct \mbox{\hyperlink{structRallyHereMetricActionIncrement}{Rally\+Here\+Metric\+Action\+Increment}}
+\item 
+struct \mbox{\hyperlink{structRallyHereMetricActionSet}{Rally\+Here\+Metric\+Action\+Set}}
+\item 
+struct \mbox{\hyperlink{structRallyHereMetricActionUnique}{Rally\+Here\+Metric\+Action\+Unique}}
+\item 
+struct \mbox{\hyperlink{structRallyHereMetricAction}{Rally\+Here\+Metric\+Action}}
+\item 
+struct \mbox{\hyperlink{structRallyHereMetricCheckpoint}{Rally\+Here\+Metric\+Checkpoint}}
+\item 
+struct \mbox{\hyperlink{structRallyHereMetricDefinition}{Rally\+Here\+Metric\+Definition}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618f}{Rally\+Here\+Metric\+Type}} \mbox{\hyperlink{c__metrics_8h_aa89a9a2cad39bc67edf0a86c58ab7f75}{Rally\+Here\+Metric\+Type}}
+\item 
+typedef enum \mbox{\hyperlink{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280}{Rally\+Here\+Metric\+Action\+Type}} \mbox{\hyperlink{c__metrics_8h_a0f584bba073df6feb1e7492408cd7a39}{Rally\+Here\+Metric\+Action\+Type}}
+\item 
+typedef enum \mbox{\hyperlink{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaa}{Rally\+Here\+Metric\+Flush}} \mbox{\hyperlink{c__metrics_8h_ae1518b512f4ad23fbb6291253b0bb068}{Rally\+Here\+Metric\+Flush}}
+\item 
+typedef Rally\+Here\+Metric\+Registry $\ast$ \mbox{\hyperlink{c__metrics_8h_ad652760d0664a541a9dde797e61da7fd}{Rally\+Here\+Metric\+Registry\+Ptr}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618f}{Rally\+Here\+Metric\+Type}} \{ \mbox{\hyperlink{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618fa8808a8162700d11fb63d8284b774cd02}{RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+TYPE\+\_\+\+COUNTER}}
+, \mbox{\hyperlink{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618fa6041bf7b02d4007e6d87337fc5d6ff53}{RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+TYPE\+\_\+\+GAUGE}}
+, \mbox{\hyperlink{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618fa4105dbae00ac34a5132dee29264c56a5}{RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+TYPE\+\_\+\+TIMER}}
+, \mbox{\hyperlink{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618fad836d7d3a6cca871b5f8ec9d923fef49}{RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+TYPE\+\_\+\+SET}}
+ \}
+\item 
+enum \mbox{\hyperlink{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280}{Rally\+Here\+Metric\+Action\+Type}} \{ \newline
+\mbox{\hyperlink{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280a675dde6d066fb043c8a73dab25c1919c}{RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+ACTION\+\_\+\+INCREMENT}}
+, \mbox{\hyperlink{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280abee4b24b39a5d86750ccca43bdbea9d6}{RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+ACTION\+\_\+\+INCREMENT\+\_\+\+WITH\+\_\+\+SAMPLE}}
+, \mbox{\hyperlink{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280aba4e49f55d7255fbc04b621d129eeff3}{RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+ACTION\+\_\+\+SET}}
+, \mbox{\hyperlink{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280aca0aa0676686c6b2c35e706a66074101}{RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+ACTION\+\_\+\+SET\+\_\+\+WITH\+\_\+\+SAMPLE}}
+, \newline
+\mbox{\hyperlink{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280a9e0be7f6aaae0def4094440401afabb0}{RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+ACTION\+\_\+\+UNIQUE}}
+ \}
+\item 
+enum \mbox{\hyperlink{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaa}{Rally\+Here\+Metric\+Flush}} \{ \mbox{\hyperlink{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaaa99d1a9dff3f4848e02989bfeeee49267}{RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+FLUSH}}
+, \mbox{\hyperlink{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaaa0e1696cbfa95d59a78a5b8b07af43943}{RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+NO\+\_\+\+FLUSH}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An interface for structuring metrics in a way that can be used either with statsd or graphite 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{c__metrics_8h_a0f584bba073df6feb1e7492408cd7a39}\label{c__metrics_8h_a0f584bba073df6feb1e7492408cd7a39}} 
+\index{c\_metrics.h@{c\_metrics.h}!RallyHereMetricActionType@{RallyHereMetricActionType}}
+\index{RallyHereMetricActionType@{RallyHereMetricActionType}!c\_metrics.h@{c\_metrics.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereMetricActionType}{RallyHereMetricActionType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280}{Rally\+Here\+Metric\+Action\+Type}} \mbox{\hyperlink{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280}{Rally\+Here\+Metric\+Action\+Type}}}
+
+\mbox{\Hypertarget{c__metrics_8h_ae1518b512f4ad23fbb6291253b0bb068}\label{c__metrics_8h_ae1518b512f4ad23fbb6291253b0bb068}} 
+\index{c\_metrics.h@{c\_metrics.h}!RallyHereMetricFlush@{RallyHereMetricFlush}}
+\index{RallyHereMetricFlush@{RallyHereMetricFlush}!c\_metrics.h@{c\_metrics.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereMetricFlush}{RallyHereMetricFlush}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaa}{Rally\+Here\+Metric\+Flush}} \mbox{\hyperlink{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaa}{Rally\+Here\+Metric\+Flush}}}
+
+\mbox{\Hypertarget{c__metrics_8h_ad652760d0664a541a9dde797e61da7fd}\label{c__metrics_8h_ad652760d0664a541a9dde797e61da7fd}} 
+\index{c\_metrics.h@{c\_metrics.h}!RallyHereMetricRegistryPtr@{RallyHereMetricRegistryPtr}}
+\index{RallyHereMetricRegistryPtr@{RallyHereMetricRegistryPtr}!c\_metrics.h@{c\_metrics.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereMetricRegistryPtr}{RallyHereMetricRegistryPtr}}
+{\footnotesize\ttfamily typedef Rally\+Here\+Metric\+Registry$\ast$ \mbox{\hyperlink{c__metrics_8h_ad652760d0664a541a9dde797e61da7fd}{Rally\+Here\+Metric\+Registry\+Ptr}}}
+
+\mbox{\Hypertarget{c__metrics_8h_aa89a9a2cad39bc67edf0a86c58ab7f75}\label{c__metrics_8h_aa89a9a2cad39bc67edf0a86c58ab7f75}} 
+\index{c\_metrics.h@{c\_metrics.h}!RallyHereMetricType@{RallyHereMetricType}}
+\index{RallyHereMetricType@{RallyHereMetricType}!c\_metrics.h@{c\_metrics.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereMetricType}{RallyHereMetricType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618f}{Rally\+Here\+Metric\+Type}} \mbox{\hyperlink{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618f}{Rally\+Here\+Metric\+Type}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280}\label{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280}} 
+\index{c\_metrics.h@{c\_metrics.h}!RallyHereMetricActionType@{RallyHereMetricActionType}}
+\index{RallyHereMetricActionType@{RallyHereMetricActionType}!c\_metrics.h@{c\_metrics.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereMetricActionType}{RallyHereMetricActionType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280}{Rally\+Here\+Metric\+Action\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RALLY\_HERE\_METRIC\_ACTION\_INCREMENT@{RALLY\_HERE\_METRIC\_ACTION\_INCREMENT}!c\_metrics.h@{c\_metrics.h}}\index{c\_metrics.h@{c\_metrics.h}!RALLY\_HERE\_METRIC\_ACTION\_INCREMENT@{RALLY\_HERE\_METRIC\_ACTION\_INCREMENT}}}\mbox{\Hypertarget{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280a675dde6d066fb043c8a73dab25c1919c}\label{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280a675dde6d066fb043c8a73dab25c1919c}} 
+RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+ACTION\+\_\+\+INCREMENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RALLY\_HERE\_METRIC\_ACTION\_INCREMENT\_WITH\_SAMPLE@{RALLY\_HERE\_METRIC\_ACTION\_INCREMENT\_WITH\_SAMPLE}!c\_metrics.h@{c\_metrics.h}}\index{c\_metrics.h@{c\_metrics.h}!RALLY\_HERE\_METRIC\_ACTION\_INCREMENT\_WITH\_SAMPLE@{RALLY\_HERE\_METRIC\_ACTION\_INCREMENT\_WITH\_SAMPLE}}}\mbox{\Hypertarget{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280abee4b24b39a5d86750ccca43bdbea9d6}\label{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280abee4b24b39a5d86750ccca43bdbea9d6}} 
+RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+ACTION\+\_\+\+INCREMENT\+\_\+\+WITH\+\_\+\+SAMPLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RALLY\_HERE\_METRIC\_ACTION\_SET@{RALLY\_HERE\_METRIC\_ACTION\_SET}!c\_metrics.h@{c\_metrics.h}}\index{c\_metrics.h@{c\_metrics.h}!RALLY\_HERE\_METRIC\_ACTION\_SET@{RALLY\_HERE\_METRIC\_ACTION\_SET}}}\mbox{\Hypertarget{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280aba4e49f55d7255fbc04b621d129eeff3}\label{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280aba4e49f55d7255fbc04b621d129eeff3}} 
+RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+ACTION\+\_\+\+SET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RALLY\_HERE\_METRIC\_ACTION\_SET\_WITH\_SAMPLE@{RALLY\_HERE\_METRIC\_ACTION\_SET\_WITH\_SAMPLE}!c\_metrics.h@{c\_metrics.h}}\index{c\_metrics.h@{c\_metrics.h}!RALLY\_HERE\_METRIC\_ACTION\_SET\_WITH\_SAMPLE@{RALLY\_HERE\_METRIC\_ACTION\_SET\_WITH\_SAMPLE}}}\mbox{\Hypertarget{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280aca0aa0676686c6b2c35e706a66074101}\label{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280aca0aa0676686c6b2c35e706a66074101}} 
+RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+ACTION\+\_\+\+SET\+\_\+\+WITH\+\_\+\+SAMPLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RALLY\_HERE\_METRIC\_ACTION\_UNIQUE@{RALLY\_HERE\_METRIC\_ACTION\_UNIQUE}!c\_metrics.h@{c\_metrics.h}}\index{c\_metrics.h@{c\_metrics.h}!RALLY\_HERE\_METRIC\_ACTION\_UNIQUE@{RALLY\_HERE\_METRIC\_ACTION\_UNIQUE}}}\mbox{\Hypertarget{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280a9e0be7f6aaae0def4094440401afabb0}\label{c__metrics_8h_ab8924252bdca9e75368c0256ad21b280a9e0be7f6aaae0def4094440401afabb0}} 
+RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+ACTION\+\_\+\+UNIQUE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaa}\label{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaa}} 
+\index{c\_metrics.h@{c\_metrics.h}!RallyHereMetricFlush@{RallyHereMetricFlush}}
+\index{RallyHereMetricFlush@{RallyHereMetricFlush}!c\_metrics.h@{c\_metrics.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereMetricFlush}{RallyHereMetricFlush}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaa}{Rally\+Here\+Metric\+Flush}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RALLY\_HERE\_METRIC\_FLUSH@{RALLY\_HERE\_METRIC\_FLUSH}!c\_metrics.h@{c\_metrics.h}}\index{c\_metrics.h@{c\_metrics.h}!RALLY\_HERE\_METRIC\_FLUSH@{RALLY\_HERE\_METRIC\_FLUSH}}}\mbox{\Hypertarget{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaaa99d1a9dff3f4848e02989bfeeee49267}\label{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaaa99d1a9dff3f4848e02989bfeeee49267}} 
+RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+FLUSH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RALLY\_HERE\_METRIC\_NO\_FLUSH@{RALLY\_HERE\_METRIC\_NO\_FLUSH}!c\_metrics.h@{c\_metrics.h}}\index{c\_metrics.h@{c\_metrics.h}!RALLY\_HERE\_METRIC\_NO\_FLUSH@{RALLY\_HERE\_METRIC\_NO\_FLUSH}}}\mbox{\Hypertarget{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaaa0e1696cbfa95d59a78a5b8b07af43943}\label{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaaa0e1696cbfa95d59a78a5b8b07af43943}} 
+RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+NO\+\_\+\+FLUSH&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618f}\label{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618f}} 
+\index{c\_metrics.h@{c\_metrics.h}!RallyHereMetricType@{RallyHereMetricType}}
+\index{RallyHereMetricType@{RallyHereMetricType}!c\_metrics.h@{c\_metrics.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereMetricType}{RallyHereMetricType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618f}{Rally\+Here\+Metric\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RALLY\_HERE\_METRIC\_TYPE\_COUNTER@{RALLY\_HERE\_METRIC\_TYPE\_COUNTER}!c\_metrics.h@{c\_metrics.h}}\index{c\_metrics.h@{c\_metrics.h}!RALLY\_HERE\_METRIC\_TYPE\_COUNTER@{RALLY\_HERE\_METRIC\_TYPE\_COUNTER}}}\mbox{\Hypertarget{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618fa8808a8162700d11fb63d8284b774cd02}\label{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618fa8808a8162700d11fb63d8284b774cd02}} 
+RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+TYPE\+\_\+\+COUNTER&Can be incremented with or without sampling \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RALLY\_HERE\_METRIC\_TYPE\_GAUGE@{RALLY\_HERE\_METRIC\_TYPE\_GAUGE}!c\_metrics.h@{c\_metrics.h}}\index{c\_metrics.h@{c\_metrics.h}!RALLY\_HERE\_METRIC\_TYPE\_GAUGE@{RALLY\_HERE\_METRIC\_TYPE\_GAUGE}}}\mbox{\Hypertarget{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618fa6041bf7b02d4007e6d87337fc5d6ff53}\label{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618fa6041bf7b02d4007e6d87337fc5d6ff53}} 
+RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+TYPE\+\_\+\+GAUGE&Can be set or incremented without sampling rate \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RALLY\_HERE\_METRIC\_TYPE\_TIMER@{RALLY\_HERE\_METRIC\_TYPE\_TIMER}!c\_metrics.h@{c\_metrics.h}}\index{c\_metrics.h@{c\_metrics.h}!RALLY\_HERE\_METRIC\_TYPE\_TIMER@{RALLY\_HERE\_METRIC\_TYPE\_TIMER}}}\mbox{\Hypertarget{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618fa4105dbae00ac34a5132dee29264c56a5}\label{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618fa4105dbae00ac34a5132dee29264c56a5}} 
+RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+TYPE\+\_\+\+TIMER&Can be set with or without sampling rate \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RALLY\_HERE\_METRIC\_TYPE\_SET@{RALLY\_HERE\_METRIC\_TYPE\_SET}!c\_metrics.h@{c\_metrics.h}}\index{c\_metrics.h@{c\_metrics.h}!RALLY\_HERE\_METRIC\_TYPE\_SET@{RALLY\_HERE\_METRIC\_TYPE\_SET}}}\mbox{\Hypertarget{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618fad836d7d3a6cca871b5f8ec9d923fef49}\label{c__metrics_8h_a5d296b8f5371e7f66d218ab96ca9618fad836d7d3a6cca871b5f8ec9d923fef49}} 
+RALLY\+\_\+\+HERE\+\_\+\+METRIC\+\_\+\+TYPE\+\_\+\+SET&\\
+\hline
+
+\end{DoxyEnumFields}

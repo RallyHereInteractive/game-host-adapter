@@ -1,0 +1,126 @@
+\hypertarget{namespacerallyhere}{}\doxysection{rallyhere Namespace Reference}
+\label{namespacerallyhere}\index{rallyhere@{rallyhere}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacerallyhere_1_1allocator}{allocator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrallyhere_1_1a2s__simple__response}{a2s\+\_\+simple\+\_\+response}}
+\item 
+struct \mbox{\hyperlink{structrallyhere_1_1server__info}{server\+\_\+info}}
+\item 
+struct \mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}}
+\item 
+class \mbox{\hyperlink{classrallyhere_1_1Status}{Status}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacerallyhere_a7f5299480c8b27fb1ecb8a48090074be}{memory\+\_\+buffer}} = fmt\+::basic\+\_\+memory\+\_\+buffer$<$ char, fmt\+::inline\+\_\+buffer\+\_\+size, \mbox{\hyperlink{namespacerallyhere_1_1allocator_a72acd99bdea4508c86208ec46d611292}{rallyhere\+::allocator\+::allocator}}$<$ char $>$ $>$
+\item 
+using \mbox{\hyperlink{namespacerallyhere_a06e017abf8a0212e162b377dc793078e}{string}} = std\+::basic\+\_\+string$<$ char, std\+::char\+\_\+traits$<$ char $>$, \mbox{\hyperlink{namespacerallyhere_1_1allocator_a72acd99bdea4508c86208ec46d611292}{rallyhere\+::allocator\+::allocator}}$<$ char $>$ $>$
+\item 
+using \mbox{\hyperlink{namespacerallyhere_ae6c398b5cead92743640822e3a687302}{stringstream}} = std\+::basic\+\_\+stringstream$<$ char, std\+::char\+\_\+traits$<$ char $>$, \mbox{\hyperlink{namespacerallyhere_1_1allocator_a72acd99bdea4508c86208ec46d611292}{rallyhere\+::allocator\+::allocator}}$<$ char $>$ $>$
+\item 
+{\footnotesize template$<$class T $>$ }\\using \mbox{\hyperlink{namespacerallyhere_a9822d3fb78edd3730ef97afb9b2c06d9}{vector}} = std\+::vector$<$ T, \mbox{\hyperlink{namespacerallyhere_1_1allocator_a72acd99bdea4508c86208ec46d611292}{rallyhere\+::allocator\+::allocator}}$<$ T $>$ $>$
+\item 
+using \mbox{\hyperlink{namespacerallyhere_a6a86fdf96ef7e4a9876d443a6bba29ec}{string\+\_\+body}} = boost\+::beast\+::http\+::basic\+\_\+string\+\_\+body$<$ char, std\+::char\+\_\+traits$<$ char $>$, \mbox{\hyperlink{namespacerallyhere_1_1allocator_a72acd99bdea4508c86208ec46d611292}{rallyhere\+::allocator\+::allocator}}$<$ char $>$ $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566}{a2s\+\_\+query}} \+: uint8\+\_\+t \{ \mbox{\hyperlink{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566acaf9b6b99962bf5c2264824231d7a40c}{info}} = 0x54
+, \mbox{\hyperlink{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566aa2bbabfe7b1dd886a0c32b57bd8a94f9}{players}} = 0x55
+, \mbox{\hyperlink{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566aa4f86f7bfc24194b276c22e0ef158197}{rules}} = 0x56
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} const char $\ast$ \mbox{\hyperlink{namespacerallyhere_a01f61b99849af1519d941b913b1fb746}{status\+\_\+text}} (\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}})
+\item 
+constexpr bool \mbox{\hyperlink{namespacerallyhere_aaebe4b7543e4994038781a51d57e9bae}{is\+\_\+error}} (\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} err)
+\item 
+constexpr bool \mbox{\hyperlink{namespacerallyhere_a32e5c5dcdf2d843bff452a896dc45d48}{is\+\_\+cancelled}} (\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} err)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacerallyhere_a7f5299480c8b27fb1ecb8a48090074be}\label{namespacerallyhere_a7f5299480c8b27fb1ecb8a48090074be}} 
+\index{rallyhere@{rallyhere}!memory\_buffer@{memory\_buffer}}
+\index{memory\_buffer@{memory\_buffer}!rallyhere@{rallyhere}}
+\doxysubsubsection{\texorpdfstring{memory\_buffer}{memory\_buffer}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacerallyhere_a7f5299480c8b27fb1ecb8a48090074be}{rallyhere\+::memory\+\_\+buffer}} = typedef fmt\+::basic\+\_\+memory\+\_\+buffer$<$char, fmt\+::inline\+\_\+buffer\+\_\+size, \mbox{\hyperlink{namespacerallyhere_1_1allocator_a72acd99bdea4508c86208ec46d611292}{rallyhere\+::allocator\+::allocator}}$<$char$>$ $>$}
+
+\mbox{\Hypertarget{namespacerallyhere_a06e017abf8a0212e162b377dc793078e}\label{namespacerallyhere_a06e017abf8a0212e162b377dc793078e}} 
+\index{rallyhere@{rallyhere}!string@{string}}
+\index{string@{string}!rallyhere@{rallyhere}}
+\doxysubsubsection{\texorpdfstring{string}{string}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacerallyhere_a06e017abf8a0212e162b377dc793078e}{rallyhere\+::string}} = typedef std\+::basic\+\_\+string$<$char, std\+::char\+\_\+traits$<$char$>$, \mbox{\hyperlink{namespacerallyhere_1_1allocator_a72acd99bdea4508c86208ec46d611292}{rallyhere\+::allocator\+::allocator}}$<$char$>$ $>$}
+
+\mbox{\Hypertarget{namespacerallyhere_a6a86fdf96ef7e4a9876d443a6bba29ec}\label{namespacerallyhere_a6a86fdf96ef7e4a9876d443a6bba29ec}} 
+\index{rallyhere@{rallyhere}!string\_body@{string\_body}}
+\index{string\_body@{string\_body}!rallyhere@{rallyhere}}
+\doxysubsubsection{\texorpdfstring{string\_body}{string\_body}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacerallyhere_a6a86fdf96ef7e4a9876d443a6bba29ec}{rallyhere\+::string\+\_\+body}} = typedef boost\+::beast\+::http\+::basic\+\_\+string\+\_\+body$<$char, std\+::char\+\_\+traits$<$char$>$, \mbox{\hyperlink{namespacerallyhere_1_1allocator_a72acd99bdea4508c86208ec46d611292}{rallyhere\+::allocator\+::allocator}}$<$char$>$ $>$}
+
+\mbox{\Hypertarget{namespacerallyhere_ae6c398b5cead92743640822e3a687302}\label{namespacerallyhere_ae6c398b5cead92743640822e3a687302}} 
+\index{rallyhere@{rallyhere}!stringstream@{stringstream}}
+\index{stringstream@{stringstream}!rallyhere@{rallyhere}}
+\doxysubsubsection{\texorpdfstring{stringstream}{stringstream}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacerallyhere_ae6c398b5cead92743640822e3a687302}{rallyhere\+::stringstream}} = typedef std\+::basic\+\_\+stringstream$<$char, std\+::char\+\_\+traits$<$char$>$, \mbox{\hyperlink{namespacerallyhere_1_1allocator_a72acd99bdea4508c86208ec46d611292}{rallyhere\+::allocator\+::allocator}}$<$char$>$ $>$}
+
+\mbox{\Hypertarget{namespacerallyhere_a9822d3fb78edd3730ef97afb9b2c06d9}\label{namespacerallyhere_a9822d3fb78edd3730ef97afb9b2c06d9}} 
+\index{rallyhere@{rallyhere}!vector@{vector}}
+\index{vector@{vector}!rallyhere@{rallyhere}}
+\doxysubsubsection{\texorpdfstring{vector}{vector}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+using \mbox{\hyperlink{namespacerallyhere_a9822d3fb78edd3730ef97afb9b2c06d9}{rallyhere\+::vector}} = typedef std\+::vector$<$T, \mbox{\hyperlink{namespacerallyhere_1_1allocator_a72acd99bdea4508c86208ec46d611292}{rallyhere\+::allocator\+::allocator}}$<$T$>$ $>$}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566}\label{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566}} 
+\index{rallyhere@{rallyhere}!a2s\_query@{a2s\_query}}
+\index{a2s\_query@{a2s\_query}!rallyhere@{rallyhere}}
+\doxysubsubsection{\texorpdfstring{a2s\_query}{a2s\_query}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566}{rallyhere\+::a2s\+\_\+query}} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{info@{info}!rallyhere@{rallyhere}}\index{rallyhere@{rallyhere}!info@{info}}}\mbox{\Hypertarget{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566acaf9b6b99962bf5c2264824231d7a40c}\label{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566acaf9b6b99962bf5c2264824231d7a40c}} 
+info&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{players@{players}!rallyhere@{rallyhere}}\index{rallyhere@{rallyhere}!players@{players}}}\mbox{\Hypertarget{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566aa2bbabfe7b1dd886a0c32b57bd8a94f9}\label{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566aa2bbabfe7b1dd886a0c32b57bd8a94f9}} 
+players&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rules@{rules}!rallyhere@{rallyhere}}\index{rallyhere@{rallyhere}!rules@{rules}}}\mbox{\Hypertarget{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566aa4f86f7bfc24194b276c22e0ef158197}\label{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566aa4f86f7bfc24194b276c22e0ef158197}} 
+rules&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacerallyhere_a32e5c5dcdf2d843bff452a896dc45d48}\label{namespacerallyhere_a32e5c5dcdf2d843bff452a896dc45d48}} 
+\index{rallyhere@{rallyhere}!is\_cancelled@{is\_cancelled}}
+\index{is\_cancelled@{is\_cancelled}!rallyhere@{rallyhere}}
+\doxysubsubsection{\texorpdfstring{is\_cancelled()}{is\_cancelled()}}
+{\footnotesize\ttfamily constexpr bool rallyhere\+::is\+\_\+cancelled (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}}}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{namespacerallyhere_aaebe4b7543e4994038781a51d57e9bae}\label{namespacerallyhere_aaebe4b7543e4994038781a51d57e9bae}} 
+\index{rallyhere@{rallyhere}!is\_error@{is\_error}}
+\index{is\_error@{is\_error}!rallyhere@{rallyhere}}
+\doxysubsubsection{\texorpdfstring{is\_error()}{is\_error()}}
+{\footnotesize\ttfamily constexpr bool rallyhere\+::is\+\_\+error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}}}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{namespacerallyhere_a01f61b99849af1519d941b913b1fb746}\label{namespacerallyhere_a01f61b99849af1519d941b913b1fb746}} 
+\index{rallyhere@{rallyhere}!status\_text@{status\_text}}
+\index{status\_text@{status\_text}!rallyhere@{rallyhere}}
+\doxysubsubsection{\texorpdfstring{status\_text()}{status\_text()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} const char$\ast$ rallyhere\+::status\+\_\+text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}}}]{ }\end{DoxyParamCaption})}
+

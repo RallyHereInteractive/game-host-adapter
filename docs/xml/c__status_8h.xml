@@ -1,0 +1,1120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="c__status_8h" kind="file" language="C++">
+    <compoundname>c_status.h</compoundname>
+    <includes refid="c__platform_8h" local="yes">c_platform.h</includes>
+    <includedby refid="c__api_8h" local="yes">/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h</includedby>
+    <includedby refid="rh__status_8h" local="yes">/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h</label>
+        <link refid="c__status_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>c_platform.h</label>
+        <link refid="c__platform_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h</label>
+        <link refid="c__status_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h</label>
+        <link refid="rh__status_8h"/>
+      </node>
+      <node id="2">
+        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h</label>
+        <link refid="c__api_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</label>
+        <link refid="rh__string__map__wrapper_8hpp"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" prot="public" static="no" strong="no">
+        <type></type>
+        <name>RallyHereStatusCode</name>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a1300ac8cfb4b729eb58870f1622ad954" prot="public">
+          <name>RH_STATUS_OK</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a0a8082fa14843a2281943608a8cd7dd1" prot="public">
+          <name>RH_STATUS_ERROR</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a591d6d384b580a2d37b3d8ae8dcb936f" prot="public">
+          <name>RH_STATUS_NO_BOOTSTRAP_MODE_PROVIDED</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a16e0d6608c332601d336233f07e82490" prot="public">
+          <name>RH_STATUS_CREDENTIALS_FILE_NOT_TWO_LINES</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a0728f365351ad818785f6f3c23d9066a" prot="public">
+          <name>RH_STATUS_NO_RALLYHERE_URL_PROVIDED</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a6d05a38f126a17b22f377b4ca0a67d1e" prot="public">
+          <name>RH_STATUS_NO_SIC_PROFILE_ID_PROVIDED</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a08de4e979e2cd29910c01b3f0c9f10ca" prot="public">
+          <name>RH_STATUS_CANCELLED</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a98f11d0f7159aa51983be9d327c875d5" prot="public">
+          <name>RH_STATUS_VALIDATION_ERROR_ADAPTER_IS_NULLPTR</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ab66449e71969e766c2c9f95e8d22b799" prot="public">
+          <name>RH_STATUS_ADAPTER_ALLOCATION_ERROR</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a14b9ca3fe3edd5b354d4f1f2baec5120" prot="public">
+          <name>RH_STATUS_VALIDATION_ERROR_MAP_IS_NULLPTR</name>
+          <initializer>= 9</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4d39404778b776c9c89a6ef35e1253d0" prot="public">
+          <name>RH_STATUS_MAP_ALLOCATION_ERROR</name>
+          <initializer>= 10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3d20263bbd6aa84ad40be352c2be37ea" prot="public">
+          <name>RH_STATUS_VALIDATION_ERROR_KEY_IS_NULLPTR</name>
+          <initializer>= 11</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a8c740518e8c6f392102f71fea5507287" prot="public">
+          <name>RH_STATUS_VALIDATION_ERROR_VALUE_IS_NULLPTR</name>
+          <initializer>= 12</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a77b7d9abc7c812f92b327433aa866c78" prot="public">
+          <name>RH_STATUS_VALIDATION_ERROR_VALUE_SIZE_IS_NULLPTR</name>
+          <initializer>= 13</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5e4a428dc699b3d678db59bb779f5694" prot="public">
+          <name>RH_STATUS_KEY_NOT_FOUND</name>
+          <initializer>= 14</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3db695bc7d8868bbf0e81d1f88b1be87" prot="public">
+          <name>RH_STATUS_COULD_NOT_PARSE_RESPONSE</name>
+          <initializer>= 15</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4d43ce15af4adb44b399761e60fa926a" prot="public">
+          <name>RH_STATUS_RESPONSE_NO_ACCESS_TOKEN</name>
+          <initializer>= 16</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784adb88c2387ecc66e91690d3829fe28be8" prot="public">
+          <name>RH_STATUS_RESPONSE_NO_REFRESH_TOKEN</name>
+          <initializer>= 17</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a6e73aa6f6a63192a578ca7414e95cd5e" prot="public">
+          <name>RH_STATUS_RESPONSE_NO_AUTH_SUCCESS</name>
+          <initializer>= 18</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a447c1e341e5a8cdf4041b529ceec5865" prot="public">
+          <name>RH_STATUS_RESPONSE_AUTH_SUCCESS_NOT_BOOL</name>
+          <initializer>= 19</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784adb2f2b041e5db61c058c60bd65e6a455" prot="public">
+          <name>RH_STATUS_POLL_INTERVAL_MUST_BE_NUMERIC</name>
+          <initializer>= 20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ade028b1a3ffa2b385cde32b38dd35a07" prot="public">
+          <name>RH_STATUS_CANNOT_POLL_WITHOUT_ON_ALLOCATED_CALLBACK</name>
+          <initializer>= 21</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4a48f683cc94fd6e8197b5911042c3d7" prot="public">
+          <name>RH_STATUS_PROMETHEUS_PORT_MUST_BE_NUMERIC</name>
+          <initializer>= 22</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aa64721cd4e8953c139b590188f80bdb1" prot="public">
+          <name>RH_STATUS_PROMETHEUS_ALREADY_STARTED</name>
+          <initializer>= 23</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ad38349022692a036840f5e30522f7666" prot="public">
+          <name>RH_STATUS_PROMETHEUS_COULD_NOT_START</name>
+          <initializer>= 24</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a180125453cc22048fb1e9056f2c072c0" prot="public">
+          <name>RH_STATUS_REQUEST_TIMEOUT_MUST_BE_NUMERIC</name>
+          <initializer>= 25</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ac219f6cf5dcf3a07256f0c5aa82aa0b5" prot="public">
+          <name>RH_STATUS_POLL_UNKNOWN_STATE</name>
+          <initializer>= 26</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a6cf9b7466cdd3efb72560137a6639428" prot="public">
+          <name>RH_STATUS_COULD_NOT_PARSE_SERVER_JSON</name>
+          <initializer>= 27</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a1c03163fdafb759f77fef0787325c04d" prot="public">
+          <name>RH_STATUS_NO_SERVER_JSON</name>
+          <initializer>= 28</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ae74f345ad235bc1b894ef9749dbcc428" prot="public">
+          <name>RH_STATUS_A2S_QUERY_PORT_MUST_BE_SHORT_NUMBER</name>
+          <initializer>= 29</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3d939ba719a1e72dac87213d000ac91d" prot="public">
+          <name>RH_STATUS_VALIDATION_ERROR_STATS_IS_NULLPTR</name>
+          <initializer>= 30</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784abf084b16aa904d3c3789d82ccc7d6323" prot="public">
+          <name>RH_STATUS_VALIDATION_ERROR_STATS_PROVIDED_IS_NULLPTR</name>
+          <initializer>= 31</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aaf0fc67a7fb4f7d9865febf5d1ead80e" prot="public">
+          <name>RH_STATUS_PUBLIC_PORT_MUST_BE_NUMERIC</name>
+          <initializer>= 32</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ade38e83d581d90d8543d8c85ed73dada" prot="public">
+          <name>RH_STATUS_BIND_PORT_MUST_BE_NUMERIC</name>
+          <initializer>= 33</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a738b0b9660397d1f7d71704babff4cff" prot="public">
+          <name>RH_STATUS_MAX_POLL_FAILURES_MUST_BE_NUMERIC</name>
+          <initializer>= 34</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a10ab1036f37b4c3d9cb0988004485a6d" prot="public">
+          <name>RH_STATUS_MUST_PROVIDE_REPORTED_PUBLIC_HOST</name>
+          <initializer>= 35</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a8e406a5a7f2663bb70943ef85f58f182" prot="public">
+          <name>RH_STATUS_VALIDATION_ERROR_DEFINITION_IS_NULLPTR</name>
+          <initializer>= 36</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aaf20d589448c0a0da3bf3a91b452fbaf" prot="public">
+          <name>RH_STATUS_VALIDATION_ERROR_ACTION_IS_NULLPTR</name>
+          <initializer>= 37</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a085134dfbbf8492eb1da3f35122ff36a" prot="public">
+          <name>RH_STATUS_METRIC_TYPE_NOT_SUPPORTED_BY_BACKEND</name>
+          <initializer>= 38</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ad44f9e0270716cadf96288b761ce5760" prot="public">
+          <name>RH_STATUS_METRIC_BACKEND_GRAPHITE_NOT_CONFIGURED</name>
+          <initializer>= 39</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a02214395540aeb3a80b0d53ff59e0bf4" prot="public">
+          <name>RH_STATUS_METRIC_BACKEND_STATSD_NOT_CONFIGURED</name>
+          <initializer>= 40</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a7dc9b355287b4572d7f7e07c842d792b" prot="public">
+          <name>RH_STATUS_METRIC_ACTION_NOT_SUPPORTED_BY_BACKEND</name>
+          <initializer>= 41</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3c19942f92f264f61214ced37ffe17cc" prot="public">
+          <name>RH_STATUS_METRIC_ACTION_NOT_SUPPORTED_BY_TYPE</name>
+          <initializer>= 42</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5478aec493c7e8ff5004055be4221399" prot="public">
+          <name>RH_STATUS_HTTP_CONTINUE</name>
+          <initializer>= 100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a43b9eaaebddcf33d56af93d96f14efed" prot="public">
+          <name>RH_STATUS_HTTP_SWITCHINGPROTOCOLS</name>
+          <initializer>= 101</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a223d974ddcd1ecf9a5b7402cee4133ec" prot="public">
+          <name>RH_STATUS_HTTP_PROCESSING</name>
+          <initializer>= 102</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ad1b104ef3131ee6df848c09bb0de3656" prot="public">
+          <name>RH_STATUS_HTTP_OK</name>
+          <initializer>= 200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a577e489149a1c88c5026325fde1f3fe0" prot="public">
+          <name>RH_STATUS_HTTP_CREATED</name>
+          <initializer>= 201</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a7f1a08b981824b5fd71980ed577995de" prot="public">
+          <name>RH_STATUS_HTTP_ACCEPTED</name>
+          <initializer>= 202</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a9b8130c9f50673fe080184cf145e63a5" prot="public">
+          <name>RH_STATUS_HTTP_NON_AUTHORITATIVE_INFORMATION</name>
+          <initializer>= 203</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af4c21eddcc52d7cabf2531c05372f27e" prot="public">
+          <name>RH_STATUS_HTTP_NO_CONTENT</name>
+          <initializer>= 204</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a899149acda4ae2df0834d4934aba4065" prot="public">
+          <name>RH_STATUS_HTTP_RESET_CONTENT</name>
+          <initializer>= 205</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ac4d1ae31ecd4e46e3924842b5e41584e" prot="public">
+          <name>RH_STATUS_HTTP_PARTIAL_CONTENT</name>
+          <initializer>= 206</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aae0caa6d08f4d5ff13dd94d40182af9b" prot="public">
+          <name>RH_STATUS_HTTP_MULTI_STATUS</name>
+          <initializer>= 207</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784afca98c3f4ca438c4c88f29d91d328932" prot="public">
+          <name>RH_STATUS_HTTP_ALREADY_REPORTED</name>
+          <initializer>= 208</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ac0c6674325564218168db382c032b7cc" prot="public">
+          <name>RH_STATUS_HTTP_IM_USED</name>
+          <initializer>= 226</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784acc9c74a0fb57a2e3c7e5cc32784f6c0e" prot="public">
+          <name>RH_STATUS_HTTP_MULTIPLE_CHOICES</name>
+          <initializer>= 300</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a45545da4a5c7fd73d083bd244be771cf" prot="public">
+          <name>RH_STATUS_HTTP_MOVED_PERMANENTLY</name>
+          <initializer>= 301</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a2f741463ff376b0521c4c0e0838bed3a" prot="public">
+          <name>RH_STATUS_HTTP_FOUND</name>
+          <initializer>= 302</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a133055c9cfaea5f348de159a04e82d47" prot="public">
+          <name>RH_STATUS_HTTP_SEE_OTHER</name>
+          <initializer>= 303</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a92c6520787839cfbe4930558cc90848d" prot="public">
+          <name>RH_STATUS_HTTP_NOT_MODIFIED</name>
+          <initializer>= 304</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aebb75c1de47bb8f05fafa4ff5ff5d4b1" prot="public">
+          <name>RH_STATUS_HTTP_USE_PROXY</name>
+          <initializer>= 305</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a9e7195d5fc60e483740172dca869e1d2" prot="public">
+          <name>RH_STATUS_HTTP_TEMPORARY_REDIRECT</name>
+          <initializer>= 307</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ae3048fb3d9eaff93215a83074f341d55" prot="public">
+          <name>RH_STATUS_HTTP_PERMANENT_REDIRECT</name>
+          <initializer>= 308</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af355c8bd8782b8691d0e3d8c11bfd449" prot="public">
+          <name>RH_STATUS_HTTP_BAD_REQUEST</name>
+          <initializer>= 400</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a53a40133dd3bed4f65ca32bf3a0200c9" prot="public">
+          <name>RH_STATUS_HTTP_UNAUTHORIZED</name>
+          <initializer>= 401</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aa448dfeca5c1687a5465342b69aefa2d" prot="public">
+          <name>RH_STATUS_HTTP_PAYMENT_REQUIRED</name>
+          <initializer>= 402</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ae723dcad7bcf05bf06454829e89a985e" prot="public">
+          <name>RH_STATUS_HTTP_FORBIDDEN</name>
+          <initializer>= 403</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784abd3a892c457e4bb8c55599fbd8a47168" prot="public">
+          <name>RH_STATUS_HTTP_NOT_FOUND</name>
+          <initializer>= 404</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af7806e2beade7fc8bb5841543f69d345" prot="public">
+          <name>RH_STATUS_HTTP_METHOD_NOT_ALLOWED</name>
+          <initializer>= 405</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a370243080046a3ed1821e5f8db3227b6" prot="public">
+          <name>RH_STATUS_HTTP_NOT_ACCEPTABLE</name>
+          <initializer>= 406</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784adac4f22e34a48a0c463ba58e69d384a7" prot="public">
+          <name>RH_STATUS_HTTP_PROXY_AUTHENTICATION_REQUIRED</name>
+          <initializer>= 407</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a9b27eba03e8f3234f881347e67ef96d0" prot="public">
+          <name>RH_STATUS_HTTP_REQUEST_TIMEOUT</name>
+          <initializer>= 408</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a57fa7fcac0634a5c52e329be29b97136" prot="public">
+          <name>RH_STATUS_HTTP_CONFLICT</name>
+          <initializer>= 409</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ac585afe002c3265c1342d85df170216a" prot="public">
+          <name>RH_STATUS_HTTP_GONE</name>
+          <initializer>= 410</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5e293cc2bd81d243186b34c70b2fafee" prot="public">
+          <name>RH_STATUS_HTTP_LENGTH_REQUIRED</name>
+          <initializer>= 411</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5769b74b8a6ed69270e20c5ca53bf7eb" prot="public">
+          <name>RH_STATUS_HTTP_PRECONDITION_FAILED</name>
+          <initializer>= 412</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a486dd7ed5ddedf5b7e300111795a64fc" prot="public">
+          <name>RH_STATUS_HTTP_PAYLOAD_TOO_LARGE</name>
+          <initializer>= 413</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a8efbcf57b51ade7bddaf897569fbb47b" prot="public">
+          <name>RH_STATUS_HTTP_URI_TOO_LONG</name>
+          <initializer>= 414</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784abcd0cfa4ffcacb43bea17aab90d50ae2" prot="public">
+          <name>RH_STATUS_HTTP_UNSUPPORTED_MEDIA_TYPE</name>
+          <initializer>= 415</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a203d9f825b4a78cfb385c28ab8d57292" prot="public">
+          <name>RH_STATUS_HTTP_RANGE_NOT_SATISFIABLE</name>
+          <initializer>= 416</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4dac306a3008196bd260eeace4cdf091" prot="public">
+          <name>RH_STATUS_HTTP_EXPECTATION_FAILED</name>
+          <initializer>= 417</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5a14d1cd310a3dd313b310dd79d7f295" prot="public">
+          <name>RH_STATUS_HTTP_MISDIRECTED_REQUEST</name>
+          <initializer>= 421</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af1d34fd47c9b34762c763f97b10c6a11" prot="public">
+          <name>RH_STATUS_HTTP_UNPROCESSABLE_ENTITY</name>
+          <initializer>= 422</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a101307b051c572902487a4b7ec953632" prot="public">
+          <name>RH_STATUS_HTTP_LOCKED</name>
+          <initializer>= 423</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a2745cc5bb3f7f31c515a2878165412d9" prot="public">
+          <name>RH_STATUS_HTTP_FAILED_DEPENDENCY</name>
+          <initializer>= 424</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aab5101d752651a6675c105b5536e6309" prot="public">
+          <name>RH_STATUS_HTTP_UPGRADE_REQUIRED</name>
+          <initializer>= 426</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af3442d832944a04dc0b23693bc416cb1" prot="public">
+          <name>RH_STATUS_HTTP_PRECONDITION_REQUIRED</name>
+          <initializer>= 428</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aa567f4004067cb24273babc68ed255c2" prot="public">
+          <name>RH_STATUS_HTTP_TOO_MANY_REQUESTS</name>
+          <initializer>= 429</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aee7dc6b706cdd226812ac5e3f7c50835" prot="public">
+          <name>RH_STATUS_HTTP_REQUEST_HEADER_FIELDS_TOO_LARGE</name>
+          <initializer>= 431</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a882e041d9cd5e342ac484bfd4061349e" prot="public">
+          <name>RH_STATUS_HTTP_CONNECTION_CLOSED_WITHOUT_RESPONSE</name>
+          <initializer>= 444</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784acd8685f41ad26673ce4cc2aeddb38ccf" prot="public">
+          <name>RH_STATUS_HTTP_UNAVAILABLE_FOR_LEGAL_REASONS</name>
+          <initializer>= 451</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a81bf8452ba3a748298b86e4ab5270758" prot="public">
+          <name>RH_STATUS_HTTP_CLIENT_CLOSED_REQUEST</name>
+          <initializer>= 499</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ae484935a39dcc713ba63b0445cd3b09c" prot="public">
+          <name>RH_STATUS_HTTP_INTERNAL_SERVER_ERROR</name>
+          <initializer>= 500</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a45e9842912641c9140d8c4d8ffca6af6" prot="public">
+          <name>RH_STATUS_HTTP_NOT_IMPLEMENTED</name>
+          <initializer>= 501</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ab85c08ff899dca1462df44fa2daa5ee1" prot="public">
+          <name>RH_STATUS_HTTP_BAD_GATEWAY</name>
+          <initializer>= 502</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a09ea99f6fb73f7b3c01f672657036648" prot="public">
+          <name>RH_STATUS_HTTP_SERVICE_UNAVAILABLE</name>
+          <initializer>= 503</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a6f9b2b572db711be8848616259a33055" prot="public">
+          <name>RH_STATUS_HTTP_GATEWAY_TIMEOUT</name>
+          <initializer>= 504</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4803f0ec6f4ddf01df890d0e04776463" prot="public">
+          <name>RH_STATUS_HTTP_HTTP_VERSION_NOT_SUPPORTED</name>
+          <initializer>= 505</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a64c11a10180823c325f291c16cb65b36" prot="public">
+          <name>RH_STATUS_HTTP_VARIANT_ALSO_NEGOTIATES</name>
+          <initializer>= 506</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a734a2e9ece510445f952300653bcdecd" prot="public">
+          <name>RH_STATUS_HTTP_INSUFFICIENT_STORAGE</name>
+          <initializer>= 507</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a11be1617e2139aa4d65165008bcdbb07" prot="public">
+          <name>RH_STATUS_HTTP_LOOP_DETECTED</name>
+          <initializer>= 508</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aa02e63729cb24297e61eb5b2cbe41643" prot="public">
+          <name>RH_STATUS_HTTP_NOT_EXTENDED</name>
+          <initializer>= 510</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a478df6f1985318d71c727380fc52dded" prot="public">
+          <name>RH_STATUS_HTTP_NETWORK_AUTHENTICATION_REQUIRED</name>
+          <initializer>= 511</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3f9ed1646539ccefb7b2d7ab9df99f22" prot="public">
+          <name>RH_STATUS_HTTP_NETWORK_CONNECT_TIMEOUT_ERROR</name>
+          <initializer>= 599</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" line="26" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" bodystart="27" bodyend="137"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="c__status_8h_1a9956737139e2ba1d2d6fb0e7c0079c8b" prot="public" static="no">
+        <type>enum <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>typedef enum RallyHereStatusCode RallyHereStatusCode</definition>
+        <argsstring></argsstring>
+        <name>RallyHereStatusCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" line="137" column="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="c__status_8h_1a685f482fa4421e8b01ff18abe9e49b88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> bool</type>
+        <definition>RH_EXPORT bool rallyhere_is_error</definition>
+        <argsstring>(RallyHereStatusCode err)</argsstring>
+        <name>rallyhere_is_error</name>
+        <param>
+          <type><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" line="139" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" declline="139" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="c__status_8h_1aa2352955c2e1fd2bdd2c4f58804dfe6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> bool</type>
+        <definition>RH_EXPORT bool rallyhere_is_cancelled</definition>
+        <argsstring>(RallyHereStatusCode err)</argsstring>
+        <name>rallyhere_is_cancelled</name>
+        <param>
+          <type><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" line="140" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" declline="140" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="c__status_8h_1af3db8a9f050d08c872c2008e17736816" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> const char *</type>
+        <definition>RH_EXPORT const char* rallyhere_status_text</definition>
+        <argsstring>(RallyHereStatusCode err)</argsstring>
+        <name>rallyhere_status_text</name>
+        <param>
+          <type><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" line="141" column="26" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" declline="141" declcolumn="26"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">Copyright<sp/>2023<sp/>RallyHere</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment">Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>RH_C_STATUS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RH_C_STATUS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="c__platform_8h" kindref="compound">c_platform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="28" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a1300ac8cfb4b729eb58870f1622ad954" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a1300ac8cfb4b729eb58870f1622ad954" kindref="member">RH_STATUS_OK</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="29" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a0a8082fa14843a2281943608a8cd7dd1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a0a8082fa14843a2281943608a8cd7dd1" kindref="member">RH_STATUS_ERROR</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="30" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a591d6d384b580a2d37b3d8ae8dcb936f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a591d6d384b580a2d37b3d8ae8dcb936f" kindref="member">RH_STATUS_NO_BOOTSTRAP_MODE_PROVIDED</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="31" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a16e0d6608c332601d336233f07e82490" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a16e0d6608c332601d336233f07e82490" kindref="member">RH_STATUS_CREDENTIALS_FILE_NOT_TWO_LINES</ref><sp/>=<sp/>3,</highlight></codeline>
+<codeline lineno="32" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a0728f365351ad818785f6f3c23d9066a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a0728f365351ad818785f6f3c23d9066a" kindref="member">RH_STATUS_NO_RALLYHERE_URL_PROVIDED</ref><sp/>=<sp/>4,</highlight></codeline>
+<codeline lineno="33" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a6d05a38f126a17b22f377b4ca0a67d1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a6d05a38f126a17b22f377b4ca0a67d1e" kindref="member">RH_STATUS_NO_SIC_PROFILE_ID_PROVIDED</ref><sp/>=<sp/>5,</highlight></codeline>
+<codeline lineno="34" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a08de4e979e2cd29910c01b3f0c9f10ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a08de4e979e2cd29910c01b3f0c9f10ca" kindref="member">RH_STATUS_CANCELLED</ref><sp/>=<sp/>6,</highlight></codeline>
+<codeline lineno="35" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a98f11d0f7159aa51983be9d327c875d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a98f11d0f7159aa51983be9d327c875d5" kindref="member">RH_STATUS_VALIDATION_ERROR_ADAPTER_IS_NULLPTR</ref><sp/>=<sp/>7,</highlight></codeline>
+<codeline lineno="36" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ab66449e71969e766c2c9f95e8d22b799" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ab66449e71969e766c2c9f95e8d22b799" kindref="member">RH_STATUS_ADAPTER_ALLOCATION_ERROR</ref><sp/>=<sp/>8,</highlight></codeline>
+<codeline lineno="37" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a14b9ca3fe3edd5b354d4f1f2baec5120" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a14b9ca3fe3edd5b354d4f1f2baec5120" kindref="member">RH_STATUS_VALIDATION_ERROR_MAP_IS_NULLPTR</ref><sp/>=<sp/>9,</highlight></codeline>
+<codeline lineno="38" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4d39404778b776c9c89a6ef35e1253d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4d39404778b776c9c89a6ef35e1253d0" kindref="member">RH_STATUS_MAP_ALLOCATION_ERROR</ref><sp/>=<sp/>10,</highlight></codeline>
+<codeline lineno="39" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3d20263bbd6aa84ad40be352c2be37ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3d20263bbd6aa84ad40be352c2be37ea" kindref="member">RH_STATUS_VALIDATION_ERROR_KEY_IS_NULLPTR</ref><sp/>=<sp/>11,</highlight></codeline>
+<codeline lineno="40" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a8c740518e8c6f392102f71fea5507287" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a8c740518e8c6f392102f71fea5507287" kindref="member">RH_STATUS_VALIDATION_ERROR_VALUE_IS_NULLPTR</ref><sp/>=<sp/>12,</highlight></codeline>
+<codeline lineno="41" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a77b7d9abc7c812f92b327433aa866c78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a77b7d9abc7c812f92b327433aa866c78" kindref="member">RH_STATUS_VALIDATION_ERROR_VALUE_SIZE_IS_NULLPTR</ref><sp/>=<sp/>13,</highlight></codeline>
+<codeline lineno="42" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5e4a428dc699b3d678db59bb779f5694" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5e4a428dc699b3d678db59bb779f5694" kindref="member">RH_STATUS_KEY_NOT_FOUND</ref><sp/>=<sp/>14,</highlight></codeline>
+<codeline lineno="43" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3db695bc7d8868bbf0e81d1f88b1be87" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3db695bc7d8868bbf0e81d1f88b1be87" kindref="member">RH_STATUS_COULD_NOT_PARSE_RESPONSE</ref><sp/>=<sp/>15,</highlight></codeline>
+<codeline lineno="44" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4d43ce15af4adb44b399761e60fa926a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4d43ce15af4adb44b399761e60fa926a" kindref="member">RH_STATUS_RESPONSE_NO_ACCESS_TOKEN</ref><sp/>=<sp/>16,</highlight></codeline>
+<codeline lineno="45" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784adb88c2387ecc66e91690d3829fe28be8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784adb88c2387ecc66e91690d3829fe28be8" kindref="member">RH_STATUS_RESPONSE_NO_REFRESH_TOKEN</ref><sp/>=<sp/>17,</highlight></codeline>
+<codeline lineno="46" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a6e73aa6f6a63192a578ca7414e95cd5e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a6e73aa6f6a63192a578ca7414e95cd5e" kindref="member">RH_STATUS_RESPONSE_NO_AUTH_SUCCESS</ref><sp/>=<sp/>18,</highlight></codeline>
+<codeline lineno="47" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a447c1e341e5a8cdf4041b529ceec5865" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a447c1e341e5a8cdf4041b529ceec5865" kindref="member">RH_STATUS_RESPONSE_AUTH_SUCCESS_NOT_BOOL</ref><sp/>=<sp/>19,</highlight></codeline>
+<codeline lineno="48" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784adb2f2b041e5db61c058c60bd65e6a455" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784adb2f2b041e5db61c058c60bd65e6a455" kindref="member">RH_STATUS_POLL_INTERVAL_MUST_BE_NUMERIC</ref><sp/>=<sp/>20,</highlight></codeline>
+<codeline lineno="49" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ade028b1a3ffa2b385cde32b38dd35a07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ade028b1a3ffa2b385cde32b38dd35a07" kindref="member">RH_STATUS_CANNOT_POLL_WITHOUT_ON_ALLOCATED_CALLBACK</ref><sp/>=<sp/>21,</highlight></codeline>
+<codeline lineno="50" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4a48f683cc94fd6e8197b5911042c3d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4a48f683cc94fd6e8197b5911042c3d7" kindref="member">RH_STATUS_PROMETHEUS_PORT_MUST_BE_NUMERIC</ref><sp/>=<sp/>22,</highlight></codeline>
+<codeline lineno="51" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aa64721cd4e8953c139b590188f80bdb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aa64721cd4e8953c139b590188f80bdb1" kindref="member">RH_STATUS_PROMETHEUS_ALREADY_STARTED</ref><sp/>=<sp/>23,</highlight></codeline>
+<codeline lineno="52" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ad38349022692a036840f5e30522f7666" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ad38349022692a036840f5e30522f7666" kindref="member">RH_STATUS_PROMETHEUS_COULD_NOT_START</ref><sp/>=<sp/>24,</highlight></codeline>
+<codeline lineno="53" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a180125453cc22048fb1e9056f2c072c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a180125453cc22048fb1e9056f2c072c0" kindref="member">RH_STATUS_REQUEST_TIMEOUT_MUST_BE_NUMERIC</ref><sp/>=<sp/>25,</highlight></codeline>
+<codeline lineno="54" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ac219f6cf5dcf3a07256f0c5aa82aa0b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ac219f6cf5dcf3a07256f0c5aa82aa0b5" kindref="member">RH_STATUS_POLL_UNKNOWN_STATE</ref><sp/>=<sp/>26,</highlight></codeline>
+<codeline lineno="55" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a6cf9b7466cdd3efb72560137a6639428" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a6cf9b7466cdd3efb72560137a6639428" kindref="member">RH_STATUS_COULD_NOT_PARSE_SERVER_JSON</ref><sp/>=<sp/>27,</highlight></codeline>
+<codeline lineno="56" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a1c03163fdafb759f77fef0787325c04d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a1c03163fdafb759f77fef0787325c04d" kindref="member">RH_STATUS_NO_SERVER_JSON</ref><sp/>=<sp/>28,</highlight></codeline>
+<codeline lineno="57" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ae74f345ad235bc1b894ef9749dbcc428" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ae74f345ad235bc1b894ef9749dbcc428" kindref="member">RH_STATUS_A2S_QUERY_PORT_MUST_BE_SHORT_NUMBER</ref><sp/>=<sp/>29,</highlight></codeline>
+<codeline lineno="58" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3d939ba719a1e72dac87213d000ac91d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3d939ba719a1e72dac87213d000ac91d" kindref="member">RH_STATUS_VALIDATION_ERROR_STATS_IS_NULLPTR</ref><sp/>=<sp/>30,</highlight></codeline>
+<codeline lineno="59" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784abf084b16aa904d3c3789d82ccc7d6323" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784abf084b16aa904d3c3789d82ccc7d6323" kindref="member">RH_STATUS_VALIDATION_ERROR_STATS_PROVIDED_IS_NULLPTR</ref><sp/>=<sp/>31,</highlight></codeline>
+<codeline lineno="60" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aaf0fc67a7fb4f7d9865febf5d1ead80e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aaf0fc67a7fb4f7d9865febf5d1ead80e" kindref="member">RH_STATUS_PUBLIC_PORT_MUST_BE_NUMERIC</ref><sp/>=<sp/>32,</highlight></codeline>
+<codeline lineno="61" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ade38e83d581d90d8543d8c85ed73dada" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ade38e83d581d90d8543d8c85ed73dada" kindref="member">RH_STATUS_BIND_PORT_MUST_BE_NUMERIC</ref><sp/>=<sp/>33,</highlight></codeline>
+<codeline lineno="62" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a738b0b9660397d1f7d71704babff4cff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a738b0b9660397d1f7d71704babff4cff" kindref="member">RH_STATUS_MAX_POLL_FAILURES_MUST_BE_NUMERIC</ref><sp/>=<sp/>34,</highlight></codeline>
+<codeline lineno="63" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a10ab1036f37b4c3d9cb0988004485a6d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a10ab1036f37b4c3d9cb0988004485a6d" kindref="member">RH_STATUS_MUST_PROVIDE_REPORTED_PUBLIC_HOST</ref><sp/>=<sp/>35,</highlight></codeline>
+<codeline lineno="64" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a8e406a5a7f2663bb70943ef85f58f182" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a8e406a5a7f2663bb70943ef85f58f182" kindref="member">RH_STATUS_VALIDATION_ERROR_DEFINITION_IS_NULLPTR</ref><sp/>=<sp/>36,</highlight></codeline>
+<codeline lineno="65" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aaf20d589448c0a0da3bf3a91b452fbaf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aaf20d589448c0a0da3bf3a91b452fbaf" kindref="member">RH_STATUS_VALIDATION_ERROR_ACTION_IS_NULLPTR</ref><sp/>=<sp/>37,</highlight></codeline>
+<codeline lineno="66" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a085134dfbbf8492eb1da3f35122ff36a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a085134dfbbf8492eb1da3f35122ff36a" kindref="member">RH_STATUS_METRIC_TYPE_NOT_SUPPORTED_BY_BACKEND</ref><sp/>=<sp/>38,</highlight></codeline>
+<codeline lineno="67" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ad44f9e0270716cadf96288b761ce5760" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ad44f9e0270716cadf96288b761ce5760" kindref="member">RH_STATUS_METRIC_BACKEND_GRAPHITE_NOT_CONFIGURED</ref><sp/>=<sp/>39,</highlight></codeline>
+<codeline lineno="68" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a02214395540aeb3a80b0d53ff59e0bf4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a02214395540aeb3a80b0d53ff59e0bf4" kindref="member">RH_STATUS_METRIC_BACKEND_STATSD_NOT_CONFIGURED</ref><sp/>=<sp/>40,</highlight></codeline>
+<codeline lineno="69" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a7dc9b355287b4572d7f7e07c842d792b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a7dc9b355287b4572d7f7e07c842d792b" kindref="member">RH_STATUS_METRIC_ACTION_NOT_SUPPORTED_BY_BACKEND</ref><sp/>=<sp/>41,</highlight></codeline>
+<codeline lineno="70" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3c19942f92f264f61214ced37ffe17cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3c19942f92f264f61214ced37ffe17cc" kindref="member">RH_STATUS_METRIC_ACTION_NOT_SUPPORTED_BY_TYPE</ref><sp/>=<sp/>42,</highlight></codeline>
+<codeline lineno="71" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5478aec493c7e8ff5004055be4221399" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5478aec493c7e8ff5004055be4221399" kindref="member">RH_STATUS_HTTP_CONTINUE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>100,</highlight></codeline>
+<codeline lineno="72" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a43b9eaaebddcf33d56af93d96f14efed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a43b9eaaebddcf33d56af93d96f14efed" kindref="member">RH_STATUS_HTTP_SWITCHINGPROTOCOLS</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>101,</highlight></codeline>
+<codeline lineno="73" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a223d974ddcd1ecf9a5b7402cee4133ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a223d974ddcd1ecf9a5b7402cee4133ec" kindref="member">RH_STATUS_HTTP_PROCESSING</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>102,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ad1b104ef3131ee6df848c09bb0de3656" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ad1b104ef3131ee6df848c09bb0de3656" kindref="member">RH_STATUS_HTTP_OK</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>200,</highlight></codeline>
+<codeline lineno="76" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a577e489149a1c88c5026325fde1f3fe0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a577e489149a1c88c5026325fde1f3fe0" kindref="member">RH_STATUS_HTTP_CREATED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>201,</highlight></codeline>
+<codeline lineno="77" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a7f1a08b981824b5fd71980ed577995de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a7f1a08b981824b5fd71980ed577995de" kindref="member">RH_STATUS_HTTP_ACCEPTED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>202,</highlight></codeline>
+<codeline lineno="78" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a9b8130c9f50673fe080184cf145e63a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a9b8130c9f50673fe080184cf145e63a5" kindref="member">RH_STATUS_HTTP_NON_AUTHORITATIVE_INFORMATION</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>203,</highlight></codeline>
+<codeline lineno="79" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af4c21eddcc52d7cabf2531c05372f27e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af4c21eddcc52d7cabf2531c05372f27e" kindref="member">RH_STATUS_HTTP_NO_CONTENT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>204,</highlight></codeline>
+<codeline lineno="80" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a899149acda4ae2df0834d4934aba4065" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a899149acda4ae2df0834d4934aba4065" kindref="member">RH_STATUS_HTTP_RESET_CONTENT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>205,</highlight></codeline>
+<codeline lineno="81" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ac4d1ae31ecd4e46e3924842b5e41584e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ac4d1ae31ecd4e46e3924842b5e41584e" kindref="member">RH_STATUS_HTTP_PARTIAL_CONTENT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>206,</highlight></codeline>
+<codeline lineno="82" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aae0caa6d08f4d5ff13dd94d40182af9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aae0caa6d08f4d5ff13dd94d40182af9b" kindref="member">RH_STATUS_HTTP_MULTI_STATUS</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>207,</highlight></codeline>
+<codeline lineno="83" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784afca98c3f4ca438c4c88f29d91d328932" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784afca98c3f4ca438c4c88f29d91d328932" kindref="member">RH_STATUS_HTTP_ALREADY_REPORTED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>208,</highlight></codeline>
+<codeline lineno="84" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ac0c6674325564218168db382c032b7cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ac0c6674325564218168db382c032b7cc" kindref="member">RH_STATUS_HTTP_IM_USED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>226,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784acc9c74a0fb57a2e3c7e5cc32784f6c0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784acc9c74a0fb57a2e3c7e5cc32784f6c0e" kindref="member">RH_STATUS_HTTP_MULTIPLE_CHOICES</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>300,</highlight></codeline>
+<codeline lineno="87" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a45545da4a5c7fd73d083bd244be771cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a45545da4a5c7fd73d083bd244be771cf" kindref="member">RH_STATUS_HTTP_MOVED_PERMANENTLY</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>301,</highlight></codeline>
+<codeline lineno="88" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a2f741463ff376b0521c4c0e0838bed3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a2f741463ff376b0521c4c0e0838bed3a" kindref="member">RH_STATUS_HTTP_FOUND</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>302,</highlight></codeline>
+<codeline lineno="89" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a133055c9cfaea5f348de159a04e82d47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a133055c9cfaea5f348de159a04e82d47" kindref="member">RH_STATUS_HTTP_SEE_OTHER</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>303,</highlight></codeline>
+<codeline lineno="90" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a92c6520787839cfbe4930558cc90848d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a92c6520787839cfbe4930558cc90848d" kindref="member">RH_STATUS_HTTP_NOT_MODIFIED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>304,</highlight></codeline>
+<codeline lineno="91" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aebb75c1de47bb8f05fafa4ff5ff5d4b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aebb75c1de47bb8f05fafa4ff5ff5d4b1" kindref="member">RH_STATUS_HTTP_USE_PROXY</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>305,</highlight></codeline>
+<codeline lineno="92" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a9e7195d5fc60e483740172dca869e1d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a9e7195d5fc60e483740172dca869e1d2" kindref="member">RH_STATUS_HTTP_TEMPORARY_REDIRECT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>307,</highlight></codeline>
+<codeline lineno="93" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ae3048fb3d9eaff93215a83074f341d55" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ae3048fb3d9eaff93215a83074f341d55" kindref="member">RH_STATUS_HTTP_PERMANENT_REDIRECT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>308,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af355c8bd8782b8691d0e3d8c11bfd449" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af355c8bd8782b8691d0e3d8c11bfd449" kindref="member">RH_STATUS_HTTP_BAD_REQUEST</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>400,</highlight></codeline>
+<codeline lineno="96" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a53a40133dd3bed4f65ca32bf3a0200c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a53a40133dd3bed4f65ca32bf3a0200c9" kindref="member">RH_STATUS_HTTP_UNAUTHORIZED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>401,</highlight></codeline>
+<codeline lineno="97" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aa448dfeca5c1687a5465342b69aefa2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aa448dfeca5c1687a5465342b69aefa2d" kindref="member">RH_STATUS_HTTP_PAYMENT_REQUIRED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>402,</highlight></codeline>
+<codeline lineno="98" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ae723dcad7bcf05bf06454829e89a985e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ae723dcad7bcf05bf06454829e89a985e" kindref="member">RH_STATUS_HTTP_FORBIDDEN</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>403,</highlight></codeline>
+<codeline lineno="99" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784abd3a892c457e4bb8c55599fbd8a47168" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784abd3a892c457e4bb8c55599fbd8a47168" kindref="member">RH_STATUS_HTTP_NOT_FOUND</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>404,</highlight></codeline>
+<codeline lineno="100" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af7806e2beade7fc8bb5841543f69d345" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af7806e2beade7fc8bb5841543f69d345" kindref="member">RH_STATUS_HTTP_METHOD_NOT_ALLOWED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>405,</highlight></codeline>
+<codeline lineno="101" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a370243080046a3ed1821e5f8db3227b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a370243080046a3ed1821e5f8db3227b6" kindref="member">RH_STATUS_HTTP_NOT_ACCEPTABLE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>406,</highlight></codeline>
+<codeline lineno="102" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784adac4f22e34a48a0c463ba58e69d384a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784adac4f22e34a48a0c463ba58e69d384a7" kindref="member">RH_STATUS_HTTP_PROXY_AUTHENTICATION_REQUIRED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>407,</highlight></codeline>
+<codeline lineno="103" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a9b27eba03e8f3234f881347e67ef96d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a9b27eba03e8f3234f881347e67ef96d0" kindref="member">RH_STATUS_HTTP_REQUEST_TIMEOUT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>408,</highlight></codeline>
+<codeline lineno="104" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a57fa7fcac0634a5c52e329be29b97136" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a57fa7fcac0634a5c52e329be29b97136" kindref="member">RH_STATUS_HTTP_CONFLICT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>409,</highlight></codeline>
+<codeline lineno="105" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ac585afe002c3265c1342d85df170216a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ac585afe002c3265c1342d85df170216a" kindref="member">RH_STATUS_HTTP_GONE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>410,</highlight></codeline>
+<codeline lineno="106" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5e293cc2bd81d243186b34c70b2fafee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5e293cc2bd81d243186b34c70b2fafee" kindref="member">RH_STATUS_HTTP_LENGTH_REQUIRED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>411,</highlight></codeline>
+<codeline lineno="107" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5769b74b8a6ed69270e20c5ca53bf7eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5769b74b8a6ed69270e20c5ca53bf7eb" kindref="member">RH_STATUS_HTTP_PRECONDITION_FAILED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>412,</highlight></codeline>
+<codeline lineno="108" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a486dd7ed5ddedf5b7e300111795a64fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a486dd7ed5ddedf5b7e300111795a64fc" kindref="member">RH_STATUS_HTTP_PAYLOAD_TOO_LARGE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>413,</highlight></codeline>
+<codeline lineno="109" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a8efbcf57b51ade7bddaf897569fbb47b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a8efbcf57b51ade7bddaf897569fbb47b" kindref="member">RH_STATUS_HTTP_URI_TOO_LONG</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>414,</highlight></codeline>
+<codeline lineno="110" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784abcd0cfa4ffcacb43bea17aab90d50ae2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784abcd0cfa4ffcacb43bea17aab90d50ae2" kindref="member">RH_STATUS_HTTP_UNSUPPORTED_MEDIA_TYPE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>415,</highlight></codeline>
+<codeline lineno="111" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a203d9f825b4a78cfb385c28ab8d57292" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a203d9f825b4a78cfb385c28ab8d57292" kindref="member">RH_STATUS_HTTP_RANGE_NOT_SATISFIABLE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>416,</highlight></codeline>
+<codeline lineno="112" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4dac306a3008196bd260eeace4cdf091" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4dac306a3008196bd260eeace4cdf091" kindref="member">RH_STATUS_HTTP_EXPECTATION_FAILED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>417,</highlight></codeline>
+<codeline lineno="113" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5a14d1cd310a3dd313b310dd79d7f295" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5a14d1cd310a3dd313b310dd79d7f295" kindref="member">RH_STATUS_HTTP_MISDIRECTED_REQUEST</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>421,</highlight></codeline>
+<codeline lineno="114" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af1d34fd47c9b34762c763f97b10c6a11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af1d34fd47c9b34762c763f97b10c6a11" kindref="member">RH_STATUS_HTTP_UNPROCESSABLE_ENTITY</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>422,</highlight></codeline>
+<codeline lineno="115" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a101307b051c572902487a4b7ec953632" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a101307b051c572902487a4b7ec953632" kindref="member">RH_STATUS_HTTP_LOCKED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>423,</highlight></codeline>
+<codeline lineno="116" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a2745cc5bb3f7f31c515a2878165412d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a2745cc5bb3f7f31c515a2878165412d9" kindref="member">RH_STATUS_HTTP_FAILED_DEPENDENCY</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>424,</highlight></codeline>
+<codeline lineno="117" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aab5101d752651a6675c105b5536e6309" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aab5101d752651a6675c105b5536e6309" kindref="member">RH_STATUS_HTTP_UPGRADE_REQUIRED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>426,</highlight></codeline>
+<codeline lineno="118" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af3442d832944a04dc0b23693bc416cb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af3442d832944a04dc0b23693bc416cb1" kindref="member">RH_STATUS_HTTP_PRECONDITION_REQUIRED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>428,</highlight></codeline>
+<codeline lineno="119" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aa567f4004067cb24273babc68ed255c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aa567f4004067cb24273babc68ed255c2" kindref="member">RH_STATUS_HTTP_TOO_MANY_REQUESTS</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>429,</highlight></codeline>
+<codeline lineno="120" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aee7dc6b706cdd226812ac5e3f7c50835" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aee7dc6b706cdd226812ac5e3f7c50835" kindref="member">RH_STATUS_HTTP_REQUEST_HEADER_FIELDS_TOO_LARGE</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>431,</highlight></codeline>
+<codeline lineno="121" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a882e041d9cd5e342ac484bfd4061349e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a882e041d9cd5e342ac484bfd4061349e" kindref="member">RH_STATUS_HTTP_CONNECTION_CLOSED_WITHOUT_RESPONSE</ref><sp/><sp/>=<sp/>444,</highlight></codeline>
+<codeline lineno="122" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784acd8685f41ad26673ce4cc2aeddb38ccf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784acd8685f41ad26673ce4cc2aeddb38ccf" kindref="member">RH_STATUS_HTTP_UNAVAILABLE_FOR_LEGAL_REASONS</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>451,</highlight></codeline>
+<codeline lineno="123" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a81bf8452ba3a748298b86e4ab5270758" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a81bf8452ba3a748298b86e4ab5270758" kindref="member">RH_STATUS_HTTP_CLIENT_CLOSED_REQUEST</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>499,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ae484935a39dcc713ba63b0445cd3b09c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ae484935a39dcc713ba63b0445cd3b09c" kindref="member">RH_STATUS_HTTP_INTERNAL_SERVER_ERROR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>500,</highlight></codeline>
+<codeline lineno="126" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a45e9842912641c9140d8c4d8ffca6af6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a45e9842912641c9140d8c4d8ffca6af6" kindref="member">RH_STATUS_HTTP_NOT_IMPLEMENTED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>501,</highlight></codeline>
+<codeline lineno="127" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ab85c08ff899dca1462df44fa2daa5ee1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ab85c08ff899dca1462df44fa2daa5ee1" kindref="member">RH_STATUS_HTTP_BAD_GATEWAY</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>502,</highlight></codeline>
+<codeline lineno="128" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a09ea99f6fb73f7b3c01f672657036648" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a09ea99f6fb73f7b3c01f672657036648" kindref="member">RH_STATUS_HTTP_SERVICE_UNAVAILABLE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>503,</highlight></codeline>
+<codeline lineno="129" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a6f9b2b572db711be8848616259a33055" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a6f9b2b572db711be8848616259a33055" kindref="member">RH_STATUS_HTTP_GATEWAY_TIMEOUT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>504,</highlight></codeline>
+<codeline lineno="130" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4803f0ec6f4ddf01df890d0e04776463" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a4803f0ec6f4ddf01df890d0e04776463" kindref="member">RH_STATUS_HTTP_HTTP_VERSION_NOT_SUPPORTED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>505,</highlight></codeline>
+<codeline lineno="131" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a64c11a10180823c325f291c16cb65b36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a64c11a10180823c325f291c16cb65b36" kindref="member">RH_STATUS_HTTP_VARIANT_ALSO_NEGOTIATES</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>506,</highlight></codeline>
+<codeline lineno="132" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a734a2e9ece510445f952300653bcdecd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a734a2e9ece510445f952300653bcdecd" kindref="member">RH_STATUS_HTTP_INSUFFICIENT_STORAGE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>507,</highlight></codeline>
+<codeline lineno="133" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a11be1617e2139aa4d65165008bcdbb07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a11be1617e2139aa4d65165008bcdbb07" kindref="member">RH_STATUS_HTTP_LOOP_DETECTED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>508,</highlight></codeline>
+<codeline lineno="134" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aa02e63729cb24297e61eb5b2cbe41643" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aa02e63729cb24297e61eb5b2cbe41643" kindref="member">RH_STATUS_HTTP_NOT_EXTENDED</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>510,</highlight></codeline>
+<codeline lineno="135" refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a478df6f1985318d71c727380fc52dded" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a478df6f1985318d71c727380fc52dded" kindref="member">RH_STATUS_HTTP_NETWORK_AUTHENTICATION_REQUIRED</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>511,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3f9ed1646539ccefb7b2d7ab9df99f22" kindref="member">RH_STATUS_HTTP_NETWORK_CONNECT_TIMEOUT_ERROR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>599</highlight></codeline>
+<codeline lineno="137" refid="c__status_8h_1a9956737139e2ba1d2d6fb0e7c0079c8b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="c__status_8h_1a685f482fa4421e8b01ff18abe9e49b88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="c__status_8h_1a685f482fa4421e8b01ff18abe9e49b88" kindref="member">rallyhere_is_error</ref>(<ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref><sp/>err);</highlight></codeline>
+<codeline lineno="140" refid="c__status_8h_1aa2352955c2e1fd2bdd2c4f58804dfe6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="c__status_8h_1aa2352955c2e1fd2bdd2c4f58804dfe6e" kindref="member">rallyhere_is_cancelled</ref>(<ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref><sp/>err);</highlight></codeline>
+<codeline lineno="141" refid="c__status_8h_1af3db8a9f050d08c872c2008e17736816" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="c__status_8h_1af3db8a9f050d08c872c2008e17736816" kindref="member">rallyhere_status_text</ref>(<ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref><sp/>err);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>RH_C_STATUS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h"/>
+  </compounddef>
+</doxygen>
