@@ -22,93 +22,27 @@ limitations under the License.
 #include "c_status.h"
 #include "c_metrics.h"
 
+/// @mainpage Rally Here Game Host Adapter
+/// An SDK for handling multiple different types of game hosting systems in one set of calls
+///
+/// @section intro_sec Introduction
+///
+/// This library as meant to be used as part of integrating game instance servers with RallyHere. The source code for
+/// the entire system is provided, but one should only target and use the C API directly. This will enable RallyHere to
+/// update your game servers to be able to support different game hosting providers without the need for the code in the
+/// game server to change.
+///
+/// @section getting_started Getting Started
+///
+/// The main usage of this library is to set up your memory allocator, initialize the sdk, instantiate a game instance
+/// adapter, and then tick that either asserting or waiting for allocations to come in with additional details.
+///
+/// @sa rallyhere_global_init()
+/// @sa rallyhere_allocator_set_alloc()
+/// @sa RallyHereGameInstanceAdapter
+
 /// @file c_api.h
 /// @brief An SDK for handling multiple different types of game hosting systems in one set of calls
-///
-/// Callbacks are either called immediately at the call site or when calling rallyhere_tick().
-///
-/// The general state flow follows mostly from the model that Agones uses. It can be found on the following page
-/// https://agones.dev/site/docs/reference/gameserver/
-/// digraph {
-///     graph [fontname = "helvetica"];
-///     node [fontname = "helvetica"];
-///     edge [fontname = "helvetica", pad="0.2", penwidth="2"];
-///
-///     Created [ label = "game server created" ]
-///     PortAllocation
-///     Creating
-///     Error
-///     Starting
-///     Scheduled
-///     RequestReady
-///     Ready
-///     Reserved
-///     Allocated
-///     Shutdown
-///     Unhealthy
-///     Deleted [ label = "game server deleted" ]
-///
-///     Created -> PortAllocation [ label ="has any port\nwith dynamic policy", color="red" ]
-///     Created -> Creating [ label="only static ports", color="red" ]
-///
-///     PortAllocation -> Creating [ label="allocated unused port", color="blue" ]
-///     Creating -> Starting [ label="created pod", color="blue" ]
-///     Starting -> Scheduled [ label="we have a pod, fetch its address", color="blue" ]
-///     Scheduled -> Reserved [ label="SDK.reserved(seconds)", color="purple" ]
-///     Scheduled -> RequestReady [ label="SDK.ready()", color="purple" ]
-///     RequestReady -> Ready [ label="ready to be allocated", color="blue" ]
-///     Reserved -> Ready [label="if seconds > 0  \land failed to call  \lSDK.allocate()  " color="purple"]
-///     Allocated -> RequestReady [ label="SDK.ready()", color="purple" ]
-///
-///     Ready -> Allocated [ label="allocated for use", color="orange" ]
-///     Ready -> Allocated [ label="SDK.allocate()   ", color="purple" ]
-///     Reserved -> Allocated [color="purple"]
-///
-///     Creating -> Error [ label="failed to create pod", color="blue" ]
-///
-///     Scheduled -> Shutdown [ label="SDK.shutdown()", color="purple" ]
-///     RequestReady -> Shutdown [ color="purple" ]
-///     Ready -> Shutdown [ color="purple" ]
-///     Allocated -> Shutdown [ color="purple" ]
-///     Reserved -> Shutdown [ color="purple" ]
-///
-///
-///     Scheduled -> Unhealthy [ label="failed to call SDK.healthy()\nin a timely manner" color="purple" ]
-///     RequestReady -> Unhealthy [ color="purple" ]
-///     Ready -> Unhealthy [ color="purple" ]
-///     Allocated -> Unhealthy [ color="purple" ]
-///     Reserved -> Unhealthy [ color="purple" ]
-///
-///     Unhealthy -> Deleted [ label="delete unhealthy game server", color="blue" ]
-///     Shutdown -> Deleted [ label="delete finished game server", color="blue" ]
-///
-///   subgraph cluster_01 {
-///     style=invis;
-///     {
-///         s1 [style="invis"];
-///         s2 [style="invis"];
-///         s1 -> s2 [ color="red", label="API user" ]
-///     }
-///
-///     {
-///         s3 [style="invis"];
-///         s4 [style="invis"];
-///         s3 -> s4 [ color="purple", label="SDK" ]
-///     }
-///
-///     {
-///         s5 [style="invis"];
-///         s6 [style="invis"];
-///         s5 -> s6 [ color="orange", label="allocation\ncontroller" ]
-///     }
-///
-///     {
-///         s7 [style="invis"];
-///         s8 [style="invis"];
-///         s7 -> s8 [ color="blue", label="game server\ncontroller" ]
-///     }
-///   }
-/// }
 
 #ifdef __cplusplus
 extern "C"
@@ -124,6 +58,12 @@ extern "C"
     ///
     /// This struct is intentionally empty because its true interface is only defined internally. Any methods which take
     /// this as the first argument can be thought of as methods on this struct.
+    ///
+    /// Callbacks are either called immediately at the call site or when calling rallyhere_tick().
+    ///
+    /// The general state flow follows mostly from the model that Agones uses. It can be found on the following page
+    /// https://agones.dev/site/docs/reference/gameserver/
+    /// @dotfile agones_flow.dot
     struct RallyHereGameInstanceAdapter;
     /// Opaque type and handle to a Rally Here Game Instance Adapter.
     typedef RallyHereGameInstanceAdapter* RallyHereGameInstanceAdapterPtr;
@@ -176,7 +116,6 @@ extern "C"
                                               RallyHereLogCallback callback,
                                               void* user_data);
     /// Sets the default log level for the SDK and any adapters created. This is only used if a log callback is not set.
-    /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_set_default_log_level(RallyHereLogLevel level);
     ///@}
 
