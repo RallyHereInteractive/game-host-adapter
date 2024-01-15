@@ -13,8 +13,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-
 #pragma once
 
-const char* get_rally_here_url_arg();
-const char* get_credentials_file_path_arg();
+#include "lest/lest.hpp"
+#include <list>
+
+/** @file test_base64.h
+ * Tests base64 encoding and decoding
+ */

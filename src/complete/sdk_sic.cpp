@@ -46,6 +46,8 @@ namespace net = boost::asio;      // from <boost/asio.hpp>
 namespace ssl = boost::asio::ssl; // from <boost/asio/ssl.hpp>
 using tcp = boost::asio::ip::tcp; // from <boost/asio/ip/tcp.hpp>
 
+#include "cpp-base64/base64.hpp"
+
 #include "sdk_helpers.hpp"
 #include "sdk_formatters.hpp"
 
@@ -511,17 +513,17 @@ void GameInstanceAdapter::SetupSIC()
     for (auto&& arg : m_Arguments)
     {
         rallyhere::string tmp;
-        if (ParseArgument("rhcredentialsfile=", arg, m_CredentialsFile))
+        if (ParseArgument("rhcredentialsfile=", arg, m_SICCredentials.m_CredentialsFile))
         {
-            auto lines = LoadFileToStringArray(m_CredentialsFile);
+            auto lines = LoadFileToStringArray(m_SICCredentials.m_CredentialsFile);
             if (2 != lines.size())
             {
                 m_Status = { RH_STATUS_CREDENTIALS_FILE_NOT_TWO_LINES };
                 return;
             }
-            m_APIUserName = lines[0];
-            m_APIPassword = lines[1];
-            log().log(RH_LOG_LEVEL_INFO, "Loaded rhapi username from file: {}", m_APIUserName);
+            m_SICCredentials.m_APIUserName = lines[0];
+            m_SICCredentials.m_APIPassword = lines[1];
+            log().log(RH_LOG_LEVEL_INFO, "Loaded rhapi username from file: {}", m_SICCredentials.m_APIUserName);
             continue;
         }
         if (ParseArgument("rhsicprofileid=", arg, m_SicProfileId))
@@ -616,6 +618,13 @@ void GameInstanceAdapter::SetupSIC()
             catch (const boost::bad_lexical_cast&e)
             {
                 m_Status = { RH_STATUS_MAX_POLL_FAILURES_MUST_BE_NUMERIC };
+            }
+        }
+        if (ParseArgument("rhcredentialsas=", arg, tmp))
+        {
+            if ("clientid" == tmp)
+            {
+                m_SICCredentials.m_UseCredentialsAsClientId = true;
             }
         }
     }
@@ -746,6 +755,14 @@ void GameInstanceAdapter::SetupSIC()
     upperedState[0] = toupper(upperedState[0]);
     m_InternalAdditionalInfoLabels.get()["sic_state"] = upperedState;
     m_InternalLabels.Set("sic_id", m_SicId);
+
+    if (m_SICCredentials.m_UseCredentialsAsClientId)
+    {
+        m_SICCredentials.m_APIClientId = m_SICCredentials.m_APIUserName;
+        m_SICCredentials.m_APISecret = m_SICCredentials.m_APIPassword;
+        m_SICCredentials.m_APIUserName.clear();
+        m_SICCredentials.m_APIPassword.clear();
+    }
 }
 
 template<class>
@@ -1069,6 +1086,15 @@ void GameInstanceAdapter::ReadySIC(base_callback_function_t callback, void* user
     });
 }
 
+void basic_with_base64_data(rallyhere::memory_buffer& buffer, const rallyhere::string& left, const rallyhere::string& right)
+{
+    rallyhere::memory_buffer base64buffer;
+    fmt::format_to(std::back_inserter(base64buffer), "{}:{}", left, right);
+    base64<rallyhere::string> encoder;
+    auto encoded = encoder.encode(std::string_view{ base64buffer.data(), base64buffer.size() }, false);
+    fmt::format_to(std::back_inserter(buffer), "Basic {}", std::string_view{ encoded.data(), encoded.size() });
+}
+
 std::pair<http::request<string_body>, boost::system::error_code> GameInstanceAdapter::BuildLoginRequest(const rallyhere::string& in_url_str)
 {
     http::request<string_body> m_Request;
@@ -1097,15 +1123,26 @@ std::pair<http::request<string_body>, boost::system::error_code> GameInstanceAda
     }
     else
     {
-        j["grant_type"] = "basic";
-        j["include_refresh"] = true;
-        rallyhere::memory_buffer buffer;
-        fmt::format_to(std::back_inserter(buffer), "{}:{}", m_APIUserName, m_APIPassword);
-        j["portal_access_token"] = std::string_view{ buffer.data(), buffer.size() };
+        if (m_SICCredentials.m_UseCredentialsAsClientId)
+        {
+            j["grant_type"] = "client_credentials";
+            j["include_refresh"] = true;
+            rallyhere::memory_buffer buffer;
+            basic_with_base64_data(buffer, m_SICCredentials.m_APIClientId, m_SICCredentials.m_APISecret);
+            m_Request.set(http::field::authorization, std::string_view{ buffer.data(), buffer.size() });
+        }
+        else
+        {
+            j["grant_type"] = "basic";
+            j["include_refresh"] = true;
+            rallyhere::memory_buffer buffer;
+            fmt::format_to(std::back_inserter(buffer), "{}:{}", m_SICCredentials.m_APIUserName, m_SICCredentials.m_APIPassword);
+            j["portal_access_token"] = std::string_view{ buffer.data(), buffer.size() };
+            j["accept_eula"] = true;
+            j["accept_tos"] = true;
+            j["accept_privacy_policy"] = true;
+        }
     }
-    j["accept_eula"] = true;
-    j["accept_tos"] = true;
-    j["accept_privacy_policy"] = true;
 
     rallyhere::stringstream sstr;
     boost::json::serializer sr(&mr);

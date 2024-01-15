@@ -24,6 +24,7 @@ auto demo_get_default_arguments()
         "-rhbootstrapmode=SIC",
         get_credentials_file_path_arg(),
         get_rally_here_url_arg(),
+        get_rh_credentials_as_arg(),
         "rhsicprofileid=unknownprofileid",
         "rhsicserverid=unknownserverid",
         "rhsichostname=unknownhostname",
