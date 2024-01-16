@@ -1,0 +1,181 @@
+\hypertarget{structrallyhere_1_1A2SDatagram}{}\doxysection{rallyhere\+::A2\+SDatagram Struct Reference}
+\label{structrallyhere_1_1A2SDatagram}\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+
+
+{\ttfamily \#include $<$a2s.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$size\+\_\+t N$>$ }\\\mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a4bac929dddade7f7843a9de8fc3b4749}{A2\+SDatagram}} (uint8\+\_\+t(\&data)\mbox{[}N\mbox{]})
+\item 
+{\footnotesize template$<$typename Element , size\+\_\+t N$>$ }\\\mbox{\hyperlink{structrallyhere_1_1A2SDatagram_aa5f0396e77cd77738ef437a4c230eb80}{A2\+SDatagram}} (std\+::array$<$ Element, N $>$ \&data)
+\item 
+{\footnotesize template$<$typename Element $>$ }\\\mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a70adb04f9e749c935eb3d9dd0cb8b658}{A2\+SDatagram}} (Element $\ast$data, size\+\_\+t len)
+\item 
+void \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a10116e2a2d97418b540a209b216ad4ff}{put}} (const uint8\+\_\+t $\ast$data, size\+\_\+t len)
+\item 
+\mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}} \& \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a1606755a90627bd00a74321bd02be2e9}{operator$<$$<$}} (const \mbox{\hyperlink{namespacerallyhere_a06e017abf8a0212e162b377dc793078e}{rallyhere\+::string}} \&data)
+\item 
+\mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}} \& \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a42e8ab242adebd5c18c9842ee349311a}{operator$<$$<$}} (const uint8\+\_\+t \&data)
+\item 
+\mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}} \& \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a9725748bf2b5f3f941b2f57af72d2edd}{operator$<$$<$}} (const int16\+\_\+t \&data)
+\item 
+\mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}} \& \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a711070759068065b89522e3a34c911b0}{operator$<$$<$}} (const int32\+\_\+t \&data)
+\item 
+\mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}} \& \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a7076938d076d90eb8abc1738a36144ff}{operator$<$$<$}} (const \mbox{\hyperlink{structrallyhere_1_1server__info}{server\+\_\+info}} \&info)
+\item 
+\mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}} \& \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a907cc503694552fb7f0adc02642f58a4}{operator$>$$>$}} (\mbox{\hyperlink{namespacerallyhere_a06e017abf8a0212e162b377dc793078e}{rallyhere\+::string}} \&data)
+\item 
+\mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}} \& \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_acb762317e15cc47549dbcc163b5cee90}{operator$>$$>$}} (uint8\+\_\+t \&data)
+\item 
+void \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_ac2409ea27ef627a7c57fbd3ef2ac2d22}{get}} (uint8\+\_\+t $\ast$data, size\+\_\+t len)
+\item 
+\mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}} \& \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_aeed62009f3e17be72cc76dee941f7427}{operator$>$$>$}} (int16\+\_\+t \&data)
+\item 
+\mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}} \& \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a1e6b73015c9f39f0074dbf9f18a6a63f}{operator$>$$>$}} (int32\+\_\+t \&data)
+\item 
+\mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}} \& \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a31ba12d0497ce35d895778beccf92316}{operator$>$$>$}} (\mbox{\hyperlink{structrallyhere_1_1server__info}{server\+\_\+info}} \&info)
+\item 
+size\+\_\+t \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_ab6cae52b4c701996121e08d860cedc69}{size}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boost\+::span$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a9c73db3ef61f5eb10bf27aefb39b7262}{Data}}
+\item 
+boost\+::span$<$ uint8\+\_\+t $>$\+::iterator \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a0ee3cc43224f77e140c87c5036101a3a}{next}} \{ std\+::begin(\mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a9c73db3ef61f5eb10bf27aefb39b7262}{Data}}) \}
+\item 
+bool \mbox{\hyperlink{structrallyhere_1_1A2SDatagram_aad00977149cc81d3963f521a2464daf3}{overflowed}} \{ false \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_a4bac929dddade7f7843a9de8fc3b4749}\label{structrallyhere_1_1A2SDatagram_a4bac929dddade7f7843a9de8fc3b4749}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!A2SDatagram@{A2SDatagram}}
+\index{A2SDatagram@{A2SDatagram}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{A2SDatagram()}{A2SDatagram()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
+rallyhere\+::\+A2\+SDatagram\+::\+A2\+SDatagram (\begin{DoxyParamCaption}\item[{uint8\+\_\+t(\&)}]{data\mbox{[}\+N\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_aa5f0396e77cd77738ef437a4c230eb80}\label{structrallyhere_1_1A2SDatagram_aa5f0396e77cd77738ef437a4c230eb80}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!A2SDatagram@{A2SDatagram}}
+\index{A2SDatagram@{A2SDatagram}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{A2SDatagram()}{A2SDatagram()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Element , size\+\_\+t N$>$ \\
+rallyhere\+::\+A2\+SDatagram\+::\+A2\+SDatagram (\begin{DoxyParamCaption}\item[{std\+::array$<$ Element, N $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_a70adb04f9e749c935eb3d9dd0cb8b658}\label{structrallyhere_1_1A2SDatagram_a70adb04f9e749c935eb3d9dd0cb8b658}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!A2SDatagram@{A2SDatagram}}
+\index{A2SDatagram@{A2SDatagram}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{A2SDatagram()}{A2SDatagram()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Element $>$ \\
+rallyhere\+::\+A2\+SDatagram\+::\+A2\+SDatagram (\begin{DoxyParamCaption}\item[{Element $\ast$}]{data,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_ac2409ea27ef627a7c57fbd3ef2ac2d22}\label{structrallyhere_1_1A2SDatagram_ac2409ea27ef627a7c57fbd3ef2ac2d22}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!get@{get}}
+\index{get@{get}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily void rallyhere\+::\+A2\+SDatagram\+::get (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_a9725748bf2b5f3f941b2f57af72d2edd}\label{structrallyhere_1_1A2SDatagram_a9725748bf2b5f3f941b2f57af72d2edd}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}}\& rallyhere\+::\+A2\+SDatagram\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const int16\+\_\+t \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_a711070759068065b89522e3a34c911b0}\label{structrallyhere_1_1A2SDatagram_a711070759068065b89522e3a34c911b0}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}}\& rallyhere\+::\+A2\+SDatagram\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const int32\+\_\+t \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_a1606755a90627bd00a74321bd02be2e9}\label{structrallyhere_1_1A2SDatagram_a1606755a90627bd00a74321bd02be2e9}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}}\& rallyhere\+::\+A2\+SDatagram\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacerallyhere_a06e017abf8a0212e162b377dc793078e}{rallyhere\+::string}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_a7076938d076d90eb8abc1738a36144ff}\label{structrallyhere_1_1A2SDatagram_a7076938d076d90eb8abc1738a36144ff}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}}\& rallyhere\+::\+A2\+SDatagram\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structrallyhere_1_1server__info}{server\+\_\+info}} \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_a42e8ab242adebd5c18c9842ee349311a}\label{structrallyhere_1_1A2SDatagram_a42e8ab242adebd5c18c9842ee349311a}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}}\& rallyhere\+::\+A2\+SDatagram\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_aeed62009f3e17be72cc76dee941f7427}\label{structrallyhere_1_1A2SDatagram_aeed62009f3e17be72cc76dee941f7427}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}}\& rallyhere\+::\+A2\+SDatagram\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{int16\+\_\+t \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_a1e6b73015c9f39f0074dbf9f18a6a63f}\label{structrallyhere_1_1A2SDatagram_a1e6b73015c9f39f0074dbf9f18a6a63f}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}}\& rallyhere\+::\+A2\+SDatagram\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{int32\+\_\+t \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_a907cc503694552fb7f0adc02642f58a4}\label{structrallyhere_1_1A2SDatagram_a907cc503694552fb7f0adc02642f58a4}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}}\& rallyhere\+::\+A2\+SDatagram\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacerallyhere_a06e017abf8a0212e162b377dc793078e}{rallyhere\+::string}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_a31ba12d0497ce35d895778beccf92316}\label{structrallyhere_1_1A2SDatagram_a31ba12d0497ce35d895778beccf92316}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}}\& rallyhere\+::\+A2\+SDatagram\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrallyhere_1_1server__info}{server\+\_\+info}} \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_acb762317e15cc47549dbcc163b5cee90}\label{structrallyhere_1_1A2SDatagram_acb762317e15cc47549dbcc163b5cee90}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{A2\+SDatagram}}\& rallyhere\+::\+A2\+SDatagram\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_a10116e2a2d97418b540a209b216ad4ff}\label{structrallyhere_1_1A2SDatagram_a10116e2a2d97418b540a209b216ad4ff}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!put@{put}}
+\index{put@{put}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily void rallyhere\+::\+A2\+SDatagram\+::put (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{data,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_ab6cae52b4c701996121e08d860cedc69}\label{structrallyhere_1_1A2SDatagram_ab6cae52b4c701996121e08d860cedc69}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!size@{size}}
+\index{size@{size}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t rallyhere\+::\+A2\+SDatagram\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_a9c73db3ef61f5eb10bf27aefb39b7262}\label{structrallyhere_1_1A2SDatagram_a9c73db3ef61f5eb10bf27aefb39b7262}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!Data@{Data}}
+\index{Data@{Data}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily boost\+::span$<$uint8\+\_\+t$>$ rallyhere\+::\+A2\+SDatagram\+::\+Data}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_a0ee3cc43224f77e140c87c5036101a3a}\label{structrallyhere_1_1A2SDatagram_a0ee3cc43224f77e140c87c5036101a3a}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!next@{next}}
+\index{next@{next}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily boost\+::span$<$uint8\+\_\+t$>$\+::iterator rallyhere\+::\+A2\+SDatagram\+::next \{ std\+::begin(\mbox{\hyperlink{structrallyhere_1_1A2SDatagram_a9c73db3ef61f5eb10bf27aefb39b7262}{Data}}) \}}
+
+\mbox{\Hypertarget{structrallyhere_1_1A2SDatagram_aad00977149cc81d3963f521a2464daf3}\label{structrallyhere_1_1A2SDatagram_aad00977149cc81d3963f521a2464daf3}} 
+\index{rallyhere::A2SDatagram@{rallyhere::A2SDatagram}!overflowed@{overflowed}}
+\index{overflowed@{overflowed}!rallyhere::A2SDatagram@{rallyhere::A2SDatagram}}
+\doxysubsubsection{\texorpdfstring{overflowed}{overflowed}}
+{\footnotesize\ttfamily bool rallyhere\+::\+A2\+SDatagram\+::overflowed \{ false \}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/asayman/\+Dev/game-\/host-\/adapter/include/test-\/helpers/\mbox{\hyperlink{a2s_8hpp}{a2s.\+hpp}}\end{DoxyCompactItemize}

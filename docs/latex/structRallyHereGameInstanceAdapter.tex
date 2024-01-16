@@ -1,0 +1,425 @@
+\hypertarget{structRallyHereGameInstanceAdapter}{}\doxysection{Rally\+Here\+Game\+Instance\+Adapter Struct Reference}
+\label{structRallyHereGameInstanceAdapter}\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+
+
+{\ttfamily \#include $<$c\+\_\+api.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Logging}\par
+{\em Logging levels that will passed to the optional log callback function }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_ad1d09e6062ad3db182a66f1829c7479b}{rallyhere\+\_\+set\+\_\+log\+\_\+callback}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, \mbox{\hyperlink{c__api_8h_a64a7679e581842654beca7ae63664a26}{Rally\+Here\+Log\+Callback}} callback, void $\ast$user\+\_\+data)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Lifetime}\par
+{\em Manages the lifetime of a Rally Here Game Instance Adapter. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a6122df1cede4159d0d30be0eb7b45463}{rallyhere\+\_\+create\+\_\+game\+\_\+instance\+\_\+adapter}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} $\ast$adapter, const char $\ast$arguments)
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \mbox{\hyperlink{structRallyHereGameInstanceAdapter_aeef6eea3f33281f1a997fcb3462effd3}{rallyhere\+\_\+create\+\_\+game\+\_\+instance\+\_\+adaptern}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} $\ast$adapter, const char $\ast$arguments, unsigned int arguments\+\_\+length)
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a49786a749d31ba4c426b4b0059709704}{rallyhere\+\_\+create\+\_\+game\+\_\+instance\+\_\+adapter\+\_\+with\+\_\+logger}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} $\ast$adapter, const char $\ast$arguments, \mbox{\hyperlink{c__api_8h_a64a7679e581842654beca7ae63664a26}{Rally\+Here\+Log\+Callback}} callback, void $\ast$user\+\_\+data)
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a85db0b2f34bb7f67347ff9bbe5ff2beb}{rallyhere\+\_\+create\+\_\+game\+\_\+instance\+\_\+adaptern\+\_\+with\+\_\+logger}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} $\ast$adapter, const char $\ast$arguments, unsigned int arguments\+\_\+length, \mbox{\hyperlink{c__api_8h_a64a7679e581842654beca7ae63664a26}{Rally\+Here\+Log\+Callback}} callback, void $\ast$user\+\_\+data)
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a291d4acc324c8dbab8786391fb5557ec}{rallyhere\+\_\+destroy\+\_\+game\+\_\+instance\+\_\+adapter}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter)
+\begin{DoxyCompactList}\small\item\em Destroes the adapter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Repeated at Regular Intervals}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a4db3f8b5b27ab240d0edb337719dd2fd}{rallyhere\+\_\+tick}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter)
+\begin{DoxyCompactList}\small\item\em Tick that\textquotesingle{}s expected to be called every frame. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \mbox{\hyperlink{structRallyHereGameInstanceAdapter_af3d04dce0166b8f1ba22de46ef74da9f}{rallyhere\+\_\+healthy}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter)
+\begin{DoxyCompactList}\small\item\em Mark the adapter as healthy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ State request and callbacks}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a4a665dd0eeb67b49043e7a54e0d397ed}{rallyhere\+\_\+connect}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Begin the process of connecting to the appropriate game host. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a5844a4e3c29f530db2d61f647e925f88}{rallyhere\+\_\+ready}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Tell the game host that this Game\+Instance can now be allocated. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a3c96a6e133beb24d2f54af05b13a713c}{rallyhere\+\_\+on\+\_\+allocated\+\_\+callback}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, \mbox{\hyperlink{c__api_8h_a8664a168347b6152d05be2870fff5113}{Rally\+Here\+On\+Allocated\+Callback}} callback, void $\ast$user\+\_\+data)
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_adddb6d6ebd068feef7972c6188ebecfe}{rallyhere\+\_\+test\+\_\+fake\+\_\+allocation\+\_\+response}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, const char $\ast$fake\+\_\+data)
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_afa437234d06d99d50e63479ae8ca3bd4}{rallyhere\+\_\+allocate}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Tell the game host that this Game\+Instance has been allocated. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_ab7b0b24e192ce285af9c233e68d12c19}{rallyhere\+\_\+reserve}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, unsigned int timeout\+\_\+seconds, void($\ast$reserve\+\_\+callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$reserve\+\_\+user\+\_\+data, void($\ast$ready\+\_\+callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$ready\+\_\+user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Tell the game host to reserve this game instance rather than marking it ready. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_afb679e1014b59a9a246c7c5b02c1062b}{rallyhere\+\_\+reserve\+\_\+unconditional}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Tell the game host to reserve this game instance rather than marking it ready. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Soft Stop}\par
+{\em There are times when the game hosting system would like your instance to shut down, but it does not need to happen immediately. In these situations a soft-\/stop will be requested so that your instance can finish any currently running games and then stop gracefully. Currently only used by SIC and i3D. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a662073848a735b58f79f18df20196cf1}{rallyhere\+\_\+on\+\_\+soft\+\_\+stop\+\_\+callback}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em The callback to trigger when the game host wants to stop the game instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a12b6641eae79cfca381c5a4adc4cb2aa}{rallyhere\+\_\+external\+\_\+soft\+\_\+stop\+\_\+requested}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter)
+\begin{DoxyCompactList}\small\item\em Inform the adapter that a soft stop has been requested. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Stats Labels}\par
+{\em This is a map of string to string that can be used to store labels for stats. In SIC mode this will be exported as labels on every single prometheus metric. These must be set before calling \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a5844a4e3c29f530db2d61f647e925f88}{rallyhere\+\_\+ready()}} or \mbox{\hyperlink{structRallyHereGameInstanceAdapter_ab7b0b24e192ce285af9c233e68d12c19}{rallyhere\+\_\+reserve()}} is called. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_ab3f0ff7c642bb703f228782a4e6aae93}{rallyhere\+\_\+get\+\_\+labels}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, \mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}} $\ast$map)
+\begin{DoxyCompactList}\small\item\em Get the current string map for the labels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a80e5b040228f255c243f45317f04eeac}{rallyhere\+\_\+set\+\_\+labels}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, const \mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}} map, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Set the current string map for the labels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Additional Info}\par
+{\em This is a map of string to string that can be used to store additional information about the game instance. In SIC mode this will be exported as labels on the \char`\"{}instance\+\_\+info\char`\"{} gauge. These can be set after calls to \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a5844a4e3c29f530db2d61f647e925f88}{rallyhere\+\_\+ready()}} or \mbox{\hyperlink{structRallyHereGameInstanceAdapter_ab7b0b24e192ce285af9c233e68d12c19}{rallyhere\+\_\+reserve()}}. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a91c2c856bafd227bce07837642dba164}{rallyhere\+\_\+get\+\_\+additional\+\_\+info}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, \mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}} $\ast$map)
+\begin{DoxyCompactList}\small\item\em Get the current string map for the additional info. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a059a56aff73e1901768e2511f664f9f8}{rallyhere\+\_\+set\+\_\+additional\+\_\+info}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, const \mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}} map, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Set the current string map for the additional info. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Stats Annotations}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a5735f0da0826fe530291423a214ce456}{rallyhere\+\_\+get\+\_\+annotations}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, \mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}} $\ast$map)
+\begin{DoxyCompactList}\small\item\em Get the current string map for the annotations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a6f5ea8bf77b08b81ffefe160157a4ca0}{rallyhere\+\_\+set\+\_\+annotations}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, const \mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}} map, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Set the current string map for the annotations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Stats core}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a71b7533f99e051e4a6969d28521e1e88}{rallyhere\+\_\+stats\+\_\+base}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, const \mbox{\hyperlink{structRallyHereStatsBase}{Rally\+Here\+Stats\+Base}} $\ast$stats, const \mbox{\hyperlink{structRallyHereStatsBaseProvided}{Rally\+Here\+Stats\+Base\+Provided}} $\ast$provided, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Set the base stats for the game instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Stats gauges}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a4c6cb8ff5eb5fc79e352e64fea634582}{rallyhere\+\_\+stats\+\_\+gauge}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, const char $\ast$name, double value, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_acdb70d34626a0951b5123ca5a8c90ba7}{rallyhere\+\_\+stats\+\_\+gauge\+\_\+with\+\_\+labels}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, const char $\ast$name, double value, const \mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}} labels, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Stats arbitrary}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a9b1b98ccaabfe4412ab311c4e4bf12df}{rallyhere\+\_\+stats\+\_\+arbitrary}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, const char $\ast$name, const char $\ast$data, unsigned int data\+\_\+size, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a8a05228013b9ad1fcdb0dbeea74d2d10}{rallyhere\+\_\+stats\+\_\+arbitrary\+\_\+move}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, const char $\ast$name, char $\ast$data, unsigned int data\+\_\+size, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, char $\ast$data, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Push metrics}\par
+{\em Used for metrics that are push rather than pull. User of the SDK must choose between statsd or graphite as the target for the push.
+
+\begin{DoxyAttention}{Attention}
+This is still a work in progress and the API is provided with the expectation that there will be better handling of automatically pushing those metrics in the future. The metric API is stable and generates the correct output foer statsd and graphite, but there is no internal code to send those values out yet. 
+\end{DoxyAttention}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \mbox{\hyperlink{structRallyHereGameInstanceAdapter_aaa958e15c14a2100748048adb0cf7277}{rallyhere\+\_\+metrics\+\_\+immediate\+\_\+action}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, const \mbox{\hyperlink{structRallyHereMetricDefinition}{Rally\+Here\+Metric\+Definition}} $\ast$definition, const \mbox{\hyperlink{structRallyHereMetricAction}{Rally\+Here\+Metric\+Action}} $\ast$action, \mbox{\hyperlink{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaa}{Rally\+Here\+Metric\+Flush}} flush)
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a28bcafe6ae1c9ebf393fb93f80253f73}{rallyhere\+\_\+metrics\+\_\+immediate\+\_\+action\+\_\+with\+\_\+time}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, const \mbox{\hyperlink{structRallyHereMetricDefinition}{Rally\+Here\+Metric\+Definition}} $\ast$definition, const \mbox{\hyperlink{structRallyHereMetricAction}{Rally\+Here\+Metric\+Action}} $\ast$action, double timestamp, \mbox{\hyperlink{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaa}{Rally\+Here\+Metric\+Flush}} flush)
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a109f917f5f91e81768a91e794125dc0d}{rallyhere\+\_\+metrics\+\_\+statsd\+\_\+output}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, const char $\ast$$\ast$data, size\+\_\+t $\ast$data\+\_\+size)
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a221c9aa3189025c9ed28f73f812840f6}{rallyhere\+\_\+metrics\+\_\+graphite\+\_\+output}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, const char $\ast$$\ast$data, size\+\_\+t $\ast$data\+\_\+size)
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Opaque type and handle to a Rally Here Game Instance Adapter.
+
+This struct is intentionally empty because its true interface is only defined internally. Any methods which take this as the first argument can be thought of as methods on this struct.
+
+Callbacks are either called immediately at the call site or when calling \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a4db3f8b5b27ab240d0edb337719dd2fd}{rallyhere\+\_\+tick()}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structRallyHereGameInstanceAdapter_afa437234d06d99d50e63479ae8ca3bd4}\label{structRallyHereGameInstanceAdapter_afa437234d06d99d50e63479ae8ca3bd4}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_allocate@{rallyhere\_allocate}}
+\index{rallyhere\_allocate@{rallyhere\_allocate}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_allocate()}{rallyhere\_allocate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+allocate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Tell the game host that this Game\+Instance has been allocated. 
+
+When using \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a5844a4e3c29f530db2d61f647e925f88}{rallyhere\+\_\+ready()}} this is used to tell the Game Host that you have recieved the allocation information and have done the appropriate work. In the \mbox{\hyperlink{structRallyHereGameInstanceAdapter_ab7b0b24e192ce285af9c233e68d12c19}{rallyhere\+\_\+reserve()}} case this is telling the Game Host that you are allocated by some other means. The provided callback will be called when the process completes with the result \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a4a665dd0eeb67b49043e7a54e0d397ed}\label{structRallyHereGameInstanceAdapter_a4a665dd0eeb67b49043e7a54e0d397ed}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_connect@{rallyhere\_connect}}
+\index{rallyhere\_connect@{rallyhere\_connect}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_connect()}{rallyhere\_connect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+connect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Begin the process of connecting to the appropriate game host. 
+
+The provided callback will be called when the process completes with the result of the connection attempt. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a6122df1cede4159d0d30be0eb7b45463}\label{structRallyHereGameInstanceAdapter_a6122df1cede4159d0d30be0eb7b45463}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_create\_game\_instance\_adapter@{rallyhere\_create\_game\_instance\_adapter}}
+\index{rallyhere\_create\_game\_instance\_adapter@{rallyhere\_create\_game\_instance\_adapter}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_create\_game\_instance\_adapter()}{rallyhere\_create\_game\_instance\_adapter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} rallyhere\+\_\+create\+\_\+game\+\_\+instance\+\_\+adapter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} $\ast$}]{adapter,  }\item[{const char $\ast$}]{arguments }\end{DoxyParamCaption})}
+
+Create a new adapter using a single string to represent the command line arguments it will use for initialization. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a49786a749d31ba4c426b4b0059709704}\label{structRallyHereGameInstanceAdapter_a49786a749d31ba4c426b4b0059709704}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_create\_game\_instance\_adapter\_with\_logger@{rallyhere\_create\_game\_instance\_adapter\_with\_logger}}
+\index{rallyhere\_create\_game\_instance\_adapter\_with\_logger@{rallyhere\_create\_game\_instance\_adapter\_with\_logger}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_create\_game\_instance\_adapter\_with\_logger()}{rallyhere\_create\_game\_instance\_adapter\_with\_logger()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} rallyhere\+\_\+create\+\_\+game\+\_\+instance\+\_\+adapter\+\_\+with\+\_\+logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} $\ast$}]{adapter,  }\item[{const char $\ast$}]{arguments,  }\item[{\mbox{\hyperlink{c__api_8h_a64a7679e581842654beca7ae63664a26}{Rally\+Here\+Log\+Callback}}}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+Create a new adapter using a single string to represent the command line arguments it will use for initialization and a custom logging function to be used from the moment it is created. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structRallyHereGameInstanceAdapter_ad1d09e6062ad3db182a66f1829c7479b}{rallyhere\+\_\+set\+\_\+log\+\_\+callback}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{structRallyHereGameInstanceAdapter_aeef6eea3f33281f1a997fcb3462effd3}\label{structRallyHereGameInstanceAdapter_aeef6eea3f33281f1a997fcb3462effd3}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_create\_game\_instance\_adaptern@{rallyhere\_create\_game\_instance\_adaptern}}
+\index{rallyhere\_create\_game\_instance\_adaptern@{rallyhere\_create\_game\_instance\_adaptern}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_create\_game\_instance\_adaptern()}{rallyhere\_create\_game\_instance\_adaptern()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} rallyhere\+\_\+create\+\_\+game\+\_\+instance\+\_\+adaptern (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} $\ast$}]{adapter,  }\item[{const char $\ast$}]{arguments,  }\item[{unsigned int}]{arguments\+\_\+length }\end{DoxyParamCaption})}
+
+Create a new adapter using a C-\/style array to represent the command line arguments it will use for initialization. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a85db0b2f34bb7f67347ff9bbe5ff2beb}\label{structRallyHereGameInstanceAdapter_a85db0b2f34bb7f67347ff9bbe5ff2beb}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_create\_game\_instance\_adaptern\_with\_logger@{rallyhere\_create\_game\_instance\_adaptern\_with\_logger}}
+\index{rallyhere\_create\_game\_instance\_adaptern\_with\_logger@{rallyhere\_create\_game\_instance\_adaptern\_with\_logger}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_create\_game\_instance\_adaptern\_with\_logger()}{rallyhere\_create\_game\_instance\_adaptern\_with\_logger()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} rallyhere\+\_\+create\+\_\+game\+\_\+instance\+\_\+adaptern\+\_\+with\+\_\+logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} $\ast$}]{adapter,  }\item[{const char $\ast$}]{arguments,  }\item[{unsigned int}]{arguments\+\_\+length,  }\item[{\mbox{\hyperlink{c__api_8h_a64a7679e581842654beca7ae63664a26}{Rally\+Here\+Log\+Callback}}}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+Create a new adapter using a C-\/style array to represent the command line arguments it will use for initialization and a custom logging function to be used from the moment it is created. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{structRallyHereGameInstanceAdapter_ad1d09e6062ad3db182a66f1829c7479b}{rallyhere\+\_\+set\+\_\+log\+\_\+callback}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a291d4acc324c8dbab8786391fb5557ec}\label{structRallyHereGameInstanceAdapter_a291d4acc324c8dbab8786391fb5557ec}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_destroy\_game\_instance\_adapter@{rallyhere\_destroy\_game\_instance\_adapter}}
+\index{rallyhere\_destroy\_game\_instance\_adapter@{rallyhere\_destroy\_game\_instance\_adapter}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_destroy\_game\_instance\_adapter()}{rallyhere\_destroy\_game\_instance\_adapter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+destroy\+\_\+game\+\_\+instance\+\_\+adapter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter }\end{DoxyParamCaption})}
+
+
+
+Destroes the adapter. 
+
+Before any memory is freed every registered callback is called with the status RH\+\_\+\+STATUS\+\_\+\+CANCELLED so that any memory associated with the callback\textquotesingle{}s user data can be freed. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a12b6641eae79cfca381c5a4adc4cb2aa}\label{structRallyHereGameInstanceAdapter_a12b6641eae79cfca381c5a4adc4cb2aa}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_external\_soft\_stop\_requested@{rallyhere\_external\_soft\_stop\_requested}}
+\index{rallyhere\_external\_soft\_stop\_requested@{rallyhere\_external\_soft\_stop\_requested}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_external\_soft\_stop\_requested()}{rallyhere\_external\_soft\_stop\_requested()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+external\+\_\+soft\+\_\+stop\+\_\+requested (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter }\end{DoxyParamCaption})}
+
+
+
+Inform the adapter that a soft stop has been requested. 
+
+There are situations where soft stop comes from something external to the adapter and the adapter needs to be told. In this case the adapter will also trigger the on soft stop callback. This is not a deferred call, so the registered callback will be called immediately.
+
+In SIC the SIGTERM handler can\textquotesingle{}t always be overridden by this adapter. In those situations the caller is expected to call this function as part of their SIGTERM handling. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a91c2c856bafd227bce07837642dba164}\label{structRallyHereGameInstanceAdapter_a91c2c856bafd227bce07837642dba164}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_get\_additional\_info@{rallyhere\_get\_additional\_info}}
+\index{rallyhere\_get\_additional\_info@{rallyhere\_get\_additional\_info}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_get\_additional\_info()}{rallyhere\_get\_additional\_info()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+get\+\_\+additional\+\_\+info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{\mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}} $\ast$}]{map }\end{DoxyParamCaption})}
+
+
+
+Get the current string map for the additional info. 
+
+Caller is responsible for freeing the string map with rallyhere\+\_\+string\+\_\+map\+\_\+destroy. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a5735f0da0826fe530291423a214ce456}\label{structRallyHereGameInstanceAdapter_a5735f0da0826fe530291423a214ce456}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_get\_annotations@{rallyhere\_get\_annotations}}
+\index{rallyhere\_get\_annotations@{rallyhere\_get\_annotations}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_get\_annotations()}{rallyhere\_get\_annotations()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+get\+\_\+annotations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{\mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}} $\ast$}]{map }\end{DoxyParamCaption})}
+
+
+
+Get the current string map for the annotations. 
+
+Caller is responsible for freeing the string map. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_ab3f0ff7c642bb703f228782a4e6aae93}\label{structRallyHereGameInstanceAdapter_ab3f0ff7c642bb703f228782a4e6aae93}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_get\_labels@{rallyhere\_get\_labels}}
+\index{rallyhere\_get\_labels@{rallyhere\_get\_labels}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_get\_labels()}{rallyhere\_get\_labels()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+get\+\_\+labels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{\mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}} $\ast$}]{map }\end{DoxyParamCaption})}
+
+
+
+Get the current string map for the labels. 
+
+Caller is responsible for freeing the string map with rallyhere\+\_\+string\+\_\+map\+\_\+destroy. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_af3d04dce0166b8f1ba22de46ef74da9f}\label{structRallyHereGameInstanceAdapter_af3d04dce0166b8f1ba22de46ef74da9f}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_healthy@{rallyhere\_healthy}}
+\index{rallyhere\_healthy@{rallyhere\_healthy}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_healthy()}{rallyhere\_healthy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} rallyhere\+\_\+healthy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter }\end{DoxyParamCaption})}
+
+
+
+Mark the adapter as healthy. 
+
+This is used to tell the game host that this adapter is still alive and well. Should be called at a regular interval. Every 5 seconds is a good rule of thumb. Currently only used by Agones. SIC relies on an open metrics endpoint created by this SDK. i3D relies on the Arcus socket connection. Multiplay reliies on the A2S socket connection. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a221c9aa3189025c9ed28f73f812840f6}\label{structRallyHereGameInstanceAdapter_a221c9aa3189025c9ed28f73f812840f6}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_metrics\_graphite\_output@{rallyhere\_metrics\_graphite\_output}}
+\index{rallyhere\_metrics\_graphite\_output@{rallyhere\_metrics\_graphite\_output}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_metrics\_graphite\_output()}{rallyhere\_metrics\_graphite\_output()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+metrics\+\_\+graphite\+\_\+output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{const char $\ast$$\ast$}]{data,  }\item[{size\+\_\+t $\ast$}]{data\+\_\+size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structRallyHereGameInstanceAdapter_aaa958e15c14a2100748048adb0cf7277}\label{structRallyHereGameInstanceAdapter_aaa958e15c14a2100748048adb0cf7277}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_metrics\_immediate\_action@{rallyhere\_metrics\_immediate\_action}}
+\index{rallyhere\_metrics\_immediate\_action@{rallyhere\_metrics\_immediate\_action}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_metrics\_immediate\_action()}{rallyhere\_metrics\_immediate\_action()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} rallyhere\+\_\+metrics\+\_\+immediate\+\_\+action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{const \mbox{\hyperlink{structRallyHereMetricDefinition}{Rally\+Here\+Metric\+Definition}} $\ast$}]{definition,  }\item[{const \mbox{\hyperlink{structRallyHereMetricAction}{Rally\+Here\+Metric\+Action}} $\ast$}]{action,  }\item[{\mbox{\hyperlink{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaa}{Rally\+Here\+Metric\+Flush}}}]{flush }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a28bcafe6ae1c9ebf393fb93f80253f73}\label{structRallyHereGameInstanceAdapter_a28bcafe6ae1c9ebf393fb93f80253f73}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_metrics\_immediate\_action\_with\_time@{rallyhere\_metrics\_immediate\_action\_with\_time}}
+\index{rallyhere\_metrics\_immediate\_action\_with\_time@{rallyhere\_metrics\_immediate\_action\_with\_time}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_metrics\_immediate\_action\_with\_time()}{rallyhere\_metrics\_immediate\_action\_with\_time()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} rallyhere\+\_\+metrics\+\_\+immediate\+\_\+action\+\_\+with\+\_\+time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{const \mbox{\hyperlink{structRallyHereMetricDefinition}{Rally\+Here\+Metric\+Definition}} $\ast$}]{definition,  }\item[{const \mbox{\hyperlink{structRallyHereMetricAction}{Rally\+Here\+Metric\+Action}} $\ast$}]{action,  }\item[{double}]{timestamp,  }\item[{\mbox{\hyperlink{c__metrics_8h_a510cdf6b2232f28c4f667342930bcaaa}{Rally\+Here\+Metric\+Flush}}}]{flush }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a109f917f5f91e81768a91e794125dc0d}\label{structRallyHereGameInstanceAdapter_a109f917f5f91e81768a91e794125dc0d}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_metrics\_statsd\_output@{rallyhere\_metrics\_statsd\_output}}
+\index{rallyhere\_metrics\_statsd\_output@{rallyhere\_metrics\_statsd\_output}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_metrics\_statsd\_output()}{rallyhere\_metrics\_statsd\_output()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+metrics\+\_\+statsd\+\_\+output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{const char $\ast$$\ast$}]{data,  }\item[{size\+\_\+t $\ast$}]{data\+\_\+size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a3c96a6e133beb24d2f54af05b13a713c}\label{structRallyHereGameInstanceAdapter_a3c96a6e133beb24d2f54af05b13a713c}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_on\_allocated\_callback@{rallyhere\_on\_allocated\_callback}}
+\index{rallyhere\_on\_allocated\_callback@{rallyhere\_on\_allocated\_callback}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_on\_allocated\_callback()}{rallyhere\_on\_allocated\_callback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+on\+\_\+allocated\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{\mbox{\hyperlink{c__api_8h_a8664a168347b6152d05be2870fff5113}{Rally\+Here\+On\+Allocated\+Callback}}}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+Register the callback which will be called when the game host has assigned an allocation to this adapter. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a662073848a735b58f79f18df20196cf1}\label{structRallyHereGameInstanceAdapter_a662073848a735b58f79f18df20196cf1}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_on\_soft\_stop\_callback@{rallyhere\_on\_soft\_stop\_callback}}
+\index{rallyhere\_on\_soft\_stop\_callback@{rallyhere\_on\_soft\_stop\_callback}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_on\_soft\_stop\_callback()}{rallyhere\_on\_soft\_stop\_callback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+on\+\_\+soft\+\_\+stop\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+The callback to trigger when the game host wants to stop the game instance. 
+
+In SIC this is expected to come from the SIGTERM handler. In i3D this is expected to come from the Arcus commands \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a5844a4e3c29f530db2d61f647e925f88}\label{structRallyHereGameInstanceAdapter_a5844a4e3c29f530db2d61f647e925f88}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_ready@{rallyhere\_ready}}
+\index{rallyhere\_ready@{rallyhere\_ready}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_ready()}{rallyhere\_ready()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+ready (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Tell the game host that this Game\+Instance can now be allocated. 
+
+The provided callback will be called when the process completes with the result of the game host being told this is ready. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_ab7b0b24e192ce285af9c233e68d12c19}\label{structRallyHereGameInstanceAdapter_ab7b0b24e192ce285af9c233e68d12c19}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_reserve@{rallyhere\_reserve}}
+\index{rallyhere\_reserve@{rallyhere\_reserve}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_reserve()}{rallyhere\_reserve()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+reserve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{unsigned int}]{timeout\+\_\+seconds,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}]{reserve\+\_\+callback,  }\item[{void $\ast$}]{reserve\+\_\+user\+\_\+data,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}]{ready\+\_\+callback,  }\item[{void $\ast$}]{ready\+\_\+user\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Tell the game host to reserve this game instance rather than marking it ready. 
+
+This will stop the game host from destroying this game instance based on any ready timeouts. This is to be used when the game instance is manually handling sessions in a way that isn\textquotesingle{}t expected to be handled by the normal matchmaking route. The provided callback will be called when the process completes with the result \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_afb679e1014b59a9a246c7c5b02c1062b}\label{structRallyHereGameInstanceAdapter_afb679e1014b59a9a246c7c5b02c1062b}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_reserve\_unconditional@{rallyhere\_reserve\_unconditional}}
+\index{rallyhere\_reserve\_unconditional@{rallyhere\_reserve\_unconditional}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_reserve\_unconditional()}{rallyhere\_reserve\_unconditional()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+reserve\+\_\+unconditional (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Tell the game host to reserve this game instance rather than marking it ready. 
+
+This will stop the game host from destroying this game instance based on any ready timeouts. This is to be used when the game instance is manually handling sessions in a way that isn\textquotesingle{}t expected to be handled by the normal matchmaking route. The provided callback will be called when the process completes with the result \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a059a56aff73e1901768e2511f664f9f8}\label{structRallyHereGameInstanceAdapter_a059a56aff73e1901768e2511f664f9f8}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_set\_additional\_info@{rallyhere\_set\_additional\_info}}
+\index{rallyhere\_set\_additional\_info@{rallyhere\_set\_additional\_info}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_set\_additional\_info()}{rallyhere\_set\_additional\_info()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+set\+\_\+additional\+\_\+info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{const \mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}}}]{map,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Set the current string map for the additional info. 
+
+The string map will be copied. Provide a callback to be notified when the labels have been set. These can be set after calls to \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a5844a4e3c29f530db2d61f647e925f88}{rallyhere\+\_\+ready()}} or \mbox{\hyperlink{structRallyHereGameInstanceAdapter_ab7b0b24e192ce285af9c233e68d12c19}{rallyhere\+\_\+reserve()}}. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a6f5ea8bf77b08b81ffefe160157a4ca0}\label{structRallyHereGameInstanceAdapter_a6f5ea8bf77b08b81ffefe160157a4ca0}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_set\_annotations@{rallyhere\_set\_annotations}}
+\index{rallyhere\_set\_annotations@{rallyhere\_set\_annotations}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_set\_annotations()}{rallyhere\_set\_annotations()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+set\+\_\+annotations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{const \mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}}}]{map,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Set the current string map for the annotations. 
+
+The string map will be copied. Provide a callback to be notified when the labels have been set. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a80e5b040228f255c243f45317f04eeac}\label{structRallyHereGameInstanceAdapter_a80e5b040228f255c243f45317f04eeac}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_set\_labels@{rallyhere\_set\_labels}}
+\index{rallyhere\_set\_labels@{rallyhere\_set\_labels}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_set\_labels()}{rallyhere\_set\_labels()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+set\+\_\+labels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{const \mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}}}]{map,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Set the current string map for the labels. 
+
+The string map will be copied. Provide a callback to be notified when the labels have been set. These must be set before calling \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a5844a4e3c29f530db2d61f647e925f88}{rallyhere\+\_\+ready()}} or \mbox{\hyperlink{structRallyHereGameInstanceAdapter_ab7b0b24e192ce285af9c233e68d12c19}{rallyhere\+\_\+reserve()}} is called. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_ad1d09e6062ad3db182a66f1829c7479b}\label{structRallyHereGameInstanceAdapter_ad1d09e6062ad3db182a66f1829c7479b}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_set\_log\_callback@{rallyhere\_set\_log\_callback}}
+\index{rallyhere\_set\_log\_callback@{rallyhere\_set\_log\_callback}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_set\_log\_callback()}{rallyhere\_set\_log\_callback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+set\+\_\+log\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{\mbox{\hyperlink{c__api_8h_a64a7679e581842654beca7ae63664a26}{Rally\+Here\+Log\+Callback}}}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+Sets a custom logger that can handle logs from inside of the server. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a9b1b98ccaabfe4412ab311c4e4bf12df}\label{structRallyHereGameInstanceAdapter_a9b1b98ccaabfe4412ab311c4e4bf12df}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_stats\_arbitrary@{rallyhere\_stats\_arbitrary}}
+\index{rallyhere\_stats\_arbitrary@{rallyhere\_stats\_arbitrary}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_stats\_arbitrary()}{rallyhere\_stats\_arbitrary()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+stats\+\_\+arbitrary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{data,  }\item[{unsigned int}]{data\+\_\+size,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+Set the value of an arbitrary stat. Provide a callback to be notified when the stats have been set. 
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to export with the stat which is copied by the call \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a8a05228013b9ad1fcdb0dbeea74d2d10}\label{structRallyHereGameInstanceAdapter_a8a05228013b9ad1fcdb0dbeea74d2d10}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_stats\_arbitrary\_move@{rallyhere\_stats\_arbitrary\_move}}
+\index{rallyhere\_stats\_arbitrary\_move@{rallyhere\_stats\_arbitrary\_move}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_stats\_arbitrary\_move()}{rallyhere\_stats\_arbitrary\_move()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+stats\+\_\+arbitrary\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{const char $\ast$}]{name,  }\item[{char $\ast$}]{data,  }\item[{unsigned int}]{data\+\_\+size,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, char $\ast$data, void $\ast$user\+\_\+data)}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+Set the value of an arbitrary stat. Provide a callback to be notified when the stats have been set. 
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to export with the stat which must have been allocated with the same alloc as set for the adapter. This function takes ownership of that pointer. If the error code is not RH\+\_\+\+OK then the pointer is not taken and the caller is responsible \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a71b7533f99e051e4a6969d28521e1e88}\label{structRallyHereGameInstanceAdapter_a71b7533f99e051e4a6969d28521e1e88}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_stats\_base@{rallyhere\_stats\_base}}
+\index{rallyhere\_stats\_base@{rallyhere\_stats\_base}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_stats\_base()}{rallyhere\_stats\_base()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} rallyhere\+\_\+stats\+\_\+base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{const \mbox{\hyperlink{structRallyHereStatsBase}{Rally\+Here\+Stats\+Base}} $\ast$}]{stats,  }\item[{const \mbox{\hyperlink{structRallyHereStatsBaseProvided}{Rally\+Here\+Stats\+Base\+Provided}} $\ast$}]{provided,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Set the base stats for the game instance. 
+
+Provide a callback to be notified when the stats have been set These will be exported as labels on the \char`\"{}instance\+\_\+info\char`\"{} gauge. These will be exported as part of the A2\+S\+\_\+\+INFO query. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a4c6cb8ff5eb5fc79e352e64fea634582}\label{structRallyHereGameInstanceAdapter_a4c6cb8ff5eb5fc79e352e64fea634582}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_stats\_gauge@{rallyhere\_stats\_gauge}}
+\index{rallyhere\_stats\_gauge@{rallyhere\_stats\_gauge}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_stats\_gauge()}{rallyhere\_stats\_gauge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+stats\+\_\+gauge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{const char $\ast$}]{name,  }\item[{double}]{value,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+Set the value of a gauge. Provide a callback to be notified when the stats have been set. These stats will be exported with the current labels \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_acdb70d34626a0951b5123ca5a8c90ba7}\label{structRallyHereGameInstanceAdapter_acdb70d34626a0951b5123ca5a8c90ba7}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_stats\_gauge\_with\_labels@{rallyhere\_stats\_gauge\_with\_labels}}
+\index{rallyhere\_stats\_gauge\_with\_labels@{rallyhere\_stats\_gauge\_with\_labels}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_stats\_gauge\_with\_labels()}{rallyhere\_stats\_gauge\_with\_labels()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+stats\+\_\+gauge\+\_\+with\+\_\+labels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{const char $\ast$}]{name,  }\item[{double}]{value,  }\item[{const \mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}}}]{labels,  }\item[{void($\ast$)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data)}]{callback,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})}
+
+Set the value of a gauge. Provide a callback to be notified when the stats have been set. 
+\begin{DoxyParams}{Parameters}
+{\em labels} & The labels to export with the gauge \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structRallyHereGameInstanceAdapter_adddb6d6ebd068feef7972c6188ebecfe}\label{structRallyHereGameInstanceAdapter_adddb6d6ebd068feef7972c6188ebecfe}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_test\_fake\_allocation\_response@{rallyhere\_test\_fake\_allocation\_response}}
+\index{rallyhere\_test\_fake\_allocation\_response@{rallyhere\_test\_fake\_allocation\_response}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_test\_fake\_allocation\_response()}{rallyhere\_test\_fake\_allocation\_response()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+test\+\_\+fake\+\_\+allocation\+\_\+response (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{const char $\ast$}]{fake\+\_\+data }\end{DoxyParamCaption})}
+
+Fake an allocation. This should only be used for testing purposes. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a4db3f8b5b27ab240d0edb337719dd2fd}\label{structRallyHereGameInstanceAdapter_a4db3f8b5b27ab240d0edb337719dd2fd}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_tick@{rallyhere\_tick}}
+\index{rallyhere\_tick@{rallyhere\_tick}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_tick()}{rallyhere\_tick()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} rallyhere\+\_\+tick (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter }\end{DoxyParamCaption})}
+
+
+
+Tick that\textquotesingle{}s expected to be called every frame. 
+
+This is used to check for any messages from the game host. All deferred message processing and callbacks will be handled during this tick. \begin{DoxyReturn}{Returns}
+RH\+\_\+\+STATUS\+\_\+\+OK if this adapter can still be used, otherwise an error code. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/asayman/\+Dev/game-\/host-\/adapter/include/game-\/host-\/adapter/\mbox{\hyperlink{c__api_8h}{c\+\_\+api.\+h}}\end{DoxyCompactItemize}

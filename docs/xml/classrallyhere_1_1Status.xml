@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classrallyhere_1_1Status" kind="class" language="C++" prot="public">
+    <compoundname>rallyhere::Status</compoundname>
+    <includes refid="rh__status_8h" local="no">rh_status.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrallyhere_1_1Status_1ad310138441f6a57ce6e026dedc70134c" prot="private" static="no" mutable="no">
+        <type><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RallyHereStatusCode rallyhere::Status::m_Code</definition>
+        <argsstring></argsstring>
+        <name>m_Code</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="52" column="29" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrallyhere_1_1Status_1a0e46aec2426f5c2ff85e62dda8f87ef0" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacerallyhere_1a06e017abf8a0212e162b377dc793078e" kindref="member">string</ref></type>
+        <definition>string rallyhere::Status::m_Message</definition>
+        <argsstring></argsstring>
+        <name>m_Message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="53" column="16" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrallyhere_1_1Status_1aa3fd8a836a74be4497179fc788c02521" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>rallyhere::Status::Status</definition>
+        <argsstring>()</argsstring>
+        <name>Status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="42" column="9" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classrallyhere_1_1Status_1a537c8dd791bd3a6fdd59796dff75fac8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>rallyhere::Status::Status</definition>
+        <argsstring>(RallyHereStatusCode code)</argsstring>
+        <name>Status</name>
+        <param>
+          <type><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="43" column="9" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classrallyhere_1_1Status_1a7ad71b78f8e8422d7c5dc4b463eccdaf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>rallyhere::Status::Status</definition>
+        <argsstring>(RallyHereStatusCode code, const string &amp;message)</argsstring>
+        <name>Status</name>
+        <param>
+          <type><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacerallyhere_1a06e017abf8a0212e162b377dc793078e" kindref="member">string</ref> &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="44" column="9" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classrallyhere_1_1Status_1ad0de2e63b84f8da0d827c6e77b039a7d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RallyHereStatusCode rallyhere::Status::code</definition>
+        <argsstring>() const</argsstring>
+        <name>code</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="46" column="29" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classrallyhere_1_1Status_1a308114c9416a03fc066cab687947e10a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view rallyhere::Status::code_message</definition>
+        <argsstring>() const</argsstring>
+        <name>code_message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="47" column="26" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classrallyhere_1_1Status_1aa7f557c4cfb13ebe562cfe6f3d3a44cc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string_view</type>
+        <definition>std::string_view rallyhere::Status::message</definition>
+        <argsstring>() const</argsstring>
+        <name>message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="48" column="26" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classrallyhere_1_1Status_1a2da5027faf42d9ac874787c25c7afc7e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool rallyhere::Status::ok</definition>
+        <argsstring>() const</argsstring>
+        <name>ok</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="49" column="14" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classrallyhere_1_1Status_1a772c946fd1d0e06a189c1f68b1c838fc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>rallyhere::Status::operator bool</definition>
+        <argsstring>() const</argsstring>
+        <name>operator bool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="50" column="9" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="50" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="39" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="40" bodyend="54"/>
+    <listofallmembers>
+      <member refid="classrallyhere_1_1Status_1ad0de2e63b84f8da0d827c6e77b039a7d" prot="public" virt="non-virtual"><scope>rallyhere::Status</scope><name>code</name></member>
+      <member refid="classrallyhere_1_1Status_1a308114c9416a03fc066cab687947e10a" prot="public" virt="non-virtual"><scope>rallyhere::Status</scope><name>code_message</name></member>
+      <member refid="classrallyhere_1_1Status_1ad310138441f6a57ce6e026dedc70134c" prot="private" virt="non-virtual"><scope>rallyhere::Status</scope><name>m_Code</name></member>
+      <member refid="classrallyhere_1_1Status_1a0e46aec2426f5c2ff85e62dda8f87ef0" prot="private" virt="non-virtual"><scope>rallyhere::Status</scope><name>m_Message</name></member>
+      <member refid="classrallyhere_1_1Status_1aa7f557c4cfb13ebe562cfe6f3d3a44cc" prot="public" virt="non-virtual"><scope>rallyhere::Status</scope><name>message</name></member>
+      <member refid="classrallyhere_1_1Status_1a2da5027faf42d9ac874787c25c7afc7e" prot="public" virt="non-virtual"><scope>rallyhere::Status</scope><name>ok</name></member>
+      <member refid="classrallyhere_1_1Status_1a772c946fd1d0e06a189c1f68b1c838fc" prot="public" virt="non-virtual"><scope>rallyhere::Status</scope><name>operator bool</name></member>
+      <member refid="classrallyhere_1_1Status_1aa3fd8a836a74be4497179fc788c02521" prot="public" virt="non-virtual"><scope>rallyhere::Status</scope><name>Status</name></member>
+      <member refid="classrallyhere_1_1Status_1a537c8dd791bd3a6fdd59796dff75fac8" prot="public" virt="non-virtual"><scope>rallyhere::Status</scope><name>Status</name></member>
+      <member refid="classrallyhere_1_1Status_1a7ad71b78f8e8422d7c5dc4b463eccdaf" prot="public" virt="non-virtual"><scope>rallyhere::Status</scope><name>Status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

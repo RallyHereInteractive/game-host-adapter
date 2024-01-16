@@ -1,0 +1,631 @@
+\hypertarget{c__status_8h}{}\doxysection{/home/asayman/\+Dev/game-\/host-\/adapter/include/game-\/host-\/adapter/c\+\_\+status.h File Reference}
+\label{c__status_8h}\index{/home/asayman/Dev/game-\/host-\/adapter/include/game-\/host-\/adapter/c\_status.h@{/home/asayman/Dev/game-\/host-\/adapter/include/game-\/host-\/adapter/c\_status.h}}
+{\ttfamily \#include \char`\"{}c\+\_\+platform.\+h\char`\"{}}\newline
+Include dependency graph for c\+\_\+status.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{c__status_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{c__status_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \mbox{\hyperlink{c__status_8h_a9956737139e2ba1d2d6fb0e7c0079c8b}{Rally\+Here\+Status\+Code}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \{ \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a1300ac8cfb4b729eb58870f1622ad954}{RH\+\_\+\+STATUS\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a0a8082fa14843a2281943608a8cd7dd1}{RH\+\_\+\+STATUS\+\_\+\+ERROR}} = 1
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a591d6d384b580a2d37b3d8ae8dcb936f}{RH\+\_\+\+STATUS\+\_\+\+NO\+\_\+\+BOOTSTRAP\+\_\+\+MODE\+\_\+\+PROVIDED}} = 2
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a16e0d6608c332601d336233f07e82490}{RH\+\_\+\+STATUS\+\_\+\+CREDENTIALS\+\_\+\+FILE\+\_\+\+NOT\+\_\+\+TWO\+\_\+\+LINES}} = 3
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a0728f365351ad818785f6f3c23d9066a}{RH\+\_\+\+STATUS\+\_\+\+NO\+\_\+\+RALLYHERE\+\_\+\+URL\+\_\+\+PROVIDED}} = 4
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a6d05a38f126a17b22f377b4ca0a67d1e}{RH\+\_\+\+STATUS\+\_\+\+NO\+\_\+\+SIC\+\_\+\+PROFILE\+\_\+\+ID\+\_\+\+PROVIDED}} = 5
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a08de4e979e2cd29910c01b3f0c9f10ca}{RH\+\_\+\+STATUS\+\_\+\+CANCELLED}} = 6
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a98f11d0f7159aa51983be9d327c875d5}{RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+ADAPTER\+\_\+\+IS\+\_\+\+NULLPTR}} = 7
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ab66449e71969e766c2c9f95e8d22b799}{RH\+\_\+\+STATUS\+\_\+\+ADAPTER\+\_\+\+ALLOCATION\+\_\+\+ERROR}} = 8
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a14b9ca3fe3edd5b354d4f1f2baec5120}{RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+MAP\+\_\+\+IS\+\_\+\+NULLPTR}} = 9
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4d39404778b776c9c89a6ef35e1253d0}{RH\+\_\+\+STATUS\+\_\+\+MAP\+\_\+\+ALLOCATION\+\_\+\+ERROR}} = 10
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3d20263bbd6aa84ad40be352c2be37ea}{RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+KEY\+\_\+\+IS\+\_\+\+NULLPTR}} = 11
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a8c740518e8c6f392102f71fea5507287}{RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+VALUE\+\_\+\+IS\+\_\+\+NULLPTR}} = 12
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a77b7d9abc7c812f92b327433aa866c78}{RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+VALUE\+\_\+\+SIZE\+\_\+\+IS\+\_\+\+NULLPTR}} = 13
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5e4a428dc699b3d678db59bb779f5694}{RH\+\_\+\+STATUS\+\_\+\+KEY\+\_\+\+NOT\+\_\+\+FOUND}} = 14
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3db695bc7d8868bbf0e81d1f88b1be87}{RH\+\_\+\+STATUS\+\_\+\+COULD\+\_\+\+NOT\+\_\+\+PARSE\+\_\+\+RESPONSE}} = 15
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4d43ce15af4adb44b399761e60fa926a}{RH\+\_\+\+STATUS\+\_\+\+RESPONSE\+\_\+\+NO\+\_\+\+ACCESS\+\_\+\+TOKEN}} = 16
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784adb88c2387ecc66e91690d3829fe28be8}{RH\+\_\+\+STATUS\+\_\+\+RESPONSE\+\_\+\+NO\+\_\+\+REFRESH\+\_\+\+TOKEN}} = 17
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a6e73aa6f6a63192a578ca7414e95cd5e}{RH\+\_\+\+STATUS\+\_\+\+RESPONSE\+\_\+\+NO\+\_\+\+AUTH\+\_\+\+SUCCESS}} = 18
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a447c1e341e5a8cdf4041b529ceec5865}{RH\+\_\+\+STATUS\+\_\+\+RESPONSE\+\_\+\+AUTH\+\_\+\+SUCCESS\+\_\+\+NOT\+\_\+\+BOOL}} = 19
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784adb2f2b041e5db61c058c60bd65e6a455}{RH\+\_\+\+STATUS\+\_\+\+POLL\+\_\+\+INTERVAL\+\_\+\+MUST\+\_\+\+BE\+\_\+\+NUMERIC}} = 20
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ade028b1a3ffa2b385cde32b38dd35a07}{RH\+\_\+\+STATUS\+\_\+\+CANNOT\+\_\+\+POLL\+\_\+\+WITHOUT\+\_\+\+ON\+\_\+\+ALLOCATED\+\_\+\+CALLBACK}} = 21
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4a48f683cc94fd6e8197b5911042c3d7}{RH\+\_\+\+STATUS\+\_\+\+PROMETHEUS\+\_\+\+PORT\+\_\+\+MUST\+\_\+\+BE\+\_\+\+NUMERIC}} = 22
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784aa64721cd4e8953c139b590188f80bdb1}{RH\+\_\+\+STATUS\+\_\+\+PROMETHEUS\+\_\+\+ALREADY\+\_\+\+STARTED}} = 23
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ad38349022692a036840f5e30522f7666}{RH\+\_\+\+STATUS\+\_\+\+PROMETHEUS\+\_\+\+COULD\+\_\+\+NOT\+\_\+\+START}} = 24
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a180125453cc22048fb1e9056f2c072c0}{RH\+\_\+\+STATUS\+\_\+\+REQUEST\+\_\+\+TIMEOUT\+\_\+\+MUST\+\_\+\+BE\+\_\+\+NUMERIC}} = 25
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ac219f6cf5dcf3a07256f0c5aa82aa0b5}{RH\+\_\+\+STATUS\+\_\+\+POLL\+\_\+\+UNKNOWN\+\_\+\+STATE}} = 26
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a6cf9b7466cdd3efb72560137a6639428}{RH\+\_\+\+STATUS\+\_\+\+COULD\+\_\+\+NOT\+\_\+\+PARSE\+\_\+\+SERVER\+\_\+\+JSON}} = 27
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a1c03163fdafb759f77fef0787325c04d}{RH\+\_\+\+STATUS\+\_\+\+NO\+\_\+\+SERVER\+\_\+\+JSON}} = 28
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ae74f345ad235bc1b894ef9749dbcc428}{RH\+\_\+\+STATUS\+\_\+\+A2\+S\+\_\+\+QUERY\+\_\+\+PORT\+\_\+\+MUST\+\_\+\+BE\+\_\+\+SHORT\+\_\+\+NUMBER}} = 29
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3d939ba719a1e72dac87213d000ac91d}{RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+STATS\+\_\+\+IS\+\_\+\+NULLPTR}} = 30
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784abf084b16aa904d3c3789d82ccc7d6323}{RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+STATS\+\_\+\+PROVIDED\+\_\+\+IS\+\_\+\+NULLPTR}} = 31
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784aaf0fc67a7fb4f7d9865febf5d1ead80e}{RH\+\_\+\+STATUS\+\_\+\+PUBLIC\+\_\+\+PORT\+\_\+\+MUST\+\_\+\+BE\+\_\+\+NUMERIC}} = 32
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ade38e83d581d90d8543d8c85ed73dada}{RH\+\_\+\+STATUS\+\_\+\+BIND\+\_\+\+PORT\+\_\+\+MUST\+\_\+\+BE\+\_\+\+NUMERIC}} = 33
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a738b0b9660397d1f7d71704babff4cff}{RH\+\_\+\+STATUS\+\_\+\+MAX\+\_\+\+POLL\+\_\+\+FAILURES\+\_\+\+MUST\+\_\+\+BE\+\_\+\+NUMERIC}} = 34
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a10ab1036f37b4c3d9cb0988004485a6d}{RH\+\_\+\+STATUS\+\_\+\+MUST\+\_\+\+PROVIDE\+\_\+\+REPORTED\+\_\+\+PUBLIC\+\_\+\+HOST}} = 35
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a8e406a5a7f2663bb70943ef85f58f182}{RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+DEFINITION\+\_\+\+IS\+\_\+\+NULLPTR}} = 36
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784aaf20d589448c0a0da3bf3a91b452fbaf}{RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+ACTION\+\_\+\+IS\+\_\+\+NULLPTR}} = 37
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a085134dfbbf8492eb1da3f35122ff36a}{RH\+\_\+\+STATUS\+\_\+\+METRIC\+\_\+\+TYPE\+\_\+\+NOT\+\_\+\+SUPPORTED\+\_\+\+BY\+\_\+\+BACKEND}} = 38
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ad44f9e0270716cadf96288b761ce5760}{RH\+\_\+\+STATUS\+\_\+\+METRIC\+\_\+\+BACKEND\+\_\+\+GRAPHITE\+\_\+\+NOT\+\_\+\+CONFIGURED}} = 39
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a02214395540aeb3a80b0d53ff59e0bf4}{RH\+\_\+\+STATUS\+\_\+\+METRIC\+\_\+\+BACKEND\+\_\+\+STATSD\+\_\+\+NOT\+\_\+\+CONFIGURED}} = 40
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a7dc9b355287b4572d7f7e07c842d792b}{RH\+\_\+\+STATUS\+\_\+\+METRIC\+\_\+\+ACTION\+\_\+\+NOT\+\_\+\+SUPPORTED\+\_\+\+BY\+\_\+\+BACKEND}} = 41
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3c19942f92f264f61214ced37ffe17cc}{RH\+\_\+\+STATUS\+\_\+\+METRIC\+\_\+\+ACTION\+\_\+\+NOT\+\_\+\+SUPPORTED\+\_\+\+BY\+\_\+\+TYPE}} = 42
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5478aec493c7e8ff5004055be4221399}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+CONTINUE}} = 100
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a43b9eaaebddcf33d56af93d96f14efed}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+SWITCHINGPROTOCOLS}} = 101
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a223d974ddcd1ecf9a5b7402cee4133ec}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PROCESSING}} = 102
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ad1b104ef3131ee6df848c09bb0de3656}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+OK}} = 200
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a577e489149a1c88c5026325fde1f3fe0}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+CREATED}} = 201
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a7f1a08b981824b5fd71980ed577995de}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+ACCEPTED}} = 202
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a9b8130c9f50673fe080184cf145e63a5}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NON\+\_\+\+AUTHORITATIVE\+\_\+\+INFORMATION}} = 203
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784af4c21eddcc52d7cabf2531c05372f27e}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NO\+\_\+\+CONTENT}} = 204
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a899149acda4ae2df0834d4934aba4065}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+RESET\+\_\+\+CONTENT}} = 205
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ac4d1ae31ecd4e46e3924842b5e41584e}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PARTIAL\+\_\+\+CONTENT}} = 206
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784aae0caa6d08f4d5ff13dd94d40182af9b}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+MULTI\+\_\+\+STATUS}} = 207
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784afca98c3f4ca438c4c88f29d91d328932}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+ALREADY\+\_\+\+REPORTED}} = 208
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ac0c6674325564218168db382c032b7cc}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+IM\+\_\+\+USED}} = 226
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784acc9c74a0fb57a2e3c7e5cc32784f6c0e}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+MULTIPLE\+\_\+\+CHOICES}} = 300
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a45545da4a5c7fd73d083bd244be771cf}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+MOVED\+\_\+\+PERMANENTLY}} = 301
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a2f741463ff376b0521c4c0e0838bed3a}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+FOUND}} = 302
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a133055c9cfaea5f348de159a04e82d47}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+SEE\+\_\+\+OTHER}} = 303
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a92c6520787839cfbe4930558cc90848d}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NOT\+\_\+\+MODIFIED}} = 304
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784aebb75c1de47bb8f05fafa4ff5ff5d4b1}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+USE\+\_\+\+PROXY}} = 305
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a9e7195d5fc60e483740172dca869e1d2}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+TEMPORARY\+\_\+\+REDIRECT}} = 307
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ae3048fb3d9eaff93215a83074f341d55}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PERMANENT\+\_\+\+REDIRECT}} = 308
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784af355c8bd8782b8691d0e3d8c11bfd449}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+BAD\+\_\+\+REQUEST}} = 400
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a53a40133dd3bed4f65ca32bf3a0200c9}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+UNAUTHORIZED}} = 401
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784aa448dfeca5c1687a5465342b69aefa2d}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PAYMENT\+\_\+\+REQUIRED}} = 402
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ae723dcad7bcf05bf06454829e89a985e}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+FORBIDDEN}} = 403
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784abd3a892c457e4bb8c55599fbd8a47168}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NOT\+\_\+\+FOUND}} = 404
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784af7806e2beade7fc8bb5841543f69d345}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+METHOD\+\_\+\+NOT\+\_\+\+ALLOWED}} = 405
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a370243080046a3ed1821e5f8db3227b6}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NOT\+\_\+\+ACCEPTABLE}} = 406
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784adac4f22e34a48a0c463ba58e69d384a7}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PROXY\+\_\+\+AUTHENTICATION\+\_\+\+REQUIRED}} = 407
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a9b27eba03e8f3234f881347e67ef96d0}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+REQUEST\+\_\+\+TIMEOUT}} = 408
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a57fa7fcac0634a5c52e329be29b97136}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+CONFLICT}} = 409
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ac585afe002c3265c1342d85df170216a}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+GONE}} = 410
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5e293cc2bd81d243186b34c70b2fafee}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+LENGTH\+\_\+\+REQUIRED}} = 411
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5769b74b8a6ed69270e20c5ca53bf7eb}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PRECONDITION\+\_\+\+FAILED}} = 412
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a486dd7ed5ddedf5b7e300111795a64fc}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PAYLOAD\+\_\+\+TOO\+\_\+\+LARGE}} = 413
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a8efbcf57b51ade7bddaf897569fbb47b}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+URI\+\_\+\+TOO\+\_\+\+LONG}} = 414
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784abcd0cfa4ffcacb43bea17aab90d50ae2}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+UNSUPPORTED\+\_\+\+MEDIA\+\_\+\+TYPE}} = 415
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a203d9f825b4a78cfb385c28ab8d57292}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+RANGE\+\_\+\+NOT\+\_\+\+SATISFIABLE}} = 416
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4dac306a3008196bd260eeace4cdf091}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+EXPECTATION\+\_\+\+FAILED}} = 417
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5a14d1cd310a3dd313b310dd79d7f295}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+MISDIRECTED\+\_\+\+REQUEST}} = 421
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784af1d34fd47c9b34762c763f97b10c6a11}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+UNPROCESSABLE\+\_\+\+ENTITY}} = 422
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a101307b051c572902487a4b7ec953632}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+LOCKED}} = 423
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a2745cc5bb3f7f31c515a2878165412d9}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+FAILED\+\_\+\+DEPENDENCY}} = 424
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784aab5101d752651a6675c105b5536e6309}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+UPGRADE\+\_\+\+REQUIRED}} = 426
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784af3442d832944a04dc0b23693bc416cb1}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PRECONDITION\+\_\+\+REQUIRED}} = 428
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784aa567f4004067cb24273babc68ed255c2}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+TOO\+\_\+\+MANY\+\_\+\+REQUESTS}} = 429
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784aee7dc6b706cdd226812ac5e3f7c50835}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+REQUEST\+\_\+\+HEADER\+\_\+\+FIELDS\+\_\+\+TOO\+\_\+\+LARGE}} = 431
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a882e041d9cd5e342ac484bfd4061349e}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+CONNECTION\+\_\+\+CLOSED\+\_\+\+WITHOUT\+\_\+\+RESPONSE}} = 444
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784acd8685f41ad26673ce4cc2aeddb38ccf}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+UNAVAILABLE\+\_\+\+FOR\+\_\+\+LEGAL\+\_\+\+REASONS}} = 451
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a81bf8452ba3a748298b86e4ab5270758}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+CLIENT\+\_\+\+CLOSED\+\_\+\+REQUEST}} = 499
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ae484935a39dcc713ba63b0445cd3b09c}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+INTERNAL\+\_\+\+SERVER\+\_\+\+ERROR}} = 500
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a45e9842912641c9140d8c4d8ffca6af6}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NOT\+\_\+\+IMPLEMENTED}} = 501
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784ab85c08ff899dca1462df44fa2daa5ee1}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+BAD\+\_\+\+GATEWAY}} = 502
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a09ea99f6fb73f7b3c01f672657036648}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+SERVICE\+\_\+\+UNAVAILABLE}} = 503
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a6f9b2b572db711be8848616259a33055}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+GATEWAY\+\_\+\+TIMEOUT}} = 504
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4803f0ec6f4ddf01df890d0e04776463}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+HTTP\+\_\+\+VERSION\+\_\+\+NOT\+\_\+\+SUPPORTED}} = 505
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a64c11a10180823c325f291c16cb65b36}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+VARIANT\+\_\+\+ALSO\+\_\+\+NEGOTIATES}} = 506
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a734a2e9ece510445f952300653bcdecd}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+INSUFFICIENT\+\_\+\+STORAGE}} = 507
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a11be1617e2139aa4d65165008bcdbb07}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+LOOP\+\_\+\+DETECTED}} = 508
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784aa02e63729cb24297e61eb5b2cbe41643}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NOT\+\_\+\+EXTENDED}} = 510
+, \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a478df6f1985318d71c727380fc52dded}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NETWORK\+\_\+\+AUTHENTICATION\+\_\+\+REQUIRED}} = 511
+, \newline
+\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3f9ed1646539ccefb7b2d7ab9df99f22}{RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NETWORK\+\_\+\+CONNECT\+\_\+\+TIMEOUT\+\_\+\+ERROR}} = 599
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} bool \mbox{\hyperlink{c__status_8h_a685f482fa4421e8b01ff18abe9e49b88}{rallyhere\+\_\+is\+\_\+error}} (\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} err)
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} bool \mbox{\hyperlink{c__status_8h_aa2352955c2e1fd2bdd2c4f58804dfe6e}{rallyhere\+\_\+is\+\_\+cancelled}} (\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} err)
+\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} const char $\ast$ \mbox{\hyperlink{c__status_8h_af3db8a9f050d08c872c2008e17736816}{rallyhere\+\_\+status\+\_\+text}} (\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} err)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{c__status_8h_a9956737139e2ba1d2d6fb0e7c0079c8b}\label{c__status_8h_a9956737139e2ba1d2d6fb0e7c0079c8b}} 
+\index{c\_status.h@{c\_status.h}!RallyHereStatusCode@{RallyHereStatusCode}}
+\index{RallyHereStatusCode@{RallyHereStatusCode}!c\_status.h@{c\_status.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereStatusCode}{RallyHereStatusCode}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784}} 
+\index{c\_status.h@{c\_status.h}!RallyHereStatusCode@{RallyHereStatusCode}}
+\index{RallyHereStatusCode@{RallyHereStatusCode}!c\_status.h@{c\_status.h}}
+\doxysubsubsection{\texorpdfstring{RallyHereStatusCode}{RallyHereStatusCode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_OK@{RH\_STATUS\_OK}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_OK@{RH\_STATUS\_OK}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a1300ac8cfb4b729eb58870f1622ad954}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a1300ac8cfb4b729eb58870f1622ad954}} 
+RH\+\_\+\+STATUS\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_ERROR@{RH\_STATUS\_ERROR}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_ERROR@{RH\_STATUS\_ERROR}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a0a8082fa14843a2281943608a8cd7dd1}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a0a8082fa14843a2281943608a8cd7dd1}} 
+RH\+\_\+\+STATUS\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_NO\_BOOTSTRAP\_MODE\_PROVIDED@{RH\_STATUS\_NO\_BOOTSTRAP\_MODE\_PROVIDED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_NO\_BOOTSTRAP\_MODE\_PROVIDED@{RH\_STATUS\_NO\_BOOTSTRAP\_MODE\_PROVIDED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a591d6d384b580a2d37b3d8ae8dcb936f}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a591d6d384b580a2d37b3d8ae8dcb936f}} 
+RH\+\_\+\+STATUS\+\_\+\+NO\+\_\+\+BOOTSTRAP\+\_\+\+MODE\+\_\+\+PROVIDED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_CREDENTIALS\_FILE\_NOT\_TWO\_LINES@{RH\_STATUS\_CREDENTIALS\_FILE\_NOT\_TWO\_LINES}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_CREDENTIALS\_FILE\_NOT\_TWO\_LINES@{RH\_STATUS\_CREDENTIALS\_FILE\_NOT\_TWO\_LINES}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a16e0d6608c332601d336233f07e82490}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a16e0d6608c332601d336233f07e82490}} 
+RH\+\_\+\+STATUS\+\_\+\+CREDENTIALS\+\_\+\+FILE\+\_\+\+NOT\+\_\+\+TWO\+\_\+\+LINES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_NO\_RALLYHERE\_URL\_PROVIDED@{RH\_STATUS\_NO\_RALLYHERE\_URL\_PROVIDED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_NO\_RALLYHERE\_URL\_PROVIDED@{RH\_STATUS\_NO\_RALLYHERE\_URL\_PROVIDED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a0728f365351ad818785f6f3c23d9066a}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a0728f365351ad818785f6f3c23d9066a}} 
+RH\+\_\+\+STATUS\+\_\+\+NO\+\_\+\+RALLYHERE\+\_\+\+URL\+\_\+\+PROVIDED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_NO\_SIC\_PROFILE\_ID\_PROVIDED@{RH\_STATUS\_NO\_SIC\_PROFILE\_ID\_PROVIDED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_NO\_SIC\_PROFILE\_ID\_PROVIDED@{RH\_STATUS\_NO\_SIC\_PROFILE\_ID\_PROVIDED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a6d05a38f126a17b22f377b4ca0a67d1e}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a6d05a38f126a17b22f377b4ca0a67d1e}} 
+RH\+\_\+\+STATUS\+\_\+\+NO\+\_\+\+SIC\+\_\+\+PROFILE\+\_\+\+ID\+\_\+\+PROVIDED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_CANCELLED@{RH\_STATUS\_CANCELLED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_CANCELLED@{RH\_STATUS\_CANCELLED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a08de4e979e2cd29910c01b3f0c9f10ca}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a08de4e979e2cd29910c01b3f0c9f10ca}} 
+RH\+\_\+\+STATUS\+\_\+\+CANCELLED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_VALIDATION\_ERROR\_ADAPTER\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_ADAPTER\_IS\_NULLPTR}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_VALIDATION\_ERROR\_ADAPTER\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_ADAPTER\_IS\_NULLPTR}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a98f11d0f7159aa51983be9d327c875d5}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a98f11d0f7159aa51983be9d327c875d5}} 
+RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+ADAPTER\+\_\+\+IS\+\_\+\+NULLPTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_ADAPTER\_ALLOCATION\_ERROR@{RH\_STATUS\_ADAPTER\_ALLOCATION\_ERROR}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_ADAPTER\_ALLOCATION\_ERROR@{RH\_STATUS\_ADAPTER\_ALLOCATION\_ERROR}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ab66449e71969e766c2c9f95e8d22b799}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ab66449e71969e766c2c9f95e8d22b799}} 
+RH\+\_\+\+STATUS\+\_\+\+ADAPTER\+\_\+\+ALLOCATION\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_VALIDATION\_ERROR\_MAP\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_MAP\_IS\_NULLPTR}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_VALIDATION\_ERROR\_MAP\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_MAP\_IS\_NULLPTR}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a14b9ca3fe3edd5b354d4f1f2baec5120}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a14b9ca3fe3edd5b354d4f1f2baec5120}} 
+RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+MAP\+\_\+\+IS\+\_\+\+NULLPTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_MAP\_ALLOCATION\_ERROR@{RH\_STATUS\_MAP\_ALLOCATION\_ERROR}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_MAP\_ALLOCATION\_ERROR@{RH\_STATUS\_MAP\_ALLOCATION\_ERROR}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4d39404778b776c9c89a6ef35e1253d0}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4d39404778b776c9c89a6ef35e1253d0}} 
+RH\+\_\+\+STATUS\+\_\+\+MAP\+\_\+\+ALLOCATION\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_VALIDATION\_ERROR\_KEY\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_KEY\_IS\_NULLPTR}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_VALIDATION\_ERROR\_KEY\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_KEY\_IS\_NULLPTR}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3d20263bbd6aa84ad40be352c2be37ea}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3d20263bbd6aa84ad40be352c2be37ea}} 
+RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+KEY\+\_\+\+IS\+\_\+\+NULLPTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_VALIDATION\_ERROR\_VALUE\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_VALUE\_IS\_NULLPTR}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_VALIDATION\_ERROR\_VALUE\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_VALUE\_IS\_NULLPTR}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a8c740518e8c6f392102f71fea5507287}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a8c740518e8c6f392102f71fea5507287}} 
+RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+VALUE\+\_\+\+IS\+\_\+\+NULLPTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_VALIDATION\_ERROR\_VALUE\_SIZE\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_VALUE\_SIZE\_IS\_NULLPTR}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_VALIDATION\_ERROR\_VALUE\_SIZE\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_VALUE\_SIZE\_IS\_NULLPTR}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a77b7d9abc7c812f92b327433aa866c78}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a77b7d9abc7c812f92b327433aa866c78}} 
+RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+VALUE\+\_\+\+SIZE\+\_\+\+IS\+\_\+\+NULLPTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_KEY\_NOT\_FOUND@{RH\_STATUS\_KEY\_NOT\_FOUND}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_KEY\_NOT\_FOUND@{RH\_STATUS\_KEY\_NOT\_FOUND}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5e4a428dc699b3d678db59bb779f5694}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5e4a428dc699b3d678db59bb779f5694}} 
+RH\+\_\+\+STATUS\+\_\+\+KEY\+\_\+\+NOT\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_COULD\_NOT\_PARSE\_RESPONSE@{RH\_STATUS\_COULD\_NOT\_PARSE\_RESPONSE}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_COULD\_NOT\_PARSE\_RESPONSE@{RH\_STATUS\_COULD\_NOT\_PARSE\_RESPONSE}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3db695bc7d8868bbf0e81d1f88b1be87}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3db695bc7d8868bbf0e81d1f88b1be87}} 
+RH\+\_\+\+STATUS\+\_\+\+COULD\+\_\+\+NOT\+\_\+\+PARSE\+\_\+\+RESPONSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_RESPONSE\_NO\_ACCESS\_TOKEN@{RH\_STATUS\_RESPONSE\_NO\_ACCESS\_TOKEN}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_RESPONSE\_NO\_ACCESS\_TOKEN@{RH\_STATUS\_RESPONSE\_NO\_ACCESS\_TOKEN}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4d43ce15af4adb44b399761e60fa926a}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4d43ce15af4adb44b399761e60fa926a}} 
+RH\+\_\+\+STATUS\+\_\+\+RESPONSE\+\_\+\+NO\+\_\+\+ACCESS\+\_\+\+TOKEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_RESPONSE\_NO\_REFRESH\_TOKEN@{RH\_STATUS\_RESPONSE\_NO\_REFRESH\_TOKEN}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_RESPONSE\_NO\_REFRESH\_TOKEN@{RH\_STATUS\_RESPONSE\_NO\_REFRESH\_TOKEN}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784adb88c2387ecc66e91690d3829fe28be8}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784adb88c2387ecc66e91690d3829fe28be8}} 
+RH\+\_\+\+STATUS\+\_\+\+RESPONSE\+\_\+\+NO\+\_\+\+REFRESH\+\_\+\+TOKEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_RESPONSE\_NO\_AUTH\_SUCCESS@{RH\_STATUS\_RESPONSE\_NO\_AUTH\_SUCCESS}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_RESPONSE\_NO\_AUTH\_SUCCESS@{RH\_STATUS\_RESPONSE\_NO\_AUTH\_SUCCESS}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a6e73aa6f6a63192a578ca7414e95cd5e}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a6e73aa6f6a63192a578ca7414e95cd5e}} 
+RH\+\_\+\+STATUS\+\_\+\+RESPONSE\+\_\+\+NO\+\_\+\+AUTH\+\_\+\+SUCCESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_RESPONSE\_AUTH\_SUCCESS\_NOT\_BOOL@{RH\_STATUS\_RESPONSE\_AUTH\_SUCCESS\_NOT\_BOOL}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_RESPONSE\_AUTH\_SUCCESS\_NOT\_BOOL@{RH\_STATUS\_RESPONSE\_AUTH\_SUCCESS\_NOT\_BOOL}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a447c1e341e5a8cdf4041b529ceec5865}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a447c1e341e5a8cdf4041b529ceec5865}} 
+RH\+\_\+\+STATUS\+\_\+\+RESPONSE\+\_\+\+AUTH\+\_\+\+SUCCESS\+\_\+\+NOT\+\_\+\+BOOL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_POLL\_INTERVAL\_MUST\_BE\_NUMERIC@{RH\_STATUS\_POLL\_INTERVAL\_MUST\_BE\_NUMERIC}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_POLL\_INTERVAL\_MUST\_BE\_NUMERIC@{RH\_STATUS\_POLL\_INTERVAL\_MUST\_BE\_NUMERIC}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784adb2f2b041e5db61c058c60bd65e6a455}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784adb2f2b041e5db61c058c60bd65e6a455}} 
+RH\+\_\+\+STATUS\+\_\+\+POLL\+\_\+\+INTERVAL\+\_\+\+MUST\+\_\+\+BE\+\_\+\+NUMERIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_CANNOT\_POLL\_WITHOUT\_ON\_ALLOCATED\_CALLBACK@{RH\_STATUS\_CANNOT\_POLL\_WITHOUT\_ON\_ALLOCATED\_CALLBACK}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_CANNOT\_POLL\_WITHOUT\_ON\_ALLOCATED\_CALLBACK@{RH\_STATUS\_CANNOT\_POLL\_WITHOUT\_ON\_ALLOCATED\_CALLBACK}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ade028b1a3ffa2b385cde32b38dd35a07}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ade028b1a3ffa2b385cde32b38dd35a07}} 
+RH\+\_\+\+STATUS\+\_\+\+CANNOT\+\_\+\+POLL\+\_\+\+WITHOUT\+\_\+\+ON\+\_\+\+ALLOCATED\+\_\+\+CALLBACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_PROMETHEUS\_PORT\_MUST\_BE\_NUMERIC@{RH\_STATUS\_PROMETHEUS\_PORT\_MUST\_BE\_NUMERIC}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_PROMETHEUS\_PORT\_MUST\_BE\_NUMERIC@{RH\_STATUS\_PROMETHEUS\_PORT\_MUST\_BE\_NUMERIC}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4a48f683cc94fd6e8197b5911042c3d7}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4a48f683cc94fd6e8197b5911042c3d7}} 
+RH\+\_\+\+STATUS\+\_\+\+PROMETHEUS\+\_\+\+PORT\+\_\+\+MUST\+\_\+\+BE\+\_\+\+NUMERIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_PROMETHEUS\_ALREADY\_STARTED@{RH\_STATUS\_PROMETHEUS\_ALREADY\_STARTED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_PROMETHEUS\_ALREADY\_STARTED@{RH\_STATUS\_PROMETHEUS\_ALREADY\_STARTED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784aa64721cd4e8953c139b590188f80bdb1}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784aa64721cd4e8953c139b590188f80bdb1}} 
+RH\+\_\+\+STATUS\+\_\+\+PROMETHEUS\+\_\+\+ALREADY\+\_\+\+STARTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_PROMETHEUS\_COULD\_NOT\_START@{RH\_STATUS\_PROMETHEUS\_COULD\_NOT\_START}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_PROMETHEUS\_COULD\_NOT\_START@{RH\_STATUS\_PROMETHEUS\_COULD\_NOT\_START}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ad38349022692a036840f5e30522f7666}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ad38349022692a036840f5e30522f7666}} 
+RH\+\_\+\+STATUS\+\_\+\+PROMETHEUS\+\_\+\+COULD\+\_\+\+NOT\+\_\+\+START&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_REQUEST\_TIMEOUT\_MUST\_BE\_NUMERIC@{RH\_STATUS\_REQUEST\_TIMEOUT\_MUST\_BE\_NUMERIC}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_REQUEST\_TIMEOUT\_MUST\_BE\_NUMERIC@{RH\_STATUS\_REQUEST\_TIMEOUT\_MUST\_BE\_NUMERIC}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a180125453cc22048fb1e9056f2c072c0}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a180125453cc22048fb1e9056f2c072c0}} 
+RH\+\_\+\+STATUS\+\_\+\+REQUEST\+\_\+\+TIMEOUT\+\_\+\+MUST\+\_\+\+BE\+\_\+\+NUMERIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_POLL\_UNKNOWN\_STATE@{RH\_STATUS\_POLL\_UNKNOWN\_STATE}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_POLL\_UNKNOWN\_STATE@{RH\_STATUS\_POLL\_UNKNOWN\_STATE}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ac219f6cf5dcf3a07256f0c5aa82aa0b5}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ac219f6cf5dcf3a07256f0c5aa82aa0b5}} 
+RH\+\_\+\+STATUS\+\_\+\+POLL\+\_\+\+UNKNOWN\+\_\+\+STATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_COULD\_NOT\_PARSE\_SERVER\_JSON@{RH\_STATUS\_COULD\_NOT\_PARSE\_SERVER\_JSON}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_COULD\_NOT\_PARSE\_SERVER\_JSON@{RH\_STATUS\_COULD\_NOT\_PARSE\_SERVER\_JSON}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a6cf9b7466cdd3efb72560137a6639428}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a6cf9b7466cdd3efb72560137a6639428}} 
+RH\+\_\+\+STATUS\+\_\+\+COULD\+\_\+\+NOT\+\_\+\+PARSE\+\_\+\+SERVER\+\_\+\+JSON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_NO\_SERVER\_JSON@{RH\_STATUS\_NO\_SERVER\_JSON}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_NO\_SERVER\_JSON@{RH\_STATUS\_NO\_SERVER\_JSON}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a1c03163fdafb759f77fef0787325c04d}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a1c03163fdafb759f77fef0787325c04d}} 
+RH\+\_\+\+STATUS\+\_\+\+NO\+\_\+\+SERVER\+\_\+\+JSON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_A2S\_QUERY\_PORT\_MUST\_BE\_SHORT\_NUMBER@{RH\_STATUS\_A2S\_QUERY\_PORT\_MUST\_BE\_SHORT\_NUMBER}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_A2S\_QUERY\_PORT\_MUST\_BE\_SHORT\_NUMBER@{RH\_STATUS\_A2S\_QUERY\_PORT\_MUST\_BE\_SHORT\_NUMBER}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ae74f345ad235bc1b894ef9749dbcc428}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ae74f345ad235bc1b894ef9749dbcc428}} 
+RH\+\_\+\+STATUS\+\_\+\+A2\+S\+\_\+\+QUERY\+\_\+\+PORT\+\_\+\+MUST\+\_\+\+BE\+\_\+\+SHORT\+\_\+\+NUMBER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_VALIDATION\_ERROR\_STATS\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_STATS\_IS\_NULLPTR}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_VALIDATION\_ERROR\_STATS\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_STATS\_IS\_NULLPTR}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3d939ba719a1e72dac87213d000ac91d}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3d939ba719a1e72dac87213d000ac91d}} 
+RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+STATS\+\_\+\+IS\+\_\+\+NULLPTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_VALIDATION\_ERROR\_STATS\_PROVIDED\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_STATS\_PROVIDED\_IS\_NULLPTR}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_VALIDATION\_ERROR\_STATS\_PROVIDED\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_STATS\_PROVIDED\_IS\_NULLPTR}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784abf084b16aa904d3c3789d82ccc7d6323}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784abf084b16aa904d3c3789d82ccc7d6323}} 
+RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+STATS\+\_\+\+PROVIDED\+\_\+\+IS\+\_\+\+NULLPTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_PUBLIC\_PORT\_MUST\_BE\_NUMERIC@{RH\_STATUS\_PUBLIC\_PORT\_MUST\_BE\_NUMERIC}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_PUBLIC\_PORT\_MUST\_BE\_NUMERIC@{RH\_STATUS\_PUBLIC\_PORT\_MUST\_BE\_NUMERIC}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784aaf0fc67a7fb4f7d9865febf5d1ead80e}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784aaf0fc67a7fb4f7d9865febf5d1ead80e}} 
+RH\+\_\+\+STATUS\+\_\+\+PUBLIC\+\_\+\+PORT\+\_\+\+MUST\+\_\+\+BE\+\_\+\+NUMERIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_BIND\_PORT\_MUST\_BE\_NUMERIC@{RH\_STATUS\_BIND\_PORT\_MUST\_BE\_NUMERIC}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_BIND\_PORT\_MUST\_BE\_NUMERIC@{RH\_STATUS\_BIND\_PORT\_MUST\_BE\_NUMERIC}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ade38e83d581d90d8543d8c85ed73dada}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ade38e83d581d90d8543d8c85ed73dada}} 
+RH\+\_\+\+STATUS\+\_\+\+BIND\+\_\+\+PORT\+\_\+\+MUST\+\_\+\+BE\+\_\+\+NUMERIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_MAX\_POLL\_FAILURES\_MUST\_BE\_NUMERIC@{RH\_STATUS\_MAX\_POLL\_FAILURES\_MUST\_BE\_NUMERIC}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_MAX\_POLL\_FAILURES\_MUST\_BE\_NUMERIC@{RH\_STATUS\_MAX\_POLL\_FAILURES\_MUST\_BE\_NUMERIC}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a738b0b9660397d1f7d71704babff4cff}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a738b0b9660397d1f7d71704babff4cff}} 
+RH\+\_\+\+STATUS\+\_\+\+MAX\+\_\+\+POLL\+\_\+\+FAILURES\+\_\+\+MUST\+\_\+\+BE\+\_\+\+NUMERIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_MUST\_PROVIDE\_REPORTED\_PUBLIC\_HOST@{RH\_STATUS\_MUST\_PROVIDE\_REPORTED\_PUBLIC\_HOST}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_MUST\_PROVIDE\_REPORTED\_PUBLIC\_HOST@{RH\_STATUS\_MUST\_PROVIDE\_REPORTED\_PUBLIC\_HOST}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a10ab1036f37b4c3d9cb0988004485a6d}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a10ab1036f37b4c3d9cb0988004485a6d}} 
+RH\+\_\+\+STATUS\+\_\+\+MUST\+\_\+\+PROVIDE\+\_\+\+REPORTED\+\_\+\+PUBLIC\+\_\+\+HOST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_VALIDATION\_ERROR\_DEFINITION\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_DEFINITION\_IS\_NULLPTR}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_VALIDATION\_ERROR\_DEFINITION\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_DEFINITION\_IS\_NULLPTR}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a8e406a5a7f2663bb70943ef85f58f182}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a8e406a5a7f2663bb70943ef85f58f182}} 
+RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+DEFINITION\+\_\+\+IS\+\_\+\+NULLPTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_VALIDATION\_ERROR\_ACTION\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_ACTION\_IS\_NULLPTR}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_VALIDATION\_ERROR\_ACTION\_IS\_NULLPTR@{RH\_STATUS\_VALIDATION\_ERROR\_ACTION\_IS\_NULLPTR}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784aaf20d589448c0a0da3bf3a91b452fbaf}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784aaf20d589448c0a0da3bf3a91b452fbaf}} 
+RH\+\_\+\+STATUS\+\_\+\+VALIDATION\+\_\+\+ERROR\+\_\+\+ACTION\+\_\+\+IS\+\_\+\+NULLPTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_METRIC\_TYPE\_NOT\_SUPPORTED\_BY\_BACKEND@{RH\_STATUS\_METRIC\_TYPE\_NOT\_SUPPORTED\_BY\_BACKEND}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_METRIC\_TYPE\_NOT\_SUPPORTED\_BY\_BACKEND@{RH\_STATUS\_METRIC\_TYPE\_NOT\_SUPPORTED\_BY\_BACKEND}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a085134dfbbf8492eb1da3f35122ff36a}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a085134dfbbf8492eb1da3f35122ff36a}} 
+RH\+\_\+\+STATUS\+\_\+\+METRIC\+\_\+\+TYPE\+\_\+\+NOT\+\_\+\+SUPPORTED\+\_\+\+BY\+\_\+\+BACKEND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_METRIC\_BACKEND\_GRAPHITE\_NOT\_CONFIGURED@{RH\_STATUS\_METRIC\_BACKEND\_GRAPHITE\_NOT\_CONFIGURED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_METRIC\_BACKEND\_GRAPHITE\_NOT\_CONFIGURED@{RH\_STATUS\_METRIC\_BACKEND\_GRAPHITE\_NOT\_CONFIGURED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ad44f9e0270716cadf96288b761ce5760}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ad44f9e0270716cadf96288b761ce5760}} 
+RH\+\_\+\+STATUS\+\_\+\+METRIC\+\_\+\+BACKEND\+\_\+\+GRAPHITE\+\_\+\+NOT\+\_\+\+CONFIGURED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_METRIC\_BACKEND\_STATSD\_NOT\_CONFIGURED@{RH\_STATUS\_METRIC\_BACKEND\_STATSD\_NOT\_CONFIGURED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_METRIC\_BACKEND\_STATSD\_NOT\_CONFIGURED@{RH\_STATUS\_METRIC\_BACKEND\_STATSD\_NOT\_CONFIGURED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a02214395540aeb3a80b0d53ff59e0bf4}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a02214395540aeb3a80b0d53ff59e0bf4}} 
+RH\+\_\+\+STATUS\+\_\+\+METRIC\+\_\+\+BACKEND\+\_\+\+STATSD\+\_\+\+NOT\+\_\+\+CONFIGURED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_METRIC\_ACTION\_NOT\_SUPPORTED\_BY\_BACKEND@{RH\_STATUS\_METRIC\_ACTION\_NOT\_SUPPORTED\_BY\_BACKEND}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_METRIC\_ACTION\_NOT\_SUPPORTED\_BY\_BACKEND@{RH\_STATUS\_METRIC\_ACTION\_NOT\_SUPPORTED\_BY\_BACKEND}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a7dc9b355287b4572d7f7e07c842d792b}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a7dc9b355287b4572d7f7e07c842d792b}} 
+RH\+\_\+\+STATUS\+\_\+\+METRIC\+\_\+\+ACTION\+\_\+\+NOT\+\_\+\+SUPPORTED\+\_\+\+BY\+\_\+\+BACKEND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_METRIC\_ACTION\_NOT\_SUPPORTED\_BY\_TYPE@{RH\_STATUS\_METRIC\_ACTION\_NOT\_SUPPORTED\_BY\_TYPE}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_METRIC\_ACTION\_NOT\_SUPPORTED\_BY\_TYPE@{RH\_STATUS\_METRIC\_ACTION\_NOT\_SUPPORTED\_BY\_TYPE}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3c19942f92f264f61214ced37ffe17cc}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3c19942f92f264f61214ced37ffe17cc}} 
+RH\+\_\+\+STATUS\+\_\+\+METRIC\+\_\+\+ACTION\+\_\+\+NOT\+\_\+\+SUPPORTED\+\_\+\+BY\+\_\+\+TYPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_CONTINUE@{RH\_STATUS\_HTTP\_CONTINUE}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_CONTINUE@{RH\_STATUS\_HTTP\_CONTINUE}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5478aec493c7e8ff5004055be4221399}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5478aec493c7e8ff5004055be4221399}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+CONTINUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_SWITCHINGPROTOCOLS@{RH\_STATUS\_HTTP\_SWITCHINGPROTOCOLS}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_SWITCHINGPROTOCOLS@{RH\_STATUS\_HTTP\_SWITCHINGPROTOCOLS}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a43b9eaaebddcf33d56af93d96f14efed}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a43b9eaaebddcf33d56af93d96f14efed}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+SWITCHINGPROTOCOLS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_PROCESSING@{RH\_STATUS\_HTTP\_PROCESSING}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_PROCESSING@{RH\_STATUS\_HTTP\_PROCESSING}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a223d974ddcd1ecf9a5b7402cee4133ec}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a223d974ddcd1ecf9a5b7402cee4133ec}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PROCESSING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_OK@{RH\_STATUS\_HTTP\_OK}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_OK@{RH\_STATUS\_HTTP\_OK}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ad1b104ef3131ee6df848c09bb0de3656}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ad1b104ef3131ee6df848c09bb0de3656}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_CREATED@{RH\_STATUS\_HTTP\_CREATED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_CREATED@{RH\_STATUS\_HTTP\_CREATED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a577e489149a1c88c5026325fde1f3fe0}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a577e489149a1c88c5026325fde1f3fe0}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+CREATED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_ACCEPTED@{RH\_STATUS\_HTTP\_ACCEPTED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_ACCEPTED@{RH\_STATUS\_HTTP\_ACCEPTED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a7f1a08b981824b5fd71980ed577995de}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a7f1a08b981824b5fd71980ed577995de}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+ACCEPTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_NON\_AUTHORITATIVE\_INFORMATION@{RH\_STATUS\_HTTP\_NON\_AUTHORITATIVE\_INFORMATION}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_NON\_AUTHORITATIVE\_INFORMATION@{RH\_STATUS\_HTTP\_NON\_AUTHORITATIVE\_INFORMATION}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a9b8130c9f50673fe080184cf145e63a5}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a9b8130c9f50673fe080184cf145e63a5}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NON\+\_\+\+AUTHORITATIVE\+\_\+\+INFORMATION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_NO\_CONTENT@{RH\_STATUS\_HTTP\_NO\_CONTENT}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_NO\_CONTENT@{RH\_STATUS\_HTTP\_NO\_CONTENT}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784af4c21eddcc52d7cabf2531c05372f27e}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784af4c21eddcc52d7cabf2531c05372f27e}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NO\+\_\+\+CONTENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_RESET\_CONTENT@{RH\_STATUS\_HTTP\_RESET\_CONTENT}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_RESET\_CONTENT@{RH\_STATUS\_HTTP\_RESET\_CONTENT}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a899149acda4ae2df0834d4934aba4065}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a899149acda4ae2df0834d4934aba4065}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+RESET\+\_\+\+CONTENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_PARTIAL\_CONTENT@{RH\_STATUS\_HTTP\_PARTIAL\_CONTENT}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_PARTIAL\_CONTENT@{RH\_STATUS\_HTTP\_PARTIAL\_CONTENT}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ac4d1ae31ecd4e46e3924842b5e41584e}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ac4d1ae31ecd4e46e3924842b5e41584e}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PARTIAL\+\_\+\+CONTENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_MULTI\_STATUS@{RH\_STATUS\_HTTP\_MULTI\_STATUS}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_MULTI\_STATUS@{RH\_STATUS\_HTTP\_MULTI\_STATUS}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784aae0caa6d08f4d5ff13dd94d40182af9b}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784aae0caa6d08f4d5ff13dd94d40182af9b}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+MULTI\+\_\+\+STATUS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_ALREADY\_REPORTED@{RH\_STATUS\_HTTP\_ALREADY\_REPORTED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_ALREADY\_REPORTED@{RH\_STATUS\_HTTP\_ALREADY\_REPORTED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784afca98c3f4ca438c4c88f29d91d328932}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784afca98c3f4ca438c4c88f29d91d328932}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+ALREADY\+\_\+\+REPORTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_IM\_USED@{RH\_STATUS\_HTTP\_IM\_USED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_IM\_USED@{RH\_STATUS\_HTTP\_IM\_USED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ac0c6674325564218168db382c032b7cc}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ac0c6674325564218168db382c032b7cc}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+IM\+\_\+\+USED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_MULTIPLE\_CHOICES@{RH\_STATUS\_HTTP\_MULTIPLE\_CHOICES}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_MULTIPLE\_CHOICES@{RH\_STATUS\_HTTP\_MULTIPLE\_CHOICES}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784acc9c74a0fb57a2e3c7e5cc32784f6c0e}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784acc9c74a0fb57a2e3c7e5cc32784f6c0e}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+MULTIPLE\+\_\+\+CHOICES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_MOVED\_PERMANENTLY@{RH\_STATUS\_HTTP\_MOVED\_PERMANENTLY}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_MOVED\_PERMANENTLY@{RH\_STATUS\_HTTP\_MOVED\_PERMANENTLY}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a45545da4a5c7fd73d083bd244be771cf}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a45545da4a5c7fd73d083bd244be771cf}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+MOVED\+\_\+\+PERMANENTLY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_FOUND@{RH\_STATUS\_HTTP\_FOUND}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_FOUND@{RH\_STATUS\_HTTP\_FOUND}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a2f741463ff376b0521c4c0e0838bed3a}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a2f741463ff376b0521c4c0e0838bed3a}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_SEE\_OTHER@{RH\_STATUS\_HTTP\_SEE\_OTHER}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_SEE\_OTHER@{RH\_STATUS\_HTTP\_SEE\_OTHER}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a133055c9cfaea5f348de159a04e82d47}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a133055c9cfaea5f348de159a04e82d47}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+SEE\+\_\+\+OTHER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_NOT\_MODIFIED@{RH\_STATUS\_HTTP\_NOT\_MODIFIED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_NOT\_MODIFIED@{RH\_STATUS\_HTTP\_NOT\_MODIFIED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a92c6520787839cfbe4930558cc90848d}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a92c6520787839cfbe4930558cc90848d}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NOT\+\_\+\+MODIFIED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_USE\_PROXY@{RH\_STATUS\_HTTP\_USE\_PROXY}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_USE\_PROXY@{RH\_STATUS\_HTTP\_USE\_PROXY}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784aebb75c1de47bb8f05fafa4ff5ff5d4b1}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784aebb75c1de47bb8f05fafa4ff5ff5d4b1}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+USE\+\_\+\+PROXY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_TEMPORARY\_REDIRECT@{RH\_STATUS\_HTTP\_TEMPORARY\_REDIRECT}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_TEMPORARY\_REDIRECT@{RH\_STATUS\_HTTP\_TEMPORARY\_REDIRECT}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a9e7195d5fc60e483740172dca869e1d2}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a9e7195d5fc60e483740172dca869e1d2}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+TEMPORARY\+\_\+\+REDIRECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_PERMANENT\_REDIRECT@{RH\_STATUS\_HTTP\_PERMANENT\_REDIRECT}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_PERMANENT\_REDIRECT@{RH\_STATUS\_HTTP\_PERMANENT\_REDIRECT}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ae3048fb3d9eaff93215a83074f341d55}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ae3048fb3d9eaff93215a83074f341d55}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PERMANENT\+\_\+\+REDIRECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_BAD\_REQUEST@{RH\_STATUS\_HTTP\_BAD\_REQUEST}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_BAD\_REQUEST@{RH\_STATUS\_HTTP\_BAD\_REQUEST}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784af355c8bd8782b8691d0e3d8c11bfd449}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784af355c8bd8782b8691d0e3d8c11bfd449}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+BAD\+\_\+\+REQUEST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_UNAUTHORIZED@{RH\_STATUS\_HTTP\_UNAUTHORIZED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_UNAUTHORIZED@{RH\_STATUS\_HTTP\_UNAUTHORIZED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a53a40133dd3bed4f65ca32bf3a0200c9}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a53a40133dd3bed4f65ca32bf3a0200c9}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+UNAUTHORIZED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_PAYMENT\_REQUIRED@{RH\_STATUS\_HTTP\_PAYMENT\_REQUIRED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_PAYMENT\_REQUIRED@{RH\_STATUS\_HTTP\_PAYMENT\_REQUIRED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784aa448dfeca5c1687a5465342b69aefa2d}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784aa448dfeca5c1687a5465342b69aefa2d}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PAYMENT\+\_\+\+REQUIRED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_FORBIDDEN@{RH\_STATUS\_HTTP\_FORBIDDEN}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_FORBIDDEN@{RH\_STATUS\_HTTP\_FORBIDDEN}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ae723dcad7bcf05bf06454829e89a985e}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ae723dcad7bcf05bf06454829e89a985e}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+FORBIDDEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_NOT\_FOUND@{RH\_STATUS\_HTTP\_NOT\_FOUND}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_NOT\_FOUND@{RH\_STATUS\_HTTP\_NOT\_FOUND}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784abd3a892c457e4bb8c55599fbd8a47168}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784abd3a892c457e4bb8c55599fbd8a47168}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NOT\+\_\+\+FOUND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_METHOD\_NOT\_ALLOWED@{RH\_STATUS\_HTTP\_METHOD\_NOT\_ALLOWED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_METHOD\_NOT\_ALLOWED@{RH\_STATUS\_HTTP\_METHOD\_NOT\_ALLOWED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784af7806e2beade7fc8bb5841543f69d345}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784af7806e2beade7fc8bb5841543f69d345}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+METHOD\+\_\+\+NOT\+\_\+\+ALLOWED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_NOT\_ACCEPTABLE@{RH\_STATUS\_HTTP\_NOT\_ACCEPTABLE}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_NOT\_ACCEPTABLE@{RH\_STATUS\_HTTP\_NOT\_ACCEPTABLE}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a370243080046a3ed1821e5f8db3227b6}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a370243080046a3ed1821e5f8db3227b6}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NOT\+\_\+\+ACCEPTABLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_PROXY\_AUTHENTICATION\_REQUIRED@{RH\_STATUS\_HTTP\_PROXY\_AUTHENTICATION\_REQUIRED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_PROXY\_AUTHENTICATION\_REQUIRED@{RH\_STATUS\_HTTP\_PROXY\_AUTHENTICATION\_REQUIRED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784adac4f22e34a48a0c463ba58e69d384a7}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784adac4f22e34a48a0c463ba58e69d384a7}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PROXY\+\_\+\+AUTHENTICATION\+\_\+\+REQUIRED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_REQUEST\_TIMEOUT@{RH\_STATUS\_HTTP\_REQUEST\_TIMEOUT}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_REQUEST\_TIMEOUT@{RH\_STATUS\_HTTP\_REQUEST\_TIMEOUT}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a9b27eba03e8f3234f881347e67ef96d0}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a9b27eba03e8f3234f881347e67ef96d0}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+REQUEST\+\_\+\+TIMEOUT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_CONFLICT@{RH\_STATUS\_HTTP\_CONFLICT}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_CONFLICT@{RH\_STATUS\_HTTP\_CONFLICT}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a57fa7fcac0634a5c52e329be29b97136}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a57fa7fcac0634a5c52e329be29b97136}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+CONFLICT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_GONE@{RH\_STATUS\_HTTP\_GONE}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_GONE@{RH\_STATUS\_HTTP\_GONE}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ac585afe002c3265c1342d85df170216a}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ac585afe002c3265c1342d85df170216a}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+GONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_LENGTH\_REQUIRED@{RH\_STATUS\_HTTP\_LENGTH\_REQUIRED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_LENGTH\_REQUIRED@{RH\_STATUS\_HTTP\_LENGTH\_REQUIRED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5e293cc2bd81d243186b34c70b2fafee}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5e293cc2bd81d243186b34c70b2fafee}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+LENGTH\+\_\+\+REQUIRED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_PRECONDITION\_FAILED@{RH\_STATUS\_HTTP\_PRECONDITION\_FAILED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_PRECONDITION\_FAILED@{RH\_STATUS\_HTTP\_PRECONDITION\_FAILED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5769b74b8a6ed69270e20c5ca53bf7eb}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5769b74b8a6ed69270e20c5ca53bf7eb}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PRECONDITION\+\_\+\+FAILED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_PAYLOAD\_TOO\_LARGE@{RH\_STATUS\_HTTP\_PAYLOAD\_TOO\_LARGE}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_PAYLOAD\_TOO\_LARGE@{RH\_STATUS\_HTTP\_PAYLOAD\_TOO\_LARGE}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a486dd7ed5ddedf5b7e300111795a64fc}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a486dd7ed5ddedf5b7e300111795a64fc}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PAYLOAD\+\_\+\+TOO\+\_\+\+LARGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_URI\_TOO\_LONG@{RH\_STATUS\_HTTP\_URI\_TOO\_LONG}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_URI\_TOO\_LONG@{RH\_STATUS\_HTTP\_URI\_TOO\_LONG}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a8efbcf57b51ade7bddaf897569fbb47b}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a8efbcf57b51ade7bddaf897569fbb47b}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+URI\+\_\+\+TOO\+\_\+\+LONG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_UNSUPPORTED\_MEDIA\_TYPE@{RH\_STATUS\_HTTP\_UNSUPPORTED\_MEDIA\_TYPE}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_UNSUPPORTED\_MEDIA\_TYPE@{RH\_STATUS\_HTTP\_UNSUPPORTED\_MEDIA\_TYPE}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784abcd0cfa4ffcacb43bea17aab90d50ae2}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784abcd0cfa4ffcacb43bea17aab90d50ae2}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+UNSUPPORTED\+\_\+\+MEDIA\+\_\+\+TYPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_RANGE\_NOT\_SATISFIABLE@{RH\_STATUS\_HTTP\_RANGE\_NOT\_SATISFIABLE}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_RANGE\_NOT\_SATISFIABLE@{RH\_STATUS\_HTTP\_RANGE\_NOT\_SATISFIABLE}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a203d9f825b4a78cfb385c28ab8d57292}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a203d9f825b4a78cfb385c28ab8d57292}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+RANGE\+\_\+\+NOT\+\_\+\+SATISFIABLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_EXPECTATION\_FAILED@{RH\_STATUS\_HTTP\_EXPECTATION\_FAILED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_EXPECTATION\_FAILED@{RH\_STATUS\_HTTP\_EXPECTATION\_FAILED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4dac306a3008196bd260eeace4cdf091}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4dac306a3008196bd260eeace4cdf091}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+EXPECTATION\+\_\+\+FAILED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_MISDIRECTED\_REQUEST@{RH\_STATUS\_HTTP\_MISDIRECTED\_REQUEST}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_MISDIRECTED\_REQUEST@{RH\_STATUS\_HTTP\_MISDIRECTED\_REQUEST}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5a14d1cd310a3dd313b310dd79d7f295}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a5a14d1cd310a3dd313b310dd79d7f295}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+MISDIRECTED\+\_\+\+REQUEST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_UNPROCESSABLE\_ENTITY@{RH\_STATUS\_HTTP\_UNPROCESSABLE\_ENTITY}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_UNPROCESSABLE\_ENTITY@{RH\_STATUS\_HTTP\_UNPROCESSABLE\_ENTITY}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784af1d34fd47c9b34762c763f97b10c6a11}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784af1d34fd47c9b34762c763f97b10c6a11}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+UNPROCESSABLE\+\_\+\+ENTITY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_LOCKED@{RH\_STATUS\_HTTP\_LOCKED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_LOCKED@{RH\_STATUS\_HTTP\_LOCKED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a101307b051c572902487a4b7ec953632}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a101307b051c572902487a4b7ec953632}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+LOCKED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_FAILED\_DEPENDENCY@{RH\_STATUS\_HTTP\_FAILED\_DEPENDENCY}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_FAILED\_DEPENDENCY@{RH\_STATUS\_HTTP\_FAILED\_DEPENDENCY}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a2745cc5bb3f7f31c515a2878165412d9}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a2745cc5bb3f7f31c515a2878165412d9}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+FAILED\+\_\+\+DEPENDENCY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_UPGRADE\_REQUIRED@{RH\_STATUS\_HTTP\_UPGRADE\_REQUIRED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_UPGRADE\_REQUIRED@{RH\_STATUS\_HTTP\_UPGRADE\_REQUIRED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784aab5101d752651a6675c105b5536e6309}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784aab5101d752651a6675c105b5536e6309}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+UPGRADE\+\_\+\+REQUIRED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_PRECONDITION\_REQUIRED@{RH\_STATUS\_HTTP\_PRECONDITION\_REQUIRED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_PRECONDITION\_REQUIRED@{RH\_STATUS\_HTTP\_PRECONDITION\_REQUIRED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784af3442d832944a04dc0b23693bc416cb1}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784af3442d832944a04dc0b23693bc416cb1}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+PRECONDITION\+\_\+\+REQUIRED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_TOO\_MANY\_REQUESTS@{RH\_STATUS\_HTTP\_TOO\_MANY\_REQUESTS}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_TOO\_MANY\_REQUESTS@{RH\_STATUS\_HTTP\_TOO\_MANY\_REQUESTS}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784aa567f4004067cb24273babc68ed255c2}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784aa567f4004067cb24273babc68ed255c2}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+TOO\+\_\+\+MANY\+\_\+\+REQUESTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_REQUEST\_HEADER\_FIELDS\_TOO\_LARGE@{RH\_STATUS\_HTTP\_REQUEST\_HEADER\_FIELDS\_TOO\_LARGE}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_REQUEST\_HEADER\_FIELDS\_TOO\_LARGE@{RH\_STATUS\_HTTP\_REQUEST\_HEADER\_FIELDS\_TOO\_LARGE}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784aee7dc6b706cdd226812ac5e3f7c50835}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784aee7dc6b706cdd226812ac5e3f7c50835}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+REQUEST\+\_\+\+HEADER\+\_\+\+FIELDS\+\_\+\+TOO\+\_\+\+LARGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_CONNECTION\_CLOSED\_WITHOUT\_RESPONSE@{RH\_STATUS\_HTTP\_CONNECTION\_CLOSED\_WITHOUT\_RESPONSE}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_CONNECTION\_CLOSED\_WITHOUT\_RESPONSE@{RH\_STATUS\_HTTP\_CONNECTION\_CLOSED\_WITHOUT\_RESPONSE}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a882e041d9cd5e342ac484bfd4061349e}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a882e041d9cd5e342ac484bfd4061349e}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+CONNECTION\+\_\+\+CLOSED\+\_\+\+WITHOUT\+\_\+\+RESPONSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_UNAVAILABLE\_FOR\_LEGAL\_REASONS@{RH\_STATUS\_HTTP\_UNAVAILABLE\_FOR\_LEGAL\_REASONS}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_UNAVAILABLE\_FOR\_LEGAL\_REASONS@{RH\_STATUS\_HTTP\_UNAVAILABLE\_FOR\_LEGAL\_REASONS}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784acd8685f41ad26673ce4cc2aeddb38ccf}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784acd8685f41ad26673ce4cc2aeddb38ccf}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+UNAVAILABLE\+\_\+\+FOR\+\_\+\+LEGAL\+\_\+\+REASONS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_CLIENT\_CLOSED\_REQUEST@{RH\_STATUS\_HTTP\_CLIENT\_CLOSED\_REQUEST}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_CLIENT\_CLOSED\_REQUEST@{RH\_STATUS\_HTTP\_CLIENT\_CLOSED\_REQUEST}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a81bf8452ba3a748298b86e4ab5270758}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a81bf8452ba3a748298b86e4ab5270758}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+CLIENT\+\_\+\+CLOSED\+\_\+\+REQUEST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_INTERNAL\_SERVER\_ERROR@{RH\_STATUS\_HTTP\_INTERNAL\_SERVER\_ERROR}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_INTERNAL\_SERVER\_ERROR@{RH\_STATUS\_HTTP\_INTERNAL\_SERVER\_ERROR}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ae484935a39dcc713ba63b0445cd3b09c}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ae484935a39dcc713ba63b0445cd3b09c}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+INTERNAL\+\_\+\+SERVER\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_NOT\_IMPLEMENTED@{RH\_STATUS\_HTTP\_NOT\_IMPLEMENTED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_NOT\_IMPLEMENTED@{RH\_STATUS\_HTTP\_NOT\_IMPLEMENTED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a45e9842912641c9140d8c4d8ffca6af6}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a45e9842912641c9140d8c4d8ffca6af6}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NOT\+\_\+\+IMPLEMENTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_BAD\_GATEWAY@{RH\_STATUS\_HTTP\_BAD\_GATEWAY}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_BAD\_GATEWAY@{RH\_STATUS\_HTTP\_BAD\_GATEWAY}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784ab85c08ff899dca1462df44fa2daa5ee1}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784ab85c08ff899dca1462df44fa2daa5ee1}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+BAD\+\_\+\+GATEWAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_SERVICE\_UNAVAILABLE@{RH\_STATUS\_HTTP\_SERVICE\_UNAVAILABLE}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_SERVICE\_UNAVAILABLE@{RH\_STATUS\_HTTP\_SERVICE\_UNAVAILABLE}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a09ea99f6fb73f7b3c01f672657036648}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a09ea99f6fb73f7b3c01f672657036648}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+SERVICE\+\_\+\+UNAVAILABLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_GATEWAY\_TIMEOUT@{RH\_STATUS\_HTTP\_GATEWAY\_TIMEOUT}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_GATEWAY\_TIMEOUT@{RH\_STATUS\_HTTP\_GATEWAY\_TIMEOUT}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a6f9b2b572db711be8848616259a33055}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a6f9b2b572db711be8848616259a33055}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+GATEWAY\+\_\+\+TIMEOUT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_HTTP\_VERSION\_NOT\_SUPPORTED@{RH\_STATUS\_HTTP\_HTTP\_VERSION\_NOT\_SUPPORTED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_HTTP\_VERSION\_NOT\_SUPPORTED@{RH\_STATUS\_HTTP\_HTTP\_VERSION\_NOT\_SUPPORTED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4803f0ec6f4ddf01df890d0e04776463}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a4803f0ec6f4ddf01df890d0e04776463}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+HTTP\+\_\+\+VERSION\+\_\+\+NOT\+\_\+\+SUPPORTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_VARIANT\_ALSO\_NEGOTIATES@{RH\_STATUS\_HTTP\_VARIANT\_ALSO\_NEGOTIATES}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_VARIANT\_ALSO\_NEGOTIATES@{RH\_STATUS\_HTTP\_VARIANT\_ALSO\_NEGOTIATES}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a64c11a10180823c325f291c16cb65b36}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a64c11a10180823c325f291c16cb65b36}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+VARIANT\+\_\+\+ALSO\+\_\+\+NEGOTIATES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_INSUFFICIENT\_STORAGE@{RH\_STATUS\_HTTP\_INSUFFICIENT\_STORAGE}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_INSUFFICIENT\_STORAGE@{RH\_STATUS\_HTTP\_INSUFFICIENT\_STORAGE}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a734a2e9ece510445f952300653bcdecd}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a734a2e9ece510445f952300653bcdecd}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+INSUFFICIENT\+\_\+\+STORAGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_LOOP\_DETECTED@{RH\_STATUS\_HTTP\_LOOP\_DETECTED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_LOOP\_DETECTED@{RH\_STATUS\_HTTP\_LOOP\_DETECTED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a11be1617e2139aa4d65165008bcdbb07}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a11be1617e2139aa4d65165008bcdbb07}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+LOOP\+\_\+\+DETECTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_NOT\_EXTENDED@{RH\_STATUS\_HTTP\_NOT\_EXTENDED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_NOT\_EXTENDED@{RH\_STATUS\_HTTP\_NOT\_EXTENDED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784aa02e63729cb24297e61eb5b2cbe41643}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784aa02e63729cb24297e61eb5b2cbe41643}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NOT\+\_\+\+EXTENDED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_NETWORK\_AUTHENTICATION\_REQUIRED@{RH\_STATUS\_HTTP\_NETWORK\_AUTHENTICATION\_REQUIRED}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_NETWORK\_AUTHENTICATION\_REQUIRED@{RH\_STATUS\_HTTP\_NETWORK\_AUTHENTICATION\_REQUIRED}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a478df6f1985318d71c727380fc52dded}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a478df6f1985318d71c727380fc52dded}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NETWORK\+\_\+\+AUTHENTICATION\+\_\+\+REQUIRED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RH\_STATUS\_HTTP\_NETWORK\_CONNECT\_TIMEOUT\_ERROR@{RH\_STATUS\_HTTP\_NETWORK\_CONNECT\_TIMEOUT\_ERROR}!c\_status.h@{c\_status.h}}\index{c\_status.h@{c\_status.h}!RH\_STATUS\_HTTP\_NETWORK\_CONNECT\_TIMEOUT\_ERROR@{RH\_STATUS\_HTTP\_NETWORK\_CONNECT\_TIMEOUT\_ERROR}}}\mbox{\Hypertarget{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3f9ed1646539ccefb7b2d7ab9df99f22}\label{c__status_8h_a95ac5c56776303edbbc5c3f125916784a3f9ed1646539ccefb7b2d7ab9df99f22}} 
+RH\+\_\+\+STATUS\+\_\+\+HTTP\+\_\+\+NETWORK\+\_\+\+CONNECT\+\_\+\+TIMEOUT\+\_\+\+ERROR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{c__status_8h_aa2352955c2e1fd2bdd2c4f58804dfe6e}\label{c__status_8h_aa2352955c2e1fd2bdd2c4f58804dfe6e}} 
+\index{c\_status.h@{c\_status.h}!rallyhere\_is\_cancelled@{rallyhere\_is\_cancelled}}
+\index{rallyhere\_is\_cancelled@{rallyhere\_is\_cancelled}!c\_status.h@{c\_status.h}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_is\_cancelled()}{rallyhere\_is\_cancelled()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} bool rallyhere\+\_\+is\+\_\+cancelled (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}}}]{err }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{c__status_8h_a685f482fa4421e8b01ff18abe9e49b88}\label{c__status_8h_a685f482fa4421e8b01ff18abe9e49b88}} 
+\index{c\_status.h@{c\_status.h}!rallyhere\_is\_error@{rallyhere\_is\_error}}
+\index{rallyhere\_is\_error@{rallyhere\_is\_error}!c\_status.h@{c\_status.h}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_is\_error()}{rallyhere\_is\_error()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} bool rallyhere\+\_\+is\+\_\+error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}}}]{err }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{c__status_8h_af3db8a9f050d08c872c2008e17736816}\label{c__status_8h_af3db8a9f050d08c872c2008e17736816}} 
+\index{c\_status.h@{c\_status.h}!rallyhere\_status\_text@{rallyhere\_status\_text}}
+\index{rallyhere\_status\_text@{rallyhere\_status\_text}!c\_status.h@{c\_status.h}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_status\_text()}{rallyhere\_status\_text()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} const char$\ast$ rallyhere\+\_\+status\+\_\+text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}}}]{err }\end{DoxyParamCaption})}
+

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structRallyHereMetricActionUnique" kind="struct" language="C++" prot="public">
+    <compoundname>RallyHereMetricActionUnique</compoundname>
+    <includes refid="c__metrics_8h" local="no">c_metrics.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structRallyHereMetricActionUnique_1a80518ed22e8e3272d863fa88dbb847fa" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* RallyHereMetricActionUnique::unique</definition>
+        <argsstring></argsstring>
+        <name>unique</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unique value to count </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="78" column="16" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="76" column="1" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="76" bodyend="79"/>
+    <listofallmembers>
+      <member refid="structRallyHereMetricActionUnique_1a80518ed22e8e3272d863fa88dbb847fa" prot="public" virt="non-virtual"><scope>RallyHereMetricActionUnique</scope><name>unique</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

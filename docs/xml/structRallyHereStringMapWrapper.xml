@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structRallyHereStringMapWrapper" kind="struct" language="C++" prot="public">
+    <compoundname>RallyHereStringMapWrapper</compoundname>
+    <includes refid="rh__string__map__wrapper_8hpp" local="no">rh_string_map_wrapper.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structRallyHereStringMapWrapper_1a1301f10fba53c1c1da0b020290538f43" prot="public" static="no" mutable="no">
+        <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+        <definition>RallyHereGameInstanceAdapterPtr RallyHereStringMapWrapper::adapter</definition>
+        <argsstring></argsstring>
+        <name>adapter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" line="44" column="37" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structRallyHereStringMapWrapper_1a6cf53e90e42ba7e166a4e4ed579d0239" prot="public" static="no" mutable="no">
+        <type><ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref></type>
+        <definition>RallyHereStringMapPtr RallyHereStringMapWrapper::map</definition>
+        <argsstring></argsstring>
+        <name>map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" line="45" column="27" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structRallyHereStringMapWrapper_1abe2c41c2074b49052af3cdcb124ec1e3" prot="public" static="no" mutable="no">
+        <type><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RallyHereStatusCode RallyHereStringMapWrapper::code</definition>
+        <argsstring></argsstring>
+        <name>code</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" line="46" column="25" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structRallyHereStringMapWrapper_1a152cf562cde5bf71db47d862273f0548" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RallyHereStringMapWrapper::RallyHereStringMapWrapper</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter_)</argsstring>
+        <name>RallyHereStringMapWrapper</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter_</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" line="6" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" bodystart="6" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereStringMapWrapper_1aa2978f7dfda136c6faa0b0a56d54545a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RallyHereStringMapWrapper::~RallyHereStringMapWrapper</definition>
+        <argsstring>()</argsstring>
+        <name>~RallyHereStringMapWrapper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" line="14" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereStringMapWrapper_1a3b8dc841ee326e381b706d2377c8cb7e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RallyHereStatusCode RallyHereStringMapWrapper::add_to_string_map</definition>
+        <argsstring>()</argsstring>
+        <name>add_to_string_map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" line="19" column="25" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" bodystart="19" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereStringMapWrapper_1a22f3c4be5745d64761c88713ae6c0167" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Params</declname>
+            <defname>Params</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RallyHereStatusCode RallyHereStringMapWrapper::add_to_string_map</definition>
+        <argsstring>(const char *key, const char *value, Params... params)</argsstring>
+        <name>add_to_string_map</name>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>Params...</type>
+          <declname>params</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" line="27" column="25" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" bodystart="27" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereStringMapWrapper_1a7cc7e1005343f483c4dc1e9c88c5c721" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref></type>
+        <definition>RallyHereStringMapPtr RallyHereStringMapWrapper::release</definition>
+        <argsstring>()</argsstring>
+        <name>release</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" line="37" column="27" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" bodystart="37" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>RallyHereStringMap</label>
+        <link refid="structRallyHereStringMap"/>
+      </node>
+      <node id="1">
+        <label>RallyHereStringMapWrapper</label>
+        <link refid="structRallyHereStringMapWrapper"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>adapter</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>map</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RallyHereGameInstanceAdapter</label>
+        <link refid="structRallyHereGameInstanceAdapter"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" line="4" column="1" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp" bodystart="5" bodyend="47"/>
+    <listofallmembers>
+      <member refid="structRallyHereStringMapWrapper_1a1301f10fba53c1c1da0b020290538f43" prot="public" virt="non-virtual"><scope>RallyHereStringMapWrapper</scope><name>adapter</name></member>
+      <member refid="structRallyHereStringMapWrapper_1a3b8dc841ee326e381b706d2377c8cb7e" prot="public" virt="non-virtual"><scope>RallyHereStringMapWrapper</scope><name>add_to_string_map</name></member>
+      <member refid="structRallyHereStringMapWrapper_1a22f3c4be5745d64761c88713ae6c0167" prot="public" virt="non-virtual"><scope>RallyHereStringMapWrapper</scope><name>add_to_string_map</name></member>
+      <member refid="structRallyHereStringMapWrapper_1abe2c41c2074b49052af3cdcb124ec1e3" prot="public" virt="non-virtual"><scope>RallyHereStringMapWrapper</scope><name>code</name></member>
+      <member refid="structRallyHereStringMapWrapper_1a6cf53e90e42ba7e166a4e4ed579d0239" prot="public" virt="non-virtual"><scope>RallyHereStringMapWrapper</scope><name>map</name></member>
+      <member refid="structRallyHereStringMapWrapper_1a152cf562cde5bf71db47d862273f0548" prot="public" virt="non-virtual"><scope>RallyHereStringMapWrapper</scope><name>RallyHereStringMapWrapper</name></member>
+      <member refid="structRallyHereStringMapWrapper_1a7cc7e1005343f483c4dc1e9c88c5c721" prot="public" virt="non-virtual"><scope>RallyHereStringMapWrapper</scope><name>release</name></member>
+      <member refid="structRallyHereStringMapWrapper_1aa2978f7dfda136c6faa0b0a56d54545a" prot="public" virt="non-virtual"><scope>RallyHereStringMapWrapper</scope><name>~RallyHereStringMapWrapper</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structRallyHereMetricActionSetWithSample" kind="struct" language="C++" prot="public">
+    <compoundname>RallyHereMetricActionSetWithSample</compoundname>
+    <includes refid="c__metrics_8h" local="no">c_metrics.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structRallyHereMetricActionSetWithSample_1ab1d32d720960beba507e34ac29c76ba4" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RallyHereMetricActionSetWithSample::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The amount to set the metric to. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="61" column="12" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structRallyHereMetricActionSetWithSample_1a527ac4e573c55394bc13e8c4574ecf77" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RallyHereMetricActionSetWithSample::sample_rate</definition>
+        <argsstring></argsstring>
+        <name>sample_rate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The sampling rate associated with this. 0 and 1 are interpreted as 100% </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="63" column="12" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="59" column="1" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="59" bodyend="64"/>
+    <listofallmembers>
+      <member refid="structRallyHereMetricActionSetWithSample_1a527ac4e573c55394bc13e8c4574ecf77" prot="public" virt="non-virtual"><scope>RallyHereMetricActionSetWithSample</scope><name>sample_rate</name></member>
+      <member refid="structRallyHereMetricActionSetWithSample_1ab1d32d720960beba507e34ac29c76ba4" prot="public" virt="non-virtual"><scope>RallyHereMetricActionSetWithSample</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

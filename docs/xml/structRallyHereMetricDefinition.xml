@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structRallyHereMetricDefinition" kind="struct" language="C++" prot="public">
+    <compoundname>RallyHereMetricDefinition</compoundname>
+    <includes refid="c__metrics_8h" local="no">c_metrics.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structRallyHereMetricDefinition_1a15ca495ca6545052916005ed5c308e92" prot="public" static="no" mutable="no">
+        <type><ref refid="c__metrics_8h_1a5d296b8f5371e7f66d218ab96ca9618f" kindref="member">RallyHereMetricType</ref></type>
+        <definition>RallyHereMetricType RallyHereMetricDefinition::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="106" column="25" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structRallyHereMetricDefinition_1ae4df975273d12099535e59c2e5cbce29" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* RallyHereMetricDefinition::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="107" column="16" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structRallyHereMetricDefinition_1af1b03075f4b16eda485c32c83731c6f5" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* RallyHereMetricDefinition::help</definition>
+        <argsstring></argsstring>
+        <name>help</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="108" column="16" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structRallyHereMetricDefinition_1a583c2b96ae113bb668f5e8ab8ffb6ff8" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* RallyHereMetricDefinition::label_names</definition>
+        <argsstring></argsstring>
+        <name>label_names</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A list of label names, separated by \0, terminated by \0\0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="110" column="16" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structRallyHereMetricDefinition_1a406468e49da400f7c1a94a77b3ca31ef" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* RallyHereMetricDefinition::label_values</definition>
+        <argsstring></argsstring>
+        <name>label_values</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A list of label values, separated by \0, terminated by \0\0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="112" column="16" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="105" column="1" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="105" bodyend="113"/>
+    <listofallmembers>
+      <member refid="structRallyHereMetricDefinition_1af1b03075f4b16eda485c32c83731c6f5" prot="public" virt="non-virtual"><scope>RallyHereMetricDefinition</scope><name>help</name></member>
+      <member refid="structRallyHereMetricDefinition_1a583c2b96ae113bb668f5e8ab8ffb6ff8" prot="public" virt="non-virtual"><scope>RallyHereMetricDefinition</scope><name>label_names</name></member>
+      <member refid="structRallyHereMetricDefinition_1a406468e49da400f7c1a94a77b3ca31ef" prot="public" virt="non-virtual"><scope>RallyHereMetricDefinition</scope><name>label_values</name></member>
+      <member refid="structRallyHereMetricDefinition_1ae4df975273d12099535e59c2e5cbce29" prot="public" virt="non-virtual"><scope>RallyHereMetricDefinition</scope><name>name</name></member>
+      <member refid="structRallyHereMetricDefinition_1a15ca495ca6545052916005ed5c308e92" prot="public" virt="non-virtual"><scope>RallyHereMetricDefinition</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

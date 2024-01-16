@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structfmt_1_1formatter_3_01http_1_1response_3_01rallyhere_1_1string__body_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>fmt::formatter&lt; http::response&lt; rallyhere::string_body &gt; &gt;</compoundname>
+    <includes refid="sdk__formatters_8hpp" local="no">sdk_formatters.hpp</includes>
+    <templateparamlist>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structfmt_1_1formatter_3_01http_1_1response_3_01rallyhere_1_1string__body_01_4_01_4_1a80bb7d5311a11e2139ac890e627bf04c" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr auto</type>
+        <definition>constexpr auto fmt::formatter&lt; http::response&lt; rallyhere::string_body &gt; &gt;::parse</definition>
+        <argsstring>(format_parse_context &amp;ctx)</argsstring>
+        <name>parse</name>
+        <param>
+          <type>format_parse_context &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="28" column="20" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="structfmt_1_1formatter_3_01http_1_1response_3_01rallyhere_1_1string__body_01_4_01_4_1ab3c00a1c21035c55a4a8cffff22884dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FormatContext</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto fmt::formatter&lt; http::response&lt; rallyhere::string_body &gt; &gt;::format</definition>
+        <argsstring>(const http::response&lt; rallyhere::string_body &gt; &amp;response, FormatContext &amp;ctx)</argsstring>
+        <name>format</name>
+        <param>
+          <type>const http::response&lt; <ref refid="namespacerallyhere_1a6a86fdf96ef7e4a9876d443a6bba29ec" kindref="member">rallyhere::string_body</ref> &gt; &amp;</type>
+          <declname>response</declname>
+        </param>
+        <param>
+          <type>FormatContext &amp;</type>
+          <declname>ctx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="34" column="10" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="34" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="26" column="10" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="27" bodyend="40"/>
+    <listofallmembers>
+      <member refid="structfmt_1_1formatter_3_01http_1_1response_3_01rallyhere_1_1string__body_01_4_01_4_1ab3c00a1c21035c55a4a8cffff22884dc" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; http::response&lt; rallyhere::string_body &gt; &gt;</scope><name>format</name></member>
+      <member refid="structfmt_1_1formatter_3_01http_1_1response_3_01rallyhere_1_1string__body_01_4_01_4_1a80bb7d5311a11e2139ac890e627bf04c" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; http::response&lt; rallyhere::string_body &gt; &gt;</scope><name>parse</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

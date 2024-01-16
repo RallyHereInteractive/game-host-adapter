@@ -1,0 +1,11 @@
+An SDK for handling multiple different types of game hosting systems in one set of calls\hypertarget{index_intro_sec}{}\doxysection{Introduction}\label{index_intro_sec}
+This library as meant to be used as part of integrating game instance servers with Rally\+Here. The source code for the entire system is provided, but one should only target and use the C API directly. This will enable Rally\+Here to update your game servers to be able to support different game hosting providers without the need for the code in the game server to change.\hypertarget{index_getting_started}{}\doxysection{Getting Started}\label{index_getting_started}
+The main usage of this library is to set up your memory allocator, initialize the sdk, instantiate a game instance adapter, and then tick that either asserting or waiting for allocations to come in with additional details.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{c__api_8h_a70be86817854bcd19b3f10b31fdf19c8}{rallyhere\+\_\+global\+\_\+init()}} 
+
+\mbox{\hyperlink{c__api_8h_a4432d2d7215904ab70ae8fa09ceee234}{rallyhere\+\_\+allocator\+\_\+set\+\_\+alloc()}} 
+
+\mbox{\hyperlink{structRallyHereGameInstanceAdapter}{Rally\+Here\+Game\+Instance\+Adapter}} 
+\end{DoxySeeAlso}

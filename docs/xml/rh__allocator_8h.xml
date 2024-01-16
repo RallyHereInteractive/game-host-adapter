@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="rh__allocator_8h" kind="file" language="C++">
+    <compoundname>rh_allocator.h</compoundname>
+    <includedby refid="rh__format_8h" local="yes">/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_format.h</includedby>
+    <includedby refid="rh__string_8h" local="yes">/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string.h</includedby>
+    <includedby refid="rh__vector_8h" local="yes">/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_vector.h</includedby>
+    <invincdepgraph>
+      <node id="6">
+        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h</label>
+        <link refid="rh__status_8h"/>
+      </node>
+      <node id="3">
+        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp</label>
+        <link refid="sdk__formatters_8hpp"/>
+      </node>
+      <node id="4">
+        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string.h</label>
+        <link refid="rh__string_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_format.h</label>
+        <link refid="rh__format_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp</label>
+        <link refid="a2s_8hpp"/>
+      </node>
+      <node id="7">
+        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_vector.h</label>
+        <link refid="rh__vector_8h"/>
+      </node>
+      <node id="1">
+        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_allocator.h</label>
+        <link refid="rh__allocator_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacerallyhere">rallyhere</innernamespace>
+    <innernamespace refid="namespacerallyhere_1_1allocator">rallyhere::allocator</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">Copyright<sp/>2023<sp/>RallyHere</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment">Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GAME_HOST_ADAPTER_INTERFACE_RH_ALLOCATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GAME_HOST_ADAPTER_INTERFACE_RH_ALLOCATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacerallyhere" kindref="compound">rallyhere</ref><sp/>{</highlight></codeline>
+<codeline lineno="21" refid="namespacerallyhere_1_1allocator" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacerallyhere_1_1allocator_1a72acd99bdea4508c86208ec46d611292" kindref="member">allocator</ref><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Params&gt;</highlight></codeline>
+<codeline lineno="23" refid="namespacerallyhere_1_1allocator_1a200aed2eba9e9bd8791f9fa69c5ba262" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T*<sp/><ref refid="namespacerallyhere_1_1allocator_1a200aed2eba9e9bd8791f9fa69c5ba262" kindref="member">create</ref>(Params&amp;&amp;...<sp/>params)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>::new<sp/>T(std::forward&lt;Params&gt;(params)...);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="28" refid="namespacerallyhere_1_1allocator_1a25a4d2183bf86a60bfff9f8ff66b5c51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacerallyhere_1_1allocator_1a25a4d2183bf86a60bfff9f8ff66b5c51" kindref="member">destroy</ref>(T*<sp/>ptr)<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::delete<sp/>ptr;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="33" refid="namespacerallyhere_1_1allocator_1a72acd99bdea4508c86208ec46d611292" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespacerallyhere_1_1allocator_1a72acd99bdea4508c86208ec46d611292" kindref="member">allocator</ref><sp/>=<sp/>std::allocator&lt;T&gt;;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GAME_HOST_ADAPTER_INTERFACE_RH_ALLOCATOR_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_allocator.h"/>
+  </compounddef>
+</doxygen>

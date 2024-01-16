@@ -1,0 +1,9 @@
+<map id="RallyHereMetricCheckpoint" name="RallyHereMetricCheckpoint">
+<area shape="rect" id="node1" title=" " alt="" coords="717,115,917,141"/>
+<area shape="rect" id="node2" href="$structRallyHereMetricAction.html" title=" " alt="" coords="449,115,617,141"/>
+<area shape="rect" id="node3" href="$structRallyHereMetricActionIncrement.html" title=" " alt="" coords="5,5,240,32"/>
+<area shape="rect" id="node4" href="$structRallyHereMetricActionUnique.html" title=" " alt="" coords="15,56,230,83"/>
+<area shape="rect" id="node5" href="$structRallyHereMetricActionSetWithSample.html" title=" " alt="" coords="28,107,217,149"/>
+<area shape="rect" id="node6" href="$structRallyHereMetricActionIncrementWithSample.html" title=" " alt="" coords="5,173,240,214"/>
+<area shape="rect" id="node7" href="$structRallyHereMetricActionSet.html" title=" " alt="" coords="28,239,217,265"/>
+</map>

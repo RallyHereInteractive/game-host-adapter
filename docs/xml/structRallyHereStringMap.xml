@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structRallyHereStringMap" kind="struct" language="C++" prot="public">
+    <compoundname>RallyHereStringMap</compoundname>
+    <includes refid="c__api_8h" local="no">c_api.h</includes>
+      <sectiondef kind="user-defined">
+      <header>String Map</header>
+      <description><para>A string map structure using the assigned allocator meant to help simplify passing generic, string key-value data to and from the adapter. For those calling this from C++ there is an example wrapper which helps to manage string map lifetimes. <simplesect kind="see"><para><ref refid="structRallyHereStringMapWrapper" kindref="compound">RallyHereStringMapWrapper</ref> </para>
+</simplesect>
+</para>
+</description>
+      <memberdef kind="function" id="structRallyHereStringMap_1a024ea30d47a943cb48161bf6b0a2498d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RH_EXPORT RallyHereStatusCode rallyhere_string_map_create</definition>
+        <argsstring>(RallyHereStringMapPtr *map)</argsstring>
+        <name>rallyhere_string_map_create</name>
+        <param>
+          <type><ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref> *</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a map of string to a string. The strings may not be null terminated in order to store binary data </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="296" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="296" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereStringMap_1a17aed95832b03004f2b54c41458e6490" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_string_map_destroy</definition>
+        <argsstring>(RallyHereStringMapPtr map)</argsstring>
+        <name>rallyhere_string_map_destroy</name>
+        <param>
+          <type><ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref></type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroy a map of string to a string </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="299" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="299" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereStringMap_1ae7e305441ea3ae8ceb24d373b45e1e18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RH_EXPORT RallyHereStatusCode rallyhere_string_map_copy</definition>
+        <argsstring>(RallyHereStringMapPtr dest, const RallyHereStringMapPtr src)</argsstring>
+        <name>rallyhere_string_map_copy</name>
+        <param>
+          <type><ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref></type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref></type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy a <ref refid="structRallyHereStringMap" kindref="compound">RallyHereStringMap</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="302" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="302" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereStringMap_1af1314ea38f79e701dd6980abb48253b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_string_map_clear</definition>
+        <argsstring>(RallyHereStringMapPtr map)</argsstring>
+        <name>rallyhere_string_map_clear</name>
+        <param>
+          <type><ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref></type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clear the contents of a <ref refid="structRallyHereStringMap" kindref="compound">RallyHereStringMap</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="305" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="305" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereStringMap_1a8aa120697cdba80f092f1488c7ae62cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RH_EXPORT RallyHereStatusCode rallyhere_string_map_get</definition>
+        <argsstring>(RallyHereStringMapPtr map, const char *key, const char **value, unsigned int *value_size)</argsstring>
+        <name>rallyhere_string_map_get</name>
+        <param>
+          <type><ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref></type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>unsigned int *</type>
+          <declname>value_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get a value form <ref refid="structRallyHereStringMap" kindref="compound">RallyHereStringMap</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="308" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="308" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereStringMap_1a9e8929bdfc2a69879837a992acb011cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RH_EXPORT RallyHereStatusCode rallyhere_string_map_set</definition>
+        <argsstring>(RallyHereStringMapPtr map, const char *key, const char *value)</argsstring>
+        <name>rallyhere_string_map_set</name>
+        <param>
+          <type><ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref></type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set a value in <ref refid="structRallyHereStringMap" kindref="compound">RallyHereStringMap</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="311" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="311" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structRallyHereStringMap_1adc0a5e10afb2c923e02f50dd7e58e2ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        <definition>RH_EXPORT RallyHereStatusCode rallyhere_string_map_setn</definition>
+        <argsstring>(RallyHereStringMapPtr map, const char *key, const char *value, unsigned int value_size)</argsstring>
+        <name>rallyhere_string_map_setn</name>
+        <param>
+          <type><ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref></type>
+          <declname>map</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>value_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set a value in <ref refid="structRallyHereStringMap" kindref="compound">RallyHereStringMap</ref> with a size </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="314" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="314" declcolumn="35"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Opaque type and handle to a Rally Here String Map.</para>
+<para>This struct is intentionally empty because its true interface is only defined internally. Any methods which take this as the first argument can be thought of as methods on this struct. </para>
+    </detaileddescription>
+    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="67" column="1"/>
+    <listofallmembers>
+      <member refid="structRallyHereStringMap_1af1314ea38f79e701dd6980abb48253b7" prot="public" virt="non-virtual"><scope>RallyHereStringMap</scope><name>rallyhere_string_map_clear</name></member>
+      <member refid="structRallyHereStringMap_1ae7e305441ea3ae8ceb24d373b45e1e18" prot="public" virt="non-virtual"><scope>RallyHereStringMap</scope><name>rallyhere_string_map_copy</name></member>
+      <member refid="structRallyHereStringMap_1a024ea30d47a943cb48161bf6b0a2498d" prot="public" virt="non-virtual"><scope>RallyHereStringMap</scope><name>rallyhere_string_map_create</name></member>
+      <member refid="structRallyHereStringMap_1a17aed95832b03004f2b54c41458e6490" prot="public" virt="non-virtual"><scope>RallyHereStringMap</scope><name>rallyhere_string_map_destroy</name></member>
+      <member refid="structRallyHereStringMap_1a8aa120697cdba80f092f1488c7ae62cd" prot="public" virt="non-virtual"><scope>RallyHereStringMap</scope><name>rallyhere_string_map_get</name></member>
+      <member refid="structRallyHereStringMap_1a9e8929bdfc2a69879837a992acb011cf" prot="public" virt="non-virtual"><scope>RallyHereStringMap</scope><name>rallyhere_string_map_set</name></member>
+      <member refid="structRallyHereStringMap_1adc0a5e10afb2c923e02f50dd7e58e2ee" prot="public" virt="non-virtual"><scope>RallyHereStringMap</scope><name>rallyhere_string_map_setn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

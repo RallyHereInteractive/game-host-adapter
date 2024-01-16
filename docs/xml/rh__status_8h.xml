@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="rh__status_8h" kind="file" language="C++">
+    <compoundname>rh_status.h</compoundname>
+    <includes refid="c__status_8h" local="yes">c_status.h</includes>
+    <includes refid="rh__string_8h" local="yes">rh_string.h</includes>
+    <includes local="no">string_view</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>c_status.h</label>
+        <link refid="c__status_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>c_platform.h</label>
+        <link refid="c__platform_8h"/>
+      </node>
+      <node id="1">
+        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h</label>
+        <link refid="rh__status_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>string_view</label>
+      </node>
+      <node id="4">
+        <label>rh_string.h</label>
+        <link refid="rh__string_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>rh_allocator.h</label>
+        <link refid="rh__allocator_8h"/>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classrallyhere_1_1Status" prot="public">rallyhere::Status</innerclass>
+    <innernamespace refid="namespacerallyhere">rallyhere</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">Copyright<sp/>2023<sp/>RallyHere</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">Licensed<sp/>under<sp/>the<sp/>Apache<sp/>License,<sp/>Version<sp/>2.0<sp/>(the<sp/>&quot;License&quot;);</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">you<sp/>may<sp/>not<sp/>use<sp/>this<sp/>file<sp/>except<sp/>in<sp/>compliance<sp/>with<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">You<sp/>may<sp/>obtain<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>License<sp/>at</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>http://www.apache.org/licenses/LICENSE-2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment">Unless<sp/>required<sp/>by<sp/>applicable<sp/>law<sp/>or<sp/>agreed<sp/>to<sp/>in<sp/>writing,<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">distributed<sp/>under<sp/>the<sp/>License<sp/>is<sp/>distributed<sp/>on<sp/>an<sp/>&quot;AS<sp/>IS&quot;<sp/>BASIS,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">WITHOUT<sp/>WARRANTIES<sp/>OR<sp/>CONDITIONS<sp/>OF<sp/>ANY<sp/>KIND,<sp/>either<sp/>express<sp/>or<sp/>implied.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">See<sp/>the<sp/>License<sp/>for<sp/>the<sp/>specific<sp/>language<sp/>governing<sp/>permissions<sp/>and</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">limitations<sp/>under<sp/>the<sp/>License.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GAME_HOST_ADAPTER_INTERFACE_RH_STATUS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GAME_HOST_ADAPTER_INTERFACE_RH_STATUS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="c__status_8h" kindref="compound">c_status.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rh__string_8h" kindref="compound">rh_string.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string_view&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacerallyhere" kindref="compound">rallyhere</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="namespacerallyhere_1a01f61b99849af1519d941b913b1fb746" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="namespacerallyhere_1a01f61b99849af1519d941b913b1fb746" kindref="member">status_text</ref>(<ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref>);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="namespacerallyhere_1aaebe4b7543e4994038781a51d57e9bae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacerallyhere_1aaebe4b7543e4994038781a51d57e9bae" kindref="member">is_error</ref>(<ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref><sp/>err)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err<sp/>!=<sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a1300ac8cfb4b729eb58870f1622ad954" kindref="member">RH_STATUS_OK</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="namespacerallyhere_1a32e5c5dcdf2d843bff452a896dc45d48" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespacerallyhere_1a32e5c5dcdf2d843bff452a896dc45d48" kindref="member">is_cancelled</ref>(<ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref><sp/>err)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err<sp/>==<sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a08de4e979e2cd29910c01b3f0c9f10ca" kindref="member">RH_STATUS_CANCELLED</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classrallyhere_1_1Status" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classrallyhere_1_1Status" kindref="compound">Status</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42" refid="classrallyhere_1_1Status_1aa3fd8a836a74be4497179fc788c02521" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classrallyhere_1_1Status_1aa3fd8a836a74be4497179fc788c02521" kindref="member">Status</ref>()<sp/>:<sp/>m_Code(<ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a1300ac8cfb4b729eb58870f1622ad954" kindref="member">RH_STATUS_OK</ref>),<sp/>m_Message(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>{}</highlight></codeline>
+<codeline lineno="43" refid="classrallyhere_1_1Status_1a537c8dd791bd3a6fdd59796dff75fac8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classrallyhere_1_1Status_1a537c8dd791bd3a6fdd59796dff75fac8" kindref="member">Status</ref>(<ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref><sp/><ref refid="classrallyhere_1_1Status_1ad0de2e63b84f8da0d827c6e77b039a7d" kindref="member">code</ref>)<sp/>:<sp/>m_Code(<ref refid="classrallyhere_1_1Status_1ad0de2e63b84f8da0d827c6e77b039a7d" kindref="member">code</ref>),<sp/>m_Message{}<sp/>{}</highlight></codeline>
+<codeline lineno="44" refid="classrallyhere_1_1Status_1a7ad71b78f8e8422d7c5dc4b463eccdaf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classrallyhere_1_1Status_1a7ad71b78f8e8422d7c5dc4b463eccdaf" kindref="member">Status</ref>(<ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref><sp/><ref refid="classrallyhere_1_1Status_1ad0de2e63b84f8da0d827c6e77b039a7d" kindref="member">code</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/><ref refid="classrallyhere_1_1Status_1aa7f557c4cfb13ebe562cfe6f3d3a44cc" kindref="member">message</ref>)<sp/>:<sp/>m_Code(<ref refid="classrallyhere_1_1Status_1ad0de2e63b84f8da0d827c6e77b039a7d" kindref="member">code</ref>),<sp/>m_Message(<ref refid="classrallyhere_1_1Status_1aa7f557c4cfb13ebe562cfe6f3d3a44cc" kindref="member">message</ref>)<sp/>{}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="classrallyhere_1_1Status_1ad0de2e63b84f8da0d827c6e77b039a7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref><sp/><ref refid="classrallyhere_1_1Status_1ad0de2e63b84f8da0d827c6e77b039a7d" kindref="member">code</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_Code;<sp/>};</highlight></codeline>
+<codeline lineno="47" refid="classrallyhere_1_1Status_1a308114c9416a03fc066cab687947e10a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string_view<sp/><ref refid="classrallyhere_1_1Status_1a308114c9416a03fc066cab687947e10a" kindref="member">code_message</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacerallyhere_1a01f61b99849af1519d941b913b1fb746" kindref="member">status_text</ref>(m_Code);<sp/>}</highlight></codeline>
+<codeline lineno="48" refid="classrallyhere_1_1Status_1aa7f557c4cfb13ebe562cfe6f3d3a44cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string_view<sp/><ref refid="classrallyhere_1_1Status_1aa7f557c4cfb13ebe562cfe6f3d3a44cc" kindref="member">message</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_Message;<sp/>}</highlight></codeline>
+<codeline lineno="49" refid="classrallyhere_1_1Status_1a2da5027faf42d9ac874787c25c7afc7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classrallyhere_1_1Status_1a2da5027faf42d9ac874787c25c7afc7e" kindref="member">ok</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_Code<sp/>==<sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a1300ac8cfb4b729eb58870f1622ad954" kindref="member">RH_STATUS_OK</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="50" refid="classrallyhere_1_1Status_1a772c946fd1d0e06a189c1f68b1c838fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>bool()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classrallyhere_1_1Status_1a2da5027faf42d9ac874787c25c7afc7e" kindref="member">ok</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref><sp/>m_Code;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>m_Message;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>rallyhere</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GAME_HOST_ADAPTER_INTERFACE_RH_STATUS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h"/>
+  </compounddef>
+</doxygen>

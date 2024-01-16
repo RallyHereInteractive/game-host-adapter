@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacerallyhere" kind="namespace" language="C++">
+    <compoundname>rallyhere</compoundname>
+    <innerclass refid="structrallyhere_1_1a2s__simple__response" prot="public">rallyhere::a2s_simple_response</innerclass>
+    <innerclass refid="structrallyhere_1_1server__info" prot="public">rallyhere::server_info</innerclass>
+    <innerclass refid="structrallyhere_1_1A2SDatagram" prot="public">rallyhere::A2SDatagram</innerclass>
+    <innerclass refid="classrallyhere_1_1Status" prot="public">rallyhere::Status</innerclass>
+    <innernamespace refid="namespacerallyhere_1_1allocator">rallyhere::allocator</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacerallyhere_1a0afcd5afb55b621622fd5e2f7b4a0566" prot="public" static="no" strong="yes">
+        <type>uint8_t</type>
+        <name>a2s_query</name>
+        <enumvalue id="namespacerallyhere_1a0afcd5afb55b621622fd5e2f7b4a0566acaf9b6b99962bf5c2264824231d7a40c" prot="public">
+          <name>info</name>
+          <initializer>= 0x54</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerallyhere_1a0afcd5afb55b621622fd5e2f7b4a0566aa2bbabfe7b1dd886a0c32b57bd8a94f9" prot="public">
+          <name>players</name>
+          <initializer>= 0x55</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacerallyhere_1a0afcd5afb55b621622fd5e2f7b4a0566aa4f86f7bfc24194b276c22e0ef158197" prot="public">
+          <name>rules</name>
+          <initializer>= 0x56</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp" line="72" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp" bodystart="73" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacerallyhere_1a7f5299480c8b27fb1ecb8a48090074be" prot="public" static="no">
+        <type>fmt::basic_memory_buffer&lt; char, fmt::inline_buffer_size, <ref refid="namespacerallyhere_1_1allocator_1a72acd99bdea4508c86208ec46d611292" kindref="member">rallyhere::allocator::allocator</ref>&lt; char &gt; &gt;</type>
+        <definition>using rallyhere::memory_buffer = typedef fmt::basic_memory_buffer&lt;char, fmt::inline_buffer_size, rallyhere::allocator::allocator&lt;char&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>memory_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_format.h" line="24" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_format.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacerallyhere_1a06e017abf8a0212e162b377dc793078e" prot="public" static="no">
+        <type>std::basic_string&lt; char, std::char_traits&lt; char &gt;, <ref refid="namespacerallyhere_1_1allocator_1a72acd99bdea4508c86208ec46d611292" kindref="member">rallyhere::allocator::allocator</ref>&lt; char &gt; &gt;</type>
+        <definition>using rallyhere::string = typedef std::basic_string&lt;char, std::char_traits&lt;char&gt;, rallyhere::allocator::allocator&lt;char&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>string</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string.h" line="23" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacerallyhere_1ae6c398b5cead92743640822e3a687302" prot="public" static="no">
+        <type>std::basic_stringstream&lt; char, std::char_traits&lt; char &gt;, <ref refid="namespacerallyhere_1_1allocator_1a72acd99bdea4508c86208ec46d611292" kindref="member">rallyhere::allocator::allocator</ref>&lt; char &gt; &gt;</type>
+        <definition>using rallyhere::stringstream = typedef std::basic_stringstream&lt;char, std::char_traits&lt;char&gt;, rallyhere::allocator::allocator&lt;char&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>stringstream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string.h" line="24" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacerallyhere_1a9822d3fb78edd3730ef97afb9b2c06d9" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T, <ref refid="namespacerallyhere_1_1allocator_1a72acd99bdea4508c86208ec46d611292" kindref="member">rallyhere::allocator::allocator</ref>&lt; T &gt; &gt;</type>
+        <definition>using rallyhere::vector = typedef std::vector&lt;T, rallyhere::allocator::allocator&lt;T&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>vector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_vector.h" line="24" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_vector.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacerallyhere_1a6a86fdf96ef7e4a9876d443a6bba29ec" prot="public" static="no">
+        <type>boost::beast::http::basic_string_body&lt; char, std::char_traits&lt; char &gt;, <ref refid="namespacerallyhere_1_1allocator_1a72acd99bdea4508c86208ec46d611292" kindref="member">rallyhere::allocator::allocator</ref>&lt; char &gt; &gt;</type>
+        <definition>using rallyhere::string_body = typedef boost::beast::http::basic_string_body&lt;char, std::char_traits&lt;char&gt;, rallyhere::allocator::allocator&lt;char&gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>string_body</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="23" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacerallyhere_1a17f51994891fa6aade759ea62f75fbdd" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr unsigned int</type>
+        <definition>constexpr unsigned int rallyhere::A2S_MAX_DATA_SIZE</definition>
+        <argsstring></argsstring>
+        <name>A2S_MAX_DATA_SIZE</name>
+        <initializer>= 1400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp" line="26" column="35" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacerallyhere_1a1b4c37b3daf7e45441669ac1b5a251f5" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr unsigned int</type>
+        <definition>constexpr unsigned int rallyhere::UDP_HEADER_SIZE</definition>
+        <argsstring></argsstring>
+        <name>UDP_HEADER_SIZE</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp" line="27" column="35" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacerallyhere_1a01f61b99849af1519d941b913b1fb746" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> const char *</type>
+        <definition>RH_EXPORT const char* rallyhere::status_text</definition>
+        <argsstring>(RallyHereStatusCode)</argsstring>
+        <name>status_text</name>
+        <param>
+          <type><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="27" column="26" declfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" declline="27" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerallyhere_1aaebe4b7543e4994038781a51d57e9bae" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rallyhere::is_error</definition>
+        <argsstring>(RallyHereStatusCode err)</argsstring>
+        <name>is_error</name>
+        <param>
+          <type><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="29" column="20" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerallyhere_1a32e5c5dcdf2d843bff452a896dc45d48" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool rallyhere::is_cancelled</definition>
+        <argsstring>(RallyHereStatusCode err)</argsstring>
+        <name>is_cancelled</name>
+        <param>
+          <type><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="34" column="20" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="34" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp" line="24" column="1"/>
+  </compounddef>
+</doxygen>

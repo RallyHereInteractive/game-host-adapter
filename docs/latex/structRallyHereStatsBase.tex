@@ -1,0 +1,181 @@
+\hypertarget{structRallyHereStatsBase}{}\doxysection{Rally\+Here\+Stats\+Base Struct Reference}
+\label{structRallyHereStatsBase}\index{RallyHereStatsBase@{RallyHereStatsBase}}
+
+
+Base stats to be exported by the game host adapter.  
+
+
+
+
+{\ttfamily \#include $<$c\+\_\+api.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{structRallyHereStatsBase_a81e0795669945fdad28d5e9c6ecb499b}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the server. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{structRallyHereStatsBase_acf6058a69c59bedc5cc231ce79f4cc45}{map}}
+\begin{DoxyCompactList}\small\item\em Map the server is running. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{structRallyHereStatsBase_aeff9a689014da8e2938eef48ab7a408d}{folder}}
+\begin{DoxyCompactList}\small\item\em Folder containing the game files. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{structRallyHereStatsBase_a713b15b5a238ff1898cc9d05ad6429db}{game}}
+\begin{DoxyCompactList}\small\item\em Name of the game. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{structRallyHereStatsBase_a2b9cfc8f3868f87a1cda51d816d8b820}{id}}
+\begin{DoxyCompactList}\small\item\em Numeric ID of the game. Potentially the Steam App ID. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structRallyHereStatsBase_ae3fe7b9ec5d0977b2c41d0744d2fea30}{players}}
+\begin{DoxyCompactList}\small\item\em Number of players currently on the server. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structRallyHereStatsBase_aff123439bb2fe7ac8f88973908a1b589}{max\+\_\+players}}
+\begin{DoxyCompactList}\small\item\em Maximum number of players the server can hold. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structRallyHereStatsBase_a67565ba06401c066339374733c1f0f1f}{bots}}
+\begin{DoxyCompactList}\small\item\em Number of bots on the server. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structRallyHereStatsBase_a03e3b91a2874c60c24cb4ddb2f595def}{server\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type of server. Currently \textquotesingle{}d\textquotesingle{} for dedicated, \textquotesingle{}l\textquotesingle{} for listen, \textquotesingle{}p\textquotesingle{} for Source\+TV. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structRallyHereStatsBase_a869a930027d3997e7eda78bcec2e4bde}{environment}}
+\begin{DoxyCompactList}\small\item\em Environment the server is running in. Currently \textquotesingle{}w\textquotesingle{} for Windows, \textquotesingle{}l\textquotesingle{} for Linux, \textquotesingle{}m\textquotesingle{} for Mac. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structRallyHereStatsBase_a47cbeb803c043765e14e998d39ed48cf}{visibility}}
+\begin{DoxyCompactList}\small\item\em Visibility of the server. Currently \textquotesingle{}0\textquotesingle{} for public and \textquotesingle{}1\textquotesingle{} for private. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structRallyHereStatsBase_a69f230c0fef002804fda3e1eb00409e3}{anticheat}}
+\begin{DoxyCompactList}\small\item\em Anti-\/cheat running on the server. Currently \textquotesingle{}0\textquotesingle{} for unsecured, \textquotesingle{}1\textquotesingle{} for secured. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{structRallyHereStatsBase_a3e3e1b3b8cc6b01045fc31581663115d}{version}}
+\begin{DoxyCompactList}\small\item\em Version of the game installed on the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base stats to be exported by the game host adapter. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structRallyHereStatsBase_a69f230c0fef002804fda3e1eb00409e3}\label{structRallyHereStatsBase_a69f230c0fef002804fda3e1eb00409e3}} 
+\index{RallyHereStatsBase@{RallyHereStatsBase}!anticheat@{anticheat}}
+\index{anticheat@{anticheat}!RallyHereStatsBase@{RallyHereStatsBase}}
+\doxysubsubsection{\texorpdfstring{anticheat}{anticheat}}
+{\footnotesize\ttfamily uint8\+\_\+t Rally\+Here\+Stats\+Base\+::anticheat}
+
+
+
+Anti-\/cheat running on the server. Currently \textquotesingle{}0\textquotesingle{} for unsecured, \textquotesingle{}1\textquotesingle{} for secured. 
+
+\mbox{\Hypertarget{structRallyHereStatsBase_a67565ba06401c066339374733c1f0f1f}\label{structRallyHereStatsBase_a67565ba06401c066339374733c1f0f1f}} 
+\index{RallyHereStatsBase@{RallyHereStatsBase}!bots@{bots}}
+\index{bots@{bots}!RallyHereStatsBase@{RallyHereStatsBase}}
+\doxysubsubsection{\texorpdfstring{bots}{bots}}
+{\footnotesize\ttfamily uint8\+\_\+t Rally\+Here\+Stats\+Base\+::bots}
+
+
+
+Number of bots on the server. 
+
+\mbox{\Hypertarget{structRallyHereStatsBase_a869a930027d3997e7eda78bcec2e4bde}\label{structRallyHereStatsBase_a869a930027d3997e7eda78bcec2e4bde}} 
+\index{RallyHereStatsBase@{RallyHereStatsBase}!environment@{environment}}
+\index{environment@{environment}!RallyHereStatsBase@{RallyHereStatsBase}}
+\doxysubsubsection{\texorpdfstring{environment}{environment}}
+{\footnotesize\ttfamily uint8\+\_\+t Rally\+Here\+Stats\+Base\+::environment}
+
+
+
+Environment the server is running in. Currently \textquotesingle{}w\textquotesingle{} for Windows, \textquotesingle{}l\textquotesingle{} for Linux, \textquotesingle{}m\textquotesingle{} for Mac. 
+
+\mbox{\Hypertarget{structRallyHereStatsBase_aeff9a689014da8e2938eef48ab7a408d}\label{structRallyHereStatsBase_aeff9a689014da8e2938eef48ab7a408d}} 
+\index{RallyHereStatsBase@{RallyHereStatsBase}!folder@{folder}}
+\index{folder@{folder}!RallyHereStatsBase@{RallyHereStatsBase}}
+\doxysubsubsection{\texorpdfstring{folder}{folder}}
+{\footnotesize\ttfamily const char$\ast$ Rally\+Here\+Stats\+Base\+::folder}
+
+
+
+Folder containing the game files. 
+
+\mbox{\Hypertarget{structRallyHereStatsBase_a713b15b5a238ff1898cc9d05ad6429db}\label{structRallyHereStatsBase_a713b15b5a238ff1898cc9d05ad6429db}} 
+\index{RallyHereStatsBase@{RallyHereStatsBase}!game@{game}}
+\index{game@{game}!RallyHereStatsBase@{RallyHereStatsBase}}
+\doxysubsubsection{\texorpdfstring{game}{game}}
+{\footnotesize\ttfamily const char$\ast$ Rally\+Here\+Stats\+Base\+::game}
+
+
+
+Name of the game. 
+
+\mbox{\Hypertarget{structRallyHereStatsBase_a2b9cfc8f3868f87a1cda51d816d8b820}\label{structRallyHereStatsBase_a2b9cfc8f3868f87a1cda51d816d8b820}} 
+\index{RallyHereStatsBase@{RallyHereStatsBase}!id@{id}}
+\index{id@{id}!RallyHereStatsBase@{RallyHereStatsBase}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int32\+\_\+t Rally\+Here\+Stats\+Base\+::id}
+
+
+
+Numeric ID of the game. Potentially the Steam App ID. 
+
+\mbox{\Hypertarget{structRallyHereStatsBase_acf6058a69c59bedc5cc231ce79f4cc45}\label{structRallyHereStatsBase_acf6058a69c59bedc5cc231ce79f4cc45}} 
+\index{RallyHereStatsBase@{RallyHereStatsBase}!map@{map}}
+\index{map@{map}!RallyHereStatsBase@{RallyHereStatsBase}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily const char$\ast$ Rally\+Here\+Stats\+Base\+::map}
+
+
+
+Map the server is running. 
+
+\mbox{\Hypertarget{structRallyHereStatsBase_aff123439bb2fe7ac8f88973908a1b589}\label{structRallyHereStatsBase_aff123439bb2fe7ac8f88973908a1b589}} 
+\index{RallyHereStatsBase@{RallyHereStatsBase}!max\_players@{max\_players}}
+\index{max\_players@{max\_players}!RallyHereStatsBase@{RallyHereStatsBase}}
+\doxysubsubsection{\texorpdfstring{max\_players}{max\_players}}
+{\footnotesize\ttfamily uint8\+\_\+t Rally\+Here\+Stats\+Base\+::max\+\_\+players}
+
+
+
+Maximum number of players the server can hold. 
+
+\mbox{\Hypertarget{structRallyHereStatsBase_a81e0795669945fdad28d5e9c6ecb499b}\label{structRallyHereStatsBase_a81e0795669945fdad28d5e9c6ecb499b}} 
+\index{RallyHereStatsBase@{RallyHereStatsBase}!name@{name}}
+\index{name@{name}!RallyHereStatsBase@{RallyHereStatsBase}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily const char$\ast$ Rally\+Here\+Stats\+Base\+::name}
+
+
+
+Name of the server. 
+
+\mbox{\Hypertarget{structRallyHereStatsBase_ae3fe7b9ec5d0977b2c41d0744d2fea30}\label{structRallyHereStatsBase_ae3fe7b9ec5d0977b2c41d0744d2fea30}} 
+\index{RallyHereStatsBase@{RallyHereStatsBase}!players@{players}}
+\index{players@{players}!RallyHereStatsBase@{RallyHereStatsBase}}
+\doxysubsubsection{\texorpdfstring{players}{players}}
+{\footnotesize\ttfamily uint8\+\_\+t Rally\+Here\+Stats\+Base\+::players}
+
+
+
+Number of players currently on the server. 
+
+\mbox{\Hypertarget{structRallyHereStatsBase_a03e3b91a2874c60c24cb4ddb2f595def}\label{structRallyHereStatsBase_a03e3b91a2874c60c24cb4ddb2f595def}} 
+\index{RallyHereStatsBase@{RallyHereStatsBase}!server\_type@{server\_type}}
+\index{server\_type@{server\_type}!RallyHereStatsBase@{RallyHereStatsBase}}
+\doxysubsubsection{\texorpdfstring{server\_type}{server\_type}}
+{\footnotesize\ttfamily uint8\+\_\+t Rally\+Here\+Stats\+Base\+::server\+\_\+type}
+
+
+
+Type of server. Currently \textquotesingle{}d\textquotesingle{} for dedicated, \textquotesingle{}l\textquotesingle{} for listen, \textquotesingle{}p\textquotesingle{} for Source\+TV. 
+
+\mbox{\Hypertarget{structRallyHereStatsBase_a3e3e1b3b8cc6b01045fc31581663115d}\label{structRallyHereStatsBase_a3e3e1b3b8cc6b01045fc31581663115d}} 
+\index{RallyHereStatsBase@{RallyHereStatsBase}!version@{version}}
+\index{version@{version}!RallyHereStatsBase@{RallyHereStatsBase}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily const char$\ast$ Rally\+Here\+Stats\+Base\+::version}
+
+
+
+Version of the game installed on the server. 
+
+\mbox{\Hypertarget{structRallyHereStatsBase_a47cbeb803c043765e14e998d39ed48cf}\label{structRallyHereStatsBase_a47cbeb803c043765e14e998d39ed48cf}} 
+\index{RallyHereStatsBase@{RallyHereStatsBase}!visibility@{visibility}}
+\index{visibility@{visibility}!RallyHereStatsBase@{RallyHereStatsBase}}
+\doxysubsubsection{\texorpdfstring{visibility}{visibility}}
+{\footnotesize\ttfamily uint8\+\_\+t Rally\+Here\+Stats\+Base\+::visibility}
+
+
+
+Visibility of the server. Currently \textquotesingle{}0\textquotesingle{} for public and \textquotesingle{}1\textquotesingle{} for private. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/asayman/\+Dev/game-\/host-\/adapter/include/game-\/host-\/adapter/\mbox{\hyperlink{c__api_8h}{c\+\_\+api.\+h}}\end{DoxyCompactItemize}

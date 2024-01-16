@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacefmt" kind="namespace" language="C++">
+    <compoundname>fmt</compoundname>
+    <innerclass refid="structfmt_1_1formatter_3_01http_1_1response_3_01rallyhere_1_1string__body_01_4_01_4" prot="public">fmt::formatter&lt; http::response&lt; rallyhere::string_body &gt; &gt;</innerclass>
+    <innerclass refid="structfmt_1_1formatter_3_01http_1_1request_3_01rallyhere_1_1string__body_01_4_01_4" prot="public">fmt::formatter&lt; http::request&lt; rallyhere::string_body &gt; &gt;</innerclass>
+    <innerclass refid="structfmt_1_1formatter_3_01boost_1_1system_1_1error__code_01_4" prot="public">fmt::formatter&lt; boost::system::error_code &gt;</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="[generated]" line="1" column="1"/>
+  </compounddef>
+</doxygen>
