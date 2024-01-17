@@ -7,7 +7,7 @@
     <includes refid="c__platform_8h" local="yes">c_platform.h</includes>
     <includes refid="c__status_8h" local="yes">c_status.h</includes>
     <includes refid="c__metrics_8h" local="yes">c_metrics.h</includes>
-    <includedby refid="rh__string__map__wrapper_8hpp" local="yes">/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</includedby>
+    <includedby refid="rh__string__map__wrapper_8hpp" local="yes">game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</includedby>
     <incdepgraph>
       <node id="3">
         <label>cstdint</label>
@@ -30,7 +30,7 @@
         <label>cstddef</label>
       </node>
       <node id="1">
-        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h</label>
+        <label>game-host-adapter/include/game-host-adapter/c_api.h</label>
         <link refid="c__api_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -46,13 +46,13 @@
     </incdepgraph>
     <invincdepgraph>
       <node id="1">
-        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h</label>
+        <label>game-host-adapter/include/game-host-adapter/c_api.h</label>
         <link refid="c__api_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
       <node id="2">
-        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</label>
+        <label>game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</label>
         <link refid="rh__string__map__wrapper_8hpp"/>
       </node>
     </invincdepgraph>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="106" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" bodystart="106" bodyend="106"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="106" column="5" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="106" bodyend="106"/>
       </memberdef>
       <memberdef kind="typedef" id="c__api_8h_1ade4228dcd8f4d1f8c1d42bd5f40bcca3" prot="public" static="no">
         <type>enum <ref refid="c__api_8h_1acea7ed85e1829a9b981399a844ae5120" kindref="member">RallyHereLogLevel</ref></type>
@@ -112,7 +112,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="106" column="53"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="106" column="53"/>
       </memberdef>
       <memberdef kind="typedef" id="c__api_8h_1a64a7679e581842654beca7ae63664a26" prot="public" static="no">
         <type>void(*</type>
@@ -126,7 +126,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="108" column="13" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" bodystart="108" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="108" column="13" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="108" bodyend="-1"/>
       </memberdef>
       <memberdef kind="function" id="c__api_8h_1a4b0adaca38324c8ac2ebf6d2429b3d7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -144,7 +144,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="115" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="115" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="115" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="115" declcolumn="20"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -163,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="65" column="42" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" bodystart="63" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="65" column="42" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="c__api_8h_1a8901377cd48d4831c6380593a2a60360" prot="public" static="no">
         <type><ref refid="structRallyHereStringMap" kindref="compound">RallyHereStringMap</ref> *</type>
@@ -177,7 +177,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="74" column="32" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" bodystart="72" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="74" column="32" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="72" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -195,7 +195,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="213" column="13" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" bodystart="213" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="213" column="13" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="213" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -230,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="87" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="87" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="87" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="87" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="c__api_8h_1aff419acc09d05afbc49c6b671d9b053f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -258,7 +258,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="93" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="93" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="93" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="93" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="c__api_8h_1a7eeeadbe1fc805105e3ab945cb246720" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -286,7 +286,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="100" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="100" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="100" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="100" declcolumn="20"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -306,7 +306,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="125" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="125" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="125" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="125" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="c__api_8h_1af11502e19d260c2a68285b7eb9e635c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -321,7 +321,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="130" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="130" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="130" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="130" declcolumn="20"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -553,6 +553,6 @@
 <codeline lineno="509"><highlight class="normal"></highlight></codeline>
 <codeline lineno="510"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>RH_C_API_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h"/>
+    <location file="game-host-adapter/include/game-host-adapter/c_api.h"/>
   </compounddef>
 </doxygen>

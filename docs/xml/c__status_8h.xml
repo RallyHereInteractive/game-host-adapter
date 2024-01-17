@@ -3,11 +3,11 @@
   <compounddef id="c__status_8h" kind="file" language="C++">
     <compoundname>c_status.h</compoundname>
     <includes refid="c__platform_8h" local="yes">c_platform.h</includes>
-    <includedby refid="c__api_8h" local="yes">/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h</includedby>
-    <includedby refid="rh__status_8h" local="yes">/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h</includedby>
+    <includedby refid="c__api_8h" local="yes">game-host-adapter/include/game-host-adapter/c_api.h</includedby>
+    <includedby refid="rh__status_8h" local="yes">game-host-adapter/include/test-helpers/rh_status.h</includedby>
     <incdepgraph>
       <node id="1">
-        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h</label>
+        <label>game-host-adapter/include/game-host-adapter/c_status.h</label>
         <link refid="c__status_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -19,7 +19,7 @@
     </incdepgraph>
     <invincdepgraph>
       <node id="1">
-        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h</label>
+        <label>game-host-adapter/include/game-host-adapter/c_status.h</label>
         <link refid="c__status_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -27,17 +27,17 @@
         </childnode>
       </node>
       <node id="4">
-        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h</label>
+        <label>game-host-adapter/include/test-helpers/rh_status.h</label>
         <link refid="rh__status_8h"/>
       </node>
       <node id="2">
-        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h</label>
+        <label>game-host-adapter/include/game-host-adapter/c_api.h</label>
         <link refid="c__api_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="3">
-        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</label>
+        <label>game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</label>
         <link refid="rh__string__map__wrapper_8hpp"/>
       </node>
     </invincdepgraph>
@@ -891,7 +891,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" line="26" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" bodystart="27" bodyend="137"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_status.h" line="26" column="5" bodyfile="game-host-adapter/include/game-host-adapter/c_status.h" bodystart="27" bodyend="137"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -906,7 +906,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" line="137" column="25"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_status.h" line="137" column="25"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -925,7 +925,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" line="139" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" declline="139" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_status.h" line="139" column="20" declfile="game-host-adapter/include/game-host-adapter/c_status.h" declline="139" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="c__status_8h_1aa2352955c2e1fd2bdd2c4f58804dfe6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> bool</type>
@@ -942,7 +942,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" line="140" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" declline="140" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_status.h" line="140" column="20" declfile="game-host-adapter/include/game-host-adapter/c_status.h" declline="140" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="c__status_8h_1af3db8a9f050d08c872c2008e17736816" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> const char *</type>
@@ -959,7 +959,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" line="141" column="26" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h" declline="141" declcolumn="26"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_status.h" line="141" column="26" declfile="game-host-adapter/include/game-host-adapter/c_status.h" declline="141" declcolumn="26"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1115,6 +1115,6 @@
 <codeline lineno="146"><highlight class="normal"></highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>RH_C_STATUS_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h"/>
+    <location file="game-host-adapter/include/game-host-adapter/c_status.h"/>
   </compounddef>
 </doxygen>

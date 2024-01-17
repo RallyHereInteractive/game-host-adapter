@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="44" column="16" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="44" bodyend="47"/>
+        <location file="game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="44" column="16" bodyfile="game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="44" bodyend="47"/>
       </memberdef>
       <memberdef kind="function" id="structfmt_1_1formatter_3_01http_1_1request_3_01rallyhere_1_1string__body_01_4_01_4_1a64d28a93618a408212e6e4334d4e6960" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -47,14 +47,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="50" column="6" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="50" bodyend="55"/>
+        <location file="game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="50" column="6" bodyfile="game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="50" bodyend="55"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="42" column="10" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="43" bodyend="56"/>
+    <location file="game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="42" column="10" bodyfile="game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="43" bodyend="56"/>
     <listofallmembers>
       <member refid="structfmt_1_1formatter_3_01http_1_1request_3_01rallyhere_1_1string__body_01_4_01_4_1a64d28a93618a408212e6e4334d4e6960" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; http::request&lt; rallyhere::string_body &gt; &gt;</scope><name>format</name></member>
       <member refid="structfmt_1_1formatter_3_01http_1_1request_3_01rallyhere_1_1string__body_01_4_01_4_1a078f77d96865e0d16e2790a81a8c9fb8" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; http::request&lt; rallyhere::string_body &gt; &gt;</scope><name>parse</name></member>

@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="82" column="31" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="82" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="82" column="31" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="82" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereMetricAction_1a7ea459c2b57aceae25b4a64fa7af2a87" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="84" column="16" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="84" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="84" column="16" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereMetricAction_1a5f60337cbe56addbc1efcdf413b30941" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="86" column="16" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="86" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="86" column="16" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="86" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereMetricAction_1acdd9b8ab052985f11f69479520d14ddc" prot="public" static="no" mutable="no">
         <type><ref refid="structRallyHereMetricActionIncrementWithSample" kindref="compound">RallyHereMetricActionIncrementWithSample</ref></type>
@@ -56,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="89" column="50" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="89" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="89" column="50" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereMetricAction_1a953dc621717d4fd5dc88ac78a57e480d" prot="public" static="no" mutable="no">
         <type><ref refid="structRallyHereMetricActionSetWithSample" kindref="compound">RallyHereMetricActionSetWithSample</ref></type>
@@ -69,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="90" column="44" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="90" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="90" column="44" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereMetricAction_1a3a2aca58050d0e13e79a6c245189150d" prot="public" static="no" mutable="no">
         <type><ref refid="structRallyHereMetricActionIncrement" kindref="compound">RallyHereMetricActionIncrement</ref></type>
@@ -82,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="91" column="40" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="91" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="91" column="40" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="91" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereMetricAction_1a2fde817163a71d14b17179557d0180b2" prot="public" static="no" mutable="no">
         <type><ref refid="structRallyHereMetricActionSet" kindref="compound">RallyHereMetricActionSet</ref></type>
@@ -95,7 +95,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="92" column="34" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="92" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="92" column="34" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="92" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereMetricAction_1ac6be45ccd5a7a84afb51068b5399fd0b" prot="public" static="no" mutable="no">
         <type><ref refid="structRallyHereMetricActionUnique" kindref="compound">RallyHereMetricActionUnique</ref></type>
@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="93" column="37" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="93" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="93" column="37" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="93" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereMetricAction_1a6f65572b126b3aaf389916ff31580195" prot="public" static="no" mutable="no">
         <type>union RallyHereMetricAction::@0</type>
@@ -122,7 +122,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="94" column="12"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="94" column="12"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -170,7 +170,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="81" column="1" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="81" bodyend="95"/>
+    <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="81" column="1" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="81" bodyend="95"/>
     <listofallmembers>
       <member refid="structRallyHereMetricAction_1a6f65572b126b3aaf389916ff31580195" prot="public" virt="non-virtual"><scope>RallyHereMetricAction</scope><name>action</name></member>
       <member refid="structRallyHereMetricAction_1a3a2aca58050d0e13e79a6c245189150d" prot="public" virt="non-virtual"><scope>RallyHereMetricAction</scope><name>increment</name></member>

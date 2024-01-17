@@ -9,7 +9,7 @@
         <label>vector</label>
       </node>
       <node id="1">
-        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_vector.h</label>
+        <label>game-host-adapter/include/test-helpers/rh_vector.h</label>
         <link refid="rh__vector_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -55,6 +55,6 @@
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GAME_HOST_ADAPTER_INTERFACE_RH_VECTOR_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_vector.h"/>
+    <location file="game-host-adapter/include/test-helpers/rh_vector.h"/>
   </compounddef>
 </doxygen>

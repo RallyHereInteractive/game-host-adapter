@@ -23,6 +23,6 @@
 </para>
 </sect1>
     </detaileddescription>
-    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h"/>
+    <location file="game-host-adapter/include/game-host-adapter/c_api.h"/>
   </compounddef>
 </doxygen>

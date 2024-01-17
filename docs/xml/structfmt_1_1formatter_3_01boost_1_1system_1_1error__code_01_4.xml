@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="60" column="20" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="60" bodyend="63"/>
+        <location file="game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="60" column="20" bodyfile="game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="60" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="structfmt_1_1formatter_3_01boost_1_1system_1_1error__code_01_4_1a5ca6180c8a47bbedaf576cc450540151" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -47,14 +47,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="66" column="10" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="66" bodyend="71"/>
+        <location file="game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="66" column="10" bodyfile="game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="66" bodyend="71"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="58" column="10" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="59" bodyend="72"/>
+    <location file="game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="58" column="10" bodyfile="game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="59" bodyend="72"/>
     <listofallmembers>
       <member refid="structfmt_1_1formatter_3_01boost_1_1system_1_1error__code_01_4_1a5ca6180c8a47bbedaf576cc450540151" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; boost::system::error_code &gt;</scope><name>format</name></member>
       <member refid="structfmt_1_1formatter_3_01boost_1_1system_1_1error__code_01_4_1a5e3d260c19f52fb60aa66b1066937a14" prot="public" virt="non-virtual"><scope>fmt::formatter&lt; boost::system::error_code &gt;</scope><name>parse</name></member>
