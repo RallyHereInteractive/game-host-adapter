@@ -159,7 +159,7 @@ extern "C"
                                                                                       unsigned int arguments_length,
                                                                                       RallyHereLogCallback callback,
                                                                                       void* user_data);
-    /// @brief Destroes the adapter.
+    /// @brief Destroys the adapter.
     ///
     /// Before any memory is freed every registered callback is called with the status RH_STATUS_CANCELLED so that
     /// any memory associated with the callback's user data can be freed.
