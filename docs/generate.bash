@@ -1,13 +1,13 @@
 #!/bin/bash
+set -ex
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+pushd "$DIR"
 
 doxygen doxygen.cfg
 
-moxygen --html-anchors --templates ./templates --output %s.md xml
+source=$DIR/xml
+dest=$DIR/astromd
 
-rm -rf md
-mkdir md
-mkdir md/models
-#mv ./RHAPI_*.md ./md/models/
-#mv ./*.md ./md/
-
-#sed -i 's/(RHAPI_/(models\/RHAPI_/' ./md/*.md
+pushd ~/Dev/doxygentomd
+poetry run python -m doxygentomd $source $dest --style astro --baseurl=/game-host-adapter/
