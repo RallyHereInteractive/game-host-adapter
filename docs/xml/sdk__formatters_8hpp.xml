@@ -8,7 +8,7 @@
         <label>fmt/format.h</label>
       </node>
       <node id="1">
-        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp</label>
+        <label>game-host-adapter/include/test-helpers/sdk_formatters.hpp</label>
         <link refid="sdk__formatters_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -110,6 +110,6 @@
 <codeline lineno="73"><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GAME_HOST_ADAPTER_INTERFACE_SDK_FORMATTERS_HPP</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp"/>
+    <location file="game-host-adapter/include/test-helpers/sdk_formatters.hpp"/>
   </compounddef>
 </doxygen>

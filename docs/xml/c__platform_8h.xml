@@ -2,11 +2,11 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="c__platform_8h" kind="file" language="C++">
     <compoundname>c_platform.h</compoundname>
-    <includedby refid="c__api_8h" local="yes">/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h</includedby>
-    <includedby refid="c__status_8h" local="yes">/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h</includedby>
+    <includedby refid="c__api_8h" local="yes">game-host-adapter/include/game-host-adapter/c_api.h</includedby>
+    <includedby refid="c__status_8h" local="yes">game-host-adapter/include/game-host-adapter/c_status.h</includedby>
     <invincdepgraph>
       <node id="4">
-        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_status.h</label>
+        <label>game-host-adapter/include/game-host-adapter/c_status.h</label>
         <link refid="c__status_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -14,7 +14,7 @@
         </childnode>
       </node>
       <node id="1">
-        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_platform.h</label>
+        <label>game-host-adapter/include/game-host-adapter/c_platform.h</label>
         <link refid="c__platform_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -22,17 +22,17 @@
         </childnode>
       </node>
       <node id="5">
-        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h</label>
+        <label>game-host-adapter/include/test-helpers/rh_status.h</label>
         <link refid="rh__status_8h"/>
       </node>
       <node id="2">
-        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h</label>
+        <label>game-host-adapter/include/game-host-adapter/c_api.h</label>
         <link refid="c__api_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="3">
-        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</label>
+        <label>game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</label>
         <link refid="rh__string__map__wrapper_8hpp"/>
       </node>
     </invincdepgraph>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_platform.h" line="21" column="10" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_platform.h" bodystart="21" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_platform.h" line="21" column="10" bodyfile="game-host-adapter/include/game-host-adapter/c_platform.h" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" prot="public" static="no">
         <name>RH_EXPORT</name>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_platform.h" line="26" column="13" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_platform.h" bodystart="26" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_platform.h" line="26" column="13" bodyfile="game-host-adapter/include/game-host-adapter/c_platform.h" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="c__platform_8h_1a68a63fdfa8651c29d41d40081b30c9e2" prot="public" static="no">
         <name>RH_CPP_EXPORT</name>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_platform.h" line="27" column="13" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_platform.h" bodystart="27" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_platform.h" line="27" column="13" bodyfile="game-host-adapter/include/game-host-adapter/c_platform.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -109,6 +109,6 @@
 <codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
 <codeline lineno="32"><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
-    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_platform.h"/>
+    <location file="game-host-adapter/include/game-host-adapter/c_platform.h"/>
   </compounddef>
 </doxygen>

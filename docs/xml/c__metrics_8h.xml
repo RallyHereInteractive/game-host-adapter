@@ -2,22 +2,22 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="c__metrics_8h" kind="file" language="C++">
     <compoundname>c_metrics.h</compoundname>
-    <includedby refid="c__api_8h" local="yes">/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h</includedby>
+    <includedby refid="c__api_8h" local="yes">game-host-adapter/include/game-host-adapter/c_api.h</includedby>
     <invincdepgraph>
       <node id="1">
-        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h</label>
+        <label>game-host-adapter/include/game-host-adapter/c_metrics.h</label>
         <link refid="c__metrics_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
       <node id="2">
-        <label>/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h</label>
+        <label>game-host-adapter/include/game-host-adapter/c_api.h</label>
         <link refid="c__api_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="3">
-        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</label>
+        <label>game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</label>
         <link refid="rh__string__map__wrapper_8hpp"/>
       </node>
     </invincdepgraph>
@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="29" column="1" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="29" bodyend="37"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="29" column="1" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="29" bodyend="37"/>
       </memberdef>
       <memberdef kind="enum" id="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280" prot="public" static="no" strong="no">
         <type></type>
@@ -116,7 +116,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="39" column="1" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="39" bodyend="45"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="39" column="1" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="39" bodyend="45"/>
       </memberdef>
       <memberdef kind="enum" id="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaa" prot="public" static="no" strong="no">
         <type></type>
@@ -141,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="47" column="1" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="47" bodyend="50"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="47" column="1" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="47" bodyend="50"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -156,7 +156,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="37" column="21"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="37" column="21"/>
       </memberdef>
       <memberdef kind="typedef" id="c__metrics_8h_1a0f584bba073df6feb1e7492408cd7a39" prot="public" static="no">
         <type>enum <ref refid="c__metrics_8h_1ab8924252bdca9e75368c0256ad21b280" kindref="member">RallyHereMetricActionType</ref></type>
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="45" column="27"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="45" column="27"/>
       </memberdef>
       <memberdef kind="typedef" id="c__metrics_8h_1ae1518b512f4ad23fbb6291253b0bb068" prot="public" static="no">
         <type>enum <ref refid="c__metrics_8h_1a510cdf6b2232f28c4f667342930bcaaa" kindref="member">RallyHereMetricFlush</ref></type>
@@ -182,7 +182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="50" column="22"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="50" column="22"/>
       </memberdef>
       <memberdef kind="typedef" id="c__metrics_8h_1ad652760d0664a541a9dde797e61da7fd" prot="public" static="no">
         <type>RallyHereMetricRegistry *</type>
@@ -195,7 +195,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="117" column="33" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="116" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="117" column="33" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="116" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -374,6 +374,6 @@
 <codeline lineno="190"><highlight class="normal"></highlight></codeline>
 <codeline lineno="191"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>GAME_HOST_ADAPTER_C_METRICS_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h"/>
+    <location file="game-host-adapter/include/game-host-adapter/c_metrics.h"/>
   </compounddef>
 </doxygen>

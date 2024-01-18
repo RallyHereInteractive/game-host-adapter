@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_7f36b0542863d9ea4a2c8f6fbed0b7ad" kind="dir">
+    <compoundname>game-host-adapter/include/test-helpers</compoundname>
+    <innerfile refid="a2s_8hpp">a2s.hpp</innerfile>
+    <innerfile refid="rh__allocator_8h">rh_allocator.h</innerfile>
+    <innerfile refid="rh__format_8h">rh_format.h</innerfile>
+    <innerfile refid="rh__status_8h">rh_status.h</innerfile>
+    <innerfile refid="rh__string_8h">rh_string.h</innerfile>
+    <innerfile refid="rh__string__map__wrapper_8hpp">rh_string_map_wrapper.hpp</innerfile>
+    <innerfile refid="rh__vector_8h">rh_vector.h</innerfile>
+    <innerfile refid="sdk__formatters_8hpp">sdk_formatters.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="game-host-adapter/include/test-helpers/"/>
+  </compounddef>
+</doxygen>

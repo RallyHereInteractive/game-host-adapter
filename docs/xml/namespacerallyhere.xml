@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp" line="72" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp" bodystart="73" bodyend="77"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="72" column="5" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="73" bodyend="77"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -56,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_format.h" line="24" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_format.h" bodystart="24" bodyend="-1"/>
+        <location file="game-host-adapter/include/test-helpers/rh_format.h" line="24" column="5" bodyfile="game-host-adapter/include/test-helpers/rh_format.h" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerallyhere_1a06e017abf8a0212e162b377dc793078e" prot="public" static="no">
         <type>std::basic_string&lt; char, std::char_traits&lt; char &gt;, <ref refid="namespacerallyhere_1_1allocator_1a72acd99bdea4508c86208ec46d611292" kindref="member">rallyhere::allocator::allocator</ref>&lt; char &gt; &gt;</type>
@@ -69,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string.h" line="23" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string.h" bodystart="23" bodyend="-1"/>
+        <location file="game-host-adapter/include/test-helpers/rh_string.h" line="23" column="5" bodyfile="game-host-adapter/include/test-helpers/rh_string.h" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerallyhere_1ae6c398b5cead92743640822e3a687302" prot="public" static="no">
         <type>std::basic_stringstream&lt; char, std::char_traits&lt; char &gt;, <ref refid="namespacerallyhere_1_1allocator_1a72acd99bdea4508c86208ec46d611292" kindref="member">rallyhere::allocator::allocator</ref>&lt; char &gt; &gt;</type>
@@ -82,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string.h" line="24" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string.h" bodystart="24" bodyend="-1"/>
+        <location file="game-host-adapter/include/test-helpers/rh_string.h" line="24" column="5" bodyfile="game-host-adapter/include/test-helpers/rh_string.h" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerallyhere_1a9822d3fb78edd3730ef97afb9b2c06d9" prot="public" static="no">
         <templateparamlist>
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_vector.h" line="24" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_vector.h" bodystart="24" bodyend="-1"/>
+        <location file="game-host-adapter/include/test-helpers/rh_vector.h" line="24" column="5" bodyfile="game-host-adapter/include/test-helpers/rh_vector.h" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespacerallyhere_1a6a86fdf96ef7e4a9876d443a6bba29ec" prot="public" static="no">
         <type>boost::beast::http::basic_string_body&lt; char, std::char_traits&lt; char &gt;, <ref refid="namespacerallyhere_1_1allocator_1a72acd99bdea4508c86208ec46d611292" kindref="member">rallyhere::allocator::allocator</ref>&lt; char &gt; &gt;</type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="23" column="5" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="23" bodyend="-1"/>
+        <location file="game-host-adapter/include/test-helpers/sdk_formatters.hpp" line="23" column="5" bodyfile="game-host-adapter/include/test-helpers/sdk_formatters.hpp" bodystart="23" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -129,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp" line="26" column="35" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp" bodystart="26" bodyend="-1"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="26" column="35" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacerallyhere_1a1b4c37b3daf7e45441669ac1b5a251f5" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr unsigned int</type>
@@ -143,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp" line="27" column="35" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp" bodystart="27" bodyend="-1"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="27" column="35" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="27" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -161,7 +161,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="27" column="26" declfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" declline="27" declcolumn="26"/>
+        <location file="game-host-adapter/include/test-helpers/rh_status.h" line="27" column="26" declfile="game-host-adapter/include/test-helpers/rh_status.h" declline="27" declcolumn="26"/>
       </memberdef>
       <memberdef kind="function" id="namespacerallyhere_1aaebe4b7543e4994038781a51d57e9bae" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr bool</type>
@@ -178,7 +178,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="29" column="20" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="29" bodyend="32"/>
+        <location file="game-host-adapter/include/test-helpers/rh_status.h" line="29" column="20" bodyfile="game-host-adapter/include/test-helpers/rh_status.h" bodystart="29" bodyend="32"/>
       </memberdef>
       <memberdef kind="function" id="namespacerallyhere_1a32e5c5dcdf2d843bff452a896dc45d48" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr bool</type>
@@ -195,13 +195,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" line="34" column="20" bodyfile="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h" bodystart="34" bodyend="37"/>
+        <location file="game-host-adapter/include/test-helpers/rh_status.h" line="34" column="20" bodyfile="game-host-adapter/include/test-helpers/rh_status.h" bodystart="34" bodyend="37"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp" line="24" column="1"/>
+    <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="24" column="1"/>
   </compounddef>
 </doxygen>

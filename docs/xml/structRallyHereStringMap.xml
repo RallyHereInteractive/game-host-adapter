@@ -25,7 +25,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="296" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="296" declcolumn="35"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="296" column="35" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="296" declcolumn="35"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereStringMap_1a17aed95832b03004f2b54c41458e6490" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="299" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="299" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="299" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="299" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereStringMap_1ae7e305441ea3ae8ceb24d373b45e1e18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
@@ -65,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="302" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="302" declcolumn="35"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="302" column="35" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="302" declcolumn="35"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereStringMap_1af1314ea38f79e701dd6980abb48253b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -83,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="305" column="20" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="305" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="305" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="305" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereStringMap_1a8aa120697cdba80f092f1488c7ae62cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="308" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="308" declcolumn="35"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="308" column="35" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="308" declcolumn="35"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereStringMap_1a9e8929bdfc2a69879837a992acb011cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
@@ -139,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="311" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="311" declcolumn="35"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="311" column="35" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="311" declcolumn="35"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereStringMap_1adc0a5e10afb2c923e02f50dd7e58e2ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="314" column="35" declfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" declline="314" declcolumn="35"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="314" column="35" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="314" declcolumn="35"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -178,7 +178,7 @@
 <para>Opaque type and handle to a Rally Here String Map.</para>
 <para>This struct is intentionally empty because its true interface is only defined internally. Any methods which take this as the first argument can be thought of as methods on this struct. </para>
     </detaileddescription>
-    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_api.h" line="67" column="1"/>
+    <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="67" column="1"/>
     <listofallmembers>
       <member refid="structRallyHereStringMap_1af1314ea38f79e701dd6980abb48253b7" prot="public" virt="non-virtual"><scope>RallyHereStringMap</scope><name>rallyhere_string_map_clear</name></member>
       <member refid="structRallyHereStringMap_1ae7e305441ea3ae8ceb24d373b45e1e18" prot="public" virt="non-virtual"><scope>RallyHereStringMap</scope><name>rallyhere_string_map_copy</name></member>

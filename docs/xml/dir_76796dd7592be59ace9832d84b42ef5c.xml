@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_76796dd7592be59ace9832d84b42ef5c" kind="dir">
+    <compoundname>game-host-adapter/include/game-host-adapter</compoundname>
+    <innerfile refid="c__api_8h">c_api.h</innerfile>
+    <innerfile refid="c__metrics_8h">c_metrics.h</innerfile>
+    <innerfile refid="c__platform_8h">c_platform.h</innerfile>
+    <innerfile refid="c__status_8h">c_status.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="game-host-adapter/include/game-host-adapter/"/>
+  </compounddef>
+</doxygen>

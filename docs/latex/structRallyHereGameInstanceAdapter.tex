@@ -23,7 +23,7 @@
 \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a85db0b2f34bb7f67347ff9bbe5ff2beb}{rallyhere\+\_\+create\+\_\+game\+\_\+instance\+\_\+adaptern\+\_\+with\+\_\+logger}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} $\ast$adapter, const char $\ast$arguments, unsigned int arguments\+\_\+length, \mbox{\hyperlink{c__api_8h_a64a7679e581842654beca7ae63664a26}{Rally\+Here\+Log\+Callback}} callback, void $\ast$user\+\_\+data)
 \item 
 \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a291d4acc324c8dbab8786391fb5557ec}{rallyhere\+\_\+destroy\+\_\+game\+\_\+instance\+\_\+adapter}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter)
-\begin{DoxyCompactList}\small\item\em Destroes the adapter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destroys the adapter. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \end{Indent}
 \begin{Indent}\textbf{ Repeated at Regular Intervals}\par
 \begin{DoxyCompactItemize}
@@ -190,7 +190,7 @@ Create a new adapter using a C-\/style array to represent the command line argum
 
 
 
-Destroes the adapter. 
+Destroys the adapter. 
 
 Before any memory is freed every registered callback is called with the status RH\+\_\+\+STATUS\+\_\+\+CANCELLED so that any memory associated with the callback\textquotesingle{}s user data can be freed. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a12b6641eae79cfca381c5a4adc4cb2aa}\label{structRallyHereGameInstanceAdapter_a12b6641eae79cfca381c5a4adc4cb2aa}} 
 \index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_external\_soft\_stop\_requested@{rallyhere\_external\_soft\_stop\_requested}}
@@ -422,4 +422,4 @@ RH\+\_\+\+STATUS\+\_\+\+OK if this adapter can still be used, otherwise an error
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/asayman/\+Dev/game-\/host-\/adapter/include/game-\/host-\/adapter/\mbox{\hyperlink{c__api_8h}{c\+\_\+api.\+h}}\end{DoxyCompactItemize}
+game-\/host-\/adapter/include/game-\/host-\/adapter/\mbox{\hyperlink{c__api_8h}{c\+\_\+api.\+h}}\end{DoxyCompactItemize}

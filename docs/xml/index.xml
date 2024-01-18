@@ -385,11 +385,13 @@
   </compound>
   <compound refid="sdk__formatters_8hpp" kind="file"><name>sdk_formatters.hpp</name>
   </compound>
-  <compound refid="dir_f14d3b8e4f0d33cf7ca6f8bde0a24c9e" kind="dir"><name>/home/asayman/Dev/game-host-adapter/include/game-host-adapter</name>
+  <compound refid="dir_a151cabc5e4ffa3b0dad64ed99c1ba02" kind="dir"><name>game-host-adapter</name>
   </compound>
-  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>/home/asayman/Dev/game-host-adapter/include</name>
+  <compound refid="dir_76796dd7592be59ace9832d84b42ef5c" kind="dir"><name>game-host-adapter/include/game-host-adapter</name>
   </compound>
-  <compound refid="dir_b82ac779258f73c127f927533d8d7a8f" kind="dir"><name>/home/asayman/Dev/game-host-adapter/include/test-helpers</name>
+  <compound refid="dir_d6247cb30ad01aa73b1d675218087d11" kind="dir"><name>game-host-adapter/include</name>
+  </compound>
+  <compound refid="dir_7f36b0542863d9ea4a2c8f6fbed0b7ad" kind="dir"><name>game-host-adapter/include/test-helpers</name>
   </compound>
   <compound refid="indexpage" kind="page"><name>index</name>
   </compound>

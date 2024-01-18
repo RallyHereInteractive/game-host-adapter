@@ -21,7 +21,7 @@
         </childnode>
       </node>
       <node id="1">
-        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp</label>
+        <label>game-host-adapter/include/test-helpers/a2s.hpp</label>
         <link refid="a2s_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -280,6 +280,6 @@
 <codeline lineno="231"><highlight class="normal"></highlight></codeline>
 <codeline lineno="232"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GAME_HOST_ADAPTER_INTERFACE_A2S_HPP</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/a2s.hpp"/>
+    <location file="game-host-adapter/include/test-helpers/a2s.hpp"/>
   </compounddef>
 </doxygen>

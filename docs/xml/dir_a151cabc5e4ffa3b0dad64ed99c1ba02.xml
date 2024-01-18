@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_a151cabc5e4ffa3b0dad64ed99c1ba02" kind="dir">
+    <compoundname>game-host-adapter</compoundname>
+    <innerdir refid="dir_d6247cb30ad01aa73b1d675218087d11">game-host-adapter/include</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="game-host-adapter/"/>
+  </compounddef>
+</doxygen>

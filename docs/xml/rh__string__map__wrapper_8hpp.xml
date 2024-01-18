@@ -39,7 +39,7 @@
         </childnode>
       </node>
       <node id="1">
-        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</label>
+        <label>game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp</label>
         <link refid="rh__string__map__wrapper_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -99,6 +99,6 @@
 <codeline lineno="46" refid="structRallyHereStringMapWrapper_1abe2c41c2074b49052af3cdcb124ec1e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref><sp/><ref refid="structRallyHereStringMapWrapper_1abe2c41c2074b49052af3cdcb124ec1e3" kindref="member">code</ref>;</highlight></codeline>
 <codeline lineno="47"><highlight class="normal">};</highlight></codeline>
     </programlisting>
-    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp"/>
+    <location file="game-host-adapter/include/test-helpers/rh_string_map_wrapper.hpp"/>
   </compounddef>
 </doxygen>

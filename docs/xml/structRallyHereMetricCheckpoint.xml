@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="100" column="27" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="100" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="100" column="27" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="100" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereMetricCheckpoint_1a8bbdcb3d673d2f41f1c45684b874d692" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="102" column="12" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="102" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="102" column="12" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="102" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -85,7 +85,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" line="97" column="1" bodyfile="/home/asayman/Dev/game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="97" bodyend="103"/>
+    <location file="game-host-adapter/include/game-host-adapter/c_metrics.h" line="97" column="1" bodyfile="game-host-adapter/include/game-host-adapter/c_metrics.h" bodystart="97" bodyend="103"/>
     <listofallmembers>
       <member refid="structRallyHereMetricCheckpoint_1a0402f620add319371288822e23572acc" prot="public" virt="non-virtual"><scope>RallyHereMetricCheckpoint</scope><name>actions</name></member>
       <member refid="structRallyHereMetricCheckpoint_1a8bbdcb3d673d2f41f1c45684b874d692" prot="public" virt="non-virtual"><scope>RallyHereMetricCheckpoint</scope><name>timestamp</name></member>

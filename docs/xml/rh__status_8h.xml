@@ -20,7 +20,7 @@
         <link refid="c__platform_8h"/>
       </node>
       <node id="1">
-        <label>/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h</label>
+        <label>game-host-adapter/include/test-helpers/rh_status.h</label>
         <link refid="rh__status_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -111,6 +111,6 @@
 <codeline lineno="57"><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//GAME_HOST_ADAPTER_INTERFACE_RH_STATUS_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/asayman/Dev/game-host-adapter/include/test-helpers/rh_status.h"/>
+    <location file="game-host-adapter/include/test-helpers/rh_status.h"/>
   </compounddef>
 </doxygen>
