@@ -2,6 +2,7 @@
 title: rallyhere::a2s_simple_response Struct
 ---
 
+
 ## Summary
 | Kind | View | Description |
 |------|------|-------------|

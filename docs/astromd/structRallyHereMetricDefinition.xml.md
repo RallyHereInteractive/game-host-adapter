@@ -2,6 +2,7 @@
 title: RallyHereMetricDefinition Struct
 ---
 
+
 ## Summary
 | Kind | View | Description |
 |------|------|-------------|

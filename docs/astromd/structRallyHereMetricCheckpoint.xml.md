@@ -2,6 +2,7 @@
 title: RallyHereMetricCheckpoint Struct
 ---
 
+
 ## Summary
 | Kind | View | Description |
 |------|------|-------------|

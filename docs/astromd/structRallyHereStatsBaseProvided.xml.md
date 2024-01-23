@@ -1,6 +1,7 @@
 ---
 title: RallyHereStatsBaseProvided Struct
----Flags to indicate which fields of RallyHereStatsBase are set.
+---
+Flags to indicate which fields of RallyHereStatsBase are set.
 
 ## Summary
 | Kind | View | Description |

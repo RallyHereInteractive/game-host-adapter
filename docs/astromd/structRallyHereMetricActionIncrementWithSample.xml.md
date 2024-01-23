@@ -2,6 +2,7 @@
 title: RallyHereMetricActionIncrementWithSample Struct
 ---
 
+
 ## Summary
 | Kind | View | Description |
 |------|------|-------------|

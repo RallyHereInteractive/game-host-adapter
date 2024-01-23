@@ -2,6 +2,7 @@
 title: fmt::formatter< boost::system::error_code > Struct
 ---
 
+
 ## Summary
 | Kind | View | Description |
 |------|------|-------------|

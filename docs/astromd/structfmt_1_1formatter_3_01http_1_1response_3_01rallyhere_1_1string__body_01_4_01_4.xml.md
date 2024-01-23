@@ -2,6 +2,7 @@
 title: fmt::formatter< http::response< rallyhere::string_body > > Struct
 ---
 
+
 ## Summary
 | Kind | View | Description |
 |------|------|-------------|

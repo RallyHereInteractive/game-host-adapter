@@ -2,6 +2,7 @@
 title: rallyhere::A2SDatagram Struct
 ---
 
+
 ## Summary
 | Kind | View | Description |
 |------|------|-------------|

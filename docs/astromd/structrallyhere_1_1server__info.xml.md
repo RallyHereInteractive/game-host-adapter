@@ -2,6 +2,7 @@
 title: rallyhere::server_info Struct
 ---
 
+
 ## Summary
 | Kind | View | Description |
 |------|------|-------------|

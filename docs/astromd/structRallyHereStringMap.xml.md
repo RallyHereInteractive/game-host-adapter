@@ -2,6 +2,7 @@
 title: RallyHereStringMap Struct
 ---
 
+
 Opaque type and handle to a Rally Here String Map.
 This struct is intentionally empty because its true interface is only defined internally. Any methods which take this as the first argument can be thought of as methods on this struct. 
 ## Summary

@@ -2,6 +2,7 @@
 title: RallyHereMetricAction Struct
 ---
 
+
 ## Summary
 | Kind | View | Description |
 |------|------|-------------|

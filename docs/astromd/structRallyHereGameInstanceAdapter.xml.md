@@ -2,6 +2,7 @@
 title: RallyHereGameInstanceAdapter Struct
 ---
 
+
 Opaque type and handle to a Rally Here Game Instance Adapter.
 This struct is intentionally empty because its true interface is only defined internally. Any methods which take this as the first argument can be thought of as methods on this struct.
 Callbacks are either called immediately at the call site or when calling 

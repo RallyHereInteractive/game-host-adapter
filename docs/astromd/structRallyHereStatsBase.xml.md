@@ -1,6 +1,7 @@
 ---
 title: RallyHereStatsBase Struct
----Base stats to be exported by the game host adapter.
+---
+Base stats to be exported by the game host adapter.
 
 ## Summary
 | Kind | View | Description |
