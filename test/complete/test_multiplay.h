@@ -16,6 +16,7 @@ limitations under the License.
 #pragma once
 
 #include "lest/lest.hpp"
+#include "configuration.h"
 #include <list>
 
 #include "rh_string.h"
@@ -63,7 +64,7 @@ struct TestArguments
     {
         arguments = {
             "rhbootstrapmode=Multiplay",
-            "rallyhereurl=https://demo.rally-here.io",
+            get_rally_here_url_arg(),
             "A2SPort=23891",
             "rhmultiplayfile=" + serverjsonpath,
         };
