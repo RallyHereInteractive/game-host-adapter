@@ -1018,6 +1018,24 @@ void GameInstanceAdapter::ConnectSIC(base_callback_function_t callback, void* us
 
 void GameInstanceAdapter::ReadySIC(base_callback_function_t callback, void* user_data)
 {
+    if (m_A2SQueryPort != 0)
+    {
+        log().log(RH_LOG_LEVEL_INFO, "Setting up A2S for SIC");
+        // Setup A2S
+        auto a2s_alloc = i3d::one::StandardAllocator<a2s_listener>{};
+        m_A2SListener = std::allocate_shared<a2s_listener>(a2s_alloc, net::make_strand(m_IoContext), m_A2SQueryPort, log());
+        if (m_A2SListener->fail())
+        {
+            log().log(RH_LOG_LEVEL_ERROR, "Failed to start A2S listener");
+            if (callback)
+                callback(RH_STATUS_ERROR, user_data);
+            return;
+        }
+        RallyHereStatsBaseProvided provided{};
+        memset(&provided, 0xff, sizeof(provided));
+        m_A2SListener->update_server_info(m_StatsBase, provided, []() {});
+        m_A2SListener->run();
+    }
     log().log(RH_LOG_LEVEL_INFO, "Attempting SIC registration");
     CallAfterAuthValidation([=]() {
       auto alloc = i3d::one::StandardAllocator<session>{};

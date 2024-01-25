@@ -380,6 +380,7 @@ class GameInstanceAdapter
     RH_EXPORT Status Deallocate();
 
     RH_EXPORT void Setup();
+    RH_EXPORT void SetupA2S();
     RH_EXPORT void SetupSIC();
     RH_EXPORT void SetupMultiplay();
     RH_EXPORT void DoPollSIC(std::function<void(RallyHereStringMapPtr, const RallyHereStatusCode&)> next);
@@ -535,8 +536,12 @@ class GameInstanceAdapter
     ///@name Multiplay
     /// @{
     rallyhere::string m_MultiplayServerFile;
-    short m_A2SQueryPort;
     std::shared_ptr<ServerJsonWatcher> m_MultiplayServerFileWatcher{};
+    /// @}
+
+    ///@aname A2S
+    /// @{
+    short m_A2SQueryPort{0};
     std::shared_ptr<rallyhere::a2s_listener> m_A2SListener{};
     /// @}
 

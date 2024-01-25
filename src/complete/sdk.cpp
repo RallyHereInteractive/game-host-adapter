@@ -360,6 +360,7 @@ void GameInstanceAdapter::Setup()
         m_Status = { RH_STATUS_NO_RALLYHERE_URL_PROVIDED };
         return;
     }
+    SetupA2S();
     //m_SslContext.set_verify_mode(ssl::context::verify_peer | ssl::context::verify_fail_if_no_peer_cert);
     m_SslContext.set_verify_mode(ssl::context::verify_none);
     m_SslContext.set_default_verify_paths();
@@ -378,6 +379,39 @@ void GameInstanceAdapter::Setup()
     {
         m_Status = { RH_STATUS_NO_BOOTSTRAP_MODE_PROVIDED };
     }
+}
+
+void GameInstanceAdapter::SetupA2S()
+{
+    for (auto&& arg : m_Arguments)
+    {
+        rallyhere::string tmp;
+        if (ParseArgument("A2SPort=", arg, tmp))
+        {
+            try
+            {
+                m_A2SQueryPort = boost::lexical_cast<decltype(m_A2SQueryPort)>(tmp);
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_A2S_QUERY_PORT_MUST_BE_SHORT_NUMBER};
+            }
+            continue;
+        }
+    }
+
+    m_StatsBase.server_type = 'd';
+#if PLATFORM_WINDOWS
+    m_StatsBase.environment = 'w';
+#elif PLATFORM_APPLE
+    m_StatsBase.environment = 'm';
+#elif PLATFORM_LINUX
+    m_StatsBase.environment = 'l';
+#else
+#error "platform not implemented"
+#endif
+    m_StatsBase.visibility = 0;
+    m_StatsBase.anticheat = 0;
 }
 
 prometheus::Labels GameInstanceAdapter::BuildAlwaysPresentLabels()
