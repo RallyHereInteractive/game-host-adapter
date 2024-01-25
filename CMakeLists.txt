@@ -167,6 +167,7 @@ if (LEST_INCLUDE_DIRS)
             test/c_interface/test_metrics.cpp
             test/c_interface/test_statsd_metrics.h
             test/c_interface/test_statsd_metrics.cpp
+            test/c_interface/test_sic_a2s.cpp
             )
     add_executable(${PROJECT_NAME}_test
             ${c_interface_test_sources}
@@ -202,6 +203,7 @@ if (LEST_INCLUDE_DIRS)
             test/complete/test_sdk_helpers.cpp
             test/complete/test_base64.cpp
             test/complete/test_base64.h
+            test/complete/test_sic_a2s.cpp
     )
     add_executable(${PROJECT_NAME}_complete_test
             ${complete_test_sources}
