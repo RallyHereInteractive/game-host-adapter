@@ -197,13 +197,11 @@ if (LEST_INCLUDE_DIRS)
             test/complete/test_sic.cpp
             test/complete/test_a2s.h
             test/complete/test_a2s.cpp
-            test/complete/test_multiplay_a2s.cpp
             test/complete/shared_test_data.h
             test/complete/shared_test_data.cpp
             test/complete/test_sdk_helpers.cpp
             test/complete/test_base64.cpp
             test/complete/test_base64.h
-            test/complete/test_sic_a2s.cpp
     )
     add_executable(${PROJECT_NAME}_complete_test
             ${complete_test_sources}
