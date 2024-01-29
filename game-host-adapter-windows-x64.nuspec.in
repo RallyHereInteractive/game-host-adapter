@@ -19,5 +19,7 @@
         <file src="$<TARGET_FILE_DIR:game-host-adapter>/libcrypto-3-x64.dll" target="lib/libcrypto-3-x64.dll" />
         <file src="$<TARGET_FILE_DIR:game-host-adapter>/libssl-3-x64.dll" target="lib/libssl-3-x64.dll" />
         <file src="$<TARGET_FILE_DIR:game-host-adapter>/zlib1.dll" target="lib/zlib1.dll" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/civetweb-cpp.dll" target="lib/civetweb-cpp.dll" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/civetweb.dll" target="lib/civetweb.dll" />
     </files>
 </package>
