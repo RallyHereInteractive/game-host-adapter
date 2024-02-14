@@ -167,6 +167,9 @@ if (LEST_INCLUDE_DIRS)
             test/c_interface/test_metrics.cpp
             test/c_interface/test_statsd_metrics.h
             test/c_interface/test_statsd_metrics.cpp
+            test/c_interface/test_sic_a2s.cpp
+            test/c_interface/shared_a2s.h
+            test/c_interface/shared_a2s.cpp
             )
     add_executable(${PROJECT_NAME}_test
             ${c_interface_test_sources}
@@ -196,7 +199,6 @@ if (LEST_INCLUDE_DIRS)
             test/complete/test_sic.cpp
             test/complete/test_a2s.h
             test/complete/test_a2s.cpp
-            test/complete/test_multiplay_a2s.cpp
             test/complete/shared_test_data.h
             test/complete/shared_test_data.cpp
             test/complete/test_sdk_helpers.cpp

@@ -124,6 +124,9 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
         if (total_len != len)
             return warn(boost::system::errc::invalid_argument, "challenges not supported");
         A2SDatagram datagram(m_Buffer);
+        m_ServerInfo.ResponseHeader = -1;
+        m_ServerInfo.Header = 'I';
+        m_ServerInfo.EDF = 0;
         datagram << m_ServerInfo.ResponseHeader << m_ServerInfo.Header << m_ServerInfo.Protocol << m_ServerInfo.Name << m_ServerInfo.Map
                  << m_ServerInfo.Folder << m_ServerInfo.GameName << m_ServerInfo.ID << m_ServerInfo.Players << m_ServerInfo.MaxPlayers
                  << m_ServerInfo.Bots << m_ServerInfo.ServerType << m_ServerInfo.Environment << m_ServerInfo.Visibility << m_ServerInfo.VAC

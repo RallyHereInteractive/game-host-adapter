@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-#include "test_multiplay.h"
+#include "test_sic.h"
 #include "c_api.h"
 
 #include "boost/scope_exit.hpp"
@@ -24,11 +24,12 @@ limitations under the License.
 
 #include "a2s.hpp"
 #include "shared_test_data.h"
+#include "shared_a2s.h"
 
 using boost::asio::ip::udp;
-using namespace test::multiplay;
+using namespace test::sic;
 
-RallyHereStatsBase get_stats_base()
+static RallyHereStatsBase get_stats_base()
 {
     return {
         .name = "the best test server",
@@ -47,7 +48,7 @@ RallyHereStatsBase get_stats_base()
     };
 }
 
-void compare(lest::env& lest_env, const RallyHereStatsBase& stats_base, const rallyhere::server_info& info)
+static void compare(lest::env& lest_env, const RallyHereStatsBase& stats_base, const rallyhere::server_info& info)
 {
     EXPECT(stats_base.name == info.Name);
     EXPECT(stats_base.map == info.Map);
@@ -64,7 +65,7 @@ void compare(lest::env& lest_env, const RallyHereStatsBase& stats_base, const ra
     EXPECT(stats_base.version == info.Version);
 }
 
-void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& adapter, TestCCodeData& data)
+static void get_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& adapter, TestCCodeData& data)
 {
     TestArguments<rallyhere::string> arguments;
     rallyhere_global_init();
@@ -84,12 +85,6 @@ void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& a
         EXPECT(elapsed < std::chrono::seconds(10));
     }
     EXPECT(data.connect_result == RH_STATUS_OK);
-
-    {
-        ServerJson<rallyhere::string> sj{arguments.serverjsonpath};
-        sj.write("{\"AllocationUUID\":\"hey there its some test data\"}\n");
-        EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
-    }
 
     {
         RallyHereStatsBase base = get_stats_base();
@@ -127,11 +122,11 @@ void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& a
     EXPECT(data.set_base_stats_result == RH_STATUS_OK);
 }
 
-void write_new_stats(lest::env& lest_env,
-                     RallyHereGameInstanceAdapterPtr adapter,
-                     TestCCodeData& data,
-                     RallyHereStatsBase& base,
-                     RallyHereStatsBaseProvided& provided)
+static void write_new_stats(lest::env& lest_env,
+                            RallyHereGameInstanceAdapterPtr adapter,
+                            TestCCodeData& data,
+                            RallyHereStatsBase& base,
+                            RallyHereStatsBaseProvided& provided)
 {
     EXPECT(rallyhere_stats_base(adapter, &base, &provided, on_set_base_stats_callback, &data) == RH_STATUS_OK);
     data.set_base_stats_called = false;
@@ -148,46 +143,9 @@ void write_new_stats(lest::env& lest_env,
     EXPECT(data.set_base_stats_result == RH_STATUS_OK);
 }
 
-rallyhere::server_info get_stats(lest::env& lest_env,
-                                 RallyHereGameInstanceAdapterPtr adapter,
-                                 TestCCodeData& data)
-{
-    boost::asio::io_context io_context;
-
-    udp::resolver resolver(io_context);
-    udp::endpoint receiver_endpoint = *resolver.resolve(udp::v4(), "localhost", "23891").begin();
-
-    udp::socket socket(io_context);
-    socket.open(udp::v4());
-
-    std::string_view send_buf = { "\xff\xff\xff\xff\x54Source Engine Query\0", 25 };
-    socket.send_to(boost::asio::buffer(send_buf), receiver_endpoint);
-
-    boost::array<uint8_t, rallyhere::A2S_MAX_DATA_SIZE + rallyhere::UDP_HEADER_SIZE> recv_buf;
-    udp::endpoint sender_endpoint;
-    bool received{false};
-    rallyhere::server_info info{};
-    socket.async_receive_from(boost::asio::buffer(recv_buf), sender_endpoint, [&received, &recv_buf, &info](const boost::system::error_code& ec, size_t len) {
-        received = true;
-        rallyhere::A2SDatagram datagram{recv_buf.data(), len};
-        datagram >> info;
-    });
-
-    auto start = std::chrono::steady_clock::now();
-    while (!received)
-    {
-        EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
-        io_context.poll();
-        auto ongoing = std::chrono::steady_clock::now();
-        auto elapsed = ongoing - start;
-        EXPECT(elapsed < std::chrono::seconds(10 + 2));
-    }
-    return info;
-}
-
-void make_bad_request(lest::env& lest_env,
-                      RallyHereGameInstanceAdapterPtr adapter,
-                      TestCCodeData& data)
+static void make_bad_request(lest::env& lest_env,
+                             RallyHereGameInstanceAdapterPtr adapter,
+                             TestCCodeData& data)
 {
     boost::asio::io_context io_context;
 
@@ -208,7 +166,7 @@ static const lest::test module[] = {
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
         TestCCodeData data{};
-        get_multiplay_ready(lest_env, adapter, data);
+        get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -249,7 +207,7 @@ static const lest::test module[] = {
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
         TestCCodeData data{};
-        get_multiplay_ready(lest_env, adapter, data);
+        get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -269,7 +227,7 @@ static const lest::test module[] = {
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
         TestCCodeData data{};
-        get_multiplay_ready(lest_env, adapter, data);
+        get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -300,7 +258,7 @@ static const lest::test module[] = {
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
         TestCCodeData data{};
-        get_multiplay_ready(lest_env, adapter, data);
+        get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };

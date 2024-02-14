@@ -112,32 +112,7 @@ void GameInstanceAdapter::SetupMultiplay()
         {
             continue;
         }
-        if (ParseArgument("A2SPort=", arg, tmp))
-        {
-            try
-            {
-                m_A2SQueryPort = boost::lexical_cast<decltype(m_A2SQueryPort)>(tmp);
-            }
-            catch (const boost::bad_lexical_cast&e)
-            {
-                m_Status = { RH_STATUS_A2S_QUERY_PORT_MUST_BE_SHORT_NUMBER};
-            }
-            continue;
-        }
     }
-
-    m_StatsBase.server_type = 'd';
-#if PLATFORM_WINDOWS
-    m_StatsBase.environment = 'w';
-#elif PLATFORM_APPLE
-    m_StatsBase.environment = 'm';
-#elif PLATFORM_LINUX
-    m_StatsBase.environment = 'l';
-#else
-#error "platform not implemented"
-#endif
-    m_StatsBase.visibility = 0;
-    m_StatsBase.anticheat = 0;
 }
 
 void GameInstanceAdapter::ConnectMultiplay(base_callback_function_t callback, void* user_data)
