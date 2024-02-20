@@ -177,36 +177,7 @@ static const lest::test module[] = {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
 
-        boost::asio::io_context io_context;
-
-        udp::resolver resolver(io_context);
-        udp::endpoint receiver_endpoint = *resolver.resolve(udp::v4(), "localhost", "23891").begin();
-
-        udp::socket socket(io_context);
-        socket.open(udp::v4());
-
-        std::string_view send_buf = { "\xff\xff\xff\xff\x54Source Engine Query\0", 25 };
-        socket.send_to(boost::asio::buffer(send_buf), receiver_endpoint);
-
-        boost::array<uint8_t, 128> recv_buf;
-        udp::endpoint sender_endpoint;
-        bool received{false};
-        rallyhere::server_info info{};
-        socket.async_receive_from(boost::asio::buffer(recv_buf), sender_endpoint, [&received, &recv_buf, &info](const boost::system::error_code& ec, size_t len) {
-            received = true;
-            rallyhere::A2SDatagram datagram{recv_buf.data(), len};
-            datagram >> info;
-        });
-
-        auto start = std::chrono::steady_clock::now();
-        while (!received)
-        {
-            EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
-            io_context.poll();
-            auto ongoing = std::chrono::steady_clock::now();
-            auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10 + 2));
-        }
+        rallyhere::server_info info = get_stats(lest_env, adapter, data);
         compare(lest_env, get_stats_base(), info);
     },
     CASE("A2S updates after ready")
