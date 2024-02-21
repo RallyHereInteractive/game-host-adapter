@@ -17,6 +17,7 @@ limitations under the License.
 #define GAME_HOST_ADAPTER_INTERFACE_A2S_HPP
 
 #include "rh_string.h"
+#include "rh_vector.h"
 #include "boost/core/span.hpp"
 
 #include "boost/endian/conversion.hpp"
@@ -109,6 +110,10 @@ struct a2s_challenge_response
         }
 
         A2SDatagram(rallyhere::string& data) : Data(reinterpret_cast<uint8_t*>(data.data()), data.size()), next(std::begin(Data))
+        {
+        }
+
+        A2SDatagram(rallyhere::vector<uint8_t>& data) : Data(data.data(), data.size()), next(std::begin(Data))
         {
         }
 
