@@ -29,6 +29,7 @@ limitations under the License.
 #include "file_watcher.hpp"
 #include "sdk_logger.h"
 #include "stats.hpp"
+#include <random>
 
 
 namespace rallyhere
@@ -121,19 +122,44 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
             ++it;
         ++it;
         size_t total_len = it - m_Buffer.begin();
-        if (total_len != len)
-            return warn(boost::system::errc::invalid_argument, "challenges not supported");
-        A2SDatagram datagram(m_Buffer);
-        m_ServerInfo.ResponseHeader = -1;
-        m_ServerInfo.Header = 'I';
-        m_ServerInfo.EDF = 0;
-        datagram << m_ServerInfo.ResponseHeader << m_ServerInfo.Header << m_ServerInfo.Protocol << m_ServerInfo.Name << m_ServerInfo.Map
-                 << m_ServerInfo.Folder << m_ServerInfo.GameName << m_ServerInfo.ID << m_ServerInfo.Players << m_ServerInfo.MaxPlayers
-                 << m_ServerInfo.Bots << m_ServerInfo.ServerType << m_ServerInfo.Environment << m_ServerInfo.Visibility << m_ServerInfo.VAC
-                 << m_ServerInfo.Version << m_ServerInfo.EDF;
-        if (datagram.overflowed)
-            return warn(boost::system::errc::invalid_argument, "data too large for single datagram");
-        do_send(datagram.size());
+        if (total_len == len)
+        {
+            // Send back this request with a challenge
+            A2SDatagram datagram(m_Buffer);
+            m_ServerInfo.ResponseHeader = -1;
+            m_ServerInfo.Header = 0x41;
+            auto current_challenge = m_ChallengeDistribution(m_RandomEngine);
+            datagram << m_ServerInfo.ResponseHeader << m_ServerInfo.Header << current_challenge;
+            m_RecentChallenges.push_back(current_challenge);
+            do_send(datagram.size());
+        }
+        else
+        {
+            // Check if successful challenge
+            {
+                A2SDatagram datagram(it, len - total_len);
+                if ((len - total_len) != 4)
+                    return warn(boost::system::errc::invalid_argument, "invalid challenge size");
+                int32_t current_challenge;
+                datagram >> current_challenge;
+                auto existing_challenge = std::find(m_RecentChallenges.begin(), m_RecentChallenges.end(), current_challenge);
+                if (existing_challenge == m_RecentChallenges.end())
+                    return warn(boost::system::errc::invalid_argument, "invalid challenge");
+                m_RecentChallenges.erase(existing_challenge);
+            }
+            // Send back A2S_INFO response
+            A2SDatagram datagram(m_Buffer);
+            m_ServerInfo.ResponseHeader = -1;
+            m_ServerInfo.Header = 'I';
+            m_ServerInfo.EDF = 0;
+            datagram << m_ServerInfo.ResponseHeader << m_ServerInfo.Header << m_ServerInfo.Protocol << m_ServerInfo.Name << m_ServerInfo.Map
+                     << m_ServerInfo.Folder << m_ServerInfo.GameName << m_ServerInfo.ID << m_ServerInfo.Players << m_ServerInfo.MaxPlayers
+                     << m_ServerInfo.Bots << m_ServerInfo.ServerType << m_ServerInfo.Environment << m_ServerInfo.Visibility << m_ServerInfo.VAC
+                     << m_ServerInfo.Version << m_ServerInfo.EDF;
+            if (datagram.overflowed)
+                return warn(boost::system::errc::invalid_argument, "data too large for single datagram");
+            do_send(datagram.size());
+        }
         return true;
     }
 
@@ -277,6 +303,10 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
     server_info m_ServerInfo;
     rallyhere::vector<int32_t> m_RecentChallenges;
     logger m_Logger{};
+    std::random_device m_RandomDevice{};
+    std::default_random_engine m_RandomEngine{ m_RandomDevice() };
+    std::uniform_int_distribution<int32_t> m_ChallengeDistribution{1};
+    rallyhere::vector<int32_t> m_Challenges{};
 };
 
 } // namespace rallyhere
