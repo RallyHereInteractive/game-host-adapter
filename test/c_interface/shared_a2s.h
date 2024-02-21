@@ -23,3 +23,4 @@ limitations under the License.
 
 void validate_server_info(lest::env& lest_env, const rallyhere::server_info& info);
 rallyhere::server_info get_stats(lest::env& lest_env, RallyHereGameInstanceAdapterPtr adapter, TestCCodeData& data);
+void get_stats_fail_challenge(lest::env& lest_env, RallyHereGameInstanceAdapterPtr adapter, TestCCodeData& data);

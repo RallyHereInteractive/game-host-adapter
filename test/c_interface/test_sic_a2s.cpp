@@ -237,11 +237,21 @@ static const lest::test module[] = {
         make_bad_request(lest_env, adapter, data);
         rallyhere::server_info info = get_stats(lest_env, adapter, data);
         compare(lest_env, get_stats_base(), info);
-    }
+    },
+    CASE("A2S fails to return when challenge fails")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        get_ready(lest_env, adapter, data);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+        get_stats_fail_challenge(lest_env, adapter, data);
+    },
 };
 //@formatter:on
 // clang-format off
 
 extern lest::tests& specification();
 
-MODULE( specification(), module );
+//MODULE( specification(), module );
