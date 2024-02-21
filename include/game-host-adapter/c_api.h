@@ -395,9 +395,9 @@ extern "C"
         uint8_t server_type;
         /// Environment the server is running in. Currently 'w' for Windows, 'l' for Linux, 'm' for Mac
         uint8_t environment;
-        /// Visibility of the server. Currently '0' for public and '1' for private
+        /// Visibility of the server. Currently 0 for public and 1 for private
         uint8_t visibility;
-        /// Anti-cheat running on the server. Currently '0' for unsecured, '1' for secured
+        /// Anti-cheat running on the server. Currently 0 for unsecured, 1 for secured
         uint8_t anticheat;
         /// Version of the game installed on the server
         const char* version;
