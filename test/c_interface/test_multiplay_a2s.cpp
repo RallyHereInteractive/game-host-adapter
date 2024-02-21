@@ -276,6 +276,19 @@ static const lest::test module[] = {
         auto completed = get_stats_pending_challenges(lest_env, adapter, data, 21);
         EXPECT(completed == 20);
     },
+    CASE("A2S properly deletes old challenges")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        get_multiplay_ready(lest_env, adapter, data);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+        auto completed = get_stats_pending_challenges(lest_env, adapter, data, 20);
+        EXPECT(completed == 20);
+        completed = get_stats_pending_challenges(lest_env, adapter, data, 20);
+        EXPECT(completed == 20);
+    },
 };
 //@formatter:on
 // clang-format off
