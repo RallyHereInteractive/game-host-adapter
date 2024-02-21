@@ -30,10 +30,14 @@ limitations under the License.
 #include "sdk_logger.h"
 #include "stats.hpp"
 #include <random>
+#include "boost/circular_buffer.hpp"
 
 
 namespace rallyhere
 {
+
+template<class T>
+using circular_buffer = boost::circular_buffer<T, i3d::one::StandardAllocator<T>>;
 
 class a2s_listener : public std::enable_shared_from_this<a2s_listener>
 {
@@ -315,7 +319,7 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
     bool m_Cancelled{ false };
     boost::system::error_code m_Error{};
     server_info m_ServerInfo;
-    rallyhere::vector<int32_t> m_RecentChallenges;
+    circular_buffer<int32_t> m_RecentChallenges{20};
     logger m_Logger{};
     std::random_device m_RandomDevice{};
     std::default_random_engine m_RandomEngine{ m_RandomDevice() };
