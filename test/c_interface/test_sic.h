@@ -88,5 +88,15 @@ namespace sic
             return arguments_str.size();
         }
     };
+
+    template<typename T>
+    struct TestArgumentsNoChallenge : public TestArguments<T>
+    {
+        TestArgumentsNoChallenge()
+        {
+            this->arguments.push_back("A2SChallenge=0");
+            this->arguments_str = join(this->arguments, " ");
+        }
+    };
 } // namespace sic
 } // namespace test

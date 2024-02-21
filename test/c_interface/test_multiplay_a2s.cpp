@@ -65,9 +65,9 @@ void compare(lest::env& lest_env, const RallyHereStatsBase& stats_base, const ra
     EXPECT(stats_base.version == info.Version);
 }
 
-void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& adapter, TestCCodeData& data)
+template<typename ArgumentsT>
+void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& adapter, TestCCodeData& data, ArgumentsT arguments)
 {
-    TestArguments<rallyhere::string> arguments;
     rallyhere_global_init();
     auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
     EXPECT(rallyhere_is_error(result) == false);
@@ -126,6 +126,12 @@ void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& a
     }
     EXPECT(data.set_base_stats_called == true);
     EXPECT(data.set_base_stats_result == RH_STATUS_OK);
+}
+
+void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& adapter, TestCCodeData& data)
+{
+    TestArguments<rallyhere::string> arguments;
+    get_multiplay_ready(lest_env, adapter, data, arguments);
 }
 
 void write_new_stats(lest::env& lest_env,
@@ -288,6 +294,19 @@ static const lest::test module[] = {
         EXPECT(completed == 20);
         completed = get_stats_pending_challenges(lest_env, adapter, data, 20);
         EXPECT(completed == 20);
+    },
+    CASE("A2S sends info in nochallenge mode when requested")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        TestArgumentsNoChallenge<rallyhere::string> arguments;
+        get_multiplay_ready(lest_env, adapter, data, arguments);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+
+        rallyhere::server_info info = get_stats_no_challenge(lest_env, adapter, data);
+        compare(lest_env, get_stats_base(), info);
     },
 };
 //@formatter:on

@@ -70,7 +70,7 @@ struct a2s_response_handler
     }
 };
 
-rallyhere::server_info get_stats(lest::env& lest_env, RallyHereGameInstanceAdapterPtr adapter, TestCCodeData& data)
+static rallyhere::server_info get_stats_impl(lest::env& lest_env, RallyHereGameInstanceAdapterPtr adapter, TestCCodeData& data, bool should_challenge)
 {
     boost::asio::io_context io_context;
 
@@ -102,6 +102,15 @@ rallyhere::server_info get_stats(lest::env& lest_env, RallyHereGameInstanceAdapt
         EXPECT(elapsed < std::chrono::seconds(10 + 2));
     }
 
+    if (should_challenge)
+    {
+        EXPECT(handler.is_challenge == true);
+    }
+    else
+    {
+        EXPECT(handler.is_challenge == false);
+    }
+
     if (handler.is_challenge)
     {
         rallyhere::string source_buf{ "\xff\xff\xff\xff\x54Source Engine Query\0\xff\xff\xff\xff", 25 + 4 };
@@ -130,6 +139,16 @@ rallyhere::server_info get_stats(lest::env& lest_env, RallyHereGameInstanceAdapt
 
     validate_server_info(lest_env, handler.info);
     return handler.info;
+}
+
+rallyhere::server_info get_stats(lest::env& lest_env, RallyHereGameInstanceAdapterPtr adapter, TestCCodeData& data)
+{
+    return get_stats_impl(lest_env, adapter, data, true);
+}
+
+rallyhere::server_info get_stats_no_challenge(lest::env& lest_env, RallyHereGameInstanceAdapterPtr adapter, TestCCodeData& data)
+{
+    return get_stats_impl(lest_env, adapter, data, false);
 }
 
 void get_stats_fail_challenge(lest::env& lest_env, RallyHereGameInstanceAdapterPtr adapter, TestCCodeData& data)

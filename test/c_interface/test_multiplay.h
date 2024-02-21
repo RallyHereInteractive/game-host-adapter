@@ -83,6 +83,16 @@ struct TestArguments
 };
 
 template<typename T>
+struct TestArgumentsNoChallenge : public TestArguments<T>
+{
+    TestArgumentsNoChallenge() : TestArguments<T>()
+    {
+        this->arguments.push_back("A2SChallenge=0");
+        this->arguments_str = join(this->arguments, " ");
+    }
+};
+
+template<typename T>
 struct ServerJson
 {
     rallyhere::string path;
