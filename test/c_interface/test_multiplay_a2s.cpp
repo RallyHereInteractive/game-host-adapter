@@ -42,8 +42,8 @@ RallyHereStatsBase get_stats_base()
         .bots = 100,
         .server_type = 'd',
         .environment = 'l',
-        .visibility = '1',
-        .anticheat = '0',
+        .visibility = 1,
+        .anticheat = 0,
         .version = "0.0.1",
     };
 }

@@ -591,8 +591,8 @@ static const lest::test module[] = {
             .bots = 100,
             .server_type = 'd',
             .environment = 'l',
-            .visibility = '1',
-            .anticheat = '0',
+            .visibility = 1,
+            .anticheat = 0,
             .version = "0.0.1",
         };
         expected_instance_info["name"] = "the best test server";
@@ -639,8 +639,8 @@ static const lest::test module[] = {
             .bots = 100,
             .server_type = 'd',
             .environment = 'l',
-            .visibility = '1',
-            .anticheat = '0',
+            .visibility = 1,
+            .anticheat = 0,
             .version = "0.0.1",
         };
         expected_instance_info["name"] = "the best test server";
@@ -758,8 +758,8 @@ static const lest::test module[] = {
             .bots = 100,
             .server_type = 'd',
             .environment = 'l',
-            .visibility = '1',
-            .anticheat = '0',
+            .visibility = 1,
+            .anticheat = 0,
             .version = "0.0.1",
         };
         expected_instance_info["name"] = "the best test server";
