@@ -71,7 +71,7 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
         resp->header = boost::endian::little_to_native(resp->header);
         if (resp->header != -1)
         {
-            warn(boost::system::errc::invalid_argument, "invalid header");
+            warn(boost::system::errc::invalid_argument, "invalid header", resp->header);
             return;
         }
         switch (static_cast<a2s_query>(resp->type))
@@ -81,7 +81,7 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
                     return;
                 break;
             default:
-                warn(boost::system::errc::operation_not_supported, "unhandled request");
+                warn(boost::system::errc::operation_not_supported, "unhandled request", resp->type);
                 return;
                 break;
         }
@@ -144,7 +144,7 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
                 datagram >> current_challenge;
                 auto existing_challenge = std::find(m_RecentChallenges.begin(), m_RecentChallenges.end(), current_challenge);
                 if (existing_challenge == m_RecentChallenges.end())
-                    return warn(boost::system::errc::invalid_argument, "invalid challenge");
+                    return warn(boost::system::errc::invalid_argument, "invalid challenge", current_challenge);
                 m_RecentChallenges.erase(existing_challenge);
             }
             // Send back A2S_INFO response
@@ -194,7 +194,21 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
 
     bool warn(boost::system::error_code ec, const char* what)
     {
-        m_Logger.log(RH_LOG_LEVEL_ERROR, "{}: {}", what, ec.message());
+        m_Logger.log(RH_LOG_LEVEL_ERROR, "a2s: {}: {}", what, ec.message());
+        m_Error = ec;
+        return false;
+    }
+
+    template<typename T>
+    bool warn(boost::system::errc::errc_t errc, const char* what, T&& value)
+    {
+        return warn({ errc, boost::system::generic_category() }, what, value);
+    }
+
+    template<typename T>
+    bool warn(boost::system::error_code ec, const char* what, T&& value)
+    {
+        m_Logger.log(RH_LOG_LEVEL_ERROR, "a2s: {}: {} {}", what, ec.message(), value);
         m_Error = ec;
         return false;
     }
@@ -206,7 +220,7 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
 
     bool fatal(boost::system::error_code ec, const char* what)
     {
-        m_Logger.log(RH_LOG_LEVEL_ERROR, "{}: {}", what, ec.message());
+        m_Logger.log(RH_LOG_LEVEL_ERROR, "a2s: {}: {}", what, ec.message());
         m_Error = ec;
         return false;
     }
