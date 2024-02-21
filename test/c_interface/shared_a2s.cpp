@@ -194,3 +194,84 @@ void get_stats_fail_challenge(lest::env& lest_env, RallyHereGameInstanceAdapterP
         EXPECT(handler.received == false);
     }
 }
+
+size_t get_stats_pending_challenges(lest::env& lest_env, RallyHereGameInstanceAdapterPtr adapter, TestCCodeData& data, int num_pending)
+{
+    boost::asio::io_context io_context;
+
+    udp::resolver resolver(io_context);
+    udp::endpoint receiver_endpoint = *resolver.resolve(udp::v4(), "localhost", "23891").begin();
+
+    udp::socket socket(io_context);
+    socket.open(udp::v4());
+
+    udp::endpoint sender_endpoint;
+    std::vector<int32_t> challenges;
+
+    for (int i = 0; i < num_pending; ++i)
+    {
+        {
+            std::string_view send_buf = { "\xff\xff\xff\xff\x54Source Engine Query\0", 25 };
+            auto sent = socket.send_to(boost::asio::buffer(send_buf), receiver_endpoint);
+            EXPECT(sent == send_buf.size());
+        }
+
+        a2s_response_handler handler{ lest_env };
+        socket.async_receive_from(boost::asio::buffer(handler.recv_buf), sender_endpoint, std::ref(handler));
+
+        auto start = std::chrono::steady_clock::now();
+        while (!handler.received)
+        {
+            EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
+            io_context.poll();
+            if (io_context.stopped())
+                io_context.restart();
+            auto ongoing = std::chrono::steady_clock::now();
+            auto elapsed = ongoing - start;
+            EXPECT(elapsed < std::chrono::seconds(10 + 2));
+        }
+
+        EXPECT(handler.is_challenge == true);
+        challenges.push_back(handler.challenge.challenge);
+    }
+
+    EXPECT(challenges.size() == num_pending);
+    std::random_device rd;
+    std::mt19937 g(rd());
+    std::shuffle(challenges.begin(), challenges.end(), g);
+
+    size_t completed = 0;
+
+    for (int i = 0; i < num_pending; ++i)
+    {
+        rallyhere::string source_buf{ "\xff\xff\xff\xff\x54Source Engine Query\0\xff\xff\xff\xff", 25 + 4 };
+        rallyhere::vector<uint8_t> challenge_buf{ source_buf.begin(), source_buf.end() };
+        rallyhere::A2SDatagram datagram{ challenge_buf };
+        datagram.seek(25);
+        datagram << challenges.back();
+        challenges.pop_back();
+        auto sent = socket.send_to(boost::asio::buffer(challenge_buf.data(), challenge_buf.size()), receiver_endpoint);
+        EXPECT(sent == challenge_buf.size());
+
+        a2s_response_handler handler{ lest_env };
+        socket.async_receive_from(boost::asio::buffer(handler.recv_buf), sender_endpoint, std::ref(handler));
+
+        auto start = std::chrono::steady_clock::now();
+        while (!handler.received)
+        {
+            EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
+            io_context.poll();
+            if (io_context.stopped())
+                io_context.restart();
+            auto ongoing = std::chrono::steady_clock::now();
+            auto elapsed = ongoing - start;
+            if (elapsed > std::chrono::seconds(2))
+            {
+                break;
+            }
+        }
+        if (handler.received)
+            ++completed;
+    }
+    return completed;
+}

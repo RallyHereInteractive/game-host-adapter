@@ -248,6 +248,28 @@ static const lest::test module[] = {
         };
         get_stats_fail_challenge(lest_env, adapter, data);
     },
+    CASE("A2S allows up to 20 pending challenges")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        get_ready(lest_env, adapter, data);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+        auto completed = get_stats_pending_challenges(lest_env, adapter, data, 20);
+        EXPECT(completed == 20);
+    },
+    CASE("A2S fails the 21st pending challenge")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        get_ready(lest_env, adapter, data);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+        auto completed = get_stats_pending_challenges(lest_env, adapter, data, 21);
+        EXPECT(completed == 20);
+    },
 };
 //@formatter:on
 // clang-format off
