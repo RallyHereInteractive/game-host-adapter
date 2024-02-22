@@ -118,6 +118,8 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
 
     bool handle_info(size_t len)
     {
+        const auto A2S_CHALLENGE_FIELD_SIZE = 4;
+        static_assert (A2S_CHALLENGE_FIELD_SIZE == sizeof(int32_t), "A2S_CHALLENGE_FIELD_SIZE must be 4");
         if (len == sizeof(a2s_simple_response))
             return warn(boost::system::errc::invalid_argument, "payload too small");
         auto begin = m_Buffer.begin() + sizeof(a2s_simple_response);
@@ -142,7 +144,7 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
         {
             // Check that the challenge is valid
             A2SDatagram datagram(it, len - total_len);
-            if ((len - total_len) != 4)
+            if ((len - total_len) != A2S_CHALLENGE_FIELD_SIZE)
                 return warn(boost::system::errc::invalid_argument, "invalid challenge size");
             int32_t current_challenge;
             datagram >> current_challenge;
