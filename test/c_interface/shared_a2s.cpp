@@ -70,6 +70,19 @@ struct a2s_response_handler
     }
 };
 
+template <typename DurationT, typename CheckFunc, typename LoopFunc>
+void wait_for(lest::env& lest_env, DurationT duration, CheckFunc check, LoopFunc loop)
+{
+    auto start = std::chrono::steady_clock::now();
+    while (!check())
+    {
+        loop();
+        auto ongoing = std::chrono::steady_clock::now();
+        auto elapsed = ongoing - start;
+        EXPECT(elapsed < duration);
+    }
+}
+
 static rallyhere::server_info get_stats_impl(lest::env& lest_env, RallyHereGameInstanceAdapterPtr adapter, TestCCodeData& data, bool should_challenge)
 {
     boost::asio::io_context io_context;
@@ -90,17 +103,21 @@ static rallyhere::server_info get_stats_impl(lest::env& lest_env, RallyHereGameI
     udp::endpoint sender_endpoint;
     socket.async_receive_from(boost::asio::buffer(handler.recv_buf), sender_endpoint, std::ref(handler));
 
-    auto start = std::chrono::steady_clock::now();
-    while (!handler.received)
-    {
-        EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
-        io_context.poll();
-        if (io_context.stopped())
-            io_context.restart();
-        auto ongoing = std::chrono::steady_clock::now();
-        auto elapsed = ongoing - start;
-        EXPECT(elapsed < std::chrono::seconds(10 + 2));
-    }
+    using namespace std::chrono_literals;
+    wait_for(
+        lest_env,
+        12s,
+        [&handler] {
+            return handler.received;
+        },
+        [&] {
+            EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
+            io_context.poll();
+            if (io_context.stopped())
+            {
+                io_context.restart();
+            }
+        });
 
     if (should_challenge)
     {
@@ -124,7 +141,7 @@ static rallyhere::server_info get_stats_impl(lest::env& lest_env, RallyHereGameI
         handler.received = false;
         socket.async_receive_from(boost::asio::buffer(handler.recv_buf), sender_endpoint, std::ref(handler));
 
-        start = std::chrono::steady_clock::now();
+        auto start = std::chrono::steady_clock::now();
         while (!handler.received)
         {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
