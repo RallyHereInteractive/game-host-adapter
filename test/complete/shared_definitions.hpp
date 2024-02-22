@@ -70,7 +70,7 @@ while (!data.connect_called) \
     EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK); \
     auto ongoing = std::chrono::steady_clock::now(); \
     auto elapsed = ongoing - start; \
-    EXPECT(elapsed < std::chrono::seconds(10)); \
+    EXPECT(elapsed < DEFAULT_WAIT); \
 } \
 EXPECT(data.connect_result == RH_STATUS_OK);
 
@@ -83,7 +83,7 @@ while (!data.ready_called) \
     EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK); \
     auto ongoing = std::chrono::steady_clock::now(); \
     auto elapsed = ongoing - start; \
-    EXPECT(elapsed < std::chrono::seconds(10)); \
+    EXPECT(elapsed < DEFAULT_WAIT); \
 } \
 EXPECT(data.ready_result == RH_STATUS_OK);
 

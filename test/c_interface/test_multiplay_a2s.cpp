@@ -82,7 +82,7 @@ void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& a
         EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
         auto ongoing = std::chrono::steady_clock::now();
         auto elapsed = ongoing - start;
-        EXPECT(elapsed < std::chrono::seconds(10));
+        EXPECT(elapsed < DEFAULT_WAIT);
     }
     EXPECT(data.connect_result == RH_STATUS_OK);
 
@@ -109,7 +109,7 @@ void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& a
         EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
         auto ongoing = std::chrono::steady_clock::now();
         auto elapsed = ongoing - start;
-        EXPECT(elapsed < std::chrono::seconds(10));
+        EXPECT(elapsed < DEFAULT_WAIT);
     }
     EXPECT(data.ready_result == RH_STATUS_OK);
 
@@ -122,7 +122,7 @@ void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& a
         EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
         auto ongoing = std::chrono::steady_clock::now();
         auto elapsed = ongoing - start;
-        EXPECT(elapsed < std::chrono::seconds(10 + 2));
+        EXPECT(elapsed < DEFAULT_WAIT);
     }
     EXPECT(data.set_base_stats_called == true);
     EXPECT(data.set_base_stats_result == RH_STATUS_OK);
@@ -149,7 +149,7 @@ void write_new_stats(lest::env& lest_env,
         EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
         auto ongoing = std::chrono::steady_clock::now();
         auto elapsed = ongoing - start;
-        EXPECT(elapsed < std::chrono::seconds(10 + 2));
+        EXPECT(elapsed < DEFAULT_WAIT);
     }
     EXPECT(data.set_base_stats_called == true);
     EXPECT(data.set_base_stats_result == RH_STATUS_OK);

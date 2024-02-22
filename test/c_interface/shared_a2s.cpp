@@ -25,6 +25,7 @@ limitations under the License.
 #include "a2s.hpp"
 #include "shared_test_data.h"
 #include "shared_a2s.h"
+#include "configuration.h"
 
 using boost::asio::ip::udp;
 
@@ -150,7 +151,7 @@ static rallyhere::server_info get_stats_impl(lest::env& lest_env, RallyHereGameI
                 io_context.restart();
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10 + 2));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
     }
 
@@ -197,7 +198,7 @@ void get_stats_fail_challenge(lest::env& lest_env, RallyHereGameInstanceAdapterP
             io_context.restart();
         auto ongoing = std::chrono::steady_clock::now();
         auto elapsed = ongoing - start;
-        EXPECT(elapsed < std::chrono::seconds(10 + 2));
+        EXPECT(elapsed < DEFAULT_WAIT);
     }
 
     if (handler.challenge.challenge != 0)
@@ -222,7 +223,7 @@ void get_stats_fail_challenge(lest::env& lest_env, RallyHereGameInstanceAdapterP
                 io_context.restart();
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            if (elapsed > std::chrono::seconds(2))
+            if (elapsed > SHORT_WAIT)
             {
                 return;
             }
@@ -264,7 +265,7 @@ size_t get_stats_pending_challenges(lest::env& lest_env, RallyHereGameInstanceAd
                 io_context.restart();
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10 + 2));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
 
         EXPECT(handler.is_challenge == true);
@@ -301,7 +302,7 @@ size_t get_stats_pending_challenges(lest::env& lest_env, RallyHereGameInstanceAd
                 io_context.restart();
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            if (elapsed > std::chrono::seconds(2))
+            if (elapsed > SHORT_WAIT)
             {
                 break;
             }

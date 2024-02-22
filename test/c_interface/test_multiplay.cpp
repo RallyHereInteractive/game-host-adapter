@@ -61,7 +61,7 @@ void tick_adapter(lest::env &lest_env, RallyHereGameInstanceAdapterPtr adapter, 
     EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
     auto ongoing = std::chrono::steady_clock::now();
     auto elapsed = ongoing - start;
-    EXPECT(elapsed < std::chrono::seconds(10 + 2));
+    EXPECT(elapsed < DEFAULT_WAIT);
 }
 
 //@formatter:off
@@ -89,7 +89,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.connect_result == RH_STATUS_OK);
 
@@ -126,7 +126,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.connect_result == RH_STATUS_OK);
 
@@ -176,7 +176,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.connect_result == RH_STATUS_OK);
 
@@ -188,7 +188,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.reserve_result == RH_STATUS_OK);
 
@@ -206,7 +206,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.allocate_result == RH_STATUS_OK);
 
@@ -217,7 +217,7 @@ static const lest::test module[] = {
             EXPECT(data.ready_called == false);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            if (elapsed < std::chrono::seconds(10))
+            if (elapsed < DEFAULT_WAIT)
             {
                 break;
             }
@@ -246,7 +246,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.connect_result == RH_STATUS_OK);
 
@@ -261,7 +261,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.reserve_result == RH_STATUS_OK);
 
@@ -312,7 +312,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.connect_result == RH_STATUS_OK);
 
@@ -331,7 +331,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.ready_result == RH_STATUS_OK);
 
@@ -353,7 +353,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10 + 2));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.allocated_called == true);
         EXPECT(data.allocated_result == RH_STATUS_OK);
