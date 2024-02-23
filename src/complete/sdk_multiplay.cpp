@@ -145,7 +145,7 @@ void GameInstanceAdapter::ReadyMultiplay(base_callback_function_t callback, void
     m_MultiplayServerFileWatcher->run();
     // Setup A2S
     auto a2s_alloc = i3d::one::StandardAllocator<a2s_listener>{};
-    m_A2SListener = std::allocate_shared<a2s_listener>(a2s_alloc, net::make_strand(m_IoContext), m_A2SQueryPort, log());
+    m_A2SListener = std::allocate_shared<a2s_listener>(a2s_alloc, net::make_strand(m_IoContext), m_A2SQueryPort, log(), m_A2SChallenge);
     if (m_A2SListener->fail())
     {
         log().log(RH_LOG_LEVEL_ERROR, "Failed to start A2S listener");

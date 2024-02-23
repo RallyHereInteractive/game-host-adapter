@@ -133,7 +133,7 @@ static const lest::test module[] = {
             EXPECT(gia->Tick().ok() == true);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(connect_result.code() == RH_STATUS_OK);
         EXPECT(connect_result.ok() == true);

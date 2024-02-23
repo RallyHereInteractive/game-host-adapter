@@ -42,8 +42,8 @@ RallyHereStatsBase get_stats_base()
         .bots = 100,
         .server_type = 'd',
         .environment = 'l',
-        .visibility = '1',
-        .anticheat = '0',
+        .visibility = 1,
+        .anticheat = 0,
         .version = "0.0.1",
     };
 }
@@ -65,9 +65,9 @@ void compare(lest::env& lest_env, const RallyHereStatsBase& stats_base, const ra
     EXPECT(stats_base.version == info.Version);
 }
 
-void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& adapter, TestCCodeData& data)
+template<typename ArgumentsT>
+void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& adapter, TestCCodeData& data, ArgumentsT arguments)
 {
-    TestArguments<rallyhere::string> arguments;
     rallyhere_global_init();
     auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
     EXPECT(rallyhere_is_error(result) == false);
@@ -82,7 +82,7 @@ void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& a
         EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
         auto ongoing = std::chrono::steady_clock::now();
         auto elapsed = ongoing - start;
-        EXPECT(elapsed < std::chrono::seconds(10));
+        EXPECT(elapsed < DEFAULT_WAIT);
     }
     EXPECT(data.connect_result == RH_STATUS_OK);
 
@@ -109,7 +109,7 @@ void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& a
         EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
         auto ongoing = std::chrono::steady_clock::now();
         auto elapsed = ongoing - start;
-        EXPECT(elapsed < std::chrono::seconds(10));
+        EXPECT(elapsed < DEFAULT_WAIT);
     }
     EXPECT(data.ready_result == RH_STATUS_OK);
 
@@ -122,10 +122,16 @@ void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& a
         EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
         auto ongoing = std::chrono::steady_clock::now();
         auto elapsed = ongoing - start;
-        EXPECT(elapsed < std::chrono::seconds(10 + 2));
+        EXPECT(elapsed < DEFAULT_WAIT);
     }
     EXPECT(data.set_base_stats_called == true);
     EXPECT(data.set_base_stats_result == RH_STATUS_OK);
+}
+
+void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& adapter, TestCCodeData& data)
+{
+    TestArguments<rallyhere::string> arguments;
+    get_multiplay_ready(lest_env, adapter, data, arguments);
 }
 
 void write_new_stats(lest::env& lest_env,
@@ -143,7 +149,7 @@ void write_new_stats(lest::env& lest_env,
         EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
         auto ongoing = std::chrono::steady_clock::now();
         auto elapsed = ongoing - start;
-        EXPECT(elapsed < std::chrono::seconds(10 + 2));
+        EXPECT(elapsed < DEFAULT_WAIT);
     }
     EXPECT(data.set_base_stats_called == true);
     EXPECT(data.set_base_stats_result == RH_STATUS_OK);
@@ -177,36 +183,7 @@ static const lest::test module[] = {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
 
-        boost::asio::io_context io_context;
-
-        udp::resolver resolver(io_context);
-        udp::endpoint receiver_endpoint = *resolver.resolve(udp::v4(), "localhost", "23891").begin();
-
-        udp::socket socket(io_context);
-        socket.open(udp::v4());
-
-        std::string_view send_buf = { "\xff\xff\xff\xff\x54Source Engine Query\0", 25 };
-        socket.send_to(boost::asio::buffer(send_buf), receiver_endpoint);
-
-        boost::array<uint8_t, 128> recv_buf;
-        udp::endpoint sender_endpoint;
-        bool received{false};
-        rallyhere::server_info info{};
-        socket.async_receive_from(boost::asio::buffer(recv_buf), sender_endpoint, [&received, &recv_buf, &info](const boost::system::error_code& ec, size_t len) {
-            received = true;
-            rallyhere::A2SDatagram datagram{recv_buf.data(), len};
-            datagram >> info;
-        });
-
-        auto start = std::chrono::steady_clock::now();
-        while (!received)
-        {
-            EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
-            io_context.poll();
-            auto ongoing = std::chrono::steady_clock::now();
-            auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10 + 2));
-        }
+        rallyhere::server_info info = get_stats(lest_env, adapter, data);
         compare(lest_env, get_stats_base(), info);
     },
     CASE("A2S updates after ready")
@@ -272,7 +249,65 @@ static const lest::test module[] = {
         make_bad_request(lest_env, adapter, data);
         rallyhere::server_info info = get_stats(lest_env, adapter, data);
         compare(lest_env, get_stats_base(), info);
-    }
+    },
+    CASE("A2S fails to return when challenge fails")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        get_multiplay_ready(lest_env, adapter, data);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+        get_stats_fail_challenge(lest_env, adapter, data);
+    },
+    CASE("A2S allows up to 20 pending challenges")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        get_multiplay_ready(lest_env, adapter, data);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+        auto completed = get_stats_pending_challenges(lest_env, adapter, data, 20);
+        EXPECT(completed == 20);
+    },
+    CASE("A2S fails the 21st pending challenge")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        get_multiplay_ready(lest_env, adapter, data);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+        auto completed = get_stats_pending_challenges(lest_env, adapter, data, 21);
+        EXPECT(completed == 20);
+    },
+    CASE("A2S properly deletes old challenges")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        get_multiplay_ready(lest_env, adapter, data);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+        auto completed = get_stats_pending_challenges(lest_env, adapter, data, 20);
+        EXPECT(completed == 20);
+        completed = get_stats_pending_challenges(lest_env, adapter, data, 20);
+        EXPECT(completed == 20);
+    },
+    CASE("A2S sends info in nochallenge mode when requested")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        TestArgumentsNoChallenge<rallyhere::string> arguments;
+        get_multiplay_ready(lest_env, adapter, data, arguments);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+
+        rallyhere::server_info info = get_stats_no_challenge(lest_env, adapter, data);
+        compare(lest_env, get_stats_base(), info);
+    },
 };
 //@formatter:on
 // clang-format off

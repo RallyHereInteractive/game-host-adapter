@@ -543,6 +543,7 @@ class GameInstanceAdapter
     /// @{
     short m_A2SQueryPort{0};
     std::shared_ptr<rallyhere::a2s_listener> m_A2SListener{};
+    bool m_A2SChallenge{true};
     /// @}
 
     rallyhere::string m_UserAgent;

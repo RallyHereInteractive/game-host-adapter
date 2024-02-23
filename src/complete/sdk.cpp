@@ -398,6 +398,12 @@ void GameInstanceAdapter::SetupA2S()
             }
             continue;
         }
+        if (ParseArgument("A2Schallenge=", arg, tmp))
+        {
+            if (tmp[0] == 'f' || tmp[0] == 'F' || tmp[0] == '0' || tmp[0] == 'n' || tmp[0] == 'N')
+                m_A2SChallenge = false;
+            continue;
+        }
     }
 
     m_StatsBase.server_type = 'd';

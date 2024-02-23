@@ -397,7 +397,7 @@ void get_raw_metrics(lest::env & lest_env, RallyHereGameInstanceAdapterPtr adapt
             }
         }
     };
-    session_ptr->run(url, std::move(request_pair.first), wrapper, log(), true, std::chrono::seconds(10));
+    session_ptr->run(url, std::move(request_pair.first), wrapper, log(), true, DEFAULT_WAIT);
 
     auto start = std::chrono::steady_clock::now();
     while (!metrics_ready)
@@ -408,7 +408,7 @@ void get_raw_metrics(lest::env & lest_env, RallyHereGameInstanceAdapterPtr adapt
         EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
         auto ongoing = std::chrono::steady_clock::now();
         auto elapsed = ongoing - start;
-        EXPECT(elapsed < std::chrono::seconds(10));
+        EXPECT(elapsed < DEFAULT_WAIT);
     }
 }
 
@@ -457,7 +457,7 @@ void get_instance_info_labels(lest::env & lest_env, RallyHereGameInstanceAdapter
             }
         }
     };
-    session_ptr->run(url, std::move(request_pair.first), wrapper, log(), true, std::chrono::seconds(10));
+    session_ptr->run(url, std::move(request_pair.first), wrapper, log(), true, DEFAULT_WAIT);
 
     auto start = std::chrono::steady_clock::now();
     while (!metrics_ready)
@@ -468,7 +468,7 @@ void get_instance_info_labels(lest::env & lest_env, RallyHereGameInstanceAdapter
         EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
         auto ongoing = std::chrono::steady_clock::now();
         auto elapsed = ongoing - start;
-        EXPECT(elapsed < std::chrono::seconds(10));
+        EXPECT(elapsed < DEFAULT_WAIT);
     }
 }
 
@@ -515,7 +515,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.set_labels_result == RH_STATUS_OK);
 
@@ -531,7 +531,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.set_labels_result == RH_STATUS_PROMETHEUS_ALREADY_STARTED);
 
@@ -555,7 +555,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.set_additional_info_result == RH_STATUS_OK);
 
@@ -591,8 +591,8 @@ static const lest::test module[] = {
             .bots = 100,
             .server_type = 'd',
             .environment = 'l',
-            .visibility = '1',
-            .anticheat = '0',
+            .visibility = 1,
+            .anticheat = 0,
             .version = "0.0.1",
         };
         expected_instance_info["name"] = "the best test server";
@@ -639,8 +639,8 @@ static const lest::test module[] = {
             .bots = 100,
             .server_type = 'd',
             .environment = 'l',
-            .visibility = '1',
-            .anticheat = '0',
+            .visibility = 1,
+            .anticheat = 0,
             .version = "0.0.1",
         };
         expected_instance_info["name"] = "the best test server";
@@ -678,7 +678,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.set_additional_info_result == RH_STATUS_OK);
 
@@ -758,8 +758,8 @@ static const lest::test module[] = {
             .bots = 100,
             .server_type = 'd',
             .environment = 'l',
-            .visibility = '1',
-            .anticheat = '0',
+            .visibility = 1,
+            .anticheat = 0,
             .version = "0.0.1",
         };
         expected_instance_info["name"] = "the best test server";
@@ -797,7 +797,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.set_additional_info_result == RH_STATUS_OK);
 
@@ -821,7 +821,7 @@ static const lest::test module[] = {
             EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
             auto ongoing = std::chrono::steady_clock::now();
             auto elapsed = ongoing - start;
-            EXPECT(elapsed < std::chrono::seconds(10 + 2));
+            EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.allocated_called == true);
         EXPECT(data.allocated_result == RH_STATUS_OK);

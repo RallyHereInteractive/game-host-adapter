@@ -17,6 +17,7 @@ limitations under the License.
 #define GAME_HOST_ADAPTER_INTERFACE_A2S_HPP
 
 #include "rh_string.h"
+#include "rh_vector.h"
 #include "boost/core/span.hpp"
 
 #include "boost/endian/conversion.hpp"
@@ -69,11 +70,26 @@ namespace rallyhere
     };
 #pragma pack(pop)
 
+#pragma pack(push, 1)
+struct a2s_challenge_response
+{
+    int32_t header;
+    uint8_t type;
+    int32_t challenge;
+};
+#pragma pack(pop)
+
     enum class a2s_query : uint8_t
     {
         info = 0x54,
         players = 0x55,
         rules = 0x56,
+    };
+
+    enum a2s_response_type : uint8_t
+    {
+        info = 0x49,
+        challenge = 0x41,
     };
 
     struct A2SDatagram
@@ -90,6 +106,14 @@ namespace rallyhere
 
         template<typename Element>
         A2SDatagram(Element* data, size_t len) : Data(data, len), next(std::begin(Data))
+        {
+        }
+
+        A2SDatagram(rallyhere::string& data) : Data(reinterpret_cast<uint8_t*>(data.data()), data.size()), next(std::begin(Data))
+        {
+        }
+
+        A2SDatagram(rallyhere::vector<uint8_t>& data) : Data(data.data(), data.size()), next(std::begin(Data))
         {
         }
 
@@ -218,9 +242,27 @@ namespace rallyhere
             return *this;
         }
 
+        A2SDatagram& operator>>(a2s_simple_response& response)
+        {
+            *this >> response.header >> response.type;
+            return *this;
+        }
+
+        A2SDatagram& operator>>(a2s_challenge_response& response)
+        {
+            *this >> response.header >> response.type >> response.challenge;
+            return *this;
+        }
+
         size_t size() const
         {
             return next - std::begin(Data);
+        }
+
+        void seek(size_t pos)
+        {
+            next = std::begin(Data) + pos;
+            overflowed = next >= std::end(Data);
         }
 
         boost::span<uint8_t> Data;

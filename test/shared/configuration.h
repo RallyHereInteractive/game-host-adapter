@@ -34,3 +34,6 @@ const char* get_rally_here_url_arg();
 std::string get_credentials_file_path();
 const char* get_credentials_file_path_arg();
 const char* get_rh_credentials_as_arg();
+
+constexpr auto DEFAULT_WAIT = std::chrono::seconds(12);
+constexpr auto SHORT_WAIT = std::chrono::seconds(2);

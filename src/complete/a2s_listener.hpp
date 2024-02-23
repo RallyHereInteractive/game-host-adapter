@@ -29,17 +29,22 @@ limitations under the License.
 #include "file_watcher.hpp"
 #include "sdk_logger.h"
 #include "stats.hpp"
+#include <random>
+#include "boost/circular_buffer.hpp"
 
 
 namespace rallyhere
 {
 
+template<class T>
+using circular_buffer = boost::circular_buffer<T, i3d::one::StandardAllocator<T>>;
+
 class a2s_listener : public std::enable_shared_from_this<a2s_listener>
 {
     using udp = boost::asio::ip::udp; // from <boost/asio/ip/udp.hpp>
   public:
-    a2s_listener(boost::asio::any_io_executor ex, short port, logger logger) :
-        m_Socket(ex, udp::endpoint(udp::v4(), port)), m_Logger{ logger }
+    a2s_listener(boost::asio::any_io_executor ex, short port, logger logger, bool challenge ) :
+        m_Socket(ex, udp::endpoint(udp::v4(), port)), m_Logger{ logger }, m_ShouldChallenge{ challenge }
     {
     }
 
@@ -70,7 +75,7 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
         resp->header = boost::endian::little_to_native(resp->header);
         if (resp->header != -1)
         {
-            warn(boost::system::errc::invalid_argument, "invalid header");
+            warn(boost::system::errc::invalid_argument, "invalid header", resp->header);
             return;
         }
         switch (static_cast<a2s_query>(resp->type))
@@ -80,7 +85,7 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
                     return;
                 break;
             default:
-                warn(boost::system::errc::operation_not_supported, "unhandled request");
+                warn(boost::system::errc::operation_not_supported, "unhandled request", resp->type);
                 return;
                 break;
         }
@@ -113,6 +118,8 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
 
     bool handle_info(size_t len)
     {
+        const auto A2S_CHALLENGE_FIELD_SIZE = 4;
+        static_assert (A2S_CHALLENGE_FIELD_SIZE == sizeof(int32_t), "A2S_CHALLENGE_FIELD_SIZE must be 4");
         if (len == sizeof(a2s_simple_response))
             return warn(boost::system::errc::invalid_argument, "payload too small");
         auto begin = m_Buffer.begin() + sizeof(a2s_simple_response);
@@ -121,8 +128,34 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
             ++it;
         ++it;
         size_t total_len = it - m_Buffer.begin();
-        if (total_len != len)
+        if (m_ShouldChallenge && total_len == len)
+        {
+            // Send back this request with a challenge
+            A2SDatagram datagram(m_Buffer);
+            m_ServerInfo.ResponseHeader = -1;
+            m_ServerInfo.Header = 0x41;
+            auto current_challenge = m_ChallengeDistribution(m_RandomEngine);
+            datagram << m_ServerInfo.ResponseHeader << m_ServerInfo.Header << current_challenge;
+            m_RecentChallenges.push_back(current_challenge);
+            do_send(datagram.size());
+            return true;
+        }
+        if (m_ShouldChallenge && total_len != len)
+        {
+            // Check that the challenge is valid
+            A2SDatagram datagram(it, len - total_len);
+            if ((len - total_len) != A2S_CHALLENGE_FIELD_SIZE)
+                return warn(boost::system::errc::invalid_argument, "invalid challenge size");
+            int32_t current_challenge;
+            datagram >> current_challenge;
+            auto existing_challenge = std::find(m_RecentChallenges.begin(), m_RecentChallenges.end(), current_challenge);
+            if (existing_challenge == m_RecentChallenges.end())
+                return warn(boost::system::errc::invalid_argument, "invalid challenge", current_challenge);
+            m_RecentChallenges.erase(existing_challenge);
+        }
+        if (!m_ShouldChallenge && total_len != len)
             return warn(boost::system::errc::invalid_argument, "challenges not supported");
+        // Send back A2S_INFO response
         A2SDatagram datagram(m_Buffer);
         m_ServerInfo.ResponseHeader = -1;
         m_ServerInfo.Header = 'I';
@@ -168,7 +201,21 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
 
     bool warn(boost::system::error_code ec, const char* what)
     {
-        m_Logger.log(RH_LOG_LEVEL_ERROR, "{}: {}", what, ec.message());
+        m_Logger.log(RH_LOG_LEVEL_ERROR, "a2s: {}: {}", what, ec.message());
+        m_Error = ec;
+        return false;
+    }
+
+    template<typename T>
+    bool warn(boost::system::errc::errc_t errc, const char* what, T&& value)
+    {
+        return warn({ errc, boost::system::generic_category() }, what, value);
+    }
+
+    template<typename T>
+    bool warn(boost::system::error_code ec, const char* what, T&& value)
+    {
+        m_Logger.log(RH_LOG_LEVEL_ERROR, "a2s: {}: {} {}", what, ec.message(), value);
         m_Error = ec;
         return false;
     }
@@ -180,7 +227,7 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
 
     bool fatal(boost::system::error_code ec, const char* what)
     {
-        m_Logger.log(RH_LOG_LEVEL_ERROR, "{}: {}", what, ec.message());
+        m_Logger.log(RH_LOG_LEVEL_ERROR, "a2s: {}: {}", what, ec.message());
         m_Error = ec;
         return false;
     }
@@ -275,8 +322,13 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
     bool m_Cancelled{ false };
     boost::system::error_code m_Error{};
     server_info m_ServerInfo;
-    rallyhere::vector<int32_t> m_RecentChallenges;
+    circular_buffer<int32_t> m_RecentChallenges{20};
     logger m_Logger{};
+    std::random_device m_RandomDevice{};
+    std::default_random_engine m_RandomEngine{ m_RandomDevice() };
+    std::uniform_int_distribution<int32_t> m_ChallengeDistribution{1};
+    rallyhere::vector<int32_t> m_Challenges{};
+    bool m_ShouldChallenge{true};
 };
 
 } // namespace rallyhere
