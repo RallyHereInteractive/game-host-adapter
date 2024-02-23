@@ -107,7 +107,7 @@ static rallyhere::server_info get_stats_impl(lest::env& lest_env, RallyHereGameI
     using namespace std::chrono_literals;
     wait_for(
         lest_env,
-        12s,
+        DEFAULT_WAIT,
         [&handler] {
             return handler.received;
         },
