@@ -225,7 +225,7 @@ Status GameInstanceAdapter::StatsBase(const RallyHereStatsBase* stats, const Ral
         update_if_changed(m_StatsBase.id, stats->id, changed);
     if (provided->set_players)
         update_if_changed(m_StatsBase.players, stats->players, changed);
-    if (provided->set_max_players)
+    if (provided->set_max_players && !m_ForcedMaxPlayers)
         update_if_changed(m_StatsBase.max_players, stats->max_players, changed);
     if (provided->set_bots)
         update_if_changed(m_StatsBase.bots, stats->bots, changed);
@@ -246,7 +246,7 @@ Status GameInstanceAdapter::StatsBase(const RallyHereStatsBase* stats, const Ral
     if (provided->set_players)
         if (ConnectedPlayersGauge)
             ConnectedPlayersGauge->Set(m_StatsBase.players);
-    if (provided->set_max_players)
+    if (provided->set_max_players && !m_ForcedMaxPlayers)
         if (MaxAllowedPlayersGauge)
             MaxAllowedPlayersGauge->Set(m_StatsBase.max_players);
     // Update A2S
@@ -342,6 +342,7 @@ void GameInstanceAdapter::Setup()
     m_UserAgent = BOOST_BEAST_VERSION_STRING;
     for (auto&& arg : m_Arguments)
     {
+        rallyhere::string tmp;
         if (ParseArgument("rhbootstrapmode=", arg, m_ModeName))
         {
             continue;
@@ -352,6 +353,30 @@ void GameInstanceAdapter::Setup()
         }
         if (ParseArgument("rhuseragent=", arg, m_UserAgent))
         {
+            continue;
+        }
+        if (ParseArgument("rhforcereportmaxplayers=", arg, tmp))
+        {
+            try
+            {
+                m_ForcedMaxPlayers = boost::lexical_cast<decltype(m_ForcedMaxPlayers)::value_type>(tmp);
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_REPORT_FORCED_MAX_PLAYERS_MUST_BE_UNSIGNED_INT_8 };
+            }
+            continue;
+        }
+        if (ParseArgument("rhdefaultreportmaxplayers=", arg, tmp))
+        {
+            try
+            {
+                m_DefaultMaxPlayers = boost::lexical_cast<decltype(m_DefaultMaxPlayers)>(tmp);
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_REPORT_DEFAULT_MAX_PLAYERS_MUST_BE_UNSIGNED_INT_8 };
+            }
             continue;
         }
     }
@@ -418,6 +443,9 @@ void GameInstanceAdapter::SetupA2S()
 #endif
     m_StatsBase.visibility = 0;
     m_StatsBase.anticheat = 0;
+    m_StatsBase.max_players = m_DefaultMaxPlayers;
+    if (m_ForcedMaxPlayers)
+        m_StatsBase.max_players = *m_ForcedMaxPlayers;
 }
 
 prometheus::Labels GameInstanceAdapter::BuildAlwaysPresentLabels()

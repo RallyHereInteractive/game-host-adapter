@@ -531,6 +531,8 @@ class GameInstanceAdapter
     rallyhere::StringMap m_InternalAdditionalInfoLabels;
     rallyhere::StringMap m_Annotations;
     bool m_HasLoggedNoPrometheus{false};
+    std::optional<short> m_ForcedMaxPlayers;
+    short m_DefaultMaxPlayers{0};
     /// @}
 
     ///@name Multiplay
