@@ -66,7 +66,7 @@ void compare(lest::env& lest_env, const RallyHereStatsBase& stats_base, const ra
 }
 
 template<typename ArgumentsT>
-void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& adapter, TestCCodeData& data, ArgumentsT arguments)
+void get_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& adapter, TestCCodeData& data, ArgumentsT arguments, bool initialize_stats = true)
 {
     rallyhere_global_init();
     auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
@@ -92,6 +92,7 @@ void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& a
         EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
     }
 
+    if (initialize_stats)
     {
         RallyHereStatsBase base = get_stats_base();
         RallyHereStatsBaseProvided provided{};
@@ -116,22 +117,25 @@ void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& a
     EXPECT(rallyhere_healthy(adapter) == RH_STATUS_OK);
     EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
 
-    start = std::chrono::steady_clock::now();
-    while (!data.set_base_stats_called)
+    if (initialize_stats)
     {
-        EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
-        auto ongoing = std::chrono::steady_clock::now();
-        auto elapsed = ongoing - start;
-        EXPECT(elapsed < DEFAULT_WAIT);
+        start = std::chrono::steady_clock::now();
+        while (!data.set_base_stats_called)
+        {
+            EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
+            auto ongoing = std::chrono::steady_clock::now();
+            auto elapsed = ongoing - start;
+            EXPECT(elapsed < DEFAULT_WAIT);
+        }
+        EXPECT(data.set_base_stats_called == true);
+        EXPECT(data.set_base_stats_result == RH_STATUS_OK);
     }
-    EXPECT(data.set_base_stats_called == true);
-    EXPECT(data.set_base_stats_result == RH_STATUS_OK);
 }
 
-void get_multiplay_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& adapter, TestCCodeData& data)
+void get_ready(lest::env& lest_env, RallyHereGameInstanceAdapterPtr& adapter, TestCCodeData& data)
 {
     TestArguments<rallyhere::string> arguments;
-    get_multiplay_ready(lest_env, adapter, data, arguments);
+    get_ready(lest_env, adapter, data, arguments);
 }
 
 void write_new_stats(lest::env& lest_env,
@@ -178,7 +182,7 @@ static const lest::test module[] = {
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
         TestCCodeData data{};
-        get_multiplay_ready(lest_env, adapter, data);
+        get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -190,7 +194,7 @@ static const lest::test module[] = {
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
         TestCCodeData data{};
-        get_multiplay_ready(lest_env, adapter, data);
+        get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -210,7 +214,7 @@ static const lest::test module[] = {
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
         TestCCodeData data{};
-        get_multiplay_ready(lest_env, adapter, data);
+        get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -241,7 +245,7 @@ static const lest::test module[] = {
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
         TestCCodeData data{};
-        get_multiplay_ready(lest_env, adapter, data);
+        get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -254,7 +258,7 @@ static const lest::test module[] = {
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
         TestCCodeData data{};
-        get_multiplay_ready(lest_env, adapter, data);
+        get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -264,7 +268,7 @@ static const lest::test module[] = {
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
         TestCCodeData data{};
-        get_multiplay_ready(lest_env, adapter, data);
+        get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -275,7 +279,7 @@ static const lest::test module[] = {
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
         TestCCodeData data{};
-        get_multiplay_ready(lest_env, adapter, data);
+        get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -286,7 +290,7 @@ static const lest::test module[] = {
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
         TestCCodeData data{};
-        get_multiplay_ready(lest_env, adapter, data);
+        get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -300,13 +304,98 @@ static const lest::test module[] = {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
         TestCCodeData data{};
         TestArgumentsNoChallenge<rallyhere::string> arguments;
-        get_multiplay_ready(lest_env, adapter, data, arguments);
+        get_ready(lest_env, adapter, data, arguments);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
 
         rallyhere::server_info info = get_stats_no_challenge(lest_env, adapter, data);
         compare(lest_env, get_stats_base(), info);
+    },
+    CASE("A2S max players starts at zero")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        TestArguments<rallyhere::string> arguments;
+        get_ready(lest_env, adapter, data, arguments, false);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+
+        rallyhere::server_info info = get_stats(lest_env, adapter, data);
+        EXPECT(info.MaxPlayers == 0);
+    },
+    CASE("A2S max players starts at the default")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        TestArguments<rallyhere::string> arguments;
+        arguments.add_argument("rhdefaultreportmaxplayers=5");
+        get_ready(lest_env, adapter, data, arguments, false);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+
+        rallyhere::server_info info = get_stats(lest_env, adapter, data);
+        EXPECT(info.MaxPlayers == 5);
+    },
+    CASE("A2S max players starts at the default and is updated")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        TestArguments<rallyhere::string> arguments;
+        arguments.add_argument("rhdefaultreportmaxplayers=5");
+        get_ready(lest_env, adapter, data, arguments, false);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+
+        rallyhere::server_info info = get_stats(lest_env, adapter, data);
+        EXPECT(info.MaxPlayers == 5);
+
+        RallyHereStatsBase base{.max_players = 10};
+        RallyHereStatsBaseProvided provided{.set_max_players = true};
+        EXPECT(rallyhere_stats_base(adapter, &base, &provided, on_set_base_stats_callback, &data) == RH_STATUS_OK);
+
+        info = get_stats(lest_env, adapter, data);
+        EXPECT(info.MaxPlayers == 10);
+    },
+    CASE("A2S max players starts at the forced value")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        TestArguments<rallyhere::string> arguments;
+        arguments.add_argument("rhforcereportmaxplayers=6");
+        arguments.add_argument("rhdefaultreportmaxplayers=3");
+        get_ready(lest_env, adapter, data, arguments, false);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+
+        rallyhere::server_info info = get_stats(lest_env, adapter, data);
+        EXPECT(info.MaxPlayers == 6);
+    },
+    CASE("A2S max players starts at the forced value and can't be changed")
+    {
+        RallyHereGameInstanceAdapterPtr adapter{nullptr};
+        TestCCodeData data{};
+        TestArguments<rallyhere::string> arguments;
+        arguments.add_argument("rhforcereportmaxplayers=6");
+        arguments.add_argument("rhdefaultreportmaxplayers=3");
+        get_ready(lest_env, adapter, data, arguments, false);
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+
+        rallyhere::server_info info = get_stats(lest_env, adapter, data);
+        EXPECT(info.MaxPlayers == 6);
+
+        RallyHereStatsBase base{.max_players = 10};
+        RallyHereStatsBaseProvided provided{.set_max_players = true};
+        EXPECT(rallyhere_stats_base(adapter, &base, &provided, on_set_base_stats_callback, &data) == RH_STATUS_OK);
+
+        info = get_stats(lest_env, adapter, data);
+        EXPECT(info.MaxPlayers == 6);
     },
 };
 //@formatter:on
