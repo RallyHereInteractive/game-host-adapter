@@ -412,27 +412,27 @@ void get_raw_metrics(lest::env & lest_env, RallyHereGameInstanceAdapterPtr adapt
     }
 }
 
-void get_instance_info_labels(lest::env & lest_env, RallyHereGameInstanceAdapterPtr adapter, std::map<std::string, std::string>& metric_labels)
+struct MetricEntry
 {
-    boost::asio::io_context m_IoContext{};
-    auto session_ptr = std::make_shared<session>(net::make_strand(m_IoContext));
-    auto url = "http://127.0.0.1:23890/metrics";
-    auto request_pair = BuildMetricsRequest(url);
-    EXPECT(!request_pair.second);
+    std::string m_Name;
+    std::string m_Value;
+    std::map<std::string, std::string> m_Labels;
+};
 
-    bool metrics_ready = false;
-    auto wrapper = [&](session& session) {
+auto get_field_value_and_labels_handler(lest::env & lest_env, RallyHereGameInstanceAdapterPtr adapter, bool& executed, std::map<std::string, MetricEntry>& entries)
+{
+    return [&](session& session) {
         EXPECT(session.m_Status);
-        metrics_ready = true;
+        executed = true;
         auto lines = read_each_line_of_file_into_vector(session.m_Response.body());
         for (auto&& line : lines)
         {
-            if (!boost::algorithm::starts_with(line, "instance_info"))
-                continue;
+            MetricEntry entry{};
             // Parse a line of text that looks like instance_info{label1="value1",label2="A longer value to",folder="",game="",game_mode="koth",map="",name="",version=""} 1
             auto pos = line.find_first_of('{');
             if (pos == rallyhere::string::npos)
                 continue;
+            entry.m_Name = line.substr(0, pos);
             auto pos2 = line.find_first_of('}', pos);
             if (pos2 == rallyhere::string::npos)
                 continue;
@@ -453,10 +453,29 @@ void get_instance_info_labels(lest::env & lest_env, RallyHereGameInstanceAdapter
                 {
                     value = "";
                 }
-                metric_labels[key] = value;
+                entry.m_Labels[key] = value;
             }
+            if (++pos2 == rallyhere::string::npos)
+                continue;
+            if (++pos2 == rallyhere::string::npos)
+                continue;
+            entry.m_Value = line.substr(pos2);
+            entries[entry.m_Name] = entry;
         }
     };
+}
+
+auto get_metric_entries(lest::env & lest_env, RallyHereGameInstanceAdapterPtr adapter)
+{
+    boost::asio::io_context m_IoContext{};
+    auto session_ptr = std::make_shared<session>(net::make_strand(m_IoContext));
+    auto url = "http://127.0.0.1:23890/metrics";
+    auto request_pair = BuildMetricsRequest(url);
+    EXPECT(!request_pair.second);
+
+    bool metrics_ready = false;
+    std::map<std::string, MetricEntry> entries;
+    auto wrapper = get_field_value_and_labels_handler(lest_env, adapter, metrics_ready, entries);
     session_ptr->run(url, std::move(request_pair.first), wrapper, log(), true, DEFAULT_WAIT);
 
     auto start = std::chrono::steady_clock::now();
@@ -470,6 +489,27 @@ void get_instance_info_labels(lest::env & lest_env, RallyHereGameInstanceAdapter
         auto elapsed = ongoing - start;
         EXPECT(elapsed < DEFAULT_WAIT);
     }
+    return entries;
+}
+
+void get_instance_info_labels(lest::env & lest_env, RallyHereGameInstanceAdapterPtr adapter, std::map<std::string, std::string>& metric_labels)
+{
+    auto entries = get_metric_entries(lest_env, adapter);
+    MetricEntry instance_info{};
+    EXPECT_NO_THROW(instance_info = entries.at("instance_info"));
+    metric_labels = instance_info.m_Labels;
+}
+
+void get_max_allowed_players(lest::env & lest_env, RallyHereGameInstanceAdapterPtr adapter, MetricEntry& max)
+{
+    auto entries = get_metric_entries(lest_env, adapter);
+    EXPECT_NO_THROW(max = entries.at("max_allowed_players_total"));
+}
+
+void get_connected_clients(lest::env & lest_env, RallyHereGameInstanceAdapterPtr adapter, MetricEntry& max)
+{
+    auto entries = get_metric_entries(lest_env, adapter);
+    EXPECT_NO_THROW(max = entries.at("connected_clients_total"));
 }
 
 
@@ -834,8 +874,129 @@ static const lest::test module[] = {
             EXPECT(labels_map.find(p.first) != labels_map.end());
             EXPECT(labels_map[p.first] == p.second);
         }
-
     },
+    CASE("Max players starts at zero")
+    {
+        auto arguments_source = demo_get_default_arguments<rallyhere::string>();
+        SETUP_TEST_ADAPTER;
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        MetricEntry max;
+        get_max_allowed_players(lest_env, adapter, max);
+        EXPECT(max.m_Value == "0");
+    },
+    CASE("Max players starts at the default")
+    {
+        auto arguments_source = demo_get_default_arguments<rallyhere::string>();
+        arguments_source.push_back("rhdefaultreportmaxplayers=5");
+        SETUP_TEST_ADAPTER;
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        MetricEntry max;
+        get_max_allowed_players(lest_env, adapter, max);
+        EXPECT(max.m_Value == "5");
+    },
+    CASE("Max players starts at the default and is updated")
+    {
+        auto arguments_source = demo_get_default_arguments<rallyhere::string>();
+        arguments_source.push_back("rhdefaultreportmaxplayers=5");
+        SETUP_TEST_ADAPTER;
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        MetricEntry max;
+        get_max_allowed_players(lest_env, adapter, max);
+        EXPECT(max.m_Value == "5");
+
+        RallyHereStatsBase base{.max_players = 10};
+        RallyHereStatsBaseProvided provided{.set_max_players = true};
+        EXPECT(rallyhere_stats_base(adapter, &base, &provided, on_set_base_stats_callback, &data) == RH_STATUS_OK);
+
+        get_max_allowed_players(lest_env, adapter, max);
+        EXPECT(max.m_Value == "10");
+    },
+    CASE("Max players starts at the forced value")
+    {
+        auto arguments_source = demo_get_default_arguments<rallyhere::string>();
+        arguments_source.push_back("rhforcereportmaxplayers=6");
+        arguments_source.push_back("rhdefaultreportmaxplayers=3");
+        SETUP_TEST_ADAPTER;
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        MetricEntry max;
+        get_max_allowed_players(lest_env, adapter, max);
+        EXPECT(max.m_Value == "6");
+    },
+    CASE("Max players starts at the forced value and can't be changed")
+    {
+        auto arguments_source = demo_get_default_arguments<rallyhere::string>();
+        arguments_source.push_back("rhforcereportmaxplayers=6");
+        arguments_source.push_back("rhdefaultreportmaxplayers=3");
+        SETUP_TEST_ADAPTER;
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        MetricEntry max;
+        get_max_allowed_players(lest_env, adapter, max);
+        EXPECT(max.m_Value == "6");
+
+        RallyHereStatsBase base{.max_players = 10};
+        RallyHereStatsBaseProvided provided{.set_max_players = true};
+        EXPECT(rallyhere_stats_base(adapter, &base, &provided, on_set_base_stats_callback, &data) == RH_STATUS_OK);
+
+        get_max_allowed_players(lest_env, adapter, max);
+        EXPECT(max.m_Value == "6");
+    },
+    CASE("Current players starts at zero")
+    {
+        auto arguments_source = demo_get_default_arguments<rallyhere::string>();
+        arguments_source.push_back("rhforcereportmaxplayers=6");
+        arguments_source.push_back("rhdefaultreportmaxplayers=3");
+        SETUP_TEST_ADAPTER;
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        MetricEntry max;
+        get_connected_clients(lest_env, adapter, max);
+        EXPECT(max.m_Value == "0");
+    },
+    CASE("Current players can be updated")
+    {
+        auto arguments_source = demo_get_default_arguments<rallyhere::string>();
+        arguments_source.push_back("rhforcereportmaxplayers=6");
+        arguments_source.push_back("rhdefaultreportmaxplayers=3");
+        SETUP_TEST_ADAPTER;
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        MetricEntry max;
+        get_connected_clients(lest_env, adapter, max);
+        EXPECT(max.m_Value == "0");
+
+        RallyHereStatsBase base{.players = 10};
+        RallyHereStatsBaseProvided provided{.set_players = true};
+        EXPECT(rallyhere_stats_base(adapter, &base, &provided, on_set_base_stats_callback, &data) == RH_STATUS_OK);
+
+        get_connected_clients(lest_env, adapter, max);
+        EXPECT(max.m_Value == "10");
+    }
 };
 //@formatter:on
 // clang-format off
