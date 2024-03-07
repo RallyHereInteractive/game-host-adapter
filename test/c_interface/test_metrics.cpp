@@ -996,7 +996,49 @@ static const lest::test module[] = {
 
         get_connected_clients(lest_env, adapter, max);
         EXPECT(max.m_Value == "10");
-    }
+    },
+    CASE("Simulate player count changes over time")
+    {
+        auto arguments_source = demo_get_default_arguments<rallyhere::string>();
+        arguments_source.push_back("rhsimulatecurrentplayersat=5,5");
+        arguments_source.push_back("rhsimulatecurrentplayersat=10,6");
+        arguments_source.push_back("rhsimulatecurrentplayersat=15,10");
+        arguments_source.push_back("rhsimulatemaxplayersat=5,6");
+        arguments_source.push_back("rhsimulatemaxplayersat=10,7");
+        arguments_source.push_back("rhsimulatemaxplayersat=15,12");
+        SETUP_TEST_ADAPTER;
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        MetricEntry max;
+        get_connected_clients(lest_env, adapter, max);
+        EXPECT(max.m_Value == "0");
+        get_max_allowed_players(lest_env, adapter, max);
+        EXPECT(max.m_Value == "0");
+
+        ADAPTER_TICK_FOR_SECONDS(5);
+
+        get_connected_clients(lest_env, adapter, max);
+        EXPECT(max.m_Value == "5");
+        get_max_allowed_players(lest_env, adapter, max);
+        EXPECT(max.m_Value == "6");
+
+        ADAPTER_TICK_FOR_SECONDS(5);
+
+        get_connected_clients(lest_env, adapter, max);
+        EXPECT(max.m_Value == "6");
+        get_max_allowed_players(lest_env, adapter, max);
+        EXPECT(max.m_Value == "7");
+
+        ADAPTER_TICK_FOR_SECONDS(5);
+
+        get_connected_clients(lest_env, adapter, max);
+        EXPECT(max.m_Value == "10");
+        get_max_allowed_players(lest_env, adapter, max);
+        EXPECT(max.m_Value == "12");
+    },
 };
 //@formatter:on
 // clang-format off
