@@ -149,6 +149,13 @@ struct SICCredentials
     bool m_UseCredentialsAsClientId{false};
 };
 
+struct TimedStatsChange
+{
+    std::chrono::steady_clock::time_point time;
+    RallyHereStatsBase base;
+    RallyHereStatsBaseProvided provided;
+};
+
 class GameInstanceAdapter
 {
   public:
@@ -533,6 +540,11 @@ class GameInstanceAdapter
     bool m_HasLoggedNoPrometheus{false};
     std::optional<short> m_ForcedMaxPlayers;
     short m_DefaultMaxPlayers{0};
+    /// @}
+
+    ///@name Fake Stat Changes
+    /// @{
+    rallyhere::vector<TimedStatsChange> m_FakeStatChanges{};
     /// @}
 
     ///@name Multiplay

@@ -38,6 +38,7 @@ limitations under the License.
 #endif
 #include "boost/lexical_cast.hpp"
 #include "boost/json/monotonic_resource.hpp"
+#include "boost/algorithm/string.hpp"
 
 #include "auth.h"
 
@@ -131,6 +132,18 @@ Status GameInstanceAdapter::Tick()
     }
     if (LastTickedGauge)
         LastTickedGauge->SetToCurrentTime();
+    for (auto it = m_FakeStatChanges.begin(); it != m_FakeStatChanges.end();)
+    {
+        if (now >= it->time)
+        {
+            StatsBase(&it->base, &it->provided, nullptr, nullptr);
+            it = m_FakeStatChanges.erase(it);
+        }
+        else
+        {
+            ++it;
+        }
+    }
     return RH_STATUS_OK;
 }
 
@@ -378,6 +391,70 @@ void GameInstanceAdapter::Setup()
                 m_Status = { RH_STATUS_REPORT_DEFAULT_MAX_PLAYERS_MUST_BE_UNSIGNED_INT_8 };
             }
             continue;
+        }
+        if (ParseArgument("rhsimulatecurrentplayersat=", arg, tmp))
+        {
+            rallyhere::vector<rallyhere::string> arguments;
+            boost::split(arguments, tmp, boost::is_any_of(","), boost::token_compress_on);
+            if (arguments.size() != 2)
+            {
+                m_Status = { RH_STATUS_SIMULATE_CURRENT_PLAYERS_AT_MUST_BE_TWO_VALUES };
+                continue;
+            }
+            TimedStatsChange change{};
+            try
+            {
+                short seconds = boost::lexical_cast<short>(arguments[0]);
+                change.time = std::chrono::steady_clock::now() + std::chrono::seconds{seconds};
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_SIMULATE_CURRENT_PLAYERS_AT_MUST_BE_UNSIGNED_INT_8 };
+                continue;
+            }
+            try
+            {
+                change.base.players = boost::lexical_cast<short>(arguments[1]);
+                change.provided.set_players = true;
+                m_FakeStatChanges.push_back(change);
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_SIMULATE_CURRENT_PLAYERS_AT_MUST_BE_UNSIGNED_INT_8 };
+                continue;
+            }
+        }
+        if (ParseArgument("rhsimulatemaxplayersat=", arg, tmp))
+        {
+            rallyhere::vector<rallyhere::string> arguments;
+            boost::split(arguments, tmp, boost::is_any_of(","), boost::token_compress_on);
+            if (arguments.size() != 2)
+            {
+                m_Status = { RH_STATUS_SIMULATE_MAX_PLAYERS_AT_MUST_BE_TWO_VALUES };
+                continue;
+            }
+            TimedStatsChange change{};
+            try
+            {
+                short seconds = boost::lexical_cast<short>(arguments[0]);
+                change.time = std::chrono::steady_clock::now() + std::chrono::seconds{seconds};
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_SIMULATE_MAX_PLAYERS_AT_MUST_BE_UNSIGNED_INT_8 };
+                continue;
+            }
+            try
+            {
+                change.base.max_players = boost::lexical_cast<short>(arguments[1]);
+                change.provided.set_max_players = true;
+                m_FakeStatChanges.push_back(change);
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_SIMULATE_MAX_PLAYERS_AT_MUST_BE_UNSIGNED_INT_8 };
+                continue;
+            }
         }
     }
     if (m_RallyHereUrl.empty())
