@@ -1000,6 +1000,7 @@ static const lest::test module[] = {
     CASE("Simulate player count changes over time")
     {
         auto arguments_source = demo_get_default_arguments<rallyhere::string>();
+        arguments_source.push_back("rhsimulationlock=players,max_players");
         arguments_source.push_back("rhsimulatecurrentplayersat=5,5");
         arguments_source.push_back("rhsimulatecurrentplayersat=10,6");
         arguments_source.push_back("rhsimulatecurrentplayersat=15,10");
