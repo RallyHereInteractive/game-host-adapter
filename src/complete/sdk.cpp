@@ -136,7 +136,7 @@ Status GameInstanceAdapter::Tick()
     {
         if (now >= it->time)
         {
-            StatsBase(&it->base, &it->provided, nullptr, nullptr);
+            StatsBaseImpl(&it->base, &it->provided, nullptr, nullptr, false);
             it = m_FakeStatChanges.erase(it);
         }
         else
@@ -213,6 +213,11 @@ void GameInstanceAdapter::ReserveUnconditional(base_callback_function_t callback
     callback(RH_STATUS_OK, user_data);
 }
 
+Status GameInstanceAdapter::StatsBase(const RallyHereStatsBase* stats, const RallyHereStatsBaseProvided* provided, base_callback_function_t callback, void* user_data)
+{
+    return StatsBaseImpl(stats, provided, callback, user_data, true);
+}
+
 template<typename T, typename J>
 void update_if_changed(T& left, const J& right, bool& changed)
 {
@@ -223,34 +228,41 @@ void update_if_changed(T& left, const J& right, bool& changed)
     }
 }
 
-Status GameInstanceAdapter::StatsBase(const RallyHereStatsBase* stats, const RallyHereStatsBaseProvided* provided, base_callback_function_t callback, void* user_data)
+Status GameInstanceAdapter::StatsBaseImpl(const RallyHereStatsBase* stats, const RallyHereStatsBaseProvided* provided, base_callback_function_t callback, void* user_data, bool use_simulation_locks)
 {
+    auto stat_not_locked = [&](const rallyhere::string& name)
+    {
+        if (!use_simulation_locks)
+            return true;
+        return std::find(m_FakeSimulateLock.begin(), m_FakeSimulateLock.end(), name) == m_FakeSimulateLock.end();
+    };
+
     bool changed = false;
-    if (provided->set_name)
+    if (provided->set_name && stat_not_locked("name"))
         update_if_changed(m_StatsBase.name, stats->name, changed);
-    if (provided->set_map)
+    if (provided->set_map && stat_not_locked("map"))
         update_if_changed(m_StatsBase.map, stats->map, changed);
-    if (provided->set_folder)
+    if (provided->set_folder && stat_not_locked("folder"))
         update_if_changed(m_StatsBase.folder, stats->folder, changed);
-    if (provided->set_game)
+    if (provided->set_game && stat_not_locked("game"))
         update_if_changed(m_StatsBase.game, stats->game, changed);
-    if (provided->set_id)
+    if (provided->set_id && stat_not_locked("id"))
         update_if_changed(m_StatsBase.id, stats->id, changed);
-    if (provided->set_players)
+    if (provided->set_players && stat_not_locked("players"))
         update_if_changed(m_StatsBase.players, stats->players, changed);
-    if (provided->set_max_players && !m_ForcedMaxPlayers)
+    if (provided->set_max_players && !m_ForcedMaxPlayers && stat_not_locked("max_players"))
         update_if_changed(m_StatsBase.max_players, stats->max_players, changed);
-    if (provided->set_bots)
+    if (provided->set_bots && stat_not_locked("bots"))
         update_if_changed(m_StatsBase.bots, stats->bots, changed);
-    if (provided->set_server_type)
+    if (provided->set_server_type && stat_not_locked("server_type"))
         update_if_changed(m_StatsBase.server_type, stats->server_type, changed);
-    if (provided->set_environment)
+    if (provided->set_environment && stat_not_locked("environment"))
         update_if_changed(m_StatsBase.environment, stats->environment, changed);
-    if (provided->set_visibility)
+    if (provided->set_visibility && stat_not_locked("visibility"))
         update_if_changed(m_StatsBase.visibility, stats->visibility, changed);
-    if (provided->set_anticheat)
+    if (provided->set_anticheat && stat_not_locked("anticheat"))
         update_if_changed(m_StatsBase.anticheat, stats->anticheat, changed);
-    if (provided->set_version)
+    if (provided->set_version && stat_not_locked("version"))
         update_if_changed(m_StatsBase.version, stats->version, changed);
     if (provided->set_name || provided->set_map || provided->set_folder || provided->set_game || provided->set_version)
         if (changed)
@@ -455,6 +467,10 @@ void GameInstanceAdapter::Setup()
                 m_Status = { RH_STATUS_SIMULATE_MAX_PLAYERS_AT_MUST_BE_UNSIGNED_INT_8 };
                 continue;
             }
+        }
+        if (ParseArgument("rhsimulatelock=", arg, tmp))
+        {
+            boost::split(m_FakeSimulateLock, tmp, boost::is_any_of(","), boost::token_compress_on);
         }
     }
     if (m_RallyHereUrl.empty())

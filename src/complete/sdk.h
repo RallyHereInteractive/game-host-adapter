@@ -420,6 +420,7 @@ class GameInstanceAdapter
     void RebuildPrometheus();
     void RefreshAdditionalInfoLabels();
     void AddStatsBaseLabels(prometheus::Labels& labels);
+    Status StatsBaseImpl(const RallyHereStatsBase* stats, const RallyHereStatsBaseProvided* provided, base_callback_function_t callback, void* user_data, bool use_simulation_locks);
 
     Status MetricsImmediateActionStatsd(const RallyHereMetricDefinition* definition,
                                         const RallyHereMetricAction* action,
@@ -545,6 +546,7 @@ class GameInstanceAdapter
     ///@name Fake Stat Changes
     /// @{
     rallyhere::vector<TimedStatsChange> m_FakeStatChanges{};
+    rallyhere::vector<rallyhere::string> m_FakeSimulateLock;
     /// @}
 
     ///@name Multiplay
