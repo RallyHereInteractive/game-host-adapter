@@ -554,6 +554,11 @@ void GameInstanceAdapter::SetupSIC()
         {
             continue;
         }
+        if (ParseArgument("rhsicappendgrouptag=", arg, tmp))
+        {
+            m_ExtraSicGroupTags.push_back(tmp);
+            continue;
+        }
         if (ParseArgument("rhpublichost=", arg, m_SicPublicHostCli))
         {
             continue;
@@ -724,6 +729,11 @@ void GameInstanceAdapter::SetupSIC()
         buffer.clear();
         fmt::format_to(std::back_inserter(buffer), "profile_id:{},server_id:{},hostname:{}", m_SicProfileId, m_SicServerId, m_SicHostName);
         m_SicGroupTags = { buffer.data(), buffer.size() };
+    }
+    for (auto&& tag : m_ExtraSicGroupTags)
+    {
+        m_SicGroupTags += ",";
+        m_SicGroupTags += tag;
     }
 
     env_var = std::getenv("SIC_PROMETHEUS_ADDITIONAL_LABELS");

@@ -456,6 +456,7 @@ class GameInstanceAdapter
     rallyhere::string m_MultiHome;
     rallyhere::string m_SicId;
     rallyhere::string m_SicGroupTags;
+    std::vector<rallyhere::string> m_ExtraSicGroupTags;
     std::chrono::seconds m_SicPollInterval{1};
     rallyhere::string m_SicPrometheusBind;
     rallyhere::string m_SicPrometheusPortCli;
