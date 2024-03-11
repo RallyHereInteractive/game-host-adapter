@@ -156,6 +156,14 @@ struct TimedStatsChange
     RallyHereStatsBaseProvided provided;
 };
 
+struct SimulatedGame
+{
+    std::chrono::steady_clock::time_point start;
+    std::chrono::steady_clock::time_point end;
+    short players;
+    short max_players;
+};
+
 class GameInstanceAdapter
 {
   public:
@@ -548,6 +556,12 @@ class GameInstanceAdapter
     /// @{
     rallyhere::vector<TimedStatsChange> m_FakeStatChanges{};
     rallyhere::vector<rallyhere::string> m_FakeSimulateLock;
+    bool m_RandomSimulator{false};
+    std::pair<std::chrono::seconds, std::chrono::seconds> m_SimGameStartupLag{10, 60};
+    std::pair<std::chrono::seconds, std::chrono::seconds> m_SimGameLength{std::chrono::minutes(5), std::chrono::minutes(20)};
+    std::pair<short, short> m_SimPlayersInGame{0, 5};
+    std::pair<short, short> m_SimMaxPlayersInGame{5, 5};
+    std::pair<short, short> m_SimNumberOfGames{0, 10};
     /// @}
 
     ///@name Multiplay

@@ -472,6 +472,144 @@ void GameInstanceAdapter::Setup()
         {
             boost::split(m_FakeSimulateLock, tmp, boost::is_any_of(","), boost::token_compress_on);
         }
+        if (ParseArgument("rhsimulatorgamestartuplag=", arg, tmp))
+        {
+            m_RandomSimulator = true;
+            rallyhere::vector<rallyhere::string> arguments;
+            boost::split(arguments, tmp, boost::is_any_of(","), boost::token_compress_on);
+            if (arguments.size() != 2)
+            {
+                m_Status = { RH_STATUS_SIMULATE_GAME_STARTUP_LAG_MUST_BE_TWO_VALUES };
+                continue;
+            }
+            try
+            {
+                m_SimGameStartupLag = {
+                    std::chrono::seconds(boost::lexical_cast<std::chrono::seconds::rep>(arguments[0])),
+                    std::chrono::seconds(boost::lexical_cast<std::chrono::seconds::rep>(arguments[1])),
+                };
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_SIMULATE_GAME_STARTUP_LAG_MUST_BE_TWO_VALUES };
+                continue;
+            }
+        }
+        if (ParseArgument("rhsimulatorgamelength=", arg, tmp))
+        {
+            m_RandomSimulator = true;
+            rallyhere::vector<rallyhere::string> arguments;
+            boost::split(arguments, tmp, boost::is_any_of(","), boost::token_compress_on);
+            if (arguments.size() != 2)
+            {
+                m_Status = { RH_STATUS_SIMULATE_GAME_STARTUP_LAG_MUST_BE_TWO_VALUES };
+                continue;
+            }
+            try
+            {
+                m_SimGameLength = {
+                    std::chrono::seconds(boost::lexical_cast<std::chrono::seconds::rep>(arguments[0])),
+                    std::chrono::seconds(boost::lexical_cast<std::chrono::seconds::rep>(arguments[1])),
+                };
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_SIMULATE_GAME_STARTUP_LAG_MUST_BE_TWO_VALUES };
+                continue;
+            }
+        }
+        if (ParseArgument("rhsimulatorplayersingame=", arg, tmp))
+        {
+            m_RandomSimulator = true;
+            rallyhere::vector<rallyhere::string> arguments;
+            boost::split(arguments, tmp, boost::is_any_of(","), boost::token_compress_on);
+            if (arguments.size() != 2)
+            {
+                m_Status = { RH_STATUS_SIMULATE_GAME_STARTUP_LAG_MUST_BE_TWO_VALUES };
+                continue;
+            }
+            try
+            {
+                m_SimPlayersInGame = {
+                    boost::lexical_cast<short>(arguments[0]),
+                    boost::lexical_cast<short>(arguments[1]),
+                };
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_SIMULATE_GAME_STARTUP_LAG_MUST_BE_TWO_VALUES };
+                continue;
+            }
+        }
+        if (ParseArgument("rhsimulatorplayersingame=", arg, tmp))
+        {
+            m_RandomSimulator = true;
+            rallyhere::vector<rallyhere::string> arguments;
+            boost::split(arguments, tmp, boost::is_any_of(","), boost::token_compress_on);
+            if (arguments.size() != 2)
+            {
+                m_Status = { RH_STATUS_SIMULATE_GAME_STARTUP_LAG_MUST_BE_TWO_VALUES };
+                continue;
+            }
+            try
+            {
+                m_SimPlayersInGame = {
+                    boost::lexical_cast<short>(arguments[0]),
+                    boost::lexical_cast<short>(arguments[1]),
+                };
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_SIMULATE_GAME_STARTUP_LAG_MUST_BE_TWO_VALUES };
+                continue;
+            }
+        }
+        if (ParseArgument("rhsimulatormaxplayersingame=", arg, tmp))
+        {
+            m_RandomSimulator = true;
+            rallyhere::vector<rallyhere::string> arguments;
+            boost::split(arguments, tmp, boost::is_any_of(","), boost::token_compress_on);
+            if (arguments.size() != 2)
+            {
+                m_Status = { RH_STATUS_SIMULATE_GAME_STARTUP_LAG_MUST_BE_TWO_VALUES };
+                continue;
+            }
+            try
+            {
+                m_SimMaxPlayersInGame = {
+                    boost::lexical_cast<short>(arguments[0]),
+                    boost::lexical_cast<short>(arguments[1]),
+                };
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_SIMULATE_GAME_STARTUP_LAG_MUST_BE_TWO_VALUES };
+                continue;
+            }
+        }
+        if (ParseArgument("rhsimulatornumberofgames=", arg, tmp))
+        {
+            m_RandomSimulator = true;
+            rallyhere::vector<rallyhere::string> arguments;
+            boost::split(arguments, tmp, boost::is_any_of(","), boost::token_compress_on);
+            if (arguments.size() != 2)
+            {
+                m_Status = { RH_STATUS_SIMULATE_GAME_STARTUP_LAG_MUST_BE_TWO_VALUES };
+                continue;
+            }
+            try
+            {
+                m_SimNumberOfGames = {
+                    boost::lexical_cast<short>(arguments[0]),
+                    boost::lexical_cast<short>(arguments[1]),
+                };
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_SIMULATE_GAME_STARTUP_LAG_MUST_BE_TWO_VALUES };
+                continue;
+            }
+        }
     }
     if (m_RallyHereUrl.empty())
     {
@@ -496,6 +634,61 @@ void GameInstanceAdapter::Setup()
     else
     {
         m_Status = { RH_STATUS_NO_BOOTSTRAP_MODE_PROVIDED };
+    }
+
+    // Generate all of the fake games
+    if (m_RandomSimulator)
+    {
+        auto logger = log();
+        std::random_device rd;
+        std::mt19937 g(rd());
+        std::uniform_int_distribution<short> numberOfGamesDistribution(m_SimNumberOfGames.first, m_SimNumberOfGames.second);
+        std::uniform_int_distribution<short> playersInGameDistribution(m_SimPlayersInGame.first, m_SimPlayersInGame.second);
+        std::uniform_int_distribution<short> maxPlayersInGameDistribution(m_SimMaxPlayersInGame.first, m_SimMaxPlayersInGame.second);
+        std::uniform_int_distribution<std::chrono::seconds::rep> gameStartupLagDistribution(m_SimGameStartupLag.first.count(), m_SimGameStartupLag.second.count());
+        std::uniform_int_distribution<std::chrono::seconds::rep> gameLengthDistribution(m_SimGameLength.first.count(), m_SimGameLength.second.count());
+        auto numberOfGames = numberOfGamesDistribution(g);
+        logger.log(RH_LOG_LEVEL_INFO, "Simulating {} games", numberOfGames);
+        auto last_time_point = std::chrono::steady_clock::now();
+        for (short i = 0; i < numberOfGames; ++i)
+        {
+            SimulatedGame game{};
+            game.players = playersInGameDistribution(g);
+            game.max_players = maxPlayersInGameDistribution(g);
+            game.start = last_time_point + std::chrono::seconds{ gameStartupLagDistribution(g) };
+            game.end = game.start + std::chrono::seconds{ gameLengthDistribution(g) };
+            logger.log(RH_LOG_LEVEL_INFO,
+                       "Simulated game {} players {} max_players {} start {} end {}",
+                       i,
+                       game.players,
+                       game.max_players,
+                       game.start.time_since_epoch().count(),
+                       game.end.time_since_epoch().count());
+            // Start with the max players
+            TimedStatsChange init{};
+            init.time = last_time_point;
+            init.base.max_players = game.max_players;
+            init.provided.set_max_players = true;
+            m_FakeStatChanges.push_back(init);
+            // Have the players join when the game starts
+            TimedStatsChange start{};
+            start.time = game.start;
+            start.base.players = game.players;
+            start.base.max_players = game.max_players;
+            start.provided.set_players = true;
+            start.provided.set_max_players = true;
+            m_FakeStatChanges.push_back(start);
+            // Have everybody leave when the game is over
+            TimedStatsChange end{};
+            end.time = game.end;
+            end.base.players = 0;
+            end.base.max_players = game.max_players;
+            end.provided.set_players = true;
+            end.provided.set_max_players = true;
+            m_FakeStatChanges.push_back(end);
+            // The next game starts when the last one ends
+            last_time_point = game.end;
+        }
     }
 }
 
