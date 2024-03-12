@@ -439,6 +439,9 @@ class GameInstanceAdapter
                                           std::optional<double> timestamp,
                                           RallyHereMetricFlush flush);
 
+    std::pair<boost::beast::http::request<string_body>, boost::system::error_code> BuildSimulateGameRequest(const rallyhere::string& in_url_str);
+    void SimulateGame();
+
     Callbacks m_Callbacks{};
     log_callback_function_t m_LogCallback{};
     rallyhere::Status m_Status{};
@@ -562,6 +565,8 @@ class GameInstanceAdapter
     std::pair<short, short> m_SimPlayersInGame{0, 5};
     std::pair<short, short> m_SimMaxPlayersInGame{5, 5};
     std::pair<short, short> m_SimNumberOfGames{0, 10};
+    rallyhere::string m_SimulatorUrl;
+    std::chrono::steady_clock::time_point m_NextSimulatedGame;
     /// @}
 
     ///@name Multiplay

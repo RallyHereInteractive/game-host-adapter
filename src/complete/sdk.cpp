@@ -144,6 +144,11 @@ Status GameInstanceAdapter::Tick()
             ++it;
         }
     }
+    if (now > m_NextSimulatedGame)
+    {
+        m_NextSimulatedGame = now + std::chrono::minutes{1};
+        SimulateGame();
+    }
     return RH_STATUS_OK;
 }
 
@@ -609,6 +614,11 @@ void GameInstanceAdapter::Setup()
                 m_Status = { RH_STATUS_SIMULATE_GAME_STARTUP_LAG_MUST_BE_TWO_VALUES };
                 continue;
             }
+        }
+        if (ParseArgument("rhsimulatorurl=", arg, m_SimulatorUrl))
+        {
+            m_NextSimulatedGame = std::chrono::steady_clock::now();
+            continue;
         }
     }
     if (m_RallyHereUrl.empty())
