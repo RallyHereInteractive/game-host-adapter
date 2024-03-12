@@ -339,7 +339,10 @@ void GameInstanceAdapter::SimulateGame()
                 end.provided.set_max_players = true;
                 m_FakeStatChanges.push_back(end);
                 // The next game starts when the last one ends
-                m_NextSimulatedGame = end.time;
+                if (game.game_length < 5)
+                    m_NextSimulatedGame = std::chrono::steady_clock::now() + std::chrono::seconds(5);
+                else
+                    m_NextSimulatedGame = end.time;
             }
             catch (const std::exception& e)
             {
