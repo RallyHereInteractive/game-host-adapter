@@ -224,7 +224,7 @@ class GameInstanceAdapter
     }
     void ExternalSoftStopRequested()
     {
-        m_ExternalSoftStopRequested.store(false, std::memory_order_relaxed);
+        m_ExternalSoftStopRequested.store(true, std::memory_order_relaxed);
     }
     void OnLogCallback(log_callback_function_t callback)
     {
