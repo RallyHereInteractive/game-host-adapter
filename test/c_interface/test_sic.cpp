@@ -26,6 +26,8 @@ limitations under the License.
 #include "shared_test_data.h"
 #include "configuration.h"
 
+#include "shared_definitions.hpp"
+
 template<typename T>
 auto get_just_profileid_arguments()
 {
@@ -57,21 +59,6 @@ auto get_default_arguments()
         "rhsicprometheusbind=0.0.0.0:23890"
     };
     return arguments;
-}
-
-// Helper function to join a vector of strings into a single string.
-static rallyhere::string join(const rallyhere::vector<rallyhere::string>& strings, const rallyhere::string& separator)
-{
-    rallyhere::string result;
-    for (auto& s : strings)
-    {
-        if (!result.empty())
-        {
-            result += separator;
-        }
-        result += s;
-    }
-    return result;
 }
 
 struct FakeData
@@ -477,7 +464,43 @@ static const lest::test module[] = {
         auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
         EXPECT(result == RH_STATUS_OK);
         EXPECT(rallyhere_is_error(result) == false);
-    }
+    },
+    CASE("SIC soft stop external triggers on tick")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        SETUP_TEST_ADAPTER;
+        rallyhere_on_soft_stop_callback(adapter, on_soft_stop_callback, &data);
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        EXPECT(data.soft_stop_called_count == 0);
+
+        rallyhere_external_soft_stop_requested(adapter);
+        EXPECT(data.soft_stop_called_count == 0);
+        ADAPTER_TICK;
+        EXPECT(data.soft_stop_called_count == 1);
+    },
+    CASE("SIC soft stop external triggers only once per request")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        SETUP_TEST_ADAPTER;
+        rallyhere_on_soft_stop_callback(adapter, on_soft_stop_callback, &data);
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        EXPECT(data.soft_stop_called_count == 0);
+
+        rallyhere_external_soft_stop_requested(adapter);
+        EXPECT(data.soft_stop_called_count == 0);
+        ADAPTER_TICK;
+        EXPECT(data.soft_stop_called_count == 1);
+        ADAPTER_TICK;
+        EXPECT(data.soft_stop_called_count == 1);
+    },
 };
 //@formatter:on
 // clang-format off

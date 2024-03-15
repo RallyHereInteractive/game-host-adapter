@@ -88,3 +88,10 @@ void on_allocate_callback(const RallyHereStatusCode& code, void* user_data)
     data->allocate_result = code;
     data->allocate_called = true;
 }
+
+void on_soft_stop_callback(const RallyHereStatusCode& code, void* user_data)
+{
+    auto data = static_cast<TestCCodeData*>(user_data);
+    data->soft_stop_result = code;
+    data->soft_stop_called_count++;
+}
