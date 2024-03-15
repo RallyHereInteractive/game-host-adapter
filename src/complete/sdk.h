@@ -149,6 +149,21 @@ struct SICCredentials
     bool m_UseCredentialsAsClientId{false};
 };
 
+struct TimedStatsChange
+{
+    std::chrono::steady_clock::time_point time;
+    RallyHereStatsBase base;
+    RallyHereStatsBaseProvided provided;
+};
+
+struct SimulatedGame
+{
+    std::chrono::steady_clock::time_point start;
+    std::chrono::steady_clock::time_point end;
+    short players;
+    short max_players;
+};
+
 class GameInstanceAdapter
 {
   public:
@@ -413,6 +428,7 @@ class GameInstanceAdapter
     void RebuildPrometheus();
     void RefreshAdditionalInfoLabels();
     void AddStatsBaseLabels(prometheus::Labels& labels);
+    Status StatsBaseImpl(const RallyHereStatsBase* stats, const RallyHereStatsBaseProvided* provided, base_callback_function_t callback, void* user_data, bool use_simulation_locks);
 
     Status MetricsImmediateActionStatsd(const RallyHereMetricDefinition* definition,
                                         const RallyHereMetricAction* action,
@@ -422,6 +438,9 @@ class GameInstanceAdapter
                                           const RallyHereMetricAction* action,
                                           std::optional<double> timestamp,
                                           RallyHereMetricFlush flush);
+
+    std::pair<boost::beast::http::request<string_body>, boost::system::error_code> BuildSimulateGameRequest(const rallyhere::string& in_url_str);
+    void SimulateGame();
 
     Callbacks m_Callbacks{};
     log_callback_function_t m_LogCallback{};
@@ -448,6 +467,7 @@ class GameInstanceAdapter
     rallyhere::string m_MultiHome;
     rallyhere::string m_SicId;
     rallyhere::string m_SicGroupTags;
+    std::vector<rallyhere::string> m_ExtraSicGroupTags;
     std::chrono::seconds m_SicPollInterval{1};
     rallyhere::string m_SicPrometheusBind;
     rallyhere::string m_SicPrometheusPortCli;
@@ -531,6 +551,22 @@ class GameInstanceAdapter
     rallyhere::StringMap m_InternalAdditionalInfoLabels;
     rallyhere::StringMap m_Annotations;
     bool m_HasLoggedNoPrometheus{false};
+    std::optional<short> m_ForcedMaxPlayers;
+    short m_DefaultMaxPlayers{0};
+    /// @}
+
+    ///@name Fake Stat Changes
+    /// @{
+    rallyhere::vector<TimedStatsChange> m_FakeStatChanges{};
+    rallyhere::vector<rallyhere::string> m_FakeSimulateLock;
+    bool m_RandomSimulator{false};
+    std::pair<std::chrono::seconds, std::chrono::seconds> m_SimGameStartupLag{10, 60};
+    std::pair<std::chrono::seconds, std::chrono::seconds> m_SimGameLength{std::chrono::minutes(5), std::chrono::minutes(20)};
+    std::pair<short, short> m_SimPlayersInGame{0, 5};
+    std::pair<short, short> m_SimMaxPlayersInGame{5, 5};
+    std::pair<short, short> m_SimNumberOfGames{0, 10};
+    rallyhere::string m_SimulatorUrl;
+    std::chrono::steady_clock::time_point m_NextSimulatedGame;
     /// @}
 
     ///@name Multiplay

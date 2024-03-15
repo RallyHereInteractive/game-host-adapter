@@ -90,3 +90,11 @@ EXPECT(data.ready_result == RH_STATUS_OK);
 
 #define ADAPTER_HEALTHY EXPECT(rallyhere_healthy(adapter) == RH_STATUS_OK);
 #define ADAPTER_TICK EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
+
+#define ADAPTER_TICK_FOR_SECONDS(secs) { \
+    auto start = std::chrono::steady_clock::now(); \
+    while (std::chrono::steady_clock::now() - start < std::chrono::seconds(secs)) \
+    { \
+        EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK); \
+    } \
+}

@@ -87,6 +87,12 @@ namespace sic
         {
             return arguments_str.size();
         }
+
+        void add_argument(const char *arg)
+        {
+            this->arguments.push_back(arg);
+            this->arguments_str = join(this->arguments, " ");
+        }
     };
 
     template<typename T>
