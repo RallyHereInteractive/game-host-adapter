@@ -87,8 +87,12 @@ struct A2SDatagram
     {
     }
 
-    template<typename Element>
-    A2SDatagram(Element* data, size_t len) : Data(data, len), next(std::begin(Data))
+    template<typename Element, typename LengthT>
+    A2SDatagram(Element* data, LengthT len) : Data(data, len), next(std::begin(Data))
+    {
+    }
+
+    A2SDatagram(uint8_t* data, size_t len) : Data(data, len), next(std::begin(Data))
     {
     }
 

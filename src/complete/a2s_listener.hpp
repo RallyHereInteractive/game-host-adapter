@@ -143,7 +143,7 @@ class a2s_listener : public std::enable_shared_from_this<a2s_listener>
         if (m_ShouldChallenge && total_len != len)
         {
             // Check that the challenge is valid
-            A2SDatagram datagram(it, len - total_len);
+            A2SDatagram datagram(&(*it), len - total_len);
             if ((len - total_len) != A2S_CHALLENGE_FIELD_SIZE)
                 return warn(boost::system::errc::invalid_argument, "invalid challenge size");
             int32_t current_challenge;
