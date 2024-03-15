@@ -116,7 +116,7 @@ Status GameInstanceAdapter::Tick()
         m_IoContext.restart();
     m_IoContext.poll();
 
-    auto externalSoftStopRequested = m_ExternalSoftStopRequested.fetch_and(false, std::memory_order_relaxed);
+    auto externalSoftStopRequested = m_ExternalSoftStopRequested.exchange(false, std::memory_order_relaxed);
     if (externalSoftStopRequested && m_SoftStopCallback)
         m_SoftStopCallback(RH_STATUS_OK, m_SoftStopUserData);
 
