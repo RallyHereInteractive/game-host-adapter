@@ -239,8 +239,7 @@ class GameInstanceAdapter
     }
     void ExternalSoftStopRequested()
     {
-        if (m_SoftStopCallback)
-            m_SoftStopCallback(RH_STATUS_OK, m_SoftStopUserData);
+        m_ExternalSoftStopRequested.store(true, std::memory_order_relaxed);
     }
     void OnLogCallback(log_callback_function_t callback)
     {
@@ -454,6 +453,7 @@ class GameInstanceAdapter
     boost::asio::cancellation_signal m_CancelSignal;
     base_callback_function_t m_SoftStopCallback{};
     void *m_SoftStopUserData{nullptr};
+    std::atomic<bool> m_ExternalSoftStopRequested{false};
 
     /// @name SIC
     /// @{
