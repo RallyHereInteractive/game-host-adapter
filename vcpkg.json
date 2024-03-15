@@ -17,6 +17,7 @@
     "boost-scope-exit",
     "boost-test",
     "boost-program-options",
+    "boost-circular-buffer",
     "lest",
     "rapidjson",
     "fmt",
