@@ -7,3 +7,7 @@
 -rhsimulatecurrentmaxplayersat= takes a tuple separated by a comma of seconds passed and the max player value to report. For example -rhsimulatemaxplayersat=60,5 after will change the max players count to 5 after 60 seconds
 
 -rhsimulatelock is a comma separated list of stats value types to ignore the settings given by rallyhere_stats_base(). This is to allow the simulator complete control of these values.
+
+-rhsimulateurl is a URL that can be called which returns the simulator parameters. This can be used to let an external service control the simualtion
+
+-rhsicappendgrouptag= Will allow you to append tags that are reported to SIC. This allows us to append to any labels specified by the clients without getting in the way.
