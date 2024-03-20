@@ -559,6 +559,16 @@ void GameInstanceAdapter::SetupSIC()
             m_ExtraSicGroupTags.push_back(tmp);
             continue;
         }
+        if (ParseArgument("rhsicappendlabels=", arg, tmp))
+        {
+            m_ExtraLabels.push_back(tmp);
+            continue;
+        }
+        if (ParseArgument("rhsicappendadditionalinfolabels=", arg, tmp))
+        {
+            m_ExtraAdditionalInfoLabels.push_back(tmp);
+            continue;
+        }
         if (ParseArgument("rhpublichost=", arg, m_SicPublicHostCli))
         {
             continue;
@@ -748,6 +758,12 @@ void GameInstanceAdapter::SetupSIC()
             m_Labels.Set(kv[0].c_str(), kv[1]);
         }
     }
+    for (auto&& label : m_ExtraLabels)
+    {
+        rallyhere::vector<rallyhere::string> kv;
+        boost::split(kv, label, boost::is_any_of(":"), boost::token_compress_on);
+        m_Labels.Set(kv[0].c_str(), kv[1]);
+    }
     env_var = std::getenv("SIC_PROMETHEUS_ADDITIONAL_INFO_LABELS");
     if (env_var != nullptr)
     {
@@ -759,6 +775,12 @@ void GameInstanceAdapter::SetupSIC()
             boost::split(kv, label, boost::is_any_of(":"), boost::token_compress_on);
             m_AdditionalInfoLabels.Set(kv[0].c_str(), kv[1]);
         }
+    }
+    for (auto&& label : m_ExtraAdditionalInfoLabels)
+    {
+        rallyhere::vector<rallyhere::string> kv;
+        boost::split(kv, label, boost::is_any_of(":"), boost::token_compress_on);
+        m_AdditionalInfoLabels.Set(kv[0].c_str(), kv[1]);
     }
 
     rallyhere::string upperedState = m_LastPolledState;
