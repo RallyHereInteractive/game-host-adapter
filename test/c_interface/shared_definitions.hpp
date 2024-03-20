@@ -32,7 +32,9 @@ auto demo_get_default_arguments()
         "MULTIHOME=0.0.0.0",
         "rhsicid=sic_unknownserverid_9000",
         "rhsicgrouptags=profile_id:unknownprofileid,server_id:unknownserverid,hostname:unknownhostname",
-        "rhsicprometheusbind=0.0.0.0:23890"
+        "rhsicprometheusbind=0.0.0.0:23890",
+        "rhsicappendlabels=testit:withvalue",
+        "rhsicappendadditionalinfolabels=addinfo:nothanks"
     };
     return arguments;
 }

@@ -547,8 +547,10 @@ class GameInstanceAdapter
     struct StatsBase m_StatsBase{};
     rallyhere::StringMap m_Labels;
     rallyhere::StringMap m_InternalLabels;
+    std::vector<rallyhere::string> m_ExtraLabels;
     rallyhere::StringMap m_AdditionalInfoLabels;
     rallyhere::StringMap m_InternalAdditionalInfoLabels;
+    std::vector<rallyhere::string> m_ExtraAdditionalInfoLabels;
     rallyhere::StringMap m_Annotations;
     bool m_HasLoggedNoPrometheus{false};
     std::optional<short> m_ForcedMaxPlayers;
