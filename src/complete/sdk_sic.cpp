@@ -545,6 +545,13 @@ void GameInstanceAdapter::SetupSIC()
             else if (tmp == "n" || tmp == "0" || tmp == "false" || tmp == "no" || tmp == "off")
                 m_SicHostNameQueryLocal = false;
         }
+        if (ParseArgument("rhsicappendhostnametolabels=", arg, tmp))
+        {
+            if (tmp == "y" || tmp == "1" || tmp == "true" || tmp == "yes" || tmp == "on")
+                m_AppendHostNameToLabels = true;
+            else if (tmp == "n" || tmp == "0" || tmp == "false" || tmp == "no" || tmp == "off")
+                m_AppendHostNameToLabels = false;
+        }
         if (ParseArgument("PORT=", arg, m_Port))
         {
             continue;
@@ -787,6 +794,10 @@ void GameInstanceAdapter::SetupSIC()
         rallyhere::vector<rallyhere::string> kv;
         boost::split(kv, label, boost::is_any_of(":"), boost::token_compress_on);
         m_Labels.Set(kv[0].c_str(), kv[1]);
+    }
+    if (m_AppendHostNameToLabels)
+    {
+        m_Labels.Set("hostname", m_SicHostName.c_str());
     }
     env_var = std::getenv("SIC_PROMETHEUS_ADDITIONAL_INFO_LABELS");
     if (env_var != nullptr)

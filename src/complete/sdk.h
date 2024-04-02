@@ -556,6 +556,7 @@ class GameInstanceAdapter
     bool m_HasLoggedNoPrometheus{false};
     std::optional<short> m_ForcedMaxPlayers;
     short m_DefaultMaxPlayers{0};
+    bool m_AppendHostNameToLabels{false};
     /// @}
 
     ///@name Fake Stat Changes
