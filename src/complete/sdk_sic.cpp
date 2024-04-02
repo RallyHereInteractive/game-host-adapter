@@ -538,6 +538,13 @@ void GameInstanceAdapter::SetupSIC()
         {
             continue;
         }
+        if (ParseArgument("rhsichostnamequerylocal=", arg, tmp))
+        {
+            if (tmp == "y" || tmp == "1" || tmp == "true" || tmp == "yes" || tmp == "on")
+                m_SicHostNameQueryLocal = true;
+            else if (tmp == "n" || tmp == "0" || tmp == "false" || tmp == "no" || tmp == "off")
+                m_SicHostNameQueryLocal = false;
+        }
         if (ParseArgument("PORT=", arg, m_Port))
         {
             continue;
@@ -687,6 +694,15 @@ void GameInstanceAdapter::SetupSIC()
     {
         m_SicHostNameEnvIp = env_var;
     }
+    rallyhere::string hostname;
+    if (m_SicHostNameQueryLocal)
+    {
+        hostname.resize(HOST_NAME_MAX + 1, '\0');
+        if (gethostname(hostname.data(), hostname.size()) != 0)
+        {
+            hostname.clear();
+        }
+    }
     rallyhere::stringstream sstr;
     sstr << "Provided hostname options: ";
     sstr << "default " << m_SicHostName << " ";
@@ -694,10 +710,18 @@ void GameInstanceAdapter::SetupSIC()
     {
         sstr << "rhsichostname=" << m_SicHostNameCli << " ";
     }
+    if (!hostname.empty())
+    {
+        sstr << "querylocal " << hostname << " ";
+    }
     log().log(RH_LOG_LEVEL_INFO, sstr.str());
     if (!m_SicHostNameCli.empty())
     {
         m_SicHostName = m_SicHostNameCli;
+    }
+    if (!hostname.empty())
+    {
+        m_SicHostName = hostname;
     }
     sstr.str("");
     sstr << "Provided public host options: ";

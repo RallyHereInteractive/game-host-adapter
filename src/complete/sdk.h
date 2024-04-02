@@ -483,6 +483,7 @@ class GameInstanceAdapter
     rallyhere::string m_SicHostNameCli;
     rallyhere::string m_SicHostNameEnvHost;
     rallyhere::string m_SicHostNameEnvIp;
+    bool m_SicHostNameQueryLocal{false};
     /// @}
 
     /// @name SIC Auth
