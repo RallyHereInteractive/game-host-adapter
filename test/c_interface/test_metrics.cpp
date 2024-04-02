@@ -1040,6 +1040,68 @@ static const lest::test module[] = {
         get_max_allowed_players(lest_env, adapter, max);
         EXPECT(max.m_Value == "12");
     },
+    CASE("Test hostname can be queried from the system")
+    {
+        auto arguments_source = demo_get_nohostname_arguments<rallyhere::string>();
+        arguments_source.push_back("rhsichostnamequerylocal=yes");
+        arguments_source.push_back("rhsicappendhostnametolabels=yes");
+        auto arguments = join(arguments_source, " ");
+        RallyHereGameInstanceAdapterPtr adapter;
+        rallyhere_global_init();
+        std::map<std::string, std::string> expected_instance_info;
+        auto host_name = boost::asio::ip::host_name();
+        expected_instance_info["hostname"] = host_name.c_str();
+        auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
+        EXPECT(rallyhere_is_error(result) == false);
+        TestCCodeData data{};
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+        data.adapter = adapter;
+
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        std::map<std::string, std::string> labels_map;
+        get_instance_info_labels(lest_env, adapter, labels_map);
+        for (auto&& p : expected_instance_info)
+        {
+            EXPECT(labels_map.find(p.first) != labels_map.end());
+            EXPECT(labels_map[p.first] == p.second);
+        }
+    },
+    CASE("Test hostname can be set directly")
+    {
+        auto arguments_source = demo_get_default_arguments<rallyhere::string>();
+        arguments_source.push_back("rhsicappendhostnametolabels=yes");
+        auto arguments = join(arguments_source, " ");
+        RallyHereGameInstanceAdapterPtr adapter;
+        rallyhere_global_init();
+        std::map<std::string, std::string> expected_instance_info;
+        expected_instance_info["hostname"] = "unknownhostname";
+        auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
+        EXPECT(rallyhere_is_error(result) == false);
+        TestCCodeData data{};
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+            rallyhere_destroy_game_instance_adapter(adapter);
+        };
+        data.adapter = adapter;
+
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        std::map<std::string, std::string> labels_map;
+        get_instance_info_labels(lest_env, adapter, labels_map);
+        for (auto&& p : expected_instance_info)
+        {
+            EXPECT(labels_map.find(p.first) != labels_map.end());
+            EXPECT(labels_map[p.first] == p.second);
+        }
+    }
 };
 //@formatter:on
 // clang-format off
