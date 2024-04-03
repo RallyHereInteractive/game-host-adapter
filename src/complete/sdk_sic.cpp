@@ -538,6 +538,20 @@ void GameInstanceAdapter::SetupSIC()
         {
             continue;
         }
+        if (ParseArgument("rhsichostnamequerylocal=", arg, tmp))
+        {
+            if (tmp == "y" || tmp == "1" || tmp == "true" || tmp == "yes" || tmp == "on")
+                m_SicHostNameQueryLocal = true;
+            else if (tmp == "n" || tmp == "0" || tmp == "false" || tmp == "no" || tmp == "off")
+                m_SicHostNameQueryLocal = false;
+        }
+        if (ParseArgument("rhsicappendhostnametolabels=", arg, tmp))
+        {
+            if (tmp == "y" || tmp == "1" || tmp == "true" || tmp == "yes" || tmp == "on")
+                m_AppendHostNameToLabels = true;
+            else if (tmp == "n" || tmp == "0" || tmp == "false" || tmp == "no" || tmp == "off")
+                m_AppendHostNameToLabels = false;
+        }
         if (ParseArgument("PORT=", arg, m_Port))
         {
             continue;
@@ -687,6 +701,15 @@ void GameInstanceAdapter::SetupSIC()
     {
         m_SicHostNameEnvIp = env_var;
     }
+    rallyhere::string hostname;
+    if (m_SicHostNameQueryLocal)
+    {
+        hostname.resize(HOST_NAME_MAX + 1, '\0');
+        if (gethostname(hostname.data(), hostname.size()) != 0)
+        {
+            hostname.clear();
+        }
+    }
     rallyhere::stringstream sstr;
     sstr << "Provided hostname options: ";
     sstr << "default " << m_SicHostName << " ";
@@ -694,10 +717,18 @@ void GameInstanceAdapter::SetupSIC()
     {
         sstr << "rhsichostname=" << m_SicHostNameCli << " ";
     }
+    if (!hostname.empty())
+    {
+        sstr << "querylocal " << hostname << " ";
+    }
     log().log(RH_LOG_LEVEL_INFO, sstr.str());
     if (!m_SicHostNameCli.empty())
     {
         m_SicHostName = m_SicHostNameCli;
+    }
+    if (!hostname.empty())
+    {
+        m_SicHostName = hostname;
     }
     sstr.str("");
     sstr << "Provided public host options: ";
@@ -763,6 +794,10 @@ void GameInstanceAdapter::SetupSIC()
         rallyhere::vector<rallyhere::string> kv;
         boost::split(kv, label, boost::is_any_of(":"), boost::token_compress_on);
         m_Labels.Set(kv[0].c_str(), kv[1]);
+    }
+    if (m_AppendHostNameToLabels)
+    {
+        m_Labels.Set("hostname", m_SicHostName.c_str());
     }
     env_var = std::getenv("SIC_PROMETHEUS_ADDITIONAL_INFO_LABELS");
     if (env_var != nullptr)

@@ -483,6 +483,7 @@ class GameInstanceAdapter
     rallyhere::string m_SicHostNameCli;
     rallyhere::string m_SicHostNameEnvHost;
     rallyhere::string m_SicHostNameEnvIp;
+    bool m_SicHostNameQueryLocal{false};
     /// @}
 
     /// @name SIC Auth
@@ -555,6 +556,7 @@ class GameInstanceAdapter
     bool m_HasLoggedNoPrometheus{false};
     std::optional<short> m_ForcedMaxPlayers;
     short m_DefaultMaxPlayers{0};
+    bool m_AppendHostNameToLabels{false};
     /// @}
 
     ///@name Fake Stat Changes

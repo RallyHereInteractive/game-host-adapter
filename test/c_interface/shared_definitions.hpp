@@ -39,6 +39,26 @@ auto demo_get_default_arguments()
     return arguments;
 }
 
+template<typename T>
+auto demo_get_nohostname_arguments()
+{
+    rallyhere::vector<T> arguments = {
+            "-rhbootstrapmode=SIC",
+            get_credentials_file_path_arg(),
+            get_rally_here_url_arg(),
+            get_rh_credentials_as_arg(),
+            "rhsicprofileid=unknownprofileid",
+            "rhsicserverid=unknownserverid",
+            "PoRt=9000",
+            "MULTIHOME=0.0.0.0",
+            "rhsicid=sic_unknownserverid_9000",
+            "rhsicprometheusbind=0.0.0.0:23890",
+            "rhsicappendlabels=testit:withvalue",
+            "rhsicappendadditionalinfolabels=addinfo:nothanks"
+    };
+    return arguments;
+}
+
 // Helper function to join a vector of strings into a single string.
 inline rallyhere::string join(const rallyhere::vector<rallyhere::string>& strings, const rallyhere::string& separator)
 {
