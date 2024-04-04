@@ -293,6 +293,13 @@ class session : public std::enable_shared_from_this<session>
         m_CancellationSlot.clear();
     }
 
+    bool is_secure()
+    {
+        if (m_Url.has_scheme())
+            return "https" == m_Url.scheme();
+        return true;
+    }
+
     void cancel_handler(boost::asio::cancellation_type_t cancellation_type)
     {
         m_Cancelled = true;
@@ -364,29 +371,38 @@ class session : public std::enable_shared_from_this<session>
             failure(ec, "connect");
             return;
         }
-        // What I had to do to make the below code work is a strong argument for why certify isn't a part of boost
-        // yet. Although I find it extremely stupid that Boost.URL added a bunch of new string_views and *didn't* provide
-        // conversions for any of them to boost::string_view.
-        std::string_view tmphost = m_Url.encoded_host();
-        boost::string_view host{ tmphost.data(), tmphost.size() };
-        boost::certify::detail::set_server_hostname(m_Stream.native_handle(), host, ec);
-        if (ec)
+        if (is_secure())
         {
-            failure(ec, "set_server_hostname");
-            return;
-        }
-        // sni_hostname incorrectly uses static typing, so it can't handle any variation of the stream type even if that
-        // stream implements the interface
-        boost::certify::sni_hostname(m_Stream, host, ec);
-        if (ec)
-        {
-            failure(ec, "set_server_hostname");
-            return;
-        }
+            // What I had to do to make the below code work is a strong argument for why certify isn't a part of boost
+            // yet. Although I find it extremely stupid that Boost.URL added a bunch of new string_views and *didn't* provide
+            // conversions for any of them to boost::string_view.
+            std::string_view tmphost = m_Url.encoded_host();
+            boost::string_view host{ tmphost.data(), tmphost.size() };
+            boost::certify::detail::set_server_hostname(m_Stream.native_handle(), host, ec);
+            if (ec)
+            {
+                failure(ec, "set_server_hostname");
+                return;
+            }
+            // sni_hostname incorrectly uses static typing, so it can't handle any variation of the stream type even if that
+            // stream implements the interface
+            boost::certify::sni_hostname(m_Stream, host, ec);
+            if (ec)
+            {
+                failure(ec, "set_server_hostname");
+                return;
+            }
 
-        m_Stream.async_handshake(
-            ssl::stream_base::client,
-            boost::asio::bind_allocator(i3d::one::StandardAllocator<int>{}, boost::asio::bind_cancellation_slot(m_CancelSignal.slot(), beast::bind_front_handler(&session::on_handshake, shared_from_this()))));
+            m_Stream.async_handshake(
+                ssl::stream_base::client,
+                boost::asio::bind_allocator(i3d::one::StandardAllocator<int>{},
+                                            boost::asio::bind_cancellation_slot(
+                                                m_CancelSignal.slot(), beast::bind_front_handler(&session::on_handshake, shared_from_this()))));
+        }
+        else
+        {
+            initiate_write();
+        }
     }
 
     void on_handshake(beast::error_code ec)
@@ -398,10 +414,29 @@ class session : public std::enable_shared_from_this<session>
         beast::get_lowest_layer(m_Stream).expires_after(std::chrono::seconds(30));
         if (m_LogRequest)
             m_Logger.log(RH_LOG_LEVEL_TRACE, "{}", m_Request);
-        http::async_write(
-            m_Stream,
-            m_Request,
-            boost::asio::bind_allocator(i3d::one::StandardAllocator<int>{}, boost::asio::bind_cancellation_slot(m_CancelSignal.slot(), beast::bind_front_handler(&session::on_write, shared_from_this()))));
+        initiate_write();
+    }
+
+    void initiate_write()
+    {
+        if (is_secure())
+        {
+            http::async_write(
+                m_Stream,
+                m_Request,
+                boost::asio::bind_allocator(
+                    i3d::one::StandardAllocator<int>{},
+                    boost::asio::bind_cancellation_slot(m_CancelSignal.slot(), beast::bind_front_handler(&session::on_write, shared_from_this()))));
+        }
+        else
+        {
+            http::async_write(
+                boost::beast::get_lowest_layer(m_Stream),
+                m_Request,
+                boost::asio::bind_allocator(
+                    i3d::one::StandardAllocator<int>{},
+                    boost::asio::bind_cancellation_slot(m_CancelSignal.slot(), beast::bind_front_handler(&session::on_write, shared_from_this()))));
+        }
     }
 
     void on_write(beast::error_code ec, std::size_t bytes_transferred)
@@ -410,11 +445,26 @@ class session : public std::enable_shared_from_this<session>
         boost::ignore_unused(bytes_transferred);
         if (ec)
             return failure(ec, "write");
-        http::async_read(
-            m_Stream,
-            m_Buffer,
-            m_Response,
-            boost::asio::bind_allocator(i3d::one::StandardAllocator<int>{}, boost::asio::bind_cancellation_slot(m_CancelSignal.slot(), beast::bind_front_handler(&session::on_read, shared_from_this()))));
+        if (is_secure())
+        {
+            http::async_read(
+                m_Stream,
+                m_Buffer,
+                m_Response,
+                boost::asio::bind_allocator(
+                    i3d::one::StandardAllocator<int>{},
+                    boost::asio::bind_cancellation_slot(m_CancelSignal.slot(), beast::bind_front_handler(&session::on_read, shared_from_this()))));
+        }
+        else
+        {
+            http::async_read(
+                boost::beast::get_lowest_layer(m_Stream),
+                m_Buffer,
+                m_Response,
+                boost::asio::bind_allocator(
+                    i3d::one::StandardAllocator<int>{},
+                    boost::asio::bind_cancellation_slot(m_CancelSignal.slot(), beast::bind_front_handler(&session::on_read, shared_from_this()))));
+        }
     }
 
     void on_read(beast::error_code ec, std::size_t bytes_transferred)
@@ -435,8 +485,18 @@ class session : public std::enable_shared_from_this<session>
         beast::get_lowest_layer(m_Stream).expires_after(m_Timeout);
 
         // Gracefully close the stream
-        m_Stream.async_shutdown(
-            boost::asio::bind_allocator(i3d::one::StandardAllocator<int>{}, boost::asio::bind_cancellation_slot(m_CancelSignal.slot(), beast::bind_front_handler(&session::on_shutdown, shared_from_this()))));
+        if (is_secure())
+        {
+            m_Stream.async_shutdown(boost::asio::bind_allocator(
+                i3d::one::StandardAllocator<int>{},
+                boost::asio::bind_cancellation_slot(m_CancelSignal.slot(), beast::bind_front_handler(&session::on_shutdown, shared_from_this()))));
+        }
+        else
+        {
+            beast::get_lowest_layer(m_Stream).socket().shutdown(tcp::socket::shutdown_both, ec);
+            if (ec && ec != beast::errc::not_connected)
+                return failure(ec, "shutdown");
+        }
     }
 
     void on_shutdown(beast::error_code ec)
