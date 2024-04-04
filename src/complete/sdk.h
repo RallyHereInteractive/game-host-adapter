@@ -459,6 +459,9 @@ class GameInstanceAdapter
     /// @{
     SICCredentials m_SICCredentials;
     rallyhere::string m_RallyHereUrl;
+    rallyhere::string m_SicRegistrationUrl;
+    rallyhere::string m_SicLoginUrl;
+    rallyhere::string m_SicPollUrl;
     rallyhere::string m_SicProfileId;
     rallyhere::string m_SicServerId;
     rallyhere::string m_SicHostName;

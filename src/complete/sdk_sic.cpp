@@ -509,6 +509,9 @@ void GameInstanceAdapter::SetupSIC()
     m_Port = "7777";
     m_PublicPort.clear();
     m_MultiHome = "0.0.0.0";
+    m_SicPollUrl = m_RallyHereUrl + "/instances/sic_registration/v1/state";
+    m_SicLoginUrl = m_RallyHereUrl + "/users/v1/login";
+    m_SicRegistrationUrl = m_RallyHereUrl + "/instances/sic_registration/v3/register";
 
     for (auto&& arg : m_Arguments)
     {
@@ -655,6 +658,18 @@ void GameInstanceAdapter::SetupSIC()
             {
                 m_SICCredentials.m_UseCredentialsAsClientId = true;
             }
+        }
+        if (ParseArgument("rhsicregistrationurl=", arg, m_SicRegistrationUrl))
+        {
+            continue;
+        }
+        if (ParseArgument("rhsicloginurl=", arg, m_SicLoginUrl))
+        {
+            continue;
+        }
+        if (ParseArgument("rhsicpollurl=", arg, m_SicPollUrl))
+        {
+            continue;
         }
     }
     if (m_SicProfileId.empty())
@@ -839,7 +854,7 @@ void GameInstanceAdapter::DoPollSIC(std::function<void(RallyHereStringMapPtr, co
 {
     auto alloc = i3d::one::StandardAllocator<session>{};
     auto session_ptr = std::allocate_shared<session>(alloc, net::make_strand(m_IoContext), m_SslContext, m_CancelSignal.slot());
-    auto url = m_RallyHereUrl + "/instances/sic_registration/v1/state";
+    auto url = m_SicPollUrl;
     auto request_pair = BuildPollRequest(url);
     if (request_pair.second)
     {
@@ -999,7 +1014,7 @@ void GameInstanceAdapter::Login(std::function<void(const RallyHereStatusCode&)> 
     }
     auto alloc = i3d::one::StandardAllocator<session>{};
     auto session_ptr = std::allocate_shared<session>(alloc, net::make_strand(m_IoContext), m_SslContext, m_CancelSignal.slot());
-    auto url = m_RallyHereUrl + "/users/v1/login";
+    auto url = m_SicLoginUrl;
     auto request_pair = BuildLoginRequest(url);
     if (request_pair.second)
     {
@@ -1107,7 +1122,7 @@ void GameInstanceAdapter::ReadySIC(base_callback_function_t callback, void* user
     CallAfterAuthValidation([=]() {
       auto alloc = i3d::one::StandardAllocator<session>{};
       auto session_ptr = std::allocate_shared<session>(alloc, net::make_strand(m_IoContext), m_SslContext, m_CancelSignal.slot());
-      auto url = m_RallyHereUrl + "/instances/sic_registration/v3/register";
+      auto url = m_SicRegistrationUrl;
       auto request_pair = BuildRegistrationRequest(url);
       if (request_pair.second)
       {
