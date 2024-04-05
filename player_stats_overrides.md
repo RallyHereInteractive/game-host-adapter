@@ -17,3 +17,7 @@
 -rhsicpollurl
 
 Set the URLs used for connecting to SIC. Normally these are derived from the rally here url, but in cases where that's not correct you can override them.
+
+-rhsichostnamequerylocal=yes/no queries the hostname from the local machine
+
+-rhsicappendhostnametolabels=yes/no appends the hostname to the every metric labels. This allows you to use the locally derived hostname in the labels
