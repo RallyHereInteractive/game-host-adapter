@@ -779,7 +779,11 @@ void GameInstanceAdapter::SetupSIC()
     rallyhere::string hostname;
     if (m_SicHostNameQueryLocal)
     {
+#if PLATFORM_LINUX
         hostname.resize(HOST_NAME_MAX + 1, '\0');
+#else
+        hostname.resize(256, '\0');
+#endif
         if (gethostname(hostname.data(), hostname.size()) != 0)
         {
             hostname.clear();
