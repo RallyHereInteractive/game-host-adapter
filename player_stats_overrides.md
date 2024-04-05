@@ -11,3 +11,9 @@
 -rhsimulateurl is a URL that can be called which returns the simulator parameters. This can be used to let an external service control the simualtion
 
 -rhsicappendgrouptag= Will allow you to append tags that are reported to SIC. This allows us to append to any labels specified by the clients without getting in the way.
+
+-rhsicregistrationurl
+-rhsicloginurl
+-rhsicpollurl
+
+Set the URLs used for connecting to SIC. Normally these are derived from the rally here url, but in cases where that's not correct you can override them.
