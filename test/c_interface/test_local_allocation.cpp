@@ -45,7 +45,8 @@ static auto get_default_arguments()
         "rhsicgrouptags=profile_id:unknownprofileid,server_id:unknownserverid,hostname:unknownhostname",
         "rhsicprometheusbind=0.0.0.0:23890",
         "rhsicregistrationurl=http://127.0.0.1:8080/sic_registration/v3/register",
-        "rhsicpollurl=http://127.0.0.1:8080/sic_registration/v1/state"
+        "rhsicpollurl=http://127.0.0.1:8080/sic_registration/v1/state",
+        "rhsicappendgrouptag=application_instance_id:387148274"
     };
     return arguments;
 }
@@ -60,7 +61,7 @@ static const lest::test module[] = {
         ADAPTER_CONNECT;
         rallyhere_on_allocated_callback(adapter, on_allocated_callback, &data);
         ADAPTER_READY;
-        while (true)
+        for (size_t i = 0; i < 10; ++i)
         {
             ADAPTER_HEALTHY;
             ADAPTER_TICK;

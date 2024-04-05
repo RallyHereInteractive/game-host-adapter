@@ -170,6 +170,7 @@ if (LEST_INCLUDE_DIRS)
             test/c_interface/test_sic_a2s.cpp
             test/c_interface/shared_a2s.h
             test/c_interface/shared_a2s.cpp
+            test/c_interface/test_local_allocation.cpp
             )
     add_executable(${PROJECT_NAME}_test
             ${c_interface_test_sources}
