@@ -85,5 +85,29 @@ int main( int argc, char * argv[] )
 {
     handle_launch_parameters(argc, argv);
     putenv("HIREZ_SIC_REPORTED_PUBLIC_HOST=unknownhostname");
-    return lest::run(specification(), 1, argv);
+    auto pivot = -1;
+    for (size_t i = 0; i < argc; ++i)
+    {
+        if (0 == strcmp(argv[i], "--"))
+        {
+            pivot = i;
+            break;
+        }
+    }
+
+    if (-1 == pivot)
+    {
+        return lest::run(specification(), 1, argv);
+    }
+    size_t new_argc = argc - pivot;
+    assert(new_argc > 0);
+    char **new_argv = new char*[new_argc];
+    new_argv[0] = argv[0];
+    for (size_t i = 1; i < new_argc; ++i)
+    {
+        new_argv[i] = argv[pivot + i];
+    }
+    auto retcode = lest::run(specification(), new_argc, new_argv);
+    delete[] new_argv;
+    return retcode;
 }

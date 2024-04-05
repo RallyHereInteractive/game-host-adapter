@@ -29,7 +29,7 @@ limitations under the License.
 #include "shared_definitions.hpp"
 
 template<typename T>
-auto get_just_profileid_arguments()
+static auto get_just_profileid_arguments()
 {
     rallyhere::vector<T> arguments = {
         "-rhbootstrapmode=SIC",
@@ -42,7 +42,7 @@ auto get_just_profileid_arguments()
 }
 
 template<typename T>
-auto get_default_arguments()
+static auto get_default_arguments()
 {
     rallyhere::vector<T> arguments = {
         "-rhbootstrapmode=SIC",
