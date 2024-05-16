@@ -887,14 +887,14 @@ void GameInstanceAdapter::SetupSIC()
         {
             rallyhere::vector<rallyhere::string> kv;
             boost::split(kv, label, boost::is_any_of(":"), boost::token_compress_on);
-            m_AdditionalInfoLabels.Set(kv[0].c_str(), kv[1]);
+            m_InternalAdditionalInfoLabels.Set(kv[0].c_str(), kv[1]);
         }
     }
     for (auto&& label : m_ExtraAdditionalInfoLabels)
     {
         rallyhere::vector<rallyhere::string> kv;
         boost::split(kv, label, boost::is_any_of(":"), boost::token_compress_on);
-        m_AdditionalInfoLabels.Set(kv[0].c_str(), kv[1]);
+        m_InternalAdditionalInfoLabels.Set(kv[0].c_str(), kv[1]);
     }
 
     rallyhere::string upperedState = m_LastPolledState;
