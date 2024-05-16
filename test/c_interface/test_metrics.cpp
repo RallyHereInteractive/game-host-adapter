@@ -1101,6 +1101,35 @@ static const lest::test module[] = {
             EXPECT(labels_map.find(p.first) != labels_map.end());
             EXPECT(labels_map[p.first] == p.second);
         }
+    },
+    CASE("Test that additional info labels works")
+    {
+        auto arguments_source = demo_get_default_arguments<rallyhere::string>();
+        auto arguments = join(arguments_source, " ");
+        RallyHereGameInstanceAdapterPtr adapter;
+        rallyhere_global_init();
+        std::map<std::string, std::string> expected_instance_info;
+        expected_instance_info["addinfo"] = "nothanks";
+        auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
+        EXPECT(rallyhere_is_error(result) == false);
+        TestCCodeData data{};
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+                                          rallyhere_destroy_game_instance_adapter(adapter);
+                                      };
+        data.adapter = adapter;
+
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        std::map<std::string, std::string> labels_map;
+        get_instance_info_labels(lest_env, adapter, labels_map);
+        for (auto&& p : expected_instance_info)
+        {
+            EXPECT(labels_map.find(p.first) != labels_map.end());
+            EXPECT(labels_map[p.first] == p.second);
+        }
     }
 };
 //@formatter:on
