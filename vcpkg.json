@@ -1,6 +1,6 @@
 {
   "name": "game-host-adapter",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "homepage": "https://github.com/RallyHereInteractive/game-host-adapter",
   "builtin-baseline": "c9140a3b500812ad3206317885860d9553b93f13",
   "dependencies": [
