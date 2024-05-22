@@ -526,10 +526,12 @@ class session : public std::enable_shared_from_this<session>
     // The callback can only be called once so make sure we delete it after using it once
     void callback()
     {
-        if (m_Callback)
-        {
-            m_Callback(*this);
-        }
+        if (!m_Callback)
+            return;
+        if (m_CallbackCount >= m_CallbackLimit)
+            return;
+        m_CallbackCount++;
+        m_Callback(*this);
     }
 
     bool check_cancelled()
@@ -560,6 +562,8 @@ class session : public std::enable_shared_from_this<session>
     boost::asio::cancellation_signal m_CancelSignal;
     std::chrono::milliseconds m_Timeout{ 30000 };
     bool m_LogRequest{ false };
+    size_t m_CallbackLimit{ 1 };
+    size_t m_CallbackCount{ 0 };
 };
 
 void GameInstanceAdapter::SetupSIC()
