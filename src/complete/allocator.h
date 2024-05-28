@@ -58,7 +58,12 @@ template <class T, class... Args>
 RH_CPP_EXPORT T *create(Args &&... args) {
     auto data = alloc(sizeof(T));
     auto p = reinterpret_cast<T *>(data);
-    ::new (p) T(std::forward<Args>(args)...);
+    try {
+        ::new(p) T(std::forward<Args>(args)...);
+    } catch (...) {
+        free(data);
+        throw;
+    }
     return p;
 }
 
