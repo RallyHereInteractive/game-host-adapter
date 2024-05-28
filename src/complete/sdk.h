@@ -283,7 +283,7 @@ class GameInstanceAdapter
         {
             log().log(RH_LOG_LEVEL_ERROR, "Could not start Prometheus: {}", e.what());
             if (callback)
-                callback(RH_STATUS_PROMETHEUS_COULD_NOT_START, user_data);
+                callback(RH_STATUS_PROMETHEUS_FAILED_RELOADING_ADDITIONAL_INFO_LABELS, user_data);
             return;
         }
         if (callback)
