@@ -28,6 +28,8 @@ limitations under the License.
 
 #include "shared_definitions.hpp"
 
+#include "boost/asio.hpp"
+
 template<typename T>
 static auto get_just_profileid_arguments()
 {
@@ -500,6 +502,40 @@ static const lest::test module[] = {
         EXPECT(data.soft_stop_called_count == 1);
         ADAPTER_TICK;
         EXPECT(data.soft_stop_called_count == 1);
+    },
+    CASE("SIC prometheus binding fails early")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        auto arguments = join(arguments_source, " ");
+        RallyHereGameInstanceAdapterPtr adapter;
+        rallyhere_global_init();
+        auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
+        EXPECT(rallyhere_is_error(result) == false);
+        TestCCodeData data{};
+        BOOST_SCOPE_EXIT_ALL(adapter) {
+                                          rallyhere_destroy_game_instance_adapter(adapter);
+                                      };
+        data.adapter = adapter;
+        rallyhere_connect(adapter, on_connect_callback, &data);
+
+        auto start = std::chrono::steady_clock::now();
+        while (!data.connect_called)
+        {
+            EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
+            auto ongoing = std::chrono::steady_clock::now();
+            auto elapsed = ongoing - start;
+            EXPECT(elapsed < DEFAULT_WAIT);
+        }
+        EXPECT(data.connect_result == RH_STATUS_OK);
+
+        boost::asio::io_context io_context;
+        boost::asio::ip::tcp::acceptor acceptor(io_context, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), 23890));
+        io_context.run_for(std::chrono::seconds(1));
+
+        rallyhere_on_allocated_callback(adapter, on_allocated_callback, &data);
+        auto start_reserve = std::chrono::steady_clock::now();
+        rallyhere_ready(adapter, on_ready_callback, &data);
+        EXPECT(data.ready_result == RH_STATUS_PROMETHEUS_COULD_NOT_START);
     },
 };
 //@formatter:on
