@@ -466,6 +466,7 @@ static const lest::test module[] = {
         auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
         EXPECT(result == RH_STATUS_OK);
         EXPECT(rallyhere_is_error(result) == false);
+        rallyhere_destroy_game_instance_adapter(adapter);
     },
     CASE("SIC soft stop external triggers on tick")
     {
