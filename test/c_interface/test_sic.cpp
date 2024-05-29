@@ -106,7 +106,7 @@ static const lest::test module[] = {
         rallyhere_global_init();
         auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
         EXPECT(rallyhere_is_error(result) == false);
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -177,7 +177,7 @@ static const lest::test module[] = {
         rallyhere_global_init();
         auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
         EXPECT(rallyhere_is_error(result) == false);
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -233,7 +233,7 @@ static const lest::test module[] = {
         rallyhere_global_init();
         auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
         EXPECT(rallyhere_is_error(result) == false);
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -300,6 +300,7 @@ static const lest::test module[] = {
         EXPECT(rallyhere_healthy(adapter) == RH_STATUS_OK);
         EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
 
+        data.set_labels_called = false;
         rallyhere_set_labels(adapter, labels, on_set_labels_callback, &data);
 
         start = std::chrono::steady_clock::now();
@@ -357,7 +358,7 @@ static const lest::test module[] = {
         rallyhere_global_init();
         auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
         EXPECT(rallyhere_is_error(result) == false);
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -512,7 +513,7 @@ static const lest::test module[] = {
         rallyhere_global_init();
         auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
         EXPECT(rallyhere_is_error(result) == false);
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         BOOST_SCOPE_EXIT_ALL(adapter) {
                                           rallyhere_destroy_game_instance_adapter(adapter);
                                       };

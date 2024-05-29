@@ -79,7 +79,7 @@ RallyHereGameInstanceAdapterPtr adapter; \
 rallyhere_global_init(); \
 auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size()); \
 EXPECT(rallyhere_is_error(result) == false); \
-TestCCodeData data{}; \
+TestCCodeData data{ lest_env }; \
 BOOST_SCOPE_EXIT_ALL(adapter) { \
     rallyhere_destroy_game_instance_adapter(adapter); \
 }; \
