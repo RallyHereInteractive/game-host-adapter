@@ -74,7 +74,7 @@ static const lest::test module[] = {
         rallyhere_global_init();
         auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
         EXPECT(rallyhere_is_error(result) == false);
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -111,7 +111,7 @@ static const lest::test module[] = {
         rallyhere_global_init();
         auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
         EXPECT(rallyhere_is_error(result) == false);
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -161,7 +161,7 @@ static const lest::test module[] = {
         rallyhere_global_init();
         auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
         EXPECT(rallyhere_is_error(result) == false);
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -231,7 +231,7 @@ static const lest::test module[] = {
         rallyhere_global_init();
         auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
         EXPECT(rallyhere_is_error(result) == false);
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };
@@ -251,7 +251,7 @@ static const lest::test module[] = {
         EXPECT(data.connect_result == RH_STATUS_OK);
 
         // If we become ready we must have an on_allocated_callback in order to handle any immediate allocations
-        rallyhere_on_allocated_callback(adapter, on_allocated_callback, &data);
+        rallyhere_on_allocated_callback(adapter, on_allocated_multiples_callback, &data);
         auto start_reserve = std::chrono::steady_clock::now();
         rallyhere_reserve(adapter, 5, on_reserve_callback, &data, on_ready_callback, &data);
 
@@ -298,7 +298,7 @@ static const lest::test module[] = {
         rallyhere_global_init();
         auto result = rallyhere_create_game_instance_adaptern(&adapter, arguments.c_str(), arguments.size());
         EXPECT(rallyhere_is_error(result) == false);
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
         };

@@ -1178,13 +1178,23 @@ void GameInstanceAdapter::ReadySIC(base_callback_function_t callback, void* user
         {
             log().log(RH_LOG_LEVEL_ERROR, "Failed to start A2S listener");
             if (callback)
-                callback(RH_STATUS_ERROR, user_data);
+                callback(RH_STATUS_A2S_COULD_NOT_START, user_data);
             return;
         }
         RallyHereStatsBaseProvided provided{};
         memset(&provided, 0xff, sizeof(provided));
         m_A2SListener->update_server_info(m_StatsBase, provided, []() {});
         m_A2SListener->run();
+    }
+    try
+    {
+        RebuildPrometheus();
+    }
+    catch (const std::exception& e)
+    {
+        log().log(RH_LOG_LEVEL_ERROR, "prometheus failed: {}", e.what());
+        callback(RH_STATUS_PROMETHEUS_COULD_NOT_START, user_data);
+        return;
     }
     log().log(RH_LOG_LEVEL_INFO, "Attempting SIC registration");
     CallAfterAuthValidation([=]() {
@@ -1232,7 +1242,7 @@ void GameInstanceAdapter::ReadySIC(base_callback_function_t callback, void* user
                 catch (const std::exception& e)
                 {
                     session.m_Logger.log(RH_LOG_LEVEL_ERROR, "prometheus failed: {}", e.what());
-                    callback(RH_STATUS_PROMETHEUS_COULD_NOT_START, user_data);
+                    callback(RH_STATUS_PROMETHEUS_FAILED_AFTER_REGISTRATION, user_data);
                     return;
                 }
                 callback(session.m_Status.code(), user_data);

@@ -181,7 +181,7 @@ static const lest::test module[] = {
     CASE("A2S starts with previously set information")
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
@@ -193,7 +193,7 @@ static const lest::test module[] = {
     CASE("A2S updates after ready")
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
@@ -213,7 +213,7 @@ static const lest::test module[] = {
     CASE("A2S updates only the values specified")
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
@@ -244,7 +244,7 @@ static const lest::test module[] = {
     CASE("A2S survives bad requests")
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
@@ -257,7 +257,7 @@ static const lest::test module[] = {
     CASE("A2S fails to return when challenge fails")
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
@@ -267,7 +267,7 @@ static const lest::test module[] = {
     CASE("A2S allows up to 20 pending challenges")
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
@@ -278,7 +278,7 @@ static const lest::test module[] = {
     CASE("A2S fails the 21st pending challenge")
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
@@ -289,7 +289,7 @@ static const lest::test module[] = {
     CASE("A2S properly deletes old challenges")
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         get_ready(lest_env, adapter, data);
         BOOST_SCOPE_EXIT_ALL(adapter) {
             rallyhere_destroy_game_instance_adapter(adapter);
@@ -302,7 +302,7 @@ static const lest::test module[] = {
     CASE("A2S sends info in nochallenge mode when requested")
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         TestArgumentsNoChallenge<rallyhere::string> arguments;
         get_ready(lest_env, adapter, data, arguments);
         BOOST_SCOPE_EXIT_ALL(adapter) {
@@ -315,7 +315,7 @@ static const lest::test module[] = {
     CASE("A2S max players starts at zero")
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         TestArguments<rallyhere::string> arguments;
         get_ready(lest_env, adapter, data, arguments, false);
         BOOST_SCOPE_EXIT_ALL(adapter) {
@@ -328,7 +328,7 @@ static const lest::test module[] = {
     CASE("A2S max players starts at the default")
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         TestArguments<rallyhere::string> arguments;
         arguments.add_argument("rhdefaultreportmaxplayers=5");
         get_ready(lest_env, adapter, data, arguments, false);
@@ -342,7 +342,7 @@ static const lest::test module[] = {
     CASE("A2S max players starts at the default and is updated")
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         TestArguments<rallyhere::string> arguments;
         arguments.add_argument("rhdefaultreportmaxplayers=5");
         get_ready(lest_env, adapter, data, arguments, false);
@@ -363,7 +363,7 @@ static const lest::test module[] = {
     CASE("A2S max players starts at the forced value")
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         TestArguments<rallyhere::string> arguments;
         arguments.add_argument("rhforcereportmaxplayers=6");
         arguments.add_argument("rhdefaultreportmaxplayers=3");
@@ -378,7 +378,7 @@ static const lest::test module[] = {
     CASE("A2S max players starts at the forced value and can't be changed")
     {
         RallyHereGameInstanceAdapterPtr adapter{nullptr};
-        TestCCodeData data{};
+        TestCCodeData data{ lest_env };
         TestArguments<rallyhere::string> arguments;
         arguments.add_argument("rhforcereportmaxplayers=6");
         arguments.add_argument("rhdefaultreportmaxplayers=3");

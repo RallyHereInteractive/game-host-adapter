@@ -17,9 +17,11 @@ limitations under the License.
 
 #include "c_api.h"
 #include "rh_string.h"
+#include "lest/lest.hpp"
 
 struct TestCCodeData
 {
+    lest::env& lest_env;
     RallyHereGameInstanceAdapterPtr adapter;
     bool connect_called;
     RallyHereStatusCode connect_result;
@@ -52,5 +54,6 @@ void on_set_additional_info_callback(const RallyHereStatusCode& code, void* user
 void on_set_base_stats_callback(const RallyHereStatusCode& code, void* user_data);
 void on_ready_callback(const RallyHereStatusCode& code, void* user_data);
 void on_allocated_callback(RallyHereStringMapPtr allocation_info, const RallyHereStatusCode& code, void* user_data);
+void on_allocated_multiples_callback(RallyHereStringMapPtr allocation_info, const RallyHereStatusCode& code, void* user_data);
 void on_allocate_callback(const RallyHereStatusCode& code, void* user_data);
 void on_soft_stop_callback(const RallyHereStatusCode& code, void* user_data);
