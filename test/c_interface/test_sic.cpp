@@ -505,6 +505,118 @@ static const lest::test module[] = {
         ADAPTER_TICK;
         EXPECT(data.soft_stop_called_count == 1);
     },
+    CASE("SIC soft stop external v2 triggers v1 on tick")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        SETUP_TEST_ADAPTER;
+        rallyhere_on_soft_stop_callback(adapter, on_soft_stop_callback, &data);
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        EXPECT(data.soft_stop_called_count == 0);
+
+        rallyhere_external_soft_stop_requested_v2(adapter, 100);
+        EXPECT(data.soft_stop_called_count == 0);
+        ADAPTER_TICK;
+        EXPECT(data.soft_stop_called_count == 1);
+    },
+    CASE("SIC soft stop external v2 triggers v1 only once per request")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        SETUP_TEST_ADAPTER;
+        rallyhere_on_soft_stop_callback(adapter, on_soft_stop_callback, &data);
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        EXPECT(data.soft_stop_called_count == 0);
+
+        rallyhere_external_soft_stop_requested_v2(adapter, 125);
+        EXPECT(data.soft_stop_called_count == 0);
+        ADAPTER_TICK;
+        EXPECT(data.soft_stop_called_count == 1);
+        ADAPTER_TICK;
+        EXPECT(data.soft_stop_called_count == 1);
+    },
+    CASE("SIC soft stop external v2 triggers v2 on tick")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        SETUP_TEST_ADAPTER;
+        rallyhere_on_soft_stop_callback_v2(adapter, on_soft_stop_callback_v2, &data);
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        EXPECT(data.soft_stop_called_count == 0);
+
+        rallyhere_external_soft_stop_requested_v2(adapter, 100);
+        EXPECT(data.soft_stop_called_count == 0);
+        ADAPTER_TICK;
+        EXPECT(data.soft_stop_called_count == 1);
+        EXPECT(data.soft_stop_timeout == 100);
+    },
+    CASE("SIC soft stop external v2 triggers v2 only once per request")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        SETUP_TEST_ADAPTER;
+        rallyhere_on_soft_stop_callback_v2(adapter, on_soft_stop_callback_v2, &data);
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        EXPECT(data.soft_stop_called_count == 0);
+
+        rallyhere_external_soft_stop_requested_v2(adapter, 125);
+        EXPECT(data.soft_stop_called_count == 0);
+        ADAPTER_TICK;
+        EXPECT(data.soft_stop_called_count == 1);
+        ADAPTER_TICK;
+        EXPECT(data.soft_stop_called_count == 1);
+        EXPECT(data.soft_stop_timeout == 125);
+    },
+    CASE("SIC soft stop external v1 triggers v2 on tick")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        SETUP_TEST_ADAPTER;
+        rallyhere_on_soft_stop_callback_v2(adapter, on_soft_stop_callback_v2, &data);
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        EXPECT(data.soft_stop_called_count == 0);
+
+        rallyhere_external_soft_stop_requested(adapter);
+        EXPECT(data.soft_stop_called_count == 0);
+        ADAPTER_TICK;
+        EXPECT(data.soft_stop_called_count == 1);
+        EXPECT(data.soft_stop_timeout == -1);
+    },
+    CASE("SIC soft stop external v1 triggers v2 only once per request")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        SETUP_TEST_ADAPTER;
+        rallyhere_on_soft_stop_callback_v2(adapter, on_soft_stop_callback_v2, &data);
+        ADAPTER_CONNECT;
+        ADAPTER_READY;
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        EXPECT(data.soft_stop_called_count == 0);
+
+        rallyhere_external_soft_stop_requested(adapter);
+        EXPECT(data.soft_stop_called_count == 0);
+        ADAPTER_TICK;
+        EXPECT(data.soft_stop_called_count == 1);
+        ADAPTER_TICK;
+        EXPECT(data.soft_stop_called_count == 1);
+        EXPECT(data.soft_stop_timeout == -1);
+    },
     CASE("SIC prometheus binding fails early")
     {
         auto arguments_source = get_default_arguments<rallyhere::string>();

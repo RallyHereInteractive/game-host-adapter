@@ -37,6 +37,7 @@ struct TestCCodeData
     RallyHereStatusCode allocate_result;
     size_t soft_stop_called_count;
     RallyHereStatusCode soft_stop_result;
+    int soft_stop_timeout;
     rallyhere::string allocation_id;
     rallyhere::string session_id;
     rallyhere::string public_host;
@@ -57,3 +58,4 @@ void on_allocated_callback(RallyHereStringMapPtr allocation_info, const RallyHer
 void on_allocated_multiples_callback(RallyHereStringMapPtr allocation_info, const RallyHereStatusCode& code, void* user_data);
 void on_allocate_callback(const RallyHereStatusCode& code, void* user_data);
 void on_soft_stop_callback(const RallyHereStatusCode& code, void* user_data);
+void on_soft_stop_callback_v2(const RallyHereStatusCode& code, void* user_data, int timeout);

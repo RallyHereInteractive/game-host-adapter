@@ -137,3 +137,11 @@ void on_soft_stop_callback(const RallyHereStatusCode& code, void* user_data)
     data->soft_stop_result = code;
     data->soft_stop_called_count++;
 }
+
+void on_soft_stop_callback_v2(const RallyHereStatusCode& code, void* user_data, int timeout)
+{
+    auto data = static_cast<TestCCodeData*>(user_data);
+    data->soft_stop_result = code;
+    data->soft_stop_called_count++;
+    data->soft_stop_timeout = timeout;
+}
