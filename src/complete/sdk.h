@@ -243,7 +243,11 @@ class GameInstanceAdapter
         m_SoftStopV2Callback = callback;
         m_SoftStopV2UserData = user_data;
     }
-    void ExternalSoftStopRequested(int timeout = -1)
+    void ExternalSoftStopRequested()
+    {
+        m_ExternalSoftStopRequested.store(true, std::memory_order_release);
+    }
+    void ExternalSoftStopRequested(int timeout)
     {
         m_ExternalSoftStopTimeout.store(timeout, std::memory_order_release);
         m_ExternalSoftStopRequested.store(true, std::memory_order_release);
