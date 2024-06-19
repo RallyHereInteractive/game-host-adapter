@@ -626,6 +626,19 @@ void GameInstanceAdapter::Setup()
             m_NextSimulatedGame = std::chrono::steady_clock::now();
             continue;
         }
+        if (ParseArgument("rhdefaultsoftstoptimeout=", arg, tmp))
+        {
+            try
+            {
+                auto value = boost::lexical_cast<short>(tmp);
+                m_ExternalSoftStopTimeout.store(value, std::memory_order_release);
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_DEFAULT_SOFT_STOP_TIMEOUT_MUST_BE_SHORT };
+            }
+            continue;
+        }
     }
     if (m_RallyHereUrl.empty())
     {
