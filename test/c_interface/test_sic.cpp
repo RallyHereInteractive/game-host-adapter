@@ -58,7 +58,28 @@ static auto get_default_arguments()
         "MULTIHOME=0.0.0.0",
         "rhsicid=sic_unknownserverid_9000",
         "rhsicgrouptags=profile_id:unknownprofileid,server_id:unknownserverid,hostname:unknownhostname",
-        "rhsicprometheusbind=0.0.0.0:23890"
+        "rhsicprometheusbind=0.0.0.0:23890",
+    };
+    return arguments;
+}
+
+template<typename T>
+static auto get_soft_stop_default_arguments()
+{
+    rallyhere::vector<T> arguments = {
+        "-rhbootstrapmode=SIC",
+        get_credentials_file_path_arg(),
+        get_rally_here_url_arg(),
+        get_rh_credentials_as_arg(),
+        "rhsicprofileid=unknownprofileid",
+        "rhsicserverid=unknownserverid",
+        "rhsichostname=unknownhostname",
+        "PoRt=9000",
+        "MULTIHOME=0.0.0.0",
+        "rhsicid=sic_unknownserverid_9000",
+        "rhsicgrouptags=profile_id:unknownprofileid,server_id:unknownserverid,hostname:unknownhostname",
+        "rhsicprometheusbind=0.0.0.0:23890",
+        "rhdefaultsoftstoptimeout=700"
     };
     return arguments;
 }
@@ -599,7 +620,7 @@ static const lest::test module[] = {
     },
     CASE("SIC soft stop external v1 triggers v2 only once per request")
     {
-        auto arguments_source = get_default_arguments<rallyhere::string>();
+        auto arguments_source = get_soft_stop_default_arguments<rallyhere::string>();
         SETUP_TEST_ADAPTER;
         rallyhere_on_soft_stop_callback_v2(adapter, on_soft_stop_callback_v2, &data);
         ADAPTER_CONNECT;
@@ -615,7 +636,7 @@ static const lest::test module[] = {
         EXPECT(data.soft_stop_called_count == 1);
         ADAPTER_TICK;
         EXPECT(data.soft_stop_called_count == 1);
-        EXPECT(data.soft_stop_timeout == -1);
+        EXPECT(data.soft_stop_timeout == 700);
     },
     CASE("SIC prometheus binding fails early")
     {
