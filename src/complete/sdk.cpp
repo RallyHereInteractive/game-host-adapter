@@ -120,6 +120,8 @@ Status GameInstanceAdapter::Tick()
     auto externalSoftStopRequested = m_ExternalSoftStopRequested.exchange(false, std::memory_order_relaxed);
     if (externalSoftStopRequested && m_SoftStopCallback)
         m_SoftStopCallback(RH_STATUS_OK, m_SoftStopUserData);
+    if (externalSoftStopRequested && m_SoftStopV2Callback)
+        m_SoftStopV2Callback(RH_STATUS_OK, m_SoftStopV2UserData, m_ExternalSoftStopTimeout.load(std::memory_order_acquire));
 
     auto now = std::chrono::steady_clock::now();
     if (m_ReservationBecomeReady != std::chrono::steady_clock::time_point{} && now >= m_ReservationBecomeReady)
@@ -622,6 +624,19 @@ void GameInstanceAdapter::Setup()
         if (ParseArgument("rhsimulatorurl=", arg, m_SimulatorUrl))
         {
             m_NextSimulatedGame = std::chrono::steady_clock::now();
+            continue;
+        }
+        if (ParseArgument("rhdefaultsoftstoptimeout=", arg, tmp))
+        {
+            try
+            {
+                auto value = boost::lexical_cast<short>(tmp);
+                m_ExternalSoftStopTimeout.store(value, std::memory_order_release);
+            }
+            catch (const boost::bad_lexical_cast&e)
+            {
+                m_Status = { RH_STATUS_DEFAULT_SOFT_STOP_TIMEOUT_MUST_BE_SHORT };
+            }
             continue;
         }
     }

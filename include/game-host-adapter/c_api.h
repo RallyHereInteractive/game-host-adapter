@@ -274,6 +274,21 @@ extern "C"
     RH_EXPORT void rallyhere_on_soft_stop_callback(RallyHereGameInstanceAdapterPtr adapter,
                                                    void (*callback)(const RallyHereStatusCode& code, void* user_data),
                                                    void* user_data);
+    /// @brief The callback to trigger when the game host wants to stop the game instance. This callback should be
+    /// implmeneted as if it were being called from a signal handler. It should do only the minimum amount of work
+    /// necessary to inform the rest of the system that a soft stop has been requested. In many cases this should
+    /// simply be atomically setting a boolean to true and little more.
+    ///
+    /// The timeout provided to the callback is the amount of time the game instance has to stop before being hard
+    /// killed. If -1 the timeout was not specified and the instance should generally be given enough time to finish
+    /// any games in progress. If no games are in progress the instance should shut itself down immediately.
+    ///
+    /// In SIC this is expected to come from the SIGTERM handler.
+    /// In i3D this is expected to come from the Arcus commands
+    /// @public @memberof RallyHereGameInstanceAdapter
+    RH_EXPORT void rallyhere_on_soft_stop_callback_v2(RallyHereGameInstanceAdapterPtr adapter,
+                                                      void (*callback)(const RallyHereStatusCode& code, void* user_data, int timeout),
+                                                      void* user_data);
     /// @brief Inform the adapter that a soft stop has been requested.
     ///
     /// There are situations where soft stop comes from something external to the adapter and the adapter needs to be
@@ -284,6 +299,19 @@ extern "C"
     /// expected to call this function as part of their SIGTERM handling.
     /// @public @memberof RallyHereGameInstanceAdapter
     RH_EXPORT void rallyhere_external_soft_stop_requested(RallyHereGameInstanceAdapterPtr adapter);
+    /// @brief Inform the adapter that a soft stop has been requested.
+    ///
+    /// There are situations where soft stop comes from something external to the adapter and the adapter needs to be
+    /// told. In this case the adapter will also trigger the on soft stop callback. This is not a deferred call, so the
+    /// registered callback will be called immediately.
+    ///
+    /// The timeout provided to the callback is the amount of time the game instance has to stop before being hard
+    /// killed. If this is unknown, set the value to -1.
+    ///
+    /// In SIC the SIGTERM handler can't always be overridden by this adapter. In those situations the caller is
+    /// expected to call this function as part of their SIGTERM handling.
+    /// @public @memberof RallyHereGameInstanceAdapter
+    RH_EXPORT void rallyhere_external_soft_stop_requested_v2(RallyHereGameInstanceAdapterPtr adapter, int timeout);
     //------------------------------------------------------------------------------
     ///@}
 

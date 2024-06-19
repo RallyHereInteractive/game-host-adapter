@@ -117,7 +117,15 @@ void rallyhere_on_soft_stop_callback(RallyHereGameInstanceAdapterPtr adapter,
                                      void* user_data)
 {
 }
+void rallyhere_on_soft_stop_callback_v2(RallyHereGameInstanceAdapterPtr adapter,
+                                        void (*callback)(const RallyHereStatusCode& code, void* user_data, int timeout),
+                                        void* user_data)
+{
+}
 void rallyhere_external_soft_stop_requested(RallyHereGameInstanceAdapterPtr adapter)
+{
+}
+void rallyhere_external_soft_stop_requested_v2(RallyHereGameInstanceAdapterPtr adapter, int timeout)
 {
 }
 

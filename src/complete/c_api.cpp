@@ -249,12 +249,28 @@ namespace
         auto a = reinterpret_cast<rallyhere::GameInstanceAdapter*>(adapter);
         a->OnSoftStopCallback(callback, user_data);
     }
+    void on_soft_stop_callback(RallyHereGameInstanceAdapterPtr adapter,
+                               void (*callback)(const RallyHereStatusCode& code, void* user_data, int timeout),
+                               void* user_data)
+    {
+        if (nullptr == adapter)
+            return;
+        auto a = reinterpret_cast<rallyhere::GameInstanceAdapter*>(adapter);
+        a->OnSoftStopCallback(callback, user_data);
+    }
     void external_soft_stop_requested(RallyHereGameInstanceAdapterPtr adapter)
     {
         if (nullptr == adapter)
             return;
         auto a = reinterpret_cast<rallyhere::GameInstanceAdapter*>(adapter);
         a->ExternalSoftStopRequested();
+    }
+    void external_soft_stop_requested(RallyHereGameInstanceAdapterPtr adapter, int timeout)
+    {
+        if (nullptr == adapter)
+            return;
+        auto a = reinterpret_cast<rallyhere::GameInstanceAdapter*>(adapter);
+        a->ExternalSoftStopRequested(timeout);
     }
     void set_log_callback(RallyHereGameInstanceAdapterPtr adapter,
                           RallyHereLogCallback callback,
@@ -614,9 +630,19 @@ extern "C"
     {
         rallyhere::on_soft_stop_callback(adapter, callback, user_data);
     }
+    void rallyhere_on_soft_stop_callback_v2(RallyHereGameInstanceAdapterPtr adapter,
+                                            void (*callback)(const RallyHereStatusCode& code, void* user_data, int timeout),
+                                            void* user_data)
+    {
+        rallyhere::on_soft_stop_callback(adapter, callback, user_data);
+    }
     void rallyhere_external_soft_stop_requested(RallyHereGameInstanceAdapterPtr adapter)
     {
         rallyhere::external_soft_stop_requested(adapter);
+    }
+    void rallyhere_external_soft_stop_requested_v2(RallyHereGameInstanceAdapterPtr adapter, int timeout)
+    {
+        rallyhere::external_soft_stop_requested(adapter, timeout);
     }
     void rallyhere_set_log_callback(RallyHereGameInstanceAdapterPtr adapter,
                                     RallyHereLogCallback callback,

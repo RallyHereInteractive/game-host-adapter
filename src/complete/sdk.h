@@ -168,6 +168,7 @@ class GameInstanceAdapter
 {
   public:
     using base_callback_function_t = std::function<void(const RallyHereStatusCode&, void*)>;
+    using soft_stop_v2_callback_function_t = std::function<void(const RallyHereStatusCode&, void*, int)>;
     using on_allocated_callback_function_t = std::function<void(RallyHereStringMapPtr, const RallyHereStatusCode&, void*)>;
     using log_callback_function_t = std::function<void(RallyHereLogLevel, std::string_view)>;
 
@@ -237,9 +238,19 @@ class GameInstanceAdapter
         m_SoftStopCallback = callback;
         m_SoftStopUserData = user_data;
     }
+    void OnSoftStopCallback(soft_stop_v2_callback_function_t callback, void* user_data)
+    {
+        m_SoftStopV2Callback = callback;
+        m_SoftStopV2UserData = user_data;
+    }
     void ExternalSoftStopRequested()
     {
-        m_ExternalSoftStopRequested.store(true, std::memory_order_relaxed);
+        m_ExternalSoftStopRequested.store(true, std::memory_order_release);
+    }
+    void ExternalSoftStopRequested(int timeout)
+    {
+        m_ExternalSoftStopTimeout.store(timeout, std::memory_order_release);
+        m_ExternalSoftStopRequested.store(true, std::memory_order_release);
     }
     void OnLogCallback(log_callback_function_t callback)
     {
@@ -453,7 +464,10 @@ class GameInstanceAdapter
     boost::asio::cancellation_signal m_CancelSignal;
     base_callback_function_t m_SoftStopCallback{};
     void *m_SoftStopUserData{nullptr};
+    soft_stop_v2_callback_function_t m_SoftStopV2Callback{};
+    void *m_SoftStopV2UserData{nullptr};
     std::atomic<bool> m_ExternalSoftStopRequested{false};
+    std::atomic<int> m_ExternalSoftStopTimeout{-1};
 
     /// @name SIC
     /// @{
