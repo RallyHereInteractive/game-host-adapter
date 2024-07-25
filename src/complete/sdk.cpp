@@ -373,11 +373,17 @@ std::string_view GameInstanceAdapter::GetModeName() const
 
 void GameInstanceAdapter::Setup()
 {
+    rallyhere::string bootstrapMode{};
+    rallyhere::string provider{};
     m_UserAgent = BOOST_BEAST_VERSION_STRING;
     for (auto&& arg : m_Arguments)
     {
         rallyhere::string tmp;
-        if (ParseArgument("rhbootstrapmode=", arg, m_ModeName))
+        if (ParseArgument("rhbootstrapmode=", arg, bootstrapMode))
+        {
+            continue;
+        }
+        if (ParseArgument("ghaprovider=", arg, provider))
         {
             continue;
         }
@@ -635,6 +641,15 @@ void GameInstanceAdapter::Setup()
     m_SslContext.set_verify_mode(ssl::context::verify_none);
     m_SslContext.set_default_verify_paths();
     boost::certify::enable_native_https_server_verification(m_SslContext);
+    if (!provider.empty())
+    {
+        m_ModeName = provider;
+    }
+    else
+    {
+        m_ModeName = bootstrapMode;
+    }
+    log().log(RH_LOG_LEVEL_INFO, "Chosen mode: {} from bootstrap: {} or provider: {}", m_ModeName, bootstrapMode, provider);
     if (m_ModeName == "SIC")
     {
         SetupSIC();
