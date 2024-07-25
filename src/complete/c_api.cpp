@@ -218,6 +218,17 @@ namespace
         a->Allocate(callback, user_data);
     }
 
+    void get_public_host_and_port(RallyHereGameInstanceAdapterPtr adapter, RallyHereStringMapPtr* map)
+    {
+        if (nullptr == adapter)
+            return;
+        if (nullptr == map)
+            return;
+        auto a = reinterpret_cast<rallyhere::GameInstanceAdapter*>(adapter);
+        auto m = a->GetPublicHostAndPort();
+        *map = reinterpret_cast<RallyHereStringMapPtr>(m);
+    }
+
     void reserve(RallyHereGameInstanceAdapterPtr adapter,
                  unsigned int timeout_seconds,
                  void (*reserve_callback)(const RallyHereStatusCode& code, void* user_data),
@@ -590,6 +601,11 @@ extern "C"
                             void* user_data)
     {
         rallyhere::allocate(adapter, callback, user_data);
+    }
+
+    void rallyhere_get_public_host_and_port(RallyHereGameInstanceAdapterPtr adapter, RallyHereStringMapPtr* map)
+    {
+        rallyhere::get_public_host_and_port(adapter, map);
     }
 
     void rallyhere_reserve(RallyHereGameInstanceAdapterPtr adapter,
