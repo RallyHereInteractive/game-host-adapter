@@ -167,6 +167,8 @@ void GameInstanceAdapter::ReadyMultiplay(base_callback_function_t callback, void
 
 void GameInstanceAdapter::CheckServerJson()
 {
+    if (!m_MultiplayServerFileWatcher)
+        return;
     auto source = LoadFileToString(m_MultiplayServerFile);
     boost::json::error_code ec;
     custom_resource mr;
