@@ -477,7 +477,7 @@ class GameInstanceAdapter
     bool m_SicPrometheusBindSet{false};
     bool m_SicPrometheusPortSet{false};
     rallyhere::string m_SicPublicHost{};
-    std::chrono::milliseconds m_SicRequestTimeout{5000};
+    std::chrono::milliseconds m_SicRequestTimeout{10000};
     /// @}
 
     /// @name SIC Public access information debugging
