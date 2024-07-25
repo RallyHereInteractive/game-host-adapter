@@ -16,6 +16,7 @@ limitations under the License.
 #include "test_multiplay.h"
 #include "c_api.h"
 #include "rh_allocator.h"
+#include <thread>
 
 #include "boost/scope_exit.hpp"
 
@@ -347,6 +348,7 @@ static const lest::test module[] = {
                      "\"ConnectionIP\":\"thegreatest.game.com\","
                      "\"ConnectionPort\":\"6767\"}\n");
         }
+        std::this_thread::sleep_for(std::chrono::seconds(1));
         start = std::chrono::steady_clock::now();
         while (!data.allocated_called)
         {
