@@ -56,3 +56,6 @@ tags
 
 # Test data
 .test_data.json
+
+# Testing credentials
+.two_line_env_credentials.cred
