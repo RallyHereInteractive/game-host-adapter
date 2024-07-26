@@ -16,6 +16,12 @@ jobs:
       fail-fast: false
       matrix:
         config:
+          - os: ubuntu-latest
+            vcpkg_triplet: x64-linux-release
+            generator: Ninja
+          - os: ubuntu-20.04
+            vcpkg_triplet: x64-linux-release
+            generator: Ninja
           - os: windows-latest
             vcpkg_triplet: x64-windows-release
             generator: Visual Studio 17 2022
