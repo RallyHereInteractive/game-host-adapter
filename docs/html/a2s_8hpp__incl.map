@@ -1,8 +1,10 @@
 <map id="game&#45;host&#45;adapter/include/test&#45;helpers/a2s.hpp" name="game&#45;host&#45;adapter/include/test&#45;helpers/a2s.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="137,5,335,47"/>
-<area shape="rect" id="node2" href="$rh__string_8h.html" title=" " alt="" coords="44,95,135,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="159,95,313,121"/>
-<area shape="rect" id="node6" title=" " alt="" coords="337,95,546,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="177,5,375,47"/>
+<area shape="rect" id="node2" href="$rh__string_8h.html" title=" " alt="" coords="40,95,131,121"/>
+<area shape="rect" id="node5" href="$rh__vector_8h.html" title=" " alt="" coords="155,95,250,121"/>
+<area shape="rect" id="node7" title=" " alt="" coords="274,95,427,121"/>
+<area shape="rect" id="node8" title=" " alt="" coords="451,95,661,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,169,64,196"/>
 <area shape="rect" id="node4" href="$rh__allocator_8h.html" title=" " alt="" coords="89,169,199,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="223,169,286,196"/>
 </map>

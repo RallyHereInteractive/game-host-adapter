@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structrallyhere_1_1a2s__challenge__response" kind="struct" language="C++" prot="public">
+    <compoundname>rallyhere::a2s_challenge_response</compoundname>
+    <includes refid="a2s_8hpp" local="no">a2s.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structrallyhere_1_1a2s__challenge__response_1a96c66ac87a88d502d7fd3d1f82304304" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t rallyhere::a2s_challenge_response::header</definition>
+        <argsstring></argsstring>
+        <name>header</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="76" column="13" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrallyhere_1_1a2s__challenge__response_1a82180bbd4aa0403667dba85914234b1a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t rallyhere::a2s_challenge_response::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="77" column="13" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrallyhere_1_1a2s__challenge__response_1a99593022bc805655b14e38029846bb4a" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t rallyhere::a2s_challenge_response::challenge</definition>
+        <argsstring></argsstring>
+        <name>challenge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="78" column="13" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="74" column="1" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="75" bodyend="79"/>
+    <listofallmembers>
+      <member refid="structrallyhere_1_1a2s__challenge__response_1a99593022bc805655b14e38029846bb4a" prot="public" virt="non-virtual"><scope>rallyhere::a2s_challenge_response</scope><name>challenge</name></member>
+      <member refid="structrallyhere_1_1a2s__challenge__response_1a96c66ac87a88d502d7fd3d1f82304304" prot="public" virt="non-virtual"><scope>rallyhere::a2s_challenge_response</scope><name>header</name></member>
+      <member refid="structrallyhere_1_1a2s__challenge__response_1a82180bbd4aa0403667dba85914234b1a" prot="public" virt="non-virtual"><scope>rallyhere::a2s_challenge_response</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

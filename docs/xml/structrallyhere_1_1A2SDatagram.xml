@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="226" column="21" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="226" bodyend="-1"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="268" column="21" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="268" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structrallyhere_1_1A2SDatagram_1a0ee3cc43224f77e140c87c5036101a3a" prot="public" static="no" mutable="no">
         <type>boost::span&lt; uint8_t &gt;::iterator</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="227" column="32" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="227" bodyend="-1"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="269" column="32" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="269" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structrallyhere_1_1A2SDatagram_1aad00977149cc81d3963f521a2464daf3" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="228" column="14" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="228" bodyend="-1"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="270" column="14" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="270" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="82" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="82" bodyend="84"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="98" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="98" bodyend="100"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1aa5f0396e77cd77738ef437a4c230eb80" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -97,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="87" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="87" bodyend="89"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="103" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="103" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1a70adb04f9e749c935eb3d9dd0cb8b658" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -123,7 +123,41 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="92" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="92" bodyend="94"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="108" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="108" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1ab9248b418b6d12667bc3ef4ec160b872" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>rallyhere::A2SDatagram::A2SDatagram</definition>
+        <argsstring>(rallyhere::string &amp;data)</argsstring>
+        <name>A2SDatagram</name>
+        <param>
+          <type><ref refid="namespacerallyhere_1a06e017abf8a0212e162b377dc793078e" kindref="member">rallyhere::string</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="112" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="112" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1aa2160c8ff2753beda44866402a96c1d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>rallyhere::A2SDatagram::A2SDatagram</definition>
+        <argsstring>(rallyhere::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>A2SDatagram</name>
+        <param>
+          <type><ref refid="namespacerallyhere_1a9822d3fb78edd3730ef97afb9b2c06d9" kindref="member">rallyhere::vector</ref>&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="116" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="116" bodyend="118"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1a10116e2a2d97418b540a209b216ad4ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -144,7 +178,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="96" column="14" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="96" bodyend="106"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="120" column="14" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="120" bodyend="130"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1a1606755a90627bd00a74321bd02be2e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structrallyhere_1_1A2SDatagram" kindref="compound">A2SDatagram</ref> &amp;</type>
@@ -161,7 +195,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="108" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="108" bodyend="112"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="132" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="132" bodyend="136"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1a42e8ab242adebd5c18c9842ee349311a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structrallyhere_1_1A2SDatagram" kindref="compound">A2SDatagram</ref> &amp;</type>
@@ -178,7 +212,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="113" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="113" bodyend="117"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="137" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="137" bodyend="141"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1a9725748bf2b5f3f941b2f57af72d2edd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structrallyhere_1_1A2SDatagram" kindref="compound">A2SDatagram</ref> &amp;</type>
@@ -195,7 +229,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="118" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="118" bodyend="123"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="142" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="142" bodyend="147"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1a711070759068065b89522e3a34c911b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structrallyhere_1_1A2SDatagram" kindref="compound">A2SDatagram</ref> &amp;</type>
@@ -212,7 +246,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="124" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="124" bodyend="129"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="148" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="148" bodyend="153"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1a7076938d076d90eb8abc1738a36144ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structrallyhere_1_1A2SDatagram" kindref="compound">A2SDatagram</ref> &amp;</type>
@@ -229,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="131" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="131" bodyend="151"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="155" column="9" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="155" bodyend="175"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1a907cc503694552fb7f0adc02642f58a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structrallyhere_1_1A2SDatagram" kindref="compound">A2SDatagram</ref> &amp;</type>
@@ -246,7 +280,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="153" column="21" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="153" bodyend="162"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="177" column="21" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="177" bodyend="186"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1acb762317e15cc47549dbcc163b5cee90" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structrallyhere_1_1A2SDatagram" kindref="compound">A2SDatagram</ref> &amp;</type>
@@ -263,7 +297,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="163" column="21" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="163" bodyend="169"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="187" column="21" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="187" bodyend="193"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1ac2409ea27ef627a7c57fbd3ef2ac2d22" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -284,7 +318,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="170" column="14" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="170" bodyend="181"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="194" column="14" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="194" bodyend="205"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1aeed62009f3e17be72cc76dee941f7427" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structrallyhere_1_1A2SDatagram" kindref="compound">A2SDatagram</ref> &amp;</type>
@@ -301,7 +335,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="182" column="21" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="182" bodyend="189"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="206" column="21" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="206" bodyend="213"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1a1e6b73015c9f39f0074dbf9f18a6a63f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structrallyhere_1_1A2SDatagram" kindref="compound">A2SDatagram</ref> &amp;</type>
@@ -318,7 +352,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="190" column="21" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="190" bodyend="197"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="214" column="21" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="214" bodyend="221"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1a31ba12d0497ce35d895778beccf92316" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structrallyhere_1_1A2SDatagram" kindref="compound">A2SDatagram</ref> &amp;</type>
@@ -335,7 +369,41 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="199" column="21" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="199" bodyend="219"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="223" column="21" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="223" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1a7178198f80c6575df7acfdc201f0e03d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structrallyhere_1_1A2SDatagram" kindref="compound">A2SDatagram</ref> &amp;</type>
+        <definition>A2SDatagram&amp; rallyhere::A2SDatagram::operator&gt;&gt;</definition>
+        <argsstring>(a2s_simple_response &amp;response)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type><ref refid="structrallyhere_1_1a2s__simple__response" kindref="compound">a2s_simple_response</ref> &amp;</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="245" column="21" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="245" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1aaeb6982b9e4c4a1ccac8b4fca1edb26f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structrallyhere_1_1A2SDatagram" kindref="compound">A2SDatagram</ref> &amp;</type>
+        <definition>A2SDatagram&amp; rallyhere::A2SDatagram::operator&gt;&gt;</definition>
+        <argsstring>(a2s_challenge_response &amp;response)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type><ref refid="structrallyhere_1_1a2s__challenge__response" kindref="compound">a2s_challenge_response</ref> &amp;</type>
+          <declname>response</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="251" column="21" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="251" bodyend="255"/>
       </memberdef>
       <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1ab6cae52b4c701996121e08d860cedc69" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>size_t</type>
@@ -348,18 +416,37 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="221" column="16" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="221" bodyend="224"/>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="257" column="16" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="257" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="structrallyhere_1_1A2SDatagram_1a547f57912792f5e0e3877e339127454c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void rallyhere::A2SDatagram::seek</definition>
+        <argsstring>(size_t pos)</argsstring>
+        <name>seek</name>
+        <param>
+          <type>size_t</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="262" column="14" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="262" bodyend="266"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="79" column="5" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="80" bodyend="229"/>
+    <location file="game-host-adapter/include/test-helpers/a2s.hpp" line="95" column="5" bodyfile="game-host-adapter/include/test-helpers/a2s.hpp" bodystart="96" bodyend="271"/>
     <listofallmembers>
       <member refid="structrallyhere_1_1A2SDatagram_1a4bac929dddade7f7843a9de8fc3b4749" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>A2SDatagram</name></member>
       <member refid="structrallyhere_1_1A2SDatagram_1aa5f0396e77cd77738ef437a4c230eb80" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>A2SDatagram</name></member>
       <member refid="structrallyhere_1_1A2SDatagram_1a70adb04f9e749c935eb3d9dd0cb8b658" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>A2SDatagram</name></member>
+      <member refid="structrallyhere_1_1A2SDatagram_1ab9248b418b6d12667bc3ef4ec160b872" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>A2SDatagram</name></member>
+      <member refid="structrallyhere_1_1A2SDatagram_1aa2160c8ff2753beda44866402a96c1d2" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>A2SDatagram</name></member>
       <member refid="structrallyhere_1_1A2SDatagram_1a9c73db3ef61f5eb10bf27aefb39b7262" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>Data</name></member>
       <member refid="structrallyhere_1_1A2SDatagram_1ac2409ea27ef627a7c57fbd3ef2ac2d22" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>get</name></member>
       <member refid="structrallyhere_1_1A2SDatagram_1a0ee3cc43224f77e140c87c5036101a3a" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>next</name></member>
@@ -373,8 +460,11 @@
       <member refid="structrallyhere_1_1A2SDatagram_1aeed62009f3e17be72cc76dee941f7427" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>operator&gt;&gt;</name></member>
       <member refid="structrallyhere_1_1A2SDatagram_1a1e6b73015c9f39f0074dbf9f18a6a63f" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>operator&gt;&gt;</name></member>
       <member refid="structrallyhere_1_1A2SDatagram_1a31ba12d0497ce35d895778beccf92316" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>operator&gt;&gt;</name></member>
+      <member refid="structrallyhere_1_1A2SDatagram_1a7178198f80c6575df7acfdc201f0e03d" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>operator&gt;&gt;</name></member>
+      <member refid="structrallyhere_1_1A2SDatagram_1aaeb6982b9e4c4a1ccac8b4fca1edb26f" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>operator&gt;&gt;</name></member>
       <member refid="structrallyhere_1_1A2SDatagram_1aad00977149cc81d3963f521a2464daf3" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>overflowed</name></member>
       <member refid="structrallyhere_1_1A2SDatagram_1a10116e2a2d97418b540a209b216ad4ff" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>put</name></member>
+      <member refid="structrallyhere_1_1A2SDatagram_1a547f57912792f5e0e3877e339127454c" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>seek</name></member>
       <member refid="structrallyhere_1_1A2SDatagram_1ab6cae52b4c701996121e08d860cedc69" prot="public" virt="non-virtual"><scope>rallyhere::A2SDatagram</scope><name>size</name></member>
     </listofallmembers>
   </compounddef>

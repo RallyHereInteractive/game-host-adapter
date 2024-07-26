@@ -4,6 +4,7 @@
     <compoundname>rh_vector.h</compoundname>
     <includes local="no">vector</includes>
     <includes refid="rh__allocator_8h" local="yes">rh_allocator.h</includes>
+    <includedby refid="a2s_8hpp" local="yes">game-host-adapter/include/test-helpers/a2s.hpp</includedby>
     <incdepgraph>
       <node id="2">
         <label>vector</label>
@@ -21,6 +22,18 @@
         <link refid="rh__allocator_8h"/>
       </node>
     </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>game-host-adapter/include/test-helpers/a2s.hpp</label>
+        <link refid="a2s_8hpp"/>
+      </node>
+      <node id="1">
+        <label>game-host-adapter/include/test-helpers/rh_vector.h</label>
+        <link refid="rh__vector_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
     <innernamespace refid="namespacerallyhere">rallyhere</innernamespace>
     <briefdescription>
     </briefdescription>

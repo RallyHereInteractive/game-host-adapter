@@ -348,6 +348,30 @@
         </inbodydescription>
         <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="232" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="232" declcolumn="20"/>
       </memberdef>
+      <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a31b26a826279e5dbffc672c887f114a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
+        <definition>RH_EXPORT void rallyhere_get_public_host_and_port</definition>
+        <argsstring>(RallyHereGameInstanceAdapterPtr adapter, RallyHereStringMapPtr *map)</argsstring>
+        <name>rallyhere_get_public_host_and_port</name>
+        <param>
+          <type><ref refid="c__api_8h_1ab9f295af86f1286c21e57d4a73c76f8b" kindref="member">RallyHereGameInstanceAdapterPtr</ref></type>
+          <declname>adapter</declname>
+        </param>
+        <param>
+          <type><ref refid="c__api_8h_1a8901377cd48d4831c6380593a2a60360" kindref="member">RallyHereStringMapPtr</ref> *</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+<para>Get any configured public host and port information. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There are situations where you want to use the Reserve flow, but would like to reuse the operational paramaters provided to SIC by RallyHere operations. This allows you to get a string map with the public_host and public_port that were provided to the game host. This is currently only valid in SIC mode.</para>
+<para>Caller is responsible for freeing the string map with rallyhere_string_map_destroy. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="244" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="244" declcolumn="20"/>
+      </memberdef>
       <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1ab7b0b24e192ce285af9c233e68d12c19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
         <definition>RH_EXPORT void rallyhere_reserve</definition>
@@ -385,7 +409,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="242" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="242" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="252" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="252" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1afb679e1014b59a9a246c7c5b02c1062b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -412,7 +436,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="255" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="255" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="265" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="265" declcolumn="20"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -437,14 +461,14 @@
           <declname>user_data</declname>
         </param>
         <briefdescription>
-<para>The callback to trigger when the game host wants to stop the game instance. </para>
+<para>The callback to trigger when the game host wants to stop the game instance. This callback should be implmeneted as if it were being called from a signal handler. It should do only the minimum amount of work necessary to inform the rest of the system that a soft stop has been requested. In many cases this should simply be atomically setting a boolean to true and little more. </para>
         </briefdescription>
         <detaileddescription>
 <para>In SIC this is expected to come from the SIGTERM handler. In i3D this is expected to come from the Arcus commands </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="271" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="271" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="284" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="284" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a12b6641eae79cfca381c5a4adc4cb2aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -464,7 +488,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="283" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="283" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="296" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="296" declcolumn="20"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -492,7 +516,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="325" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="325" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="338" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="338" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a80e5b040228f255c243f45317f04eeac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -523,7 +547,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="331" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="331" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="344" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="344" declcolumn="20"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -551,7 +575,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="345" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="345" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="358" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="358" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a059a56aff73e1901768e2511f664f9f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -582,7 +606,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="351" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="351" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="364" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="364" declcolumn="20"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -608,7 +632,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="363" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="363" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="376" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="376" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a6f5ea8bf77b08b81ffefe160157a4ca0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -639,7 +663,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="368" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="368" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="381" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="381" declcolumn="20"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -677,7 +701,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="428" column="35" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="428" declcolumn="35"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="441" column="35" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="441" declcolumn="35"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -714,7 +738,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="441" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="441" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="454" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="454" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1acdb70d34626a0951b5123ca5a8c90ba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -761,7 +785,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="449" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="449" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="462" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="462" declcolumn="20"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -811,7 +835,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="462" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="462" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="475" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="475" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a8a05228013b9ad1fcdb0dbeea74d2d10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -858,7 +882,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="472" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="472" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="485" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="485" declcolumn="20"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -895,7 +919,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="490" column="35" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="490" declcolumn="35"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="503" column="35" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="503" declcolumn="35"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a28bcafe6ae1c9ebf393fb93f80253f73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> <ref refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784" kindref="member">RallyHereStatusCode</ref></type>
@@ -928,7 +952,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="495" column="35" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="495" declcolumn="35"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="508" column="35" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="508" declcolumn="35"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a109f917f5f91e81768a91e794125dc0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -953,7 +977,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="501" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="501" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="514" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="514" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="structRallyHereGameInstanceAdapter_1a221c9aa3189025c9ed28f73f812840f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__platform_8h_1ab0f7a4ccdb6515b62edbb26fd4cd0808" kindref="member">RH_EXPORT</ref> void</type>
@@ -978,7 +1002,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="503" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="503" declcolumn="20"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="516" column="20" declfile="game-host-adapter/include/game-host-adapter/c_api.h" declline="516" declcolumn="20"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1001,6 +1025,7 @@
       <member refid="structRallyHereGameInstanceAdapter_1a91c2c856bafd227bce07837642dba164" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_get_additional_info</name></member>
       <member refid="structRallyHereGameInstanceAdapter_1a5735f0da0826fe530291423a214ce456" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_get_annotations</name></member>
       <member refid="structRallyHereGameInstanceAdapter_1ab3f0ff7c642bb703f228782a4e6aae93" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_get_labels</name></member>
+      <member refid="structRallyHereGameInstanceAdapter_1a31b26a826279e5dbffc672c887f114a7" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_get_public_host_and_port</name></member>
       <member refid="structRallyHereGameInstanceAdapter_1af3d04dce0166b8f1ba22de46ef74da9f" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_healthy</name></member>
       <member refid="structRallyHereGameInstanceAdapter_1a221c9aa3189025c9ed28f73f812840f6" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_metrics_graphite_output</name></member>
       <member refid="structRallyHereGameInstanceAdapter_1aaa958e15c14a2100748048adb0cf7277" prot="public" virt="non-virtual"><scope>RallyHereGameInstanceAdapter</scope><name>rallyhere_metrics_immediate_action</name></member>

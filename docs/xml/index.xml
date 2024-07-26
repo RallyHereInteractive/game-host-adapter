@@ -1,5 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+  <compound refid="structrallyhere_1_1a2s__challenge__response" kind="struct"><name>rallyhere::a2s_challenge_response</name>
+    <member refid="structrallyhere_1_1a2s__challenge__response_1a96c66ac87a88d502d7fd3d1f82304304" kind="variable"><name>header</name></member>
+    <member refid="structrallyhere_1_1a2s__challenge__response_1a82180bbd4aa0403667dba85914234b1a" kind="variable"><name>type</name></member>
+    <member refid="structrallyhere_1_1a2s__challenge__response_1a99593022bc805655b14e38029846bb4a" kind="variable"><name>challenge</name></member>
+  </compound>
   <compound refid="structrallyhere_1_1a2s__simple__response" kind="struct"><name>rallyhere::a2s_simple_response</name>
     <member refid="structrallyhere_1_1a2s__simple__response_1aec3b8eca400c68045c4ce4a2170e86a6" kind="variable"><name>header</name></member>
     <member refid="structrallyhere_1_1a2s__simple__response_1aa85694668d5183fe7f0640d72451887f" kind="variable"><name>type</name></member>
@@ -11,6 +16,8 @@
     <member refid="structrallyhere_1_1A2SDatagram_1a4bac929dddade7f7843a9de8fc3b4749" kind="function"><name>A2SDatagram</name></member>
     <member refid="structrallyhere_1_1A2SDatagram_1aa5f0396e77cd77738ef437a4c230eb80" kind="function"><name>A2SDatagram</name></member>
     <member refid="structrallyhere_1_1A2SDatagram_1a70adb04f9e749c935eb3d9dd0cb8b658" kind="function"><name>A2SDatagram</name></member>
+    <member refid="structrallyhere_1_1A2SDatagram_1ab9248b418b6d12667bc3ef4ec160b872" kind="function"><name>A2SDatagram</name></member>
+    <member refid="structrallyhere_1_1A2SDatagram_1aa2160c8ff2753beda44866402a96c1d2" kind="function"><name>A2SDatagram</name></member>
     <member refid="structrallyhere_1_1A2SDatagram_1a10116e2a2d97418b540a209b216ad4ff" kind="function"><name>put</name></member>
     <member refid="structrallyhere_1_1A2SDatagram_1a1606755a90627bd00a74321bd02be2e9" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="structrallyhere_1_1A2SDatagram_1a42e8ab242adebd5c18c9842ee349311a" kind="function"><name>operator&lt;&lt;</name></member>
@@ -23,7 +30,10 @@
     <member refid="structrallyhere_1_1A2SDatagram_1aeed62009f3e17be72cc76dee941f7427" kind="function"><name>operator&gt;&gt;</name></member>
     <member refid="structrallyhere_1_1A2SDatagram_1a1e6b73015c9f39f0074dbf9f18a6a63f" kind="function"><name>operator&gt;&gt;</name></member>
     <member refid="structrallyhere_1_1A2SDatagram_1a31ba12d0497ce35d895778beccf92316" kind="function"><name>operator&gt;&gt;</name></member>
+    <member refid="structrallyhere_1_1A2SDatagram_1a7178198f80c6575df7acfdc201f0e03d" kind="function"><name>operator&gt;&gt;</name></member>
+    <member refid="structrallyhere_1_1A2SDatagram_1aaeb6982b9e4c4a1ccac8b4fca1edb26f" kind="function"><name>operator&gt;&gt;</name></member>
     <member refid="structrallyhere_1_1A2SDatagram_1ab6cae52b4c701996121e08d860cedc69" kind="function"><name>size</name></member>
+    <member refid="structrallyhere_1_1A2SDatagram_1a547f57912792f5e0e3877e339127454c" kind="function"><name>seek</name></member>
   </compound>
   <compound refid="structfmt_1_1formatter_3_01boost_1_1system_1_1error__code_01_4" kind="struct"><name>fmt::formatter&lt; boost::system::error_code &gt;</name>
     <member refid="structfmt_1_1formatter_3_01boost_1_1system_1_1error__code_01_4_1a5e3d260c19f52fb60aa66b1066937a14" kind="function"><name>parse</name></member>
@@ -51,6 +61,7 @@
     <member refid="structRallyHereGameInstanceAdapter_1a3c96a6e133beb24d2f54af05b13a713c" kind="function"><name>rallyhere_on_allocated_callback</name></member>
     <member refid="structRallyHereGameInstanceAdapter_1adddb6d6ebd068feef7972c6188ebecfe" kind="function"><name>rallyhere_test_fake_allocation_response</name></member>
     <member refid="structRallyHereGameInstanceAdapter_1afa437234d06d99d50e63479ae8ca3bd4" kind="function"><name>rallyhere_allocate</name></member>
+    <member refid="structRallyHereGameInstanceAdapter_1a31b26a826279e5dbffc672c887f114a7" kind="function"><name>rallyhere_get_public_host_and_port</name></member>
     <member refid="structRallyHereGameInstanceAdapter_1ab7b0b24e192ce285af9c233e68d12c19" kind="function"><name>rallyhere_reserve</name></member>
     <member refid="structRallyHereGameInstanceAdapter_1afb679e1014b59a9a246c7c5b02c1062b" kind="function"><name>rallyhere_reserve_unconditional</name></member>
     <member refid="structRallyHereGameInstanceAdapter_1a662073848a735b58f79f18df20196cf1" kind="function"><name>rallyhere_on_soft_stop_callback</name></member>
@@ -195,9 +206,13 @@
   </compound>
   <compound refid="namespacerallyhere" kind="namespace"><name>rallyhere</name>
     <member refid="namespacerallyhere_1a0afcd5afb55b621622fd5e2f7b4a0566" kind="enum"><name>a2s_query</name></member>
-    <member refid="namespacerallyhere_1a0afcd5afb55b621622fd5e2f7b4a0566acaf9b6b99962bf5c2264824231d7a40c" kind="enumvalue"><name>info</name></member>
+    <member refid="namespacerallyhere_1aa3a251be829757c4e50fec94521a889aacaf9b6b99962bf5c2264824231d7a40c" kind="enumvalue"><name>info</name></member>
     <member refid="namespacerallyhere_1a0afcd5afb55b621622fd5e2f7b4a0566aa2bbabfe7b1dd886a0c32b57bd8a94f9" kind="enumvalue"><name>players</name></member>
     <member refid="namespacerallyhere_1a0afcd5afb55b621622fd5e2f7b4a0566aa4f86f7bfc24194b276c22e0ef158197" kind="enumvalue"><name>rules</name></member>
+    <member refid="namespacerallyhere_1aa3a251be829757c4e50fec94521a889a" kind="enum"><name>a2s_response_type</name></member>
+    <member refid="namespacerallyhere_1aa3a251be829757c4e50fec94521a889aaf3091821e82e8b9280a48daf45893e8c" kind="enumvalue"><name>info</name></member>
+    <member refid="namespacerallyhere_1aa3a251be829757c4e50fec94521a889aacaf9b6b99962bf5c2264824231d7a40c" kind="enumvalue"><name>info</name></member>
+    <member refid="namespacerallyhere_1aa3a251be829757c4e50fec94521a889aab7c559c7330c425966e77ca9cfbaef58" kind="enumvalue"><name>challenge</name></member>
     <member refid="namespacerallyhere_1a7f5299480c8b27fb1ecb8a48090074be" kind="typedef"><name>memory_buffer</name></member>
     <member refid="namespacerallyhere_1a06e017abf8a0212e162b377dc793078e" kind="typedef"><name>string</name></member>
     <member refid="namespacerallyhere_1ae6c398b5cead92743640822e3a687302" kind="typedef"><name>stringstream</name></member>
@@ -302,6 +317,16 @@
     <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a02214395540aeb3a80b0d53ff59e0bf4" kind="enumvalue"><name>RH_STATUS_METRIC_BACKEND_STATSD_NOT_CONFIGURED</name></member>
     <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a7dc9b355287b4572d7f7e07c842d792b" kind="enumvalue"><name>RH_STATUS_METRIC_ACTION_NOT_SUPPORTED_BY_BACKEND</name></member>
     <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a3c19942f92f264f61214ced37ffe17cc" kind="enumvalue"><name>RH_STATUS_METRIC_ACTION_NOT_SUPPORTED_BY_TYPE</name></member>
+    <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ac5eb82110c0d3d3a09b161fcc5fbace3" kind="enumvalue"><name>RH_STATUS_REPORT_FORCED_MAX_PLAYERS_MUST_BE_UNSIGNED_INT_8</name></member>
+    <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ac829a2a21921b77f3fd72c56e4da8a1f" kind="enumvalue"><name>RH_STATUS_REPORT_DEFAULT_MAX_PLAYERS_MUST_BE_UNSIGNED_INT_8</name></member>
+    <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784af9b9cf4c349b7e60c31a2565899281a5" kind="enumvalue"><name>RH_STATUS_SIMULATE_CURRENT_PLAYERS_AT_MUST_BE_TWO_VALUES</name></member>
+    <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a97cea2dd633af5e0be0bb54ffd77e08d" kind="enumvalue"><name>RH_STATUS_SIMULATE_CURRENT_PLAYERS_AT_MUST_BE_UNSIGNED_INT_8</name></member>
+    <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a0150c2da9ae32e043bc6f40acc43506c" kind="enumvalue"><name>RH_STATUS_SIMULATE_MAX_PLAYERS_AT_MUST_BE_TWO_VALUES</name></member>
+    <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a0ac163acfd67b9090f491fcd805a7f23" kind="enumvalue"><name>RH_STATUS_SIMULATE_MAX_PLAYERS_AT_MUST_BE_UNSIGNED_INT_8</name></member>
+    <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784aa1c3ad1fbe676dbf4fa9b093b36e959c" kind="enumvalue"><name>RH_STATUS_SIMULATE_GAME_STARTUP_LAG_MUST_BE_TWO_VALUES</name></member>
+    <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a202ca6feb6c9ded0247956fb72f44d7e" kind="enumvalue"><name>RH_STATUS_A2S_COULD_NOT_START</name></member>
+    <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784ad006efc971ebd139701a475a7e9a90e4" kind="enumvalue"><name>RH_STATUS_PROMETHEUS_FAILED_AFTER_REGISTRATION</name></member>
+    <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784acb2244387cb80ddb66bd9023d307e4f7" kind="enumvalue"><name>RH_STATUS_PROMETHEUS_FAILED_RELOADING_ADDITIONAL_INFO_LABELS</name></member>
     <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a5478aec493c7e8ff5004055be4221399" kind="enumvalue"><name>RH_STATUS_HTTP_CONTINUE</name></member>
     <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a43b9eaaebddcf33d56af93d96f14efed" kind="enumvalue"><name>RH_STATUS_HTTP_SWITCHINGPROTOCOLS</name></member>
     <member refid="c__status_8h_1a95ac5c56776303edbbc5c3f125916784a223d974ddcd1ecf9a5b7402cee4133ec" kind="enumvalue"><name>RH_STATUS_HTTP_PROCESSING</name></member>

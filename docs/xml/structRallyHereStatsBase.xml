@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="379" column="20" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="379" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="392" column="20" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="392" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereStatsBase_1acf6058a69c59bedc5cc231ce79f4cc45" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="381" column="20" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="381" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="394" column="20" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="394" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereStatsBase_1aeff9a689014da8e2938eef48ab7a408d" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="383" column="20" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="383" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="396" column="20" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="396" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereStatsBase_1a713b15b5a238ff1898cc9d05ad6429db" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="385" column="20" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="385" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="398" column="20" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="398" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereStatsBase_1a2b9cfc8f3868f87a1cda51d816d8b820" prot="public" static="no" mutable="no">
         <type>int32_t</type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="387" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="387" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="400" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="400" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereStatsBase_1ae3fe7b9ec5d0977b2c41d0744d2fea30" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="389" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="389" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="402" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="402" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereStatsBase_1aff123439bb2fe7ac8f88973908a1b589" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="391" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="391" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="404" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="404" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereStatsBase_1a67565ba06401c066339374733c1f0f1f" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="393" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="393" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="406" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="406" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereStatsBase_1a03e3b91a2874c60c24cb4ddb2f595def" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -128,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="395" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="395" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="408" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="408" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereStatsBase_1a869a930027d3997e7eda78bcec2e4bde" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -142,7 +142,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="397" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="397" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="410" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="410" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereStatsBase_1a47cbeb803c043765e14e998d39ed48cf" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -150,13 +150,13 @@
         <argsstring></argsstring>
         <name>visibility</name>
         <briefdescription>
-<para>Visibility of the server. Currently &apos;0&apos; for public and &apos;1&apos; for private. </para>
+<para>Visibility of the server. Currently 0 for public and 1 for private. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="399" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="399" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="412" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="412" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereStatsBase_1a69f230c0fef002804fda3e1eb00409e3" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -164,13 +164,13 @@
         <argsstring></argsstring>
         <name>anticheat</name>
         <briefdescription>
-<para>Anti-cheat running on the server. Currently &apos;0&apos; for unsecured, &apos;1&apos; for secured. </para>
+<para>Anti-cheat running on the server. Currently 0 for unsecured, 1 for secured. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="401" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="401" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="414" column="17" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="414" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structRallyHereStatsBase_1a3e3e1b3b8cc6b01045fc31581663115d" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -184,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="403" column="20" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="403" bodyend="-1"/>
+        <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="416" column="20" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="416" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -192,7 +192,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="377" column="5" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="377" bodyend="404"/>
+    <location file="game-host-adapter/include/game-host-adapter/c_api.h" line="390" column="5" bodyfile="game-host-adapter/include/game-host-adapter/c_api.h" bodystart="390" bodyend="417"/>
     <listofallmembers>
       <member refid="structRallyHereStatsBase_1a69f230c0fef002804fda3e1eb00409e3" prot="public" virt="non-virtual"><scope>RallyHereStatsBase</scope><name>anticheat</name></member>
       <member refid="structRallyHereStatsBase_1a67565ba06401c066339374733c1f0f1f" prot="public" virt="non-virtual"><scope>RallyHereStatsBase</scope><name>bots</name></member>

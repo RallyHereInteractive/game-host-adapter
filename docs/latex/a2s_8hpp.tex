@@ -1,6 +1,7 @@
 \hypertarget{a2s_8hpp}{}\doxysection{game-\/host-\/adapter/include/test-\/helpers/a2s.hpp File Reference}
 \label{a2s_8hpp}\index{game-\/host-\/adapter/include/test-\/helpers/a2s.hpp@{game-\/host-\/adapter/include/test-\/helpers/a2s.hpp}}
 {\ttfamily \#include \char`\"{}rh\+\_\+string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rh\+\_\+vector.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}boost/core/span.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}boost/endian/conversion.\+hpp\char`\"{}}\newline
 Include dependency graph for a2s.\+hpp\+:
@@ -18,6 +19,8 @@ struct \mbox{\hyperlink{structrallyhere_1_1a2s__simple__response}{rallyhere\+::a
 \item 
 struct \mbox{\hyperlink{structrallyhere_1_1server__info}{rallyhere\+::server\+\_\+info}}
 \item 
+struct \mbox{\hyperlink{structrallyhere_1_1a2s__challenge__response}{rallyhere\+::a2s\+\_\+challenge\+\_\+response}}
+\item 
 struct \mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{rallyhere\+::\+A2\+SDatagram}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
@@ -28,8 +31,13 @@ struct \mbox{\hyperlink{structrallyhere_1_1A2SDatagram}{rallyhere\+::\+A2\+SData
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum class \mbox{\hyperlink{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566}{rallyhere\+::a2s\+\_\+query}} \+: uint8\+\_\+t \{ \mbox{\hyperlink{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566acaf9b6b99962bf5c2264824231d7a40c}{rallyhere\+::info}} = 0x54
+enum class \mbox{\hyperlink{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566}{rallyhere\+::a2s\+\_\+query}} \+: uint8\+\_\+t \{ \mbox{\hyperlink{namespacerallyhere_aa3a251be829757c4e50fec94521a889aacaf9b6b99962bf5c2264824231d7a40c}{rallyhere\+::info}} = 0x54
 , \mbox{\hyperlink{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566aa2bbabfe7b1dd886a0c32b57bd8a94f9}{rallyhere\+::players}} = 0x55
 , \mbox{\hyperlink{namespacerallyhere_a0afcd5afb55b621622fd5e2f7b4a0566aa4f86f7bfc24194b276c22e0ef158197}{rallyhere\+::rules}} = 0x56
+ \}
+\item 
+enum \mbox{\hyperlink{namespacerallyhere_aa3a251be829757c4e50fec94521a889a}{rallyhere\+::a2s\+\_\+response\+\_\+type}} \+: uint8\+\_\+t \{ \mbox{\hyperlink{namespacerallyhere_aa3a251be829757c4e50fec94521a889aaf3091821e82e8b9280a48daf45893e8c}{rallyhere\+::info}} = 0x49
+, \mbox{\hyperlink{namespacerallyhere_aa3a251be829757c4e50fec94521a889aacaf9b6b99962bf5c2264824231d7a40c}{rallyhere\+::info}} = 0x54
+, \mbox{\hyperlink{namespacerallyhere_aa3a251be829757c4e50fec94521a889aab7c559c7330c425966e77ca9cfbaef58}{rallyhere\+::challenge}} = 0x41
  \}
 \end{DoxyCompactItemize}

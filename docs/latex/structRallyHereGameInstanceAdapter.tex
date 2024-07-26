@@ -46,6 +46,8 @@
 \item 
 \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_afa437234d06d99d50e63479ae8ca3bd4}{rallyhere\+\_\+allocate}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
 \begin{DoxyCompactList}\small\item\em Tell the game host that this Game\+Instance has been allocated. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a31b26a826279e5dbffc672c887f114a7}{rallyhere\+\_\+get\+\_\+public\+\_\+host\+\_\+and\+\_\+port}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, \mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}} $\ast$map)
+\begin{DoxyCompactList}\small\item\em Get any configured public host and port information. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_ab7b0b24e192ce285af9c233e68d12c19}{rallyhere\+\_\+reserve}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, unsigned int timeout\+\_\+seconds, void($\ast$reserve\+\_\+callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$reserve\+\_\+user\+\_\+data, void($\ast$ready\+\_\+callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$ready\+\_\+user\+\_\+data)
 \begin{DoxyCompactList}\small\item\em Tell the game host to reserve this game instance rather than marking it ready. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_afb679e1014b59a9a246c7c5b02c1062b}{rallyhere\+\_\+reserve\+\_\+unconditional}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
@@ -55,7 +57,7 @@
 {\em There are times when the game hosting system would like your instance to shut down, but it does not need to happen immediately. In these situations a soft-\/stop will be requested so that your instance can finish any currently running games and then stop gracefully. Currently only used by SIC and i3D. }\begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a662073848a735b58f79f18df20196cf1}{rallyhere\+\_\+on\+\_\+soft\+\_\+stop\+\_\+callback}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter, void($\ast$callback)(const \mbox{\hyperlink{c__status_8h_a95ac5c56776303edbbc5c3f125916784}{Rally\+Here\+Status\+Code}} \&code, void $\ast$user\+\_\+data), void $\ast$user\+\_\+data)
-\begin{DoxyCompactList}\small\item\em The callback to trigger when the game host wants to stop the game instance. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The callback to trigger when the game host wants to stop the game instance. This callback should be implmeneted as if it were being called from a signal handler. It should do only the minimum amount of work necessary to inform the rest of the system that a soft stop has been requested. In many cases this should simply be atomically setting a boolean to true and little more. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void \mbox{\hyperlink{structRallyHereGameInstanceAdapter_a12b6641eae79cfca381c5a4adc4cb2aa}{rallyhere\+\_\+external\+\_\+soft\+\_\+stop\+\_\+requested}} (\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}} adapter)
 \begin{DoxyCompactList}\small\item\em Inform the adapter that a soft stop has been requested. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \end{Indent}
@@ -234,6 +236,18 @@ Caller is responsible for freeing the string map. \mbox{\Hypertarget{structRally
 
 Get the current string map for the labels. 
 
+Caller is responsible for freeing the string map with rallyhere\+\_\+string\+\_\+map\+\_\+destroy. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a31b26a826279e5dbffc672c887f114a7}\label{structRallyHereGameInstanceAdapter_a31b26a826279e5dbffc672c887f114a7}} 
+\index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_get\_public\_host\_and\_port@{rallyhere\_get\_public\_host\_and\_port}}
+\index{rallyhere\_get\_public\_host\_and\_port@{rallyhere\_get\_public\_host\_and\_port}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
+\doxysubsubsection{\texorpdfstring{rallyhere\_get\_public\_host\_and\_port()}{rallyhere\_get\_public\_host\_and\_port()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{c__platform_8h_ab0f7a4ccdb6515b62edbb26fd4cd0808}{RH\+\_\+\+EXPORT}} void rallyhere\+\_\+get\+\_\+public\+\_\+host\+\_\+and\+\_\+port (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{c__api_8h_ab9f295af86f1286c21e57d4a73c76f8b}{Rally\+Here\+Game\+Instance\+Adapter\+Ptr}}}]{adapter,  }\item[{\mbox{\hyperlink{c__api_8h_a8901377cd48d4831c6380593a2a60360}{Rally\+Here\+String\+Map\+Ptr}} $\ast$}]{map }\end{DoxyParamCaption})}
+
+
+
+Get any configured public host and port information. 
+
+There are situations where you want to use the Reserve flow, but would like to reuse the operational paramaters provided to SIC by Rally\+Here operations. This allows you to get a string map with the public\+\_\+host and public\+\_\+port that were provided to the game host. This is currently only valid in SIC mode.
+
 Caller is responsible for freeing the string map with rallyhere\+\_\+string\+\_\+map\+\_\+destroy. \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_af3d04dce0166b8f1ba22de46ef74da9f}\label{structRallyHereGameInstanceAdapter_af3d04dce0166b8f1ba22de46ef74da9f}} 
 \index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_healthy@{rallyhere\_healthy}}
 \index{rallyhere\_healthy@{rallyhere\_healthy}!RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}}
@@ -282,7 +296,7 @@ Register the callback which will be called when the game host has assigned an al
 
 
 
-The callback to trigger when the game host wants to stop the game instance. 
+The callback to trigger when the game host wants to stop the game instance. This callback should be implmeneted as if it were being called from a signal handler. It should do only the minimum amount of work necessary to inform the rest of the system that a soft stop has been requested. In many cases this should simply be atomically setting a boolean to true and little more. 
 
 In SIC this is expected to come from the SIGTERM handler. In i3D this is expected to come from the Arcus commands \mbox{\Hypertarget{structRallyHereGameInstanceAdapter_a5844a4e3c29f530db2d61f647e925f88}\label{structRallyHereGameInstanceAdapter_a5844a4e3c29f530db2d61f647e925f88}} 
 \index{RallyHereGameInstanceAdapter@{RallyHereGameInstanceAdapter}!rallyhere\_ready@{rallyhere\_ready}}

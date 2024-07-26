@@ -35,6 +35,8 @@
       <node id="7">
         <label>game-host-adapter/include/test-helpers/rh_vector.h</label>
         <link refid="rh__vector_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>game-host-adapter/include/test-helpers/rh_allocator.h</label>

@@ -74,6 +74,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="rh__string_8h_source.html">rh_string.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rh__vector_8h_source.html">rh_vector.h</a>&quot;</code><br />
 <code>#include &quot;boost/core/span.hpp&quot;</code><br />
 <code>#include &quot;boost/endian/conversion.hpp&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -81,12 +82,14 @@ Include dependency graph for a2s.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="a2s_8hpp__incl.png" border="0" usemap="#agame-host-adapter_2include_2test-helpers_2a2s_8hpp" alt=""/></div>
 <map name="agame-host-adapter_2include_2test-helpers_2a2s_8hpp" id="agame-host-adapter_2include_2test-helpers_2a2s_8hpp">
-<area shape="rect" title=" " alt="" coords="137,5,335,47"/>
-<area shape="rect" href="rh__string_8h.html" title=" " alt="" coords="44,95,135,121"/>
-<area shape="rect" title=" " alt="" coords="159,95,313,121"/>
-<area shape="rect" title=" " alt="" coords="337,95,546,121"/>
+<area shape="rect" title=" " alt="" coords="177,5,375,47"/>
+<area shape="rect" href="rh__string_8h.html" title=" " alt="" coords="40,95,131,121"/>
+<area shape="rect" href="rh__vector_8h.html" title=" " alt="" coords="155,95,250,121"/>
+<area shape="rect" title=" " alt="" coords="274,95,427,121"/>
+<area shape="rect" title=" " alt="" coords="451,95,661,121"/>
 <area shape="rect" title=" " alt="" coords="5,169,64,196"/>
 <area shape="rect" href="rh__allocator_8h.html" title=" " alt="" coords="89,169,199,196"/>
+<area shape="rect" title=" " alt="" coords="223,169,286,196"/>
 </map>
 </div>
 </div>
@@ -98,6 +101,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrallyhere_1_1server__info.html">rallyhere::server_info</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrallyhere_1_1a2s__challenge__response.html">rallyhere::a2s_challenge_response</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrallyhere_1_1A2SDatagram.html">rallyhere::A2SDatagram</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -108,11 +113,16 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a0afcd5afb55b621622fd5e2f7b4a0566"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerallyhere.html#a0afcd5afb55b621622fd5e2f7b4a0566">rallyhere::a2s_query</a> : uint8_t { <a class="el" href="namespacerallyhere.html#a0afcd5afb55b621622fd5e2f7b4a0566acaf9b6b99962bf5c2264824231d7a40c">rallyhere::info</a> = 0x54
+<tr class="memitem:a0afcd5afb55b621622fd5e2f7b4a0566"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerallyhere.html#a0afcd5afb55b621622fd5e2f7b4a0566">rallyhere::a2s_query</a> : uint8_t { <a class="el" href="namespacerallyhere.html#aa3a251be829757c4e50fec94521a889aacaf9b6b99962bf5c2264824231d7a40c">rallyhere::info</a> = 0x54
 , <a class="el" href="namespacerallyhere.html#a0afcd5afb55b621622fd5e2f7b4a0566aa2bbabfe7b1dd886a0c32b57bd8a94f9">rallyhere::players</a> = 0x55
 , <a class="el" href="namespacerallyhere.html#a0afcd5afb55b621622fd5e2f7b4a0566aa4f86f7bfc24194b276c22e0ef158197">rallyhere::rules</a> = 0x56
  }</td></tr>
 <tr class="separator:a0afcd5afb55b621622fd5e2f7b4a0566"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3a251be829757c4e50fec94521a889a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerallyhere.html#aa3a251be829757c4e50fec94521a889a">rallyhere::a2s_response_type</a> : uint8_t { <a class="el" href="namespacerallyhere.html#aa3a251be829757c4e50fec94521a889aaf3091821e82e8b9280a48daf45893e8c">rallyhere::info</a> = 0x49
+, <a class="el" href="namespacerallyhere.html#aa3a251be829757c4e50fec94521a889aacaf9b6b99962bf5c2264824231d7a40c">rallyhere::info</a> = 0x54
+, <a class="el" href="namespacerallyhere.html#aa3a251be829757c4e50fec94521a889aab7c559c7330c425966e77ca9cfbaef58">rallyhere::challenge</a> = 0x41
+ }</td></tr>
+<tr class="separator:aa3a251be829757c4e50fec94521a889a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

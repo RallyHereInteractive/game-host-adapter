@@ -112,6 +112,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afa437234d06d99d50e63479ae8ca3bd4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__platform_8h.html#ab0f7a4ccdb6515b62edbb26fd4cd0808">RH_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRallyHereGameInstanceAdapter.html#afa437234d06d99d50e63479ae8ca3bd4">rallyhere_allocate</a> (<a class="el" href="c__api_8h.html#ab9f295af86f1286c21e57d4a73c76f8b">RallyHereGameInstanceAdapterPtr</a> adapter, void(*callback)(const <a class="el" href="c__status_8h.html#a95ac5c56776303edbbc5c3f125916784">RallyHereStatusCode</a> &amp;code, void *user_data), void *user_data)</td></tr>
 <tr class="memdesc:afa437234d06d99d50e63479ae8ca3bd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell the game host that this GameInstance has been allocated.  <a href="structRallyHereGameInstanceAdapter.html#afa437234d06d99d50e63479ae8ca3bd4">More...</a><br /></td></tr>
 <tr class="separator:afa437234d06d99d50e63479ae8ca3bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31b26a826279e5dbffc672c887f114a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__platform_8h.html#ab0f7a4ccdb6515b62edbb26fd4cd0808">RH_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRallyHereGameInstanceAdapter.html#a31b26a826279e5dbffc672c887f114a7">rallyhere_get_public_host_and_port</a> (<a class="el" href="c__api_8h.html#ab9f295af86f1286c21e57d4a73c76f8b">RallyHereGameInstanceAdapterPtr</a> adapter, <a class="el" href="c__api_8h.html#a8901377cd48d4831c6380593a2a60360">RallyHereStringMapPtr</a> *map)</td></tr>
+<tr class="memdesc:a31b26a826279e5dbffc672c887f114a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get any configured public host and port information.  <a href="structRallyHereGameInstanceAdapter.html#a31b26a826279e5dbffc672c887f114a7">More...</a><br /></td></tr>
+<tr class="separator:a31b26a826279e5dbffc672c887f114a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7b0b24e192ce285af9c233e68d12c19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__platform_8h.html#ab0f7a4ccdb6515b62edbb26fd4cd0808">RH_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRallyHereGameInstanceAdapter.html#ab7b0b24e192ce285af9c233e68d12c19">rallyhere_reserve</a> (<a class="el" href="c__api_8h.html#ab9f295af86f1286c21e57d4a73c76f8b">RallyHereGameInstanceAdapterPtr</a> adapter, unsigned int timeout_seconds, void(*reserve_callback)(const <a class="el" href="c__status_8h.html#a95ac5c56776303edbbc5c3f125916784">RallyHereStatusCode</a> &amp;code, void *user_data), void *reserve_user_data, void(*ready_callback)(const <a class="el" href="c__status_8h.html#a95ac5c56776303edbbc5c3f125916784">RallyHereStatusCode</a> &amp;code, void *user_data), void *ready_user_data)</td></tr>
 <tr class="memdesc:ab7b0b24e192ce285af9c233e68d12c19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell the game host to reserve this game instance rather than marking it ready.  <a href="structRallyHereGameInstanceAdapter.html#ab7b0b24e192ce285af9c233e68d12c19">More...</a><br /></td></tr>
 <tr class="separator:ab7b0b24e192ce285af9c233e68d12c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,7 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>There are times when the game hosting system would like your instance to shut down, but it does not need to happen immediately. In these situations a soft-stop will be requested so that your instance can finish any currently running games and then stop gracefully. Currently only used by SIC and i3D. </p>
 </div></td></tr>
 <tr class="memitem:a662073848a735b58f79f18df20196cf1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__platform_8h.html#ab0f7a4ccdb6515b62edbb26fd4cd0808">RH_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRallyHereGameInstanceAdapter.html#a662073848a735b58f79f18df20196cf1">rallyhere_on_soft_stop_callback</a> (<a class="el" href="c__api_8h.html#ab9f295af86f1286c21e57d4a73c76f8b">RallyHereGameInstanceAdapterPtr</a> adapter, void(*callback)(const <a class="el" href="c__status_8h.html#a95ac5c56776303edbbc5c3f125916784">RallyHereStatusCode</a> &amp;code, void *user_data), void *user_data)</td></tr>
-<tr class="memdesc:a662073848a735b58f79f18df20196cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The callback to trigger when the game host wants to stop the game instance.  <a href="structRallyHereGameInstanceAdapter.html#a662073848a735b58f79f18df20196cf1">More...</a><br /></td></tr>
+<tr class="memdesc:a662073848a735b58f79f18df20196cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The callback to trigger when the game host wants to stop the game instance. This callback should be implmeneted as if it were being called from a signal handler. It should do only the minimum amount of work necessary to inform the rest of the system that a soft stop has been requested. In many cases this should simply be atomically setting a boolean to true and little more.  <a href="structRallyHereGameInstanceAdapter.html#a662073848a735b58f79f18df20196cf1">More...</a><br /></td></tr>
 <tr class="separator:a662073848a735b58f79f18df20196cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12b6641eae79cfca381c5a4adc4cb2aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__platform_8h.html#ab0f7a4ccdb6515b62edbb26fd4cd0808">RH_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRallyHereGameInstanceAdapter.html#a12b6641eae79cfca381c5a4adc4cb2aa">rallyhere_external_soft_stop_requested</a> (<a class="el" href="c__api_8h.html#ab9f295af86f1286c21e57d4a73c76f8b">RallyHereGameInstanceAdapterPtr</a> adapter)</td></tr>
 <tr class="memdesc:a12b6641eae79cfca381c5a4adc4cb2aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inform the adapter that a soft stop has been requested.  <a href="structRallyHereGameInstanceAdapter.html#a12b6641eae79cfca381c5a4adc4cb2aa">More...</a><br /></td></tr>
@@ -546,6 +549,38 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a31b26a826279e5dbffc672c887f114a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31b26a826279e5dbffc672c887f114a7">&#9670;&nbsp;</a></span>rallyhere_get_public_host_and_port()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="c__platform_8h.html#ab0f7a4ccdb6515b62edbb26fd4cd0808">RH_EXPORT</a> void rallyhere_get_public_host_and_port </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="c__api_8h.html#ab9f295af86f1286c21e57d4a73c76f8b">RallyHereGameInstanceAdapterPtr</a>&#160;</td>
+          <td class="paramname"><em>adapter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="c__api_8h.html#a8901377cd48d4831c6380593a2a60360">RallyHereStringMapPtr</a> *&#160;</td>
+          <td class="paramname"><em>map</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get any configured public host and port information. </p>
+<p>There are situations where you want to use the Reserve flow, but would like to reuse the operational paramaters provided to SIC by RallyHere operations. This allows you to get a string map with the public_host and public_port that were provided to the game host. This is currently only valid in SIC mode.</p>
+<p>Caller is responsible for freeing the string map with rallyhere_string_map_destroy. </p>
+
+</div>
+</div>
 <a id="af3d04dce0166b8f1ba22de46ef74da9f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af3d04dce0166b8f1ba22de46ef74da9f">&#9670;&nbsp;</a></span>rallyhere_healthy()</h2>
 
@@ -788,7 +823,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The callback to trigger when the game host wants to stop the game instance. </p>
+<p>The callback to trigger when the game host wants to stop the game instance. This callback should be implmeneted as if it were being called from a signal handler. It should do only the minimum amount of work necessary to inform the rest of the system that a soft stop has been requested. In many cases this should simply be atomically setting a boolean to true and little more. </p>
 <p>In SIC this is expected to come from the SIGTERM handler. In i3D this is expected to come from the Arcus commands </p>
 
 </div>
