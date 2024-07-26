@@ -75,7 +75,26 @@ jobs:
         run: |
           mkdir -p ${{ github.workspace }}/vcpkg_cache
           echo VCPKG_DEFAULT_BINARY_CACHE='${{ github.workspace }}/vcpkg_cache' >> $GITHUB_ENV
-      - name: List all files in workspace
+      - name: Generate Game Host Adapter Build
         shell: bash
         run: |
-          find ${{ github.workspace }}
+          export NUGET_EXE=`which nuget`
+          cmake -G "${{ matrix.config.generator }}" \
+            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+            --toolchain '${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake' \
+            --install-prefix '${{ github.workspace }}/install' \
+            -DVCPKG_TARGET_TRIPLET='${{ matrix.config.vcpkg_triplet }}' \
+            -S '${{ github.workspace }}/game-host-adapter' \
+            -B '${{ github.workspace }}/build'
+      - name: Build Game Host Adapter
+        shell: bash
+        continue-on-error: true
+        run: |
+          export NUGET_EXE=`which nuget`
+          cmake --build '${{ github.workspace }}/build' \
+            --config RelWithDebInfo \
+            --target game-host-adapter
+      - name: List all files
+        shell: bash
+        run: |
+          find .
