@@ -539,7 +539,36 @@ static const lest::test module[] = {
         rallyhere_ready(adapter, on_ready_callback, &data);
         EXPECT(data.ready_result == RH_STATUS_PROMETHEUS_COULD_NOT_START);
     },
+    CASE("SIC C interface reserve can get public host and port")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        SETUP_TEST_ADAPTER;
+        ADAPTER_CONNECT;
+
+        rallyhere_reserve_unconditional(adapter, on_reserve_callback, &data);
+
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        RallyHereStringMapPtr hostinfo = nullptr;
+        BOOST_SCOPE_EXIT_ALL(hostinfo) {
+            rallyhere_string_map_destroy(hostinfo);
+        };
+        rallyhere_get_public_host_and_port(adapter, &hostinfo);
+        EXPECT(hostinfo != nullptr);
+        const char* value_to_check = nullptr;
+        unsigned int value_size = 0;
+        EXPECT(rallyhere_string_map_get(hostinfo, "public_host", &value_to_check, &value_size) == RH_STATUS_OK);
+        const char* expected_hostname = "unknownhostname";
+        EXPECT(value_size == strlen(expected_hostname));
+        EXPECT(0 == strcmp(expected_hostname, value_to_check));
+        const char* expected_port = "9000";
+        EXPECT(rallyhere_string_map_get(hostinfo, "public_port", &value_to_check, &value_size) == RH_STATUS_OK);
+        EXPECT(value_size == strlen(expected_port));
+        EXPECT(0 == strcmp(expected_port, value_to_check));
+    },
 };
+
 //@formatter:on
 // clang-format off
 

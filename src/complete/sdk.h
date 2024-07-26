@@ -387,6 +387,13 @@ class GameInstanceAdapter
     {
         m_FakeAllocationData = data;
     }
+    auto GetPublicHostAndPort() const
+    {
+        auto allocation_info = i3d::one::allocator::create<rallyhere::StringMap>();
+        allocation_info->Set("public_host", m_SicPublicHost);
+        allocation_info->Set("public_port", m_PublicPort);
+        return allocation_info;
+    }
 
   private:
     /** Inform the game host that this game instance is done with its current allocation. Should only be called as part of the destruction of
