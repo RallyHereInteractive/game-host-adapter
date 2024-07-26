@@ -74,6 +74,13 @@ static const lest::test module[] = {
         auto mode_name = adapter.GetModeName();
         EXPECT(mode_name == "SIC");
     },
+    CASE("Provider None is available")
+    {
+        auto arguments = get_default_arguments<const char *>("None", "");
+        rallyhere::GameInstanceAdapter adapter{arguments.c_str()};
+        auto mode_name = adapter.GetModeName();
+        EXPECT(mode_name == "None");
+    },
 };
 //@formatter:on
 // clang-format off
