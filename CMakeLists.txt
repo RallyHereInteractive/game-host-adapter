@@ -205,6 +205,7 @@ if (LEST_INCLUDE_DIRS)
             test/complete/test_sdk_helpers.cpp
             test/complete/test_base64.cpp
             test/complete/test_base64.h
+            test/complete/test_provider.cpp
     )
     add_executable(${PROJECT_NAME}_complete_test
             ${complete_test_sources}

@@ -167,6 +167,8 @@ void GameInstanceAdapter::ReadyMultiplay(base_callback_function_t callback, void
 
 void GameInstanceAdapter::CheckServerJson()
 {
+    if (!m_MultiplayServerFileWatcher)
+        return;
     auto source = LoadFileToString(m_MultiplayServerFile);
     boost::json::error_code ec;
     custom_resource mr;
@@ -200,7 +202,10 @@ void GameInstanceAdapter::CheckServerJson()
             allocation_info->Set("public_port", m_AllocatedPublicPort);
             if (LastAllocatedGauge)
                 LastAllocatedGauge->SetToCurrentTime();
-            m_OnAllocatedCallback(reinterpret_cast<RallyHereStringMapPtr>(allocation_info), RH_STATUS_OK, m_OnAllocatedUserData);
+            if (m_OnAllocatedCallback)
+                m_OnAllocatedCallback(reinterpret_cast<RallyHereStringMapPtr>(allocation_info), RH_STATUS_OK, m_OnAllocatedUserData);
+            else
+                i3d::one::allocator::destroy(allocation_info);
             StopCheckingServerJson();
         }
     }
