@@ -163,7 +163,7 @@ void GameInstanceAdapter::Connect(base_callback_function_t callback, void* user_
         ConnectSIC(callback, user_data);
     else if (m_ModeName == "Multiplay")
         ConnectMultiplay(callback, user_data);
-    else if (m_ModeName == "AutoCreate")
+    else if (m_ModeName == "AutoCreate" || m_ModeName == "None")
     {
         if (callback)
             callback(RH_STATUS_OK, user_data);
@@ -179,7 +179,7 @@ void GameInstanceAdapter::Ready(base_callback_function_t callback, void* user_da
         ReadySIC(callback, user_data);
     else if (m_ModeName == "Multiplay")
         ReadyMultiplay(callback, user_data);
-    else if (m_ModeName == "AutoCreate")
+    else if (m_ModeName == "AutoCreate" || m_ModeName == "None")
     {}
     else
         if (callback)
@@ -658,7 +658,7 @@ void GameInstanceAdapter::Setup()
     {
         SetupMultiplay();
     }
-    else if (m_ModeName == "AutoCreate")
+    else if (m_ModeName == "AutoCreate" || m_ModeName == "None")
     {}
     else
     {
