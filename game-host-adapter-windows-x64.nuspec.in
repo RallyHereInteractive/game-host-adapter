@@ -12,9 +12,9 @@
         <file src="$<TARGET_FILE_DIR:game-host-adapter>/game-host-adapter.pdb" target="lib/game-host-adapter.pdb" />
         <file src="$<TARGET_FILE_DIR:game-host-adapter>/game-host-adapter.lib" target="lib/game-host-adapter.lib" />
         <file src="$<TARGET_FILE_DIR:game-host-adapter>/game-host-adapter.exp" target="lib/game-host-adapter.exp" />
-        <file src="$<TARGET_FILE_DIR:game-host-adapter>/boost_filesystem-vc143-mt-x64-1_83.dll" target="lib/boost_filesystem-vc143-mt-x64-1_83.dll" />
-        <file src="$<TARGET_FILE_DIR:game-host-adapter>/boost_json-vc143-mt-x64-1_83.dll" target="lib/boost_json-vc143-mt-x64-1_83.dll" />
-        <file src="$<TARGET_FILE_DIR:game-host-adapter>/boost_url-vc143-mt-x64-1_83.dll" target="lib/boost_url-vc143-mt-x64-1_83.dll" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/boost_filesystem-vc142-mt-x64-1_83.dll" target="lib/boost_filesystem-vc142-mt-x64-1_83.dll" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/boost_json-vc142-mt-x64-1_83.dll" target="lib/boost_json-vc142-mt-x64-1_83.dll" />
+        <file src="$<TARGET_FILE_DIR:game-host-adapter>/boost_url-vc142-mt-x64-1_83.dll" target="lib/boost_url-vc142-mt-x64-1_83.dll" />
         <file src="$<TARGET_FILE_DIR:game-host-adapter>/fmt.dll" target="lib/fmt.dll" />
         <file src="$<TARGET_FILE_DIR:game-host-adapter>/libcrypto-3-x64.dll" target="lib/libcrypto-3-x64.dll" />
         <file src="$<TARGET_FILE_DIR:game-host-adapter>/libssl-3-x64.dll" target="lib/libssl-3-x64.dll" />
