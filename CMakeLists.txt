@@ -117,7 +117,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC certify::core)
 find_package(prometheus-cpp CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE prometheus-cpp::core prometheus-cpp::pull)
 
-target_compile_definitions(${PROJECT_NAME} PRIVATE "$<IF:$<CONFIG:Debug>,-DDEFAULT_LOG_LEVEL=RH_LOG_LEVEL_TRACE,-DDEFAULT_LOG_LEVEL=RH_LOG_LEVEL_ERROR>")
+target_compile_definitions(${PROJECT_NAME} PRIVATE "$<IF:$<CONFIG:Debug>,DEFAULT_LOG_LEVEL=RH_LOG_LEVEL_TRACE,DEFAULT_LOG_LEVEL=RH_LOG_LEVEL_ERROR>")
 
 #target_compile_options(${PROJECT_NAME} PRIVATE "$<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:-gdwarf-4>")
 #target_link_options(${PROJECT_NAME} PRIVATE "$<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:-gdwarf-4>")

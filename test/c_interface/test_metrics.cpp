@@ -200,7 +200,7 @@ public:
             return;
         }
         // Set a timeout on the operation
-        beast::get_lowest_layer(m_Stream).expires_after(std::chrono::seconds(30));
+        beast::get_lowest_layer(m_Stream).expires_after(m_Timeout);
 
         // Make the connection on the IP address we get from a lookup
         beast::get_lowest_layer(m_Stream).async_connect(
@@ -218,7 +218,7 @@ public:
         }
 
         // Set a timeout on the operation
-        beast::get_lowest_layer(m_Stream).expires_after(std::chrono::seconds(30));
+        beast::get_lowest_layer(m_Stream).expires_after(m_Timeout);
         if (m_LogRequest)
             m_Logger.log(RH_LOG_LEVEL_TRACE, "{}", m_Request);
         http::async_write(
@@ -323,7 +323,7 @@ public:
     bool m_Cancelled{ false };
     boost::asio::cancellation_slot m_CancellationSlot;
     boost::asio::cancellation_signal m_CancelSignal;
-    std::chrono::milliseconds m_Timeout{ 30000 };
+    std::chrono::milliseconds m_Timeout{ 10000 };
     bool m_LogRequest{ false };
 };
 
