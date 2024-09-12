@@ -573,6 +573,8 @@ void GameInstanceAdapter::SetupSIC()
     m_Port = "7777";
     m_PublicPort.clear();
     m_MultiHome = "0.0.0.0";
+    if (m_RallyHereUrl.back() == '/')
+        m_RallyHereUrl.pop_back();
     m_SicPollUrl = m_RallyHereUrl + "/instances/sic_registration/v1/state";
     m_SicLoginUrl = m_RallyHereUrl + "/users/v1/login";
     m_SicRegistrationUrl = m_RallyHereUrl + "/instances/sic_registration/v3/register";
