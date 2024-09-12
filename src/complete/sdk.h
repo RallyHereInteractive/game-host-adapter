@@ -392,7 +392,39 @@ class GameInstanceAdapter
         auto allocation_info = i3d::one::allocator::create<rallyhere::StringMap>();
         allocation_info->Set("public_host", m_SicPublicHost);
         allocation_info->Set("public_port", m_PublicPort);
+        AddBindIpsAndPorts(allocation_info);
         return allocation_info;
+    }
+
+    void AddBindIpsAndPorts(rallyhere::StringMap* allocation_info) const
+    {
+        if (m_BindIps.size() > 0)
+        {
+            if (m_BindIps.size() == 1)
+            {
+                allocation_info->Set("bind_ips", m_BindIps[0]);
+                allocation_info->Set("bind_ports", m_BindPorts[0]);
+            }
+            else
+            {
+                rallyhere::string delim = "";
+                rallyhere::stringstream bind_ips;
+                for (const auto& ip : m_BindIps)
+                {
+                    bind_ips << delim << ip;
+                    delim = ",";
+                }
+                allocation_info->Set("bind_ips", bind_ips.str());
+                delim = "";
+                rallyhere::stringstream bind_ports;
+                for (const auto& port : m_BindPorts)
+                {
+                    bind_ports << delim << port;
+                    delim = ",";
+                }
+                allocation_info->Set("bind_ports", bind_ports.str());
+            }
+        }
     }
 
   private:
@@ -538,6 +570,13 @@ class GameInstanceAdapter
     rallyhere::string m_PublicHost{};
     rallyhere::string m_AllocatedPublicPort{};
     rallyhere::string m_LastPolledState{"Deallocated"};
+    /// @}
+
+    /// @name Allocation Extended Information
+    /// Information that can be of use to the game instance but is not required for the game host adapter to function
+    /// @{
+    rallyhere::vector<rallyhere::string> m_BindIps{};
+    rallyhere::vector<rallyhere::string> m_BindPorts{};
     /// @}
 
     /// @name SIC Prometheus

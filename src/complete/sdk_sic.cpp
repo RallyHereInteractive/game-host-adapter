@@ -573,6 +573,8 @@ void GameInstanceAdapter::SetupSIC()
     m_Port = "7777";
     m_PublicPort.clear();
     m_MultiHome = "0.0.0.0";
+    if (m_RallyHereUrl.back() == '/')
+        m_RallyHereUrl.pop_back();
     m_SicPollUrl = m_RallyHereUrl + "/instances/sic_registration/v1/state";
     m_SicLoginUrl = m_RallyHereUrl + "/users/v1/login";
     m_SicRegistrationUrl = m_RallyHereUrl + "/instances/sic_registration/v3/register";
@@ -991,6 +993,7 @@ void GameInstanceAdapter::DoPollSIC(std::function<void(RallyHereStringMapPtr, co
                             allocation_info->Set("session_id", item.session_id);
                             allocation_info->Set("public_host", m_PublicHost);
                             allocation_info->Set("public_port", m_AllocatedPublicPort);
+                            AddBindIpsAndPorts(allocation_info);
                             if (LastAllocatedGauge)
                                 LastAllocatedGauge->SetToCurrentTime();
                             next(reinterpret_cast<RallyHereStringMapPtr>(allocation_info), RH_STATUS_OK);

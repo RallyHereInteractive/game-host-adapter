@@ -375,6 +375,8 @@ void GameInstanceAdapter::Setup()
 {
     rallyhere::string bootstrapMode{};
     rallyhere::string provider{};
+    rallyhere::vector<rallyhere::string> bindIps{};
+    rallyhere::vector<rallyhere::string> bindPorts{};
     m_UserAgent = BOOST_BEAST_VERSION_STRING;
     for (auto&& arg : m_Arguments)
     {
@@ -630,12 +632,29 @@ void GameInstanceAdapter::Setup()
             m_NextSimulatedGame = std::chrono::steady_clock::now();
             continue;
         }
+        if (ParseArgument("rhbindip=", arg, tmp))
+        {
+            bindIps.push_back(tmp);
+            continue;
+        }
+        if (ParseArgument("rhbindport=", arg, tmp))
+        {
+            bindPorts.push_back(tmp);
+            continue;
+        }
     }
     if (m_RallyHereUrl.empty())
     {
         m_Status = { RH_STATUS_NO_RALLYHERE_URL_PROVIDED };
         return;
     }
+    if (bindIps.size() != bindPorts.size())
+    {
+        m_Status = { RH_STATUS_BIND_IPS_AND_PORTS_MUST_MATCH };
+        return;
+    }
+    m_BindIps = bindIps;
+    m_BindPorts = bindPorts;
     SetupA2S();
     //m_SslContext.set_verify_mode(ssl::context::verify_peer | ssl::context::verify_fail_if_no_peer_cert);
     m_SslContext.set_verify_mode(ssl::context::verify_none);
