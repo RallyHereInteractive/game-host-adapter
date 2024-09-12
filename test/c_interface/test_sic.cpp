@@ -551,7 +551,7 @@ static const lest::test module[] = {
         ADAPTER_TICK;
 
         RallyHereStringMapPtr hostinfo = nullptr;
-        BOOST_SCOPE_EXIT_ALL(hostinfo) {
+        BOOST_SCOPE_EXIT_ALL(&hostinfo) {
             rallyhere_string_map_destroy(hostinfo);
         };
         rallyhere_get_public_host_and_port(adapter, &hostinfo);
@@ -581,7 +581,7 @@ static const lest::test module[] = {
         ADAPTER_TICK;
 
         RallyHereStringMapPtr hostinfo = nullptr;
-        BOOST_SCOPE_EXIT_ALL(hostinfo) {
+        BOOST_SCOPE_EXIT_ALL(&hostinfo) {
             rallyhere_string_map_destroy(hostinfo);
         };
         rallyhere_get_public_host_and_port(adapter, &hostinfo);
@@ -613,7 +613,7 @@ static const lest::test module[] = {
         ADAPTER_TICK;
 
         RallyHereStringMapPtr hostinfo = nullptr;
-        BOOST_SCOPE_EXIT_ALL(hostinfo) {
+        BOOST_SCOPE_EXIT_ALL(&hostinfo) {
             rallyhere_string_map_destroy(hostinfo);
         };
         rallyhere_get_public_host_and_port(adapter, &hostinfo);
@@ -645,7 +645,7 @@ static const lest::test module[] = {
         ADAPTER_TICK;
 
         RallyHereStringMapPtr hostinfo = nullptr;
-        BOOST_SCOPE_EXIT_ALL(hostinfo) {
+        BOOST_SCOPE_EXIT_ALL(&hostinfo) {
             rallyhere_string_map_destroy(hostinfo);
         };
         rallyhere_get_public_host_and_port(adapter, &hostinfo);
