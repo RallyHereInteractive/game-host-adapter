@@ -567,6 +567,100 @@ static const lest::test module[] = {
         EXPECT(value_size == strlen(expected_port));
         EXPECT(0 == strcmp(expected_port, value_to_check));
     },
+    CASE("SIC C interface reserve can get single bind ip and port")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        arguments_source.push_back("rhbindip=0.0.0.0");
+        arguments_source.push_back("rhbindport=9000");
+        SETUP_TEST_ADAPTER;
+        ADAPTER_CONNECT;
+
+        rallyhere_reserve_unconditional(adapter, on_reserve_callback, &data);
+
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        RallyHereStringMapPtr hostinfo = nullptr;
+        BOOST_SCOPE_EXIT_ALL(hostinfo) {
+            rallyhere_string_map_destroy(hostinfo);
+        };
+        rallyhere_get_public_host_and_port(adapter, &hostinfo);
+        EXPECT(hostinfo != nullptr);
+        const char* value_to_check = nullptr;
+        unsigned int value_size = 0;
+        EXPECT(rallyhere_string_map_get(hostinfo, "bind_ips", &value_to_check, &value_size) == RH_STATUS_OK);
+        const char* expected_hostname = "0.0.0.0";
+        EXPECT(value_size == strlen(expected_hostname));
+        EXPECT(0 == strcmp(expected_hostname, value_to_check));
+        const char* expected_port = "9000";
+        EXPECT(rallyhere_string_map_get(hostinfo, "bind_ports", &value_to_check, &value_size) == RH_STATUS_OK);
+        EXPECT(value_size == strlen(expected_port));
+        EXPECT(0 == strcmp(expected_port, value_to_check));
+    },
+    CASE("SIC C interface reserve can get multiple bind ips and ports")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        arguments_source.push_back("rhbindip=0.0.0.0");
+        arguments_source.push_back("rhbindport=9000");
+        arguments_source.push_back("rhbindip=::");
+        arguments_source.push_back("rhbindport=9000");
+        SETUP_TEST_ADAPTER;
+        ADAPTER_CONNECT;
+
+        rallyhere_reserve_unconditional(adapter, on_reserve_callback, &data);
+
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        RallyHereStringMapPtr hostinfo = nullptr;
+        BOOST_SCOPE_EXIT_ALL(hostinfo) {
+            rallyhere_string_map_destroy(hostinfo);
+        };
+        rallyhere_get_public_host_and_port(adapter, &hostinfo);
+        EXPECT(hostinfo != nullptr);
+        const char* value_to_check = nullptr;
+        unsigned int value_size = 0;
+        EXPECT(rallyhere_string_map_get(hostinfo, "bind_ips", &value_to_check, &value_size) == RH_STATUS_OK);
+        const char* expected_hostname = "0.0.0.0,::";
+        EXPECT(value_size == strlen(expected_hostname));
+        EXPECT(0 == strcmp(expected_hostname, value_to_check));
+        const char* expected_port = "9000,9000";
+        EXPECT(rallyhere_string_map_get(hostinfo, "bind_ports", &value_to_check, &value_size) == RH_STATUS_OK);
+        EXPECT(value_size == strlen(expected_port));
+        EXPECT(0 == strcmp(expected_port, value_to_check));
+    },
+    CASE("SIC C interface reserve can get ipv4 and ipv6 bind ips and ports")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        arguments_source.push_back("rhbindip=192.168.1.1");
+        arguments_source.push_back("rhbindport=15000");
+        arguments_source.push_back("rhbindip=2600:1700:3a20:ae70:fd:fadb:19fa:ed4a");
+        arguments_source.push_back("rhbindport=10000");
+        SETUP_TEST_ADAPTER;
+        ADAPTER_CONNECT;
+
+        rallyhere_reserve_unconditional(adapter, on_reserve_callback, &data);
+
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        RallyHereStringMapPtr hostinfo = nullptr;
+        BOOST_SCOPE_EXIT_ALL(hostinfo) {
+            rallyhere_string_map_destroy(hostinfo);
+        };
+        rallyhere_get_public_host_and_port(adapter, &hostinfo);
+        EXPECT(hostinfo != nullptr);
+        const char* value_to_check = nullptr;
+        unsigned int value_size = 0;
+        EXPECT(rallyhere_string_map_get(hostinfo, "bind_ips", &value_to_check, &value_size) == RH_STATUS_OK);
+        const char* expected_hostname = "192.168.1.1,2600:1700:3a20:ae70:fd:fadb:19fa:ed4a";
+        EXPECT(value_size == strlen(expected_hostname));
+        EXPECT(0 == strcmp(expected_hostname, value_to_check));
+        const char* expected_port = "15000,10000";
+        EXPECT(rallyhere_string_map_get(hostinfo, "bind_ports", &value_to_check, &value_size) == RH_STATUS_OK);
+        EXPECT(value_size == strlen(expected_port));
+        EXPECT(0 == strcmp(expected_port, value_to_check));
+    },
 };
 
 //@formatter:on
