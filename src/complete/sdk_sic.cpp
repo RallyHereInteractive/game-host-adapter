@@ -991,6 +991,7 @@ void GameInstanceAdapter::DoPollSIC(std::function<void(RallyHereStringMapPtr, co
                             allocation_info->Set("session_id", item.session_id);
                             allocation_info->Set("public_host", m_PublicHost);
                             allocation_info->Set("public_port", m_AllocatedPublicPort);
+                            AddBindIpsAndPorts(allocation_info);
                             if (LastAllocatedGauge)
                                 LastAllocatedGauge->SetToCurrentTime();
                             next(reinterpret_cast<RallyHereStringMapPtr>(allocation_info), RH_STATUS_OK);
