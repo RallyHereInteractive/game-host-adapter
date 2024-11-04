@@ -753,9 +753,9 @@ void GameInstanceAdapter::UpdateUserAgent()
 {
     rallyhere::memory_buffer buffer;
     fmt::format_to(std::back_inserter(buffer), "RallyHere/1.0 GameHostAdapter/{} {}", GAME_HOST_ADAPTER_VERSION, BOOST_BEAST_VERSION_STRING);
-    if (!m_StatsBase.game.empty() && m_StatsBase.version.empty())
+    if (!m_StatsBase.game.empty() && !m_StatsBase.version.empty())
     {
-        fmt::format_to(std::back_inserter(buffer), " {}/{}", m_StatsBase.name, m_StatsBase.version);
+        fmt::format_to(std::back_inserter(buffer), " {}/{}", m_StatsBase.game, m_StatsBase.version);
     }
     if (!m_CliUserAgent.empty())
     {

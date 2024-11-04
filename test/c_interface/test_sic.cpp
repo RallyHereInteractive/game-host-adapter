@@ -701,6 +701,17 @@ static const lest::test module[] = {
         EXPECT(rallyhere_string_map_get(ua, "user_agent", &value_to_check, &value_size) == RH_STATUS_OK);
         auto expected_user_agent = "GameHostAdapter/" GAME_HOST_ADAPTER_VERSION;
         EXPECT(boost::algorithm::contains(value_to_check, expected_user_agent) == true);
+        rallyhere_string_map_destroy(ua);
+
+        RallyHereStatsBase base{.game = "TheTestGame", .version = "15.3.23" };
+        RallyHereStatsBaseProvided provided{.set_game = true, .set_version = true};
+        EXPECT(rallyhere_stats_base(adapter, &base, &provided, on_set_base_stats_callback, &data) == RH_STATUS_OK);
+
+        rallyhere_get_user_agent_string(adapter, &ua);
+        EXPECT(ua != nullptr);
+        EXPECT(rallyhere_string_map_get(ua, "user_agent", &value_to_check, &value_size) == RH_STATUS_OK);
+        EXPECT(boost::algorithm::contains(value_to_check, expected_user_agent) == true);
+        EXPECT(boost::algorithm::contains(value_to_check, "TheTestGame/15.3.23") == true);
     },
 };
 
