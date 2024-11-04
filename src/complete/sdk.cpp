@@ -159,6 +159,12 @@ Status GameInstanceAdapter::Tick()
 /** Connect to the appropriate game host. This action may not actually happen at this time. */
 void GameInstanceAdapter::Connect(base_callback_function_t callback, void* user_data)
 {
+    auto connectAlreadyCalled = m_bConnectCalled.exchange(true);
+    if (connectAlreadyCalled)
+    {
+        callback(RH_STATUS_CONNECT_CALLED_TWICE, user_data);
+        return;
+    }
     if (m_ModeName == "SIC")
         ConnectSIC(callback, user_data);
     else if (m_ModeName == "Multiplay")

@@ -24,6 +24,14 @@ void on_connect_callback(const RallyHereStatusCode& code, void* user_data)
     data->connect_called = true;
 }
 
+void on_second_connect_callback(const RallyHereStatusCode& code, void* user_data)
+{
+    auto data = static_cast<TestCCodeData*>(user_data);
+    auto&& lest_env = data->lest_env;
+    data->connect_result = code;
+    data->connect_called = true;
+}
+
 void on_reserve_callback(const RallyHereStatusCode& code, void* user_data)
 {
     auto data = static_cast<TestCCodeData*>(user_data);

@@ -661,6 +661,22 @@ static const lest::test module[] = {
         EXPECT(value_size == strlen(expected_port));
         EXPECT(0 == strcmp(expected_port, value_to_check));
     },
+    CASE("SIC C interface calling connect twice fails")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        SETUP_TEST_ADAPTER;
+        ADAPTER_CONNECT;
+        rallyhere_connect(adapter, on_second_connect_callback, &data);
+        start = std::chrono::steady_clock::now();
+        while (!data.connect_called)
+        {
+            EXPECT(rallyhere_tick(adapter) == RH_STATUS_OK);
+            auto ongoing = std::chrono::steady_clock::now();
+            auto elapsed = ongoing - start;
+            EXPECT(elapsed < DEFAULT_WAIT);
+        }
+        EXPECT(data.connect_result == RH_STATUS_CONNECT_CALLED_TWICE);
+    },
 };
 
 //@formatter:on

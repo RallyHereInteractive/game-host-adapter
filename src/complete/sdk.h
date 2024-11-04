@@ -493,6 +493,7 @@ class GameInstanceAdapter
     base_callback_function_t m_SoftStopCallback{};
     void *m_SoftStopUserData{nullptr};
     std::atomic<bool> m_ExternalSoftStopRequested{false};
+    std::atomic<bool> m_bConnectCalled{false};
 
     /// @name SIC
     /// @{
