@@ -281,7 +281,10 @@ Status GameInstanceAdapter::StatsBaseImpl(const RallyHereStatsBase* stats, const
         update_if_changed(m_StatsBase.version, stats->version, changed);
     if (provided->set_name || provided->set_map || provided->set_folder || provided->set_game || provided->set_version)
         if (changed)
+        {
             RefreshAdditionalInfoLabels();
+            UpdateUserAgent();
+        }
     // Add to Prometheus
     if (provided->set_players)
         if (ConnectedPlayersGauge)
@@ -383,7 +386,6 @@ void GameInstanceAdapter::Setup()
     rallyhere::string provider{};
     rallyhere::vector<rallyhere::string> bindIps{};
     rallyhere::vector<rallyhere::string> bindPorts{};
-    m_UserAgent = BOOST_BEAST_VERSION_STRING;
     for (auto&& arg : m_Arguments)
     {
         rallyhere::string tmp;
@@ -399,7 +401,7 @@ void GameInstanceAdapter::Setup()
         {
             continue;
         }
-        if (ParseArgument("rhuseragent=", arg, m_UserAgent))
+        if (ParseArgument("rhuseragent=", arg, m_CliUserAgent))
         {
             continue;
         }
@@ -666,6 +668,7 @@ void GameInstanceAdapter::Setup()
     m_SslContext.set_verify_mode(ssl::context::verify_none);
     m_SslContext.set_default_verify_paths();
     boost::certify::enable_native_https_server_verification(m_SslContext);
+    UpdateUserAgent();
     if (!provider.empty())
     {
         m_ModeName = provider;
@@ -744,6 +747,21 @@ void GameInstanceAdapter::Setup()
             last_time_point = game.end;
         }
     }
+}
+
+void GameInstanceAdapter::UpdateUserAgent()
+{
+    rallyhere::memory_buffer buffer;
+    fmt::format_to(std::back_inserter(buffer), "RallyHere/1.0 GameHostAdapter/{} {}", GAME_HOST_ADAPTER_VERSION, BOOST_BEAST_VERSION_STRING);
+    if (!m_StatsBase.game.empty() && m_StatsBase.version.empty())
+    {
+        fmt::format_to(std::back_inserter(buffer), " {}/{}", m_StatsBase.name, m_StatsBase.version);
+    }
+    if (!m_CliUserAgent.empty())
+    {
+        fmt::format_to(std::back_inserter(buffer), " {}", m_CliUserAgent);
+    }
+    m_UserAgent = { buffer.data(), buffer.size() };
 }
 
 void GameInstanceAdapter::SetupA2S()

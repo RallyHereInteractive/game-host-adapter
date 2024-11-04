@@ -175,8 +175,10 @@ if (LEST_INCLUDE_DIRS)
     add_executable(${PROJECT_NAME}_test
             ${c_interface_test_sources}
             ${shared_sources}
+            ${VERSION_HEADER_DIR}/version.h
             )
     target_include_directories(${PROJECT_NAME}_test PRIVATE ${LEST_INCLUDE_DIRS})
+    target_include_directories(${PROJECT_NAME}_test PRIVATE ${VERSION_HEADER_DIR})
     target_include_directories(${PROJECT_NAME}_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/game-host-adapter)
     target_include_directories(${PROJECT_NAME}_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/test-helpers)
     target_include_directories(${PROJECT_NAME}_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/test/shared)

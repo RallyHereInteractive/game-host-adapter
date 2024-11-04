@@ -22,6 +22,7 @@ limitations under the License.
 
 #include "boost/scope_exit.hpp"
 #include "boost/filesystem.hpp"
+#include "boost/algorithm/string.hpp"
 
 #include "shared_test_data.h"
 #include "configuration.h"
@@ -29,6 +30,7 @@ limitations under the License.
 #include "shared_definitions.hpp"
 
 #include "boost/asio.hpp"
+#include "version.h"
 
 template<typename T>
 static auto get_just_profileid_arguments()
@@ -676,6 +678,29 @@ static const lest::test module[] = {
             EXPECT(elapsed < DEFAULT_WAIT);
         }
         EXPECT(data.connect_result == RH_STATUS_CONNECT_CALLED_TWICE);
+    },
+    CASE("SIC C interface user agent string defaults to include GHA version")
+    {
+        auto arguments_source = get_default_arguments<rallyhere::string>();
+        SETUP_TEST_ADAPTER;
+        ADAPTER_CONNECT;
+
+        rallyhere_reserve_unconditional(adapter, on_reserve_callback, &data);
+
+        ADAPTER_HEALTHY;
+        ADAPTER_TICK;
+
+        RallyHereStringMapPtr ua = nullptr;
+        BOOST_SCOPE_EXIT_ALL(&ua) {
+            rallyhere_string_map_destroy(ua);
+        };
+        rallyhere_get_user_agent_string(adapter, &ua);
+        EXPECT(ua != nullptr);
+        const char* value_to_check = nullptr;
+        unsigned int value_size = 0;
+        EXPECT(rallyhere_string_map_get(ua, "user_agent", &value_to_check, &value_size) == RH_STATUS_OK);
+        auto expected_user_agent = "GameHostAdapter/" GAME_HOST_ADAPTER_VERSION;
+        EXPECT(boost::algorithm::contains(value_to_check, expected_user_agent) == true);
     },
 };
 

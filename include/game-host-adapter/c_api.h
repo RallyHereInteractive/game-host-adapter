@@ -449,7 +449,13 @@ extern "C"
                                                        const RallyHereStatsBaseProvided *provided,
                                                        void (*callback)(const RallyHereStatusCode& code, void* user_data),
                                                        void* user_data);
-    //------------------------------------------------------------------------------
+
+    /// @brief Get a string map ptr with the "user_agent" set to the user agent string used for web requests
+    ///
+    /// Caller is responsible for freeing the string map with rallyhere_string_map_destroy.
+    /// @public @memberof RallyHereGameInstanceAdapter
+    RH_EXPORT void rallyhere_get_user_agent_string(RallyHereGameInstanceAdapterPtr adapter, RallyHereStringMapPtr* map);
+
     ///@}
     ///@name Stats gauges
     ///@{
