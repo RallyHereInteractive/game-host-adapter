@@ -427,6 +427,13 @@ class GameInstanceAdapter
         }
     }
 
+    auto GetUserAgent() const
+    {
+        auto allocation_info = i3d::one::allocator::create<rallyhere::StringMap>();
+        allocation_info->Set("user_agent", m_UserAgent);
+        return allocation_info;
+    }
+
   private:
     /** Inform the game host that this game instance is done with its current allocation. Should only be called as part of the destruction of
      * this object. */
@@ -436,6 +443,7 @@ class GameInstanceAdapter
     RH_EXPORT void SetupA2S();
     RH_EXPORT void SetupSIC();
     RH_EXPORT void SetupMultiplay();
+    RH_EXPORT void UpdateUserAgent();
     RH_EXPORT void DoPollSIC(std::function<void(RallyHereStringMapPtr, const RallyHereStatusCode&)> next);
     RH_EXPORT void PollSIC();
 
@@ -493,6 +501,7 @@ class GameInstanceAdapter
     base_callback_function_t m_SoftStopCallback{};
     void *m_SoftStopUserData{nullptr};
     std::atomic<bool> m_ExternalSoftStopRequested{false};
+    std::atomic<bool> m_bConnectCalled{false};
 
     /// @name SIC
     /// @{
@@ -635,7 +644,8 @@ class GameInstanceAdapter
     bool m_A2SChallenge{true};
     /// @}
 
-    rallyhere::string m_UserAgent;
+    rallyhere::string m_UserAgent{};
+    rallyhere::string m_CliUserAgent{};
 
     ///@name Push Metrics Provider statsd
     /// @{

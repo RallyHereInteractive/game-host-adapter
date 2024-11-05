@@ -48,6 +48,7 @@ struct TestCCodeData
 };
 
 void on_connect_callback(const RallyHereStatusCode& code, void* user_data);
+void on_second_connect_callback(const RallyHereStatusCode& code, void* user_data);
 void on_reserve_callback(const RallyHereStatusCode& code, void* user_data);
 void on_set_labels_callback(const RallyHereStatusCode& code, void* user_data);
 void on_set_additional_info_callback(const RallyHereStatusCode& code, void* user_data);
