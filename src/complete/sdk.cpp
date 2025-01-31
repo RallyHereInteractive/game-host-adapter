@@ -845,7 +845,7 @@ void GameInstanceAdapter::RebuildPrometheus()
 
     prometheus::Labels alwaysPresentLabels = BuildAlwaysPresentLabels();
 
-    auto& connectedGaugeFamily = prometheus::BuildGauge()
+    auto&& connectedGaugeFamily = prometheus::BuildGauge()
                                      .Name("connected_clients_total")
                                      .Help("Number of clients (players/spectators) connected to instance")
                                      .Labels(alwaysPresentLabels)
