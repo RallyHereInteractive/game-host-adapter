@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - os: ubuntu-latest
+          - os: ubuntu-22.04
             vcpkg_triplet: x64-linux-release
             generator: Ninja
           - os: ubuntu-20.04
@@ -33,7 +33,7 @@ jobs:
           token: ${{ github.token }}
       - name: Use clang-14 on 22.04
         shell: bash
-        if: matrix.config.os == 'ubuntu-latest'
+        if: matrix.config.os == 'ubuntu-22.04'
         run: |
           echo CC=/usr/bin/clang-14 >> $GITHUB_ENV
           echo CPP=/usr/bin/clang-cpp-14 >> $GITHUB_ENV
