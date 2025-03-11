@@ -17,12 +17,13 @@ jobs:
       matrix:
         config:
           - os: ubuntu-22.04
-            vcpkg_triplet: x64-linux-release
-            generator: Ninja
-          - os: ubuntu-20.04
+            openssl_version_identifier: version-string
+            openssl_version: 1.1.1t
             vcpkg_triplet: x64-linux-release
             generator: Ninja
           - os: windows-latest
+            openssl_version_identifier: version-string
+            openssl_version: 1.1.1t
             vcpkg_triplet: x64-windows-release
             generator: Visual Studio 17 2022
     steps:
@@ -39,14 +40,30 @@ jobs:
           echo CPP=/usr/bin/clang-cpp-14 >> $GITHUB_ENV
           echo CXX=/usr/bin/clang++-14 >> $GITHUB_ENV
           echo LD=/usr/bin/ld.lld-14 >> $GITHUB_ENV
-      - name: Use clang-12 on 20.04
+      - name: Use designated openssl version
         shell: bash
-        if: matrix.config.os == 'ubuntu-20.04'
         run: |
-          echo CC=/usr/bin/clang-12 >> $GITHUB_ENV
-          echo CPP=/usr/bin/clang-cpp-12 >> $GITHUB_ENV
-          echo CXX=/usr/bin/clang++-12 >> $GITHUB_ENV
-          echo LD=/usr/bin/ld.lld-12 >> $GITHUB_ENV
+          jq  --arg openssl_version ${{ matrix.config.openssl_version }} \
+              --arg openssl_version_identifier ${{ matrix.config.openssl_version_identifier }} \
+            '. as $top
+             | .overrides // []
+             | . as $overrides
+             | map(.name == "openssl")
+             | index(true) // ($overrides | length)
+             | . as $i
+             | $top
+             | .overrides[$i] = {"name": "openssl", "$openssl_version_identifier": "$openssl_version"}' \
+            < ${{ github.workspace }}/game-host-adapter/vcpkg.json \
+            > ${{ github.workspace }}/game-host-adapter/vcpkg.json.new
+          mv ${{ github.workspace }}/game-host-adapter/vcpkg.json.new ${{ github.workspace }}/game-host-adapter/vcpkg.json
+      - name: Mv OpenSSL overrides into ext/ports if applicable
+        shell: bash
+        run: |
+          custom_ports_dir="${{ github.workspace }}/game-host-adapter/ext/custom-ports/openssl/${{ matrix.config.openssl_version }}"
+          if [ -d "$custom_ports_dir" ]; then
+            echo "Copying custom ports into ext/ports"
+            cp -r $custom_ports_dir ${{ github.workspace }}/game-host-adapter/ext/ports/openssl
+          fi
       - name: vcpkg build
         uses: seanmiddleditch/vcpkg-action@8fca4ade4e2146ffeb4490d5e7987bde9ab0b32f
         with:
@@ -103,11 +120,11 @@ jobs:
         uses: actions/upload-artifact@v4
         if: runner.os == 'Windows'
         with:
-          name: RallyHere.GameHostAdapter.${{ matrix.config.os }}.${{ github.run_number }}.nupkg
+          name: RallyHere.GameHostAdapter.${{ matrix.config.os }}.OpenSSL${{ matrix.config.openssl_version }}.${{ github.run_number }}.nupkg
           path: ${{ github.workspace }}/build/RelWithDebInfo/RallyHere.GameHostAdapter.*
       - name: Archive Nuget Package
         uses: actions/upload-artifact@v4
         if: runner.os != 'Windows'
         with:
-          name: RallyHere.GameHostAdapter.${{ matrix.config.os }}.${{ github.run_number }}.nupkg
+          name: RallyHere.GameHostAdapter.${{ matrix.config.os }}.OpenSSL${{ matrix.config.openssl_version }}.${{ github.run_number }}.nupkg
           path: ${{ github.workspace }}/build/RallyHere.GameHostAdapter.*
