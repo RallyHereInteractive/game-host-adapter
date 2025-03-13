@@ -53,17 +53,17 @@ jobs:
              | . as $i
              | $top
              | .overrides[$i] = {"name": "openssl", "\( $openssl_version_identifier )": "\( $openssl_version )"}' \
-            < ${{ github.workspace }}/game-host-adapter/vcpkg.json \
-            > ${{ github.workspace }}/game-host-adapter/vcpkg.json.new
-          mv ${{ github.workspace }}/game-host-adapter/vcpkg.json.new ${{ github.workspace }}/game-host-adapter/vcpkg.json
+            < ${GITHUB_WORKSPACE}/game-host-adapter/vcpkg.json \
+            > ${GITHUB_WORKSPACE}/game-host-adapter/vcpkg.json.new
+          mv ${GITHUB_WORKSPACE}/game-host-adapter/vcpkg.json.new ${GITHUB_WORKSPACE}/game-host-adapter/vcpkg.json
       - name: Mv OpenSSL overrides into ext/ports if applicable
         shell: bash
         run: |
           set -x
-          optional_ports_dir="${{ github.workspace }}/game-host-adapter/ext/optional-ports/openssl/${{ matrix.config.openssl_version }}"
+          optional_ports_dir="${GITHUB_WORKSPACE}/game-host-adapter/ext/optional-ports/openssl/${{ matrix.config.openssl_version }}"
           if [ -d "$optional_ports_dir" ]; then
             echo "Copying optional ports into ext/ports"
-            cp -r $optional_ports_dir ${{ github.workspace }}/game-host-adapter/ext/ports/openssl
+            cp -r $optional_ports_dir ${GITHUB_WORKSPACE}/game-host-adapter/ext/ports/openssl
           fi
       - name: vcpkg build
         uses: seanmiddleditch/vcpkg-action@8fca4ade4e2146ffeb4490d5e7987bde9ab0b32f
