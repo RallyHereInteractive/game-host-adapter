@@ -59,10 +59,11 @@ jobs:
       - name: Mv OpenSSL overrides into ext/ports if applicable
         shell: bash
         run: |
-          custom_ports_dir="${{ github.workspace }}/game-host-adapter/ext/custom-ports/openssl/${{ matrix.config.openssl_version }}"
-          if [ -d "$custom_ports_dir" ]; then
-            echo "Copying custom ports into ext/ports"
-            cp -r $custom_ports_dir ${{ github.workspace }}/game-host-adapter/ext/ports/openssl
+          set -x
+          optional_ports_dir="${{ github.workspace }}/game-host-adapter/ext/optional-ports/openssl/${{ matrix.config.openssl_version }}"
+          if [ -d "$optional_ports_dir" ]; then
+            echo "Copying optional ports into ext/ports"
+            cp -r $optional_ports_dir ${{ github.workspace }}/game-host-adapter/ext/ports/openssl
           fi
       - name: vcpkg build
         uses: seanmiddleditch/vcpkg-action@8fca4ade4e2146ffeb4490d5e7987bde9ab0b32f
