@@ -52,7 +52,7 @@ jobs:
              | index(true) // ($overrides | length)
              | . as $i
              | $top
-             | .overrides[$i] = {"name": "openssl", "$openssl_version_identifier": "$openssl_version"}' \
+             | .overrides[$i] = {"name": "openssl", "\( $openssl_version_identifier )": "\( $openssl_version )"}' \
             < ${{ github.workspace }}/game-host-adapter/vcpkg.json \
             > ${{ github.workspace }}/game-host-adapter/vcpkg.json.new
           mv ${{ github.workspace }}/game-host-adapter/vcpkg.json.new ${{ github.workspace }}/game-host-adapter/vcpkg.json
