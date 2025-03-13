@@ -22,8 +22,8 @@ jobs:
             vcpkg_triplet: x64-linux-release
             generator: Ninja
           - os: windows-latest
-            openssl_version_identifier: version-string
-            openssl_version: 1.1.1t
+            openssl_version_identifier: version
+            openssl_version: 3.3.1
             vcpkg_triplet: x64-windows-release
             generator: Visual Studio 17 2022
     steps:
