@@ -102,7 +102,7 @@ struct base64
     template<typename StringT, unsigned int line_length>
     storage_type encode_with_line_breaks(StringT s)
     {
-        return insert_linebreaks(base64_encode<storage_type>(s, false), line_length);
+        return insert_linebreaks(encode(s, false), line_length);
     }
 
     template<typename StringT>
