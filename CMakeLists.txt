@@ -42,6 +42,10 @@ string(JSON GAME_HOST_ADAPTER_VERSION GET ${VCPKG_JSON} version)
 
 message(STATUS "${PROJECT_NAME} version ${GAME_HOST_ADAPTER_VERSION}")
 
+find_package(OpenSSL REQUIRED)
+message(STATUS "OpenSSL version: ${OPENSSL_VERSION}")
+string(REPLACE "." "_" OPENSSL_VERSION_ESCAPED ${OPENSSL_VERSION})
+
 set(VERSION_HEADER_DIR "${CMAKE_CURRENT_BINARY_DIR}/version")
 configure_file(src/complete/version.h.in "${VERSION_HEADER_DIR}/version.h" @ONLY)
 if (UNIX)
@@ -108,7 +112,6 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/e
 find_package(fmt CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)
 
-find_package(OpenSSL REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC OpenSSL::SSL OpenSSL::Crypto)
 find_package(Boost REQUIRED COMPONENTS date_time regex system thread atomic filesystem url json program_options)
 target_link_libraries(${PROJECT_NAME} PRIVATE Boost::url Boost::json)
@@ -136,11 +139,11 @@ if (UNIX)
             COMMAND objcopy --add-gnu-debuglink=$<PATH:REPLACE_EXTENSION,LAST_ONLY,$<TARGET_FILE:${PROJECT_NAME}>,sym> $<TARGET_FILE:${PROJECT_NAME}>)
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
             COMMAND ${NUGET_EXE} pack ${CMAKE_CURRENT_BINARY_DIR}/${NUSPEC_NAME}.nuspec -Version ${GAME_HOST_ADAPTER_VERSION} -OutputDirectory ${CMAKE_CURRENT_BINARY_DIR}
-            BYPRODUCTS RallyHere.GameHostAdapter.${NUPKG_OS}.${GAME_HOST_ADAPTER_VERSION}.nupkg)
+            BYPRODUCTS RallyHere.GameHostAdapter.${NUPKG_OS}.OpenSSL.${OPENSSL_VERSION_ESCAPED}.${GAME_HOST_ADAPTER_VERSION}.nupkg)
 else()
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
             COMMAND ${NUGET_EXE} pack ${CMAKE_CURRENT_BINARY_DIR}/game-host-adapter-windows-x64-$<CONFIG>.nuspec -Version ${GAME_HOST_ADAPTER_VERSION} -OutputDirectory $<TARGET_FILE_DIR:${PROJECT_NAME}>
-            BYPRODUCTS RallyHere.GameHostAdapter.Windows.x64.${GAME_HOST_ADAPTER_VERSION}.nupkg)
+            BYPRODUCTS RallyHere.GameHostAdapter.Windows.x64.OpenSSL.${OPENSSL_VERSION_ESCAPED}.${GAME_HOST_ADAPTER_VERSION}.nupkg)
 endif()
 
 find_path(LEST_INCLUDE_DIRS "lest/lest.hpp")
